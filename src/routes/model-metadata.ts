@@ -316,7 +316,7 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     organization: "NVIDIA",
   },
   "llama-4-maverick-03-26-experimental": {
-    price: mixPrice(0.55, 2.19), // todo: decrease to more reasonable price
+    price: mixPrice(0.22, 0.88),
     isOpen: true,
     organization: "Meta",
   },
