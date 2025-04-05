@@ -171,7 +171,7 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   "gemini-2.0-flash-thinking-exp-1219": { deprecated: true, organization: "Google" },
   "gemini-2.0-pro-exp-02-05": { deprecated: true, organization: "Google" },
   "gemini-2.0-flash-lite-preview-02-05": { price: mixPrice(0.075, 0.3), organization: "Google" },
-  "gemini-2.5-pro-exp-03-25": { price: mixPrice(1.25, 10), organization: "Google" },
+  "gemini-2.5-pro-exp-03-25": { price: mixPrice(1.25, 10 * 2.9), organization: "Google" },
   "gemini-advanced-0514": { deprecated: true, organization: "Google" },
   "gemini-exp-1114": { deprecated: true, organization: "Google" },
   "gemini-exp-1121": { deprecated: true, organization: "Google" },
