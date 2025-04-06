@@ -64,29 +64,45 @@ data = response.json()
 
 # Initialize the output structure
 output = {
-    "full": {
-        "elo_rating_final": {},
-        "confidence_intervals": {}
-    }
 }
 
 # Extract and transform the data
 for result in data:
     model_name = result.get("name", "")
-    if model_name:
-        transformed_name = transform_model_name(model_name)
-        total_stats = result["arena"]["total"]["total"]
-        elo_rating = total_stats["elo"]
-        
-        output["full"]["elo_rating_final"][transformed_name] = round(elo_rating, 2)
-        
+    if not model_name:
+        continue
+
+    transformed_name = transform_model_name(model_name)
+    categories = result.get("categories")
+
+    # Iterate over all subsets in arena["total"]
+    total_sections = result.get("arena", {}).get("total", {})
+    for subset_key, subset_stats in total_sections.items():
+        # Map 'total' to 'full' for compatibility
+        subcat = "full" if subset_key == "total" else subset_key
+
+        elo_rating = subset_stats["elo"]
+
+        # Initialize subcategory dicts if missing
+        if subcat not in output:
+            output[subcat] = {
+                "elo_rating_final": {},
+                "confidence_intervals": {},
+                "categories": {}
+            }
+
+        output[subcat]["elo_rating_final"][transformed_name] = round(elo_rating, 2)
+
         # Parse and add confidence intervals
-        minus_ci, plus_ci = parse_ci95(total_stats.get("ci95"))
+        minus_ci, plus_ci = parse_ci95(subset_stats.get("ci95"))
         if minus_ci is not None and plus_ci is not None:
-            output["full"]["confidence_intervals"][transformed_name] = {
+            output[subcat]["confidence_intervals"][transformed_name] = {
                 "low": round(elo_rating - minus_ci, 2),
                 "high": round(elo_rating + plus_ci, 2)
             }
+
+        # Add categories list (same for all subsets)
+        output[subcat]["categories"][transformed_name] = categories
 
 # Ensure directory exists
 os.makedirs("src/routes/assets", exist_ok=True)

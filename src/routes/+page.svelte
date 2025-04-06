@@ -61,7 +61,14 @@
     },
     vision: { Overall: "full", English: "english", Chinese: "chinese" },
     image_arena: { Overall: "full" },
-    image_artificial: { Overall: "full" },
+    image_artificial: {
+      Overall: "full",
+      ...Object.fromEntries(
+        Object.keys(imageArtificialBoard)
+          .filter((k) => k != "full")
+          .map((k) => [k, k]),
+      ),
+    },
     image_fal: { Overall: "full" },
   } as Record<string, Record<string, string>>;
 
