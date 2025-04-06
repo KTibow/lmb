@@ -58,10 +58,9 @@ def calculate_confidence_intervals(samples):
         return None, None
 
     sorted_samples = sorted(samples)
-    n = len(sorted_samples)
-    low_idx = int(n * 0.025)
-    high_idx = int(n * 0.975)
-    return sorted_samples[low_idx], sorted_samples[high_idx]
+    low_value = 0.5 * sorted_samples[2] + 0.5 * sorted_samples[3]
+    high_value = 0.5 * sorted_samples[99 - 2] + 0.5 * sorted_samples[99 - 3]
+    return low_value, high_value
 
 """Convert pickle file to JSON, handling numpy and pandas objects."""
 data = get_latest_pickle_file()
