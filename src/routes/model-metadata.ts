@@ -235,7 +235,7 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   "grok-2-2024-08-13": { price: mixPrice(2, 10), organization: "xAI" },
   "grok-2-mini-2024-08-13": { organization: "xAI" },
   "early-grok-3": { deprecated: true, organization: "xAI" },
-  "grok-3-preview-02-24": { organization: "xAI" },
+  "grok-3-preview-02-24": { price: mixPrice(3, 15), organization: "xAI" },
   "guanaco-33b": { isOpen: true },
   "internlm2_5-20b-chat": { isOpen: true },
   "internvl2-26b": { isOpen: true },

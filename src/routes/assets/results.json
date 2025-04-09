@@ -30952,1285 +30952,1325 @@
   "vision": {
     "full": {
       "elo_rating_final": {
-        "gemini-2.5-pro-exp-03-25": 1323.92,
-        "chatgpt-4o-latest-20250326": 1306.93,
-        "gemini-exp-1121": 1298.35,
-        "chatgpt-4o-latest-20250129": 1281.02,
-        "gemini-2.0-flash-thinking-exp-01-21": 1280.55,
-        "gemini-exp-1114": 1271.21,
-        "gemini-2.0-flash-thinking-exp-1219": 1268.98,
-        "gpt-4.5-preview-2025-02-27": 1259.08,
-        "gemini-2.0-flash-exp": 1256.93,
-        "chatgpt-4o-latest-20240903": 1253.67,
-        "gemini-exp-1206": 1243.2,
-        "gemini-2.0-pro-exp-02-05": 1240.2,
+        "gemini-2.5-pro-exp-03-25": 1315.15,
+        "chatgpt-4o-latest-20250326": 1303.66,
+        "gemini-exp-1121": 1298.44,
+        "chatgpt-4o-latest-20250129": 1280.64,
+        "gemini-2.0-flash-thinking-exp-01-21": 1278.8,
+        "gemini-exp-1114": 1271.34,
+        "gemini-2.0-flash-thinking-exp-1219": 1269.05,
+        "gemini-2.0-flash-exp": 1257.05,
+        "gpt-4.5-preview-2025-02-27": 1254.61,
+        "chatgpt-4o-latest-20240903": 1253.74,
+        "gemini-exp-1206": 1243.33,
+        "gemini-2.0-pro-exp-02-05": 1239.95,
         "gemini-1.5-pro-exp-0827": 1231.59,
-        "o1-2024-12-17": 1230.27,
-        "gemini-2.0-flash-001": 1228.64,
-        "chatgpt-4o-latest-20241120": 1226.0,
+        "gemini-2.0-flash-001": 1229.56,
+        "o1-2024-12-17": 1228.18,
+        "chatgpt-4o-latest-20241120": 1226.18,
         "gemini-1.5-pro-002": 1221.96,
-        "gemini-1.5-pro-exp-0801": 1219.56,
-        "claude-3-7-sonnet-20250219": 1215.57,
-        "gemini-1.5-flash-exp-0827": 1212.19,
-        "gpt-4o-2024-05-13": 1205.91,
-        "gemini-1.5-flash-002": 1205.25,
-        "claude-3-5-sonnet-20240620": 1189.14,
-        "step-1o-vision-32k-highres": 1187.06,
-        "claude-3-5-sonnet-20241022": 1182.02,
-        "qwen2.5-vl-72b-instruct": 1170.58,
-        "pixtral-large-2411": 1152.84,
-        "gemini-2.0-flash-lite-preview-02-05": 1152.5,
+        "gemini-1.5-pro-exp-0801": 1219.55,
+        "qwen2.5-vl-32b-instruct": 1217.16,
+        "claude-3-7-sonnet-20250219": 1214.61,
+        "gemini-1.5-flash-exp-0827": 1212.23,
+        "gpt-4o-2024-05-13": 1205.95,
+        "gemini-1.5-flash-002": 1205.36,
+        "claude-3-5-sonnet-20240620": 1189.18,
+        "step-1o-vision-32k-highres": 1187.24,
+        "claude-3-5-sonnet-20241022": 1182.12,
+        "qwen2.5-vl-72b-instruct": 1171.35,
+        "gemini-2.0-flash-lite-preview-02-05": 1156.16,
+        "pixtral-large-2411": 1153.33,
         "gemini-1.5-pro-001": 1151.15,
-        "gpt-4-turbo-2024-04-09": 1150.94,
-        "qwen-vl-max-1119": 1127.7,
-        "gpt-4o-2024-08-06": 1125.24,
-        "gpt-4o-mini-2024-07-18": 1123.99,
-        "gemini-1.5-flash-8b-exp-0827": 1111.69,
-        "step-1v-32k": 1110.72,
-        "qwen2-vl-72b": 1110.32,
-        "gemini-1.5-flash-8b-001": 1105.93,
-        "claude-3-opus-20240229": 1076.29,
-        "molmo-72b-0924": 1075.4,
-        "gemini-1.5-flash-001": 1072.27,
-        "pixtral-12b-2409": 1071.8,
-        "llama-3.2-vision-90b-instruct": 1069.26,
-        "internvl2-26b": 1067.11,
-        "hunyuan-standard-vision-2024-12-31": 1065.32,
-        "c4ai-aya-vision-32b": 1060.74,
-        "amazon-nova-lite-v1.0": 1060.61,
-        "qwen2-vl-7b-instruct": 1053.57,
+        "gpt-4-turbo-2024-04-09": 1150.92,
+        "qwen-vl-max-1119": 1127.8,
+        "gpt-4o-2024-08-06": 1125.34,
+        "gpt-4o-mini-2024-07-18": 1123.9,
+        "gemini-1.5-flash-8b-exp-0827": 1111.68,
+        "step-1v-32k": 1110.79,
+        "qwen2-vl-72b": 1110.41,
+        "gemini-1.5-flash-8b-001": 1106.05,
+        "claude-3-opus-20240229": 1076.35,
+        "molmo-72b-0924": 1075.5,
+        "gemini-1.5-flash-001": 1072.26,
+        "pixtral-12b-2409": 1071.92,
+        "llama-3.2-vision-90b-instruct": 1069.36,
+        "c4ai-aya-vision-8b": 1068.94,
+        "internvl2-26b": 1067.1,
+        "hunyuan-standard-vision-2024-12-31": 1065.61,
+        "amazon-nova-lite-v1.0": 1060.7,
+        "c4ai-aya-vision-32b": 1058.1,
+        "qwen2-vl-7b-instruct": 1053.64,
         "claude-3-sonnet-20240229": 1047.73,
-        "yi-vision": 1045.42,
-        "amazon-nova-pro-v1.0": 1043.73,
-        "llama-3.2-vision-11b-instruct": 1031.69,
-        "reka-flash-preview-20240611": 1024.34,
-        "molmo-7b-d-0924": 1023.65,
-        "reka-core-20240501": 1014.62,
-        "internvl2-4b": 1007.24,
-        "nvila-internal-15b-v1": 1006.51,
+        "yi-vision": 1045.39,
+        "amazon-nova-pro-v1.0": 1043.86,
+        "llama-3.2-vision-11b-instruct": 1031.77,
+        "reka-flash-preview-20240611": 1024.35,
+        "molmo-7b-d-0924": 1023.73,
+        "reka-core-20240501": 1014.63,
+        "internvl2-4b": 1007.26,
+        "nvila-internal-15b-v1": 1006.63,
         "claude-3-haiku-20240307": 1000.0,
-        "llava-v1.6-34b": 999.97,
-        "llava-onevision-qwen2-72b-ov": 992.74,
-        "cogvlm2-llama3-chat-19b": 989.44,
+        "llava-v1.6-34b": 1000.0,
+        "llava-onevision-qwen2-72b-ov": 992.67,
+        "cogvlm2-llama3-chat-19b": 989.45,
         "minicpm-v-2_6": 976.09,
-        "phi-3.5-vision-instruct": 918.28,
-        "phi-3-vision-128k-instruct": 873.64
+        "phi-3.5-vision-instruct": 918.26,
+        "phi-3-vision-128k-instruct": 873.75
       },
       "confidence_intervals": {
         "gemini-2.5-pro-exp-03-25": {
-          "low": 1305.18,
-          "high": 1339.79
+          "low": 1299.96,
+          "high": 1330.39
         },
         "chatgpt-4o-latest-20250326": {
-          "low": 1287.58,
-          "high": 1322.53
+          "low": 1290.13,
+          "high": 1317.45
         },
         "gemini-exp-1121": {
-          "low": 1285.34,
-          "high": 1310.75
+          "low": 1285.98,
+          "high": 1313.56
         },
         "chatgpt-4o-latest-20250129": {
-          "low": 1270.81,
-          "high": 1289.44
+          "low": 1272.71,
+          "high": 1288.6
         },
         "gemini-2.0-flash-thinking-exp-01-21": {
           "low": 1270.52,
-          "high": 1289.48
+          "high": 1289.93
         },
         "gemini-exp-1114": {
-          "low": 1258.51,
-          "high": 1286.91
+          "low": 1259.81,
+          "high": 1285.03
         },
         "gemini-2.0-flash-thinking-exp-1219": {
-          "low": 1255.21,
-          "high": 1281.93
-        },
-        "gpt-4.5-preview-2025-02-27": {
-          "low": 1250.5,
-          "high": 1272.13
+          "low": 1254.13,
+          "high": 1284.74
         },
         "gemini-2.0-flash-exp": {
-          "low": 1249.12,
-          "high": 1266.03
+          "low": 1247.23,
+          "high": 1268.37
+        },
+        "gpt-4.5-preview-2025-02-27": {
+          "low": 1241.4,
+          "high": 1266.87
         },
         "chatgpt-4o-latest-20240903": {
-          "low": 1246.82,
-          "high": 1262.35
+          "low": 1246.25,
+          "high": 1262.34
         },
         "gemini-exp-1206": {
-          "low": 1233.98,
-          "high": 1251.32
+          "low": 1234.24,
+          "high": 1253.13
         },
         "gemini-2.0-pro-exp-02-05": {
-          "low": 1230.75,
-          "high": 1248.99
+          "low": 1228.74,
+          "high": 1248.79
         },
         "gemini-1.5-pro-exp-0827": {
-          "low": 1225.39,
-          "high": 1238.28
-        },
-        "o1-2024-12-17": {
-          "low": 1217.95,
-          "high": 1239.96
+          "low": 1225.54,
+          "high": 1238.29
         },
         "gemini-2.0-flash-001": {
-          "low": 1215.19,
-          "high": 1240.13
+          "low": 1221.67,
+          "high": 1241.08
+        },
+        "o1-2024-12-17": {
+          "low": 1219.61,
+          "high": 1238.29
         },
         "chatgpt-4o-latest-20241120": {
-          "low": 1218.92,
-          "high": 1232.77
+          "low": 1217.99,
+          "high": 1233.08
         },
         "gemini-1.5-pro-002": {
-          "low": 1216.97,
-          "high": 1228.17
+          "low": 1214.81,
+          "high": 1227.17
         },
         "gemini-1.5-pro-exp-0801": {
-          "low": 1214.26,
-          "high": 1226.11
+          "low": 1214.65,
+          "high": 1226.74
+        },
+        "qwen2.5-vl-32b-instruct": {
+          "low": 1200.13,
+          "high": 1239.82
         },
         "claude-3-7-sonnet-20250219": {
-          "low": 1199.05,
-          "high": 1228.61
+          "low": 1199.3,
+          "high": 1226.52
         },
         "gemini-1.5-flash-exp-0827": {
-          "low": 1203.2,
-          "high": 1222.47
+          "low": 1202.17,
+          "high": 1223.14
         },
         "gpt-4o-2024-05-13": {
-          "low": 1200.45,
-          "high": 1210.74
+          "low": 1202.51,
+          "high": 1210.46
         },
         "gemini-1.5-flash-002": {
-          "low": 1198.82,
-          "high": 1212.84
+          "low": 1198.56,
+          "high": 1212.28
         },
         "claude-3-5-sonnet-20240620": {
-          "low": 1183.9,
-          "high": 1194.65
+          "low": 1184.49,
+          "high": 1194.37
         },
         "step-1o-vision-32k-highres": {
-          "low": 1176.35,
-          "high": 1193.5
+          "low": 1177.19,
+          "high": 1198.07
         },
         "claude-3-5-sonnet-20241022": {
-          "low": 1175.25,
-          "high": 1188.35
+          "low": 1175.66,
+          "high": 1188.09
         },
         "qwen2.5-vl-72b-instruct": {
-          "low": 1159.55,
-          "high": 1178.32
-        },
-        "pixtral-large-2411": {
-          "low": 1144.71,
-          "high": 1160.15
+          "low": 1163.28,
+          "high": 1180.57
         },
         "gemini-2.0-flash-lite-preview-02-05": {
-          "low": 1143.0,
-          "high": 1163.94
+          "low": 1146.87,
+          "high": 1166.37
+        },
+        "pixtral-large-2411": {
+          "low": 1147.42,
+          "high": 1162.08
         },
         "gemini-1.5-pro-001": {
-          "low": 1145.78,
-          "high": 1157.54
+          "low": 1146.12,
+          "high": 1156.94
         },
         "gpt-4-turbo-2024-04-09": {
-          "low": 1145.59,
-          "high": 1156.86
+          "low": 1145.9,
+          "high": 1157.5
         },
         "qwen-vl-max-1119": {
-          "low": 1113.41,
-          "high": 1140.26
+          "low": 1114.79,
+          "high": 1138.74
         },
         "gpt-4o-2024-08-06": {
-          "low": 1115.57,
-          "high": 1134.08
+          "low": 1115.87,
+          "high": 1134.53
         },
         "gpt-4o-mini-2024-07-18": {
-          "low": 1119.27,
-          "high": 1128.87
+          "low": 1119.37,
+          "high": 1130.26
         },
         "gemini-1.5-flash-8b-exp-0827": {
-          "low": 1100.52,
-          "high": 1121.42
+          "low": 1101.0,
+          "high": 1121.68
         },
         "step-1v-32k": {
-          "low": 1097.26,
-          "high": 1123.24
+          "low": 1098.22,
+          "high": 1127.18
         },
         "qwen2-vl-72b": {
-          "low": 1105.15,
-          "high": 1117.61
+          "low": 1104.61,
+          "high": 1115.97
         },
         "gemini-1.5-flash-8b-001": {
-          "low": 1099.67,
-          "high": 1112.52
+          "low": 1097.45,
+          "high": 1112.73
         },
         "claude-3-opus-20240229": {
-          "low": 1071.25,
-          "high": 1082.79
+          "low": 1070.94,
+          "high": 1083.32
         },
         "molmo-72b-0924": {
-          "low": 1065.85,
-          "high": 1084.8
+          "low": 1063.7,
+          "high": 1088.25
         },
         "gemini-1.5-flash-001": {
-          "low": 1065.88,
-          "high": 1078.02
+          "low": 1066.98,
+          "high": 1078.11
         },
         "pixtral-12b-2409": {
-          "low": 1064.86,
-          "high": 1078.78
+          "low": 1066.62,
+          "high": 1080.34
         },
         "llama-3.2-vision-90b-instruct": {
-          "low": 1063.21,
-          "high": 1074.7
+          "low": 1062.75,
+          "high": 1076.42
+        },
+        "c4ai-aya-vision-8b": {
+          "low": 1044.36,
+          "high": 1094.35
         },
         "internvl2-26b": {
-          "low": 1058.93,
-          "high": 1075.46
+          "low": 1058.98,
+          "high": 1074.05
         },
         "hunyuan-standard-vision-2024-12-31": {
-          "low": 1042.28,
-          "high": 1088.52
-        },
-        "c4ai-aya-vision-32b": {
-          "low": 1032.86,
-          "high": 1080.51
+          "low": 1043.38,
+          "high": 1086.68
         },
         "amazon-nova-lite-v1.0": {
-          "low": 1046.4,
-          "high": 1072.9
+          "low": 1045.66,
+          "high": 1073.98
+        },
+        "c4ai-aya-vision-32b": {
+          "low": 1029.87,
+          "high": 1080.88
         },
         "qwen2-vl-7b-instruct": {
-          "low": 1046.65,
-          "high": 1061.9
+          "low": 1045.03,
+          "high": 1059.6
         },
         "claude-3-sonnet-20240229": {
-          "low": 1042.15,
-          "high": 1054.99
+          "low": 1041.14,
+          "high": 1052.86
         },
         "yi-vision": {
-          "low": 1029.72,
-          "high": 1059.0
+          "low": 1030.04,
+          "high": 1060.17
         },
         "amazon-nova-pro-v1.0": {
-          "low": 1031.65,
-          "high": 1057.35
+          "low": 1033.06,
+          "high": 1054.33
         },
         "llama-3.2-vision-11b-instruct": {
-          "low": 1023.05,
-          "high": 1039.91
+          "low": 1024.16,
+          "high": 1039.36
         },
         "reka-flash-preview-20240611": {
-          "low": 1017.43,
-          "high": 1030.61
+          "low": 1017.76,
+          "high": 1030.56
         },
         "molmo-7b-d-0924": {
-          "low": 1010.25,
-          "high": 1033.95
+          "low": 1012.33,
+          "high": 1033.13
         },
         "reka-core-20240501": {
-          "low": 1007.86,
-          "high": 1021.56
+          "low": 1007.42,
+          "high": 1020.79
         },
         "internvl2-4b": {
-          "low": 999.28,
-          "high": 1017.96
+          "low": 997.96,
+          "high": 1015.68
         },
         "nvila-internal-15b-v1": {
-          "low": 990.83,
-          "high": 1021.76
+          "low": 989.83,
+          "high": 1021.77
         },
         "claude-3-haiku-20240307": {
-          "low": 994.47,
-          "high": 1007.72
+          "low": 994.64,
+          "high": 1004.98
         },
         "llava-v1.6-34b": {
-          "low": 992.07,
-          "high": 1009.03
+          "low": 992.66,
+          "high": 1008.69
         },
         "llava-onevision-qwen2-72b-ov": {
-          "low": 976.12,
-          "high": 1007.98
+          "low": 974.77,
+          "high": 1009.03
         },
         "cogvlm2-llama3-chat-19b": {
-          "low": 974.24,
-          "high": 1001.65
+          "low": 976.53,
+          "high": 1000.12
         },
         "minicpm-v-2_6": {
-          "low": 959.63,
-          "high": 990.16
+          "low": 964.23,
+          "high": 988.76
         },
         "phi-3.5-vision-instruct": {
-          "low": 905.47,
-          "high": 930.61
+          "low": 905.95,
+          "high": 933.09
         },
         "phi-3-vision-128k-instruct": {
-          "low": 860.17,
-          "high": 888.01
+          "low": 856.67,
+          "high": 887.21
         }
       }
     },
     "full_style_control": {
       "elo_rating_final": {
-        "gemini-2.5-pro-exp-03-25": 1251.01,
-        "chatgpt-4o-latest-20250326": 1246.22,
-        "gpt-4.5-preview-2025-02-27": 1235.5,
-        "chatgpt-4o-latest-20250129": 1232.49,
-        "gemini-exp-1206": 1210.93,
-        "gemini-2.0-flash-thinking-exp-1219": 1208.19,
-        "chatgpt-4o-latest-20240903": 1204.02,
-        "o1-2024-12-17": 1199.55,
-        "gemini-2.0-flash-thinking-exp-01-21": 1198.88,
-        "gemini-exp-1121": 1198.1,
-        "gemini-2.0-pro-exp-02-05": 1192.93,
-        "gemini-2.0-flash-exp": 1188.68,
-        "chatgpt-4o-latest-20241120": 1187.06,
-        "claude-3-7-sonnet-20250219": 1185.42,
-        "gemini-1.5-pro-002": 1179.17,
-        "gemini-1.5-pro-exp-0827": 1173.8,
-        "gpt-4o-2024-05-13": 1171.46,
-        "gemini-2.0-flash-001": 1171.09,
-        "gemini-1.5-pro-exp-0801": 1168.39,
-        "claude-3-5-sonnet-20241022": 1162.45,
-        "gemini-exp-1114": 1151.24,
-        "claude-3-5-sonnet-20240620": 1149.84,
-        "gemini-1.5-flash-exp-0827": 1145.27,
-        "gemini-1.5-flash-002": 1138.53,
-        "gemini-2.0-flash-lite-preview-02-05": 1131.92,
-        "gpt-4o-2024-08-06": 1126.42,
-        "step-1o-vision-32k-highres": 1124.8,
-        "qwen2.5-vl-72b-instruct": 1123.8,
-        "gemini-1.5-pro-001": 1123.11,
-        "gpt-4-turbo-2024-04-09": 1112.32,
-        "gpt-4o-mini-2024-07-18": 1100.18,
-        "qwen-vl-max-1119": 1095.23,
-        "pixtral-large-2411": 1093.01,
+        "chatgpt-4o-latest-20250326": 1243.1,
+        "gemini-2.5-pro-exp-03-25": 1241.74,
+        "chatgpt-4o-latest-20250129": 1231.95,
+        "gpt-4.5-preview-2025-02-27": 1230.73,
+        "gemini-exp-1206": 1210.96,
+        "gemini-2.0-flash-thinking-exp-1219": 1208.15,
+        "chatgpt-4o-latest-20240903": 1204.1,
+        "gemini-exp-1121": 1198.43,
+        "gemini-2.0-flash-thinking-exp-01-21": 1197.23,
+        "o1-2024-12-17": 1197.1,
+        "gemini-2.0-pro-exp-02-05": 1192.57,
+        "gemini-2.0-flash-exp": 1188.84,
+        "chatgpt-4o-latest-20241120": 1187.15,
+        "claude-3-7-sonnet-20250219": 1183.72,
+        "gemini-1.5-pro-002": 1179.14,
+        "gemini-1.5-pro-exp-0827": 1173.91,
+        "gemini-2.0-flash-001": 1172.12,
+        "gpt-4o-2024-05-13": 1171.55,
+        "gemini-1.5-pro-exp-0801": 1168.48,
+        "claude-3-5-sonnet-20241022": 1162.53,
+        "gemini-exp-1114": 1151.55,
+        "claude-3-5-sonnet-20240620": 1150.02,
+        "gemini-1.5-flash-exp-0827": 1145.38,
+        "gemini-1.5-flash-002": 1138.69,
+        "gemini-2.0-flash-lite-preview-02-05": 1135.3,
+        "gpt-4o-2024-08-06": 1126.37,
+        "step-1o-vision-32k-highres": 1124.96,
+        "qwen2.5-vl-72b-instruct": 1124.67,
+        "gemini-1.5-pro-001": 1123.13,
+        "gpt-4-turbo-2024-04-09": 1112.44,
+        "qwen2.5-vl-32b-instruct": 1111.56,
+        "gpt-4o-mini-2024-07-18": 1100.24,
+        "qwen-vl-max-1119": 1095.21,
+        "pixtral-large-2411": 1093.26,
         "qwen2-vl-72b": 1092.46,
-        "gemini-1.5-flash-8b-001": 1074.53,
-        "gemini-1.5-flash-001": 1071.89,
-        "gemini-1.5-flash-8b-exp-0827": 1071.45,
-        "step-1v-32k": 1065.06,
-        "claude-3-opus-20240229": 1059.02,
-        "hunyuan-standard-vision-2024-12-31": 1055.68,
-        "molmo-72b-0924": 1052.62,
-        "llama-3.2-vision-90b-instruct": 1044.69,
+        "gemini-1.5-flash-8b-001": 1074.58,
+        "gemini-1.5-flash-001": 1071.84,
+        "gemini-1.5-flash-8b-exp-0827": 1071.5,
+        "step-1v-32k": 1065.16,
+        "claude-3-opus-20240229": 1059.1,
+        "hunyuan-standard-vision-2024-12-31": 1055.87,
+        "molmo-72b-0924": 1052.74,
+        "llama-3.2-vision-90b-instruct": 1044.76,
         "qwen2-vl-7b-instruct": 1039.75,
-        "amazon-nova-lite-v1.0": 1033.87,
-        "amazon-nova-pro-v1.0": 1027.13,
-        "claude-3-sonnet-20240229": 1026.34,
-        "pixtral-12b-2409": 1025.86,
-        "internvl2-26b": 1023.66,
-        "yi-vision": 1010.81,
-        "c4ai-aya-vision-32b": 1004.31,
-        "molmo-7b-d-0924": 1004.06,
-        "reka-core-20240501": 1003.94,
-        "nvila-internal-15b-v1": 1001.22,
+        "amazon-nova-lite-v1.0": 1034.01,
+        "amazon-nova-pro-v1.0": 1027.09,
+        "claude-3-sonnet-20240229": 1026.43,
+        "pixtral-12b-2409": 1026.02,
+        "internvl2-26b": 1023.84,
+        "c4ai-aya-vision-8b": 1020.9,
+        "yi-vision": 1010.99,
+        "molmo-7b-d-0924": 1004.21,
+        "reka-core-20240501": 1003.99,
+        "nvila-internal-15b-v1": 1001.23,
+        "c4ai-aya-vision-32b": 1000.82,
         "claude-3-haiku-20240307": 1000.0,
         "llava-onevision-qwen2-72b-ov": 998.12,
-        "llama-3.2-vision-11b-instruct": 995.59,
-        "reka-flash-preview-20240611": 984.13,
-        "minicpm-v-2_6": 976.61,
-        "llava-v1.6-34b": 970.7,
-        "cogvlm2-llama3-chat-19b": 967.72,
-        "internvl2-4b": 959.6,
-        "phi-3.5-vision-instruct": 939.14,
-        "phi-3-vision-128k-instruct": 896.05
+        "llama-3.2-vision-11b-instruct": 995.69,
+        "reka-flash-preview-20240611": 984.32,
+        "minicpm-v-2_6": 976.59,
+        "llava-v1.6-34b": 970.78,
+        "cogvlm2-llama3-chat-19b": 967.78,
+        "internvl2-4b": 959.79,
+        "phi-3.5-vision-instruct": 939.1,
+        "phi-3-vision-128k-instruct": 895.9
       },
       "confidence_intervals": {
-        "gemini-2.5-pro-exp-03-25": {
-          "low": 1234.79,
-          "high": 1272.01
-        },
         "chatgpt-4o-latest-20250326": {
-          "low": 1232.79,
-          "high": 1259.41
+          "low": 1230.9,
+          "high": 1254.77
         },
-        "gpt-4.5-preview-2025-02-27": {
-          "low": 1220.83,
-          "high": 1250.6
+        "gemini-2.5-pro-exp-03-25": {
+          "low": 1228.94,
+          "high": 1260.48
         },
         "chatgpt-4o-latest-20250129": {
-          "low": 1223.97,
-          "high": 1242.78
+          "low": 1223.7,
+          "high": 1242.46
+        },
+        "gpt-4.5-preview-2025-02-27": {
+          "low": 1219.45,
+          "high": 1244.72
         },
         "gemini-exp-1206": {
-          "low": 1200.87,
-          "high": 1220.59
+          "low": 1200.69,
+          "high": 1220.87
         },
         "gemini-2.0-flash-thinking-exp-1219": {
-          "low": 1193.5,
-          "high": 1222.82
+          "low": 1193.3,
+          "high": 1222.27
         },
         "chatgpt-4o-latest-20240903": {
-          "low": 1196.68,
-          "high": 1210.42
-        },
-        "o1-2024-12-17": {
-          "low": 1187.9,
-          "high": 1210.18
-        },
-        "gemini-2.0-flash-thinking-exp-01-21": {
-          "low": 1187.91,
-          "high": 1207.36
+          "low": 1196.63,
+          "high": 1210.82
         },
         "gemini-exp-1121": {
-          "low": 1186.23,
-          "high": 1212.6
+          "low": 1187.46,
+          "high": 1211.18
+        },
+        "gemini-2.0-flash-thinking-exp-01-21": {
+          "low": 1187.35,
+          "high": 1206.18
+        },
+        "o1-2024-12-17": {
+          "low": 1186.37,
+          "high": 1207.02
         },
         "gemini-2.0-pro-exp-02-05": {
-          "low": 1182.78,
-          "high": 1199.33
+          "low": 1183.02,
+          "high": 1199.38
         },
         "gemini-2.0-flash-exp": {
-          "low": 1179.34,
-          "high": 1197.83
+          "low": 1179.71,
+          "high": 1197.57
         },
         "chatgpt-4o-latest-20241120": {
-          "low": 1179.47,
-          "high": 1192.55
+          "low": 1179.9,
+          "high": 1193.0
         },
         "claude-3-7-sonnet-20250219": {
-          "low": 1173.95,
-          "high": 1194.5
+          "low": 1172.32,
+          "high": 1194.93
         },
         "gemini-1.5-pro-002": {
-          "low": 1172.36,
-          "high": 1184.54
+          "low": 1171.8,
+          "high": 1184.9
         },
         "gemini-1.5-pro-exp-0827": {
-          "low": 1166.24,
+          "low": 1166.69,
           "high": 1181.29
         },
-        "gpt-4o-2024-05-13": {
-          "low": 1166.34,
-          "high": 1177.09
-        },
         "gemini-2.0-flash-001": {
-          "low": 1159.84,
-          "high": 1182.09
+          "low": 1160.86,
+          "high": 1183.36
+        },
+        "gpt-4o-2024-05-13": {
+          "low": 1166.79,
+          "high": 1177.15
         },
         "gemini-1.5-pro-exp-0801": {
-          "low": 1162.85,
-          "high": 1175.11
+          "low": 1161.83,
+          "high": 1175.62
         },
         "claude-3-5-sonnet-20241022": {
-          "low": 1155.75,
-          "high": 1169.82
+          "low": 1155.99,
+          "high": 1168.69
         },
         "gemini-exp-1114": {
-          "low": 1136.53,
-          "high": 1161.99
+          "low": 1136.09,
+          "high": 1162.71
         },
         "claude-3-5-sonnet-20240620": {
-          "low": 1143.63,
-          "high": 1156.6
+          "low": 1143.72,
+          "high": 1156.74
         },
         "gemini-1.5-flash-exp-0827": {
-          "low": 1134.88,
-          "high": 1154.61
+          "low": 1135.59,
+          "high": 1154.88
         },
         "gemini-1.5-flash-002": {
-          "low": 1131.35,
-          "high": 1144.23
+          "low": 1131.6,
+          "high": 1144.43
         },
         "gemini-2.0-flash-lite-preview-02-05": {
-          "low": 1120.85,
-          "high": 1141.18
+          "low": 1124.54,
+          "high": 1143.62
         },
         "gpt-4o-2024-08-06": {
-          "low": 1117.47,
-          "high": 1134.17
+          "low": 1116.69,
+          "high": 1134.09
         },
         "step-1o-vision-32k-highres": {
-          "low": 1112.69,
-          "high": 1136.73
+          "low": 1112.87,
+          "high": 1136.95
         },
         "qwen2.5-vl-72b-instruct": {
-          "low": 1113.86,
-          "high": 1133.97
+          "low": 1115.16,
+          "high": 1134.5
         },
         "gemini-1.5-pro-001": {
-          "low": 1117.99,
-          "high": 1129.41
+          "low": 1117.65,
+          "high": 1129.78
         },
         "gpt-4-turbo-2024-04-09": {
-          "low": 1107.14,
-          "high": 1118.16
+          "low": 1106.84,
+          "high": 1117.84
+        },
+        "qwen2.5-vl-32b-instruct": {
+          "low": 1092.11,
+          "high": 1134.47
         },
         "gpt-4o-mini-2024-07-18": {
-          "low": 1095.01,
-          "high": 1105.96
+          "low": 1095.15,
+          "high": 1105.99
         },
         "qwen-vl-max-1119": {
-          "low": 1081.75,
-          "high": 1108.1
+          "low": 1082.04,
+          "high": 1108.38
         },
         "pixtral-large-2411": {
-          "low": 1083.86,
-          "high": 1101.07
+          "low": 1084.38,
+          "high": 1100.58
         },
         "qwen2-vl-72b": {
-          "low": 1085.37,
-          "high": 1098.85
+          "low": 1085.3,
+          "high": 1098.6
         },
         "gemini-1.5-flash-8b-001": {
-          "low": 1067.93,
-          "high": 1079.67
+          "low": 1067.85,
+          "high": 1079.34
         },
         "gemini-1.5-flash-001": {
-          "low": 1064.98,
-          "high": 1079.29
+          "low": 1064.86,
+          "high": 1079.03
         },
         "gemini-1.5-flash-8b-exp-0827": {
-          "low": 1060.41,
-          "high": 1082.06
+          "low": 1061.3,
+          "high": 1080.95
         },
         "step-1v-32k": {
-          "low": 1050.13,
-          "high": 1080.67
+          "low": 1050.48,
+          "high": 1080.55
         },
         "claude-3-opus-20240229": {
-          "low": 1052.44,
-          "high": 1066.45
+          "low": 1052.79,
+          "high": 1066.1
         },
         "hunyuan-standard-vision-2024-12-31": {
-          "low": 1041.59,
-          "high": 1072.55
+          "low": 1041.38,
+          "high": 1072.17
         },
         "molmo-72b-0924": {
-          "low": 1042.76,
-          "high": 1064.94
+          "low": 1042.96,
+          "high": 1064.5
         },
         "llama-3.2-vision-90b-instruct": {
-          "low": 1037.71,
-          "high": 1052.53
+          "low": 1037.63,
+          "high": 1052.08
         },
         "qwen2-vl-7b-instruct": {
-          "low": 1031.63,
-          "high": 1046.65
+          "low": 1032.05,
+          "high": 1046.96
         },
         "amazon-nova-lite-v1.0": {
-          "low": 1021.26,
-          "high": 1046.09
+          "low": 1021.59,
+          "high": 1046.24
         },
         "amazon-nova-pro-v1.0": {
-          "low": 1015.43,
-          "high": 1036.69
+          "low": 1015.12,
+          "high": 1037.0
         },
         "claude-3-sonnet-20240229": {
-          "low": 1019.25,
-          "high": 1034.26
+          "low": 1019.81,
+          "high": 1034.24
         },
         "pixtral-12b-2409": {
-          "low": 1018.77,
-          "high": 1031.44
+          "low": 1019.13,
+          "high": 1031.72
         },
         "internvl2-26b": {
-          "low": 1016.16,
-          "high": 1033.62
+          "low": 1016.87,
+          "high": 1033.32
+        },
+        "c4ai-aya-vision-8b": {
+          "low": 1002.75,
+          "high": 1045.12
         },
         "yi-vision": {
-          "low": 994.63,
-          "high": 1028.07
-        },
-        "c4ai-aya-vision-32b": {
-          "low": 980.8,
-          "high": 1029.9
+          "low": 994.96,
+          "high": 1027.48
         },
         "molmo-7b-d-0924": {
-          "low": 993.74,
-          "high": 1012.56
+          "low": 993.51,
+          "high": 1013.07
         },
         "reka-core-20240501": {
-          "low": 996.22,
-          "high": 1010.66
+          "low": 996.25,
+          "high": 1010.74
         },
         "nvila-internal-15b-v1": {
-          "low": 984.27,
-          "high": 1019.33
+          "low": 983.76,
+          "high": 1018.71
+        },
+        "c4ai-aya-vision-32b": {
+          "low": 979.38,
+          "high": 1025.22
         },
         "claude-3-haiku-20240307": {
-          "low": 994.13,
-          "high": 1007.44
+          "low": 994.46,
+          "high": 1006.95
         },
         "llava-onevision-qwen2-72b-ov": {
-          "low": 981.54,
-          "high": 1021.16
+          "low": 981.99,
+          "high": 1021.45
         },
         "llama-3.2-vision-11b-instruct": {
-          "low": 987.87,
-          "high": 1004.75
+          "low": 988.14,
+          "high": 1004.19
         },
         "reka-flash-preview-20240611": {
-          "low": 975.04,
-          "high": 991.35
+          "low": 975.03,
+          "high": 991.48
         },
         "minicpm-v-2_6": {
-          "low": 960.94,
-          "high": 991.98
+          "low": 961.82,
+          "high": 992.31
         },
         "llava-v1.6-34b": {
-          "low": 961.68,
-          "high": 982.92
+          "low": 961.64,
+          "high": 982.72
         },
         "cogvlm2-llama3-chat-19b": {
-          "low": 955.8,
-          "high": 981.13
+          "low": 955.74,
+          "high": 980.55
         },
         "internvl2-4b": {
-          "low": 952.0,
-          "high": 970.31
+          "low": 952.45,
+          "high": 969.81
         },
         "phi-3.5-vision-instruct": {
-          "low": 924.64,
-          "high": 953.1
+          "low": 924.77,
+          "high": 952.66
         },
         "phi-3-vision-128k-instruct": {
-          "low": 879.47,
-          "high": 913.25
+          "low": 878.55,
+          "high": 913.72
         }
       }
     },
     "english": {
       "elo_rating_final": {
-        "gemini-2.5-pro-exp-03-25": 1323.79,
-        "gemini-exp-1121": 1310.18,
-        "chatgpt-4o-latest-20250326": 1304.18,
-        "gemini-2.0-flash-thinking-exp-01-21": 1294.13,
-        "chatgpt-4o-latest-20250129": 1282.98,
-        "gemini-exp-1114": 1279.55,
-        "gemini-2.0-flash-thinking-exp-1219": 1269.88,
-        "gemini-2.0-flash-exp": 1268.1,
-        "chatgpt-4o-latest-20240903": 1257.42,
-        "gemini-exp-1206": 1253.5,
-        "gemini-2.0-flash-001": 1252.08,
-        "gpt-4.5-preview-2025-02-27": 1246.93,
-        "gemini-2.0-pro-exp-02-05": 1237.88,
+        "gemini-2.5-pro-exp-03-25": 1314.59,
+        "gemini-exp-1121": 1310.43,
+        "chatgpt-4o-latest-20250326": 1301.94,
+        "gemini-2.0-flash-thinking-exp-01-21": 1292.09,
+        "chatgpt-4o-latest-20250129": 1282.88,
+        "gemini-exp-1114": 1279.71,
+        "gemini-2.0-flash-thinking-exp-1219": 1270.03,
+        "gemini-2.0-flash-exp": 1268.34,
+        "chatgpt-4o-latest-20240903": 1257.57,
+        "gemini-2.0-flash-001": 1254.12,
+        "gemini-exp-1206": 1253.75,
+        "gpt-4.5-preview-2025-02-27": 1243.4,
+        "gemini-2.0-pro-exp-02-05": 1237.97,
         "gemini-1.5-pro-exp-0827": 1233.48,
         "gemini-1.5-flash-exp-0827": 1228.66,
-        "gemini-1.5-pro-exp-0801": 1228.02,
-        "chatgpt-4o-latest-20241120": 1224.2,
-        "o1-2024-12-17": 1220.23,
-        "gemini-1.5-pro-002": 1219.05,
-        "gemini-1.5-flash-002": 1217.8,
-        "gpt-4o-2024-05-13": 1211.76,
-        "step-1o-vision-32k-highres": 1207.56,
-        "claude-3-7-sonnet-20250219": 1206.93,
+        "gemini-1.5-pro-exp-0801": 1228.0,
+        "chatgpt-4o-latest-20241120": 1224.51,
+        "gemini-1.5-pro-002": 1219.18,
+        "gemini-1.5-flash-002": 1218.01,
+        "o1-2024-12-17": 1217.08,
+        "qwen2.5-vl-32b-instruct": 1215.6,
+        "gpt-4o-2024-05-13": 1211.78,
+        "claude-3-7-sonnet-20250219": 1207.97,
+        "step-1o-vision-32k-highres": 1207.89,
         "claude-3-5-sonnet-20240620": 1187.34,
-        "claude-3-5-sonnet-20241022": 1180.03,
-        "qwen2.5-vl-72b-instruct": 1172.29,
-        "gemini-2.0-flash-lite-preview-02-05": 1167.29,
-        "pixtral-large-2411": 1162.09,
-        "gemini-1.5-pro-001": 1158.66,
-        "gpt-4-turbo-2024-04-09": 1157.26,
-        "gemini-1.5-flash-8b-exp-0827": 1137.02,
-        "qwen-vl-max-1119": 1133.09,
-        "step-1v-32k": 1131.04,
-        "gemini-1.5-flash-8b-001": 1130.17,
-        "gpt-4o-2024-08-06": 1129.75,
-        "gpt-4o-mini-2024-07-18": 1126.76,
-        "qwen2-vl-72b": 1113.58,
-        "molmo-72b-0924": 1108.04,
-        "internvl2-26b": 1096.42,
-        "gemini-1.5-flash-001": 1087.33,
-        "pixtral-12b-2409": 1087.0,
-        "llama-3.2-vision-90b-instruct": 1080.16,
-        "hunyuan-standard-vision-2024-12-31": 1080.02,
-        "molmo-7b-d-0924": 1074.14,
-        "claude-3-opus-20240229": 1072.92,
-        "yi-vision": 1071.71,
-        "amazon-nova-lite-v1.0": 1064.85,
-        "qwen2-vl-7b-instruct": 1064.7,
-        "llama-3.2-vision-11b-instruct": 1058.73,
-        "c4ai-aya-vision-32b": 1056.15,
+        "claude-3-5-sonnet-20241022": 1180.12,
+        "qwen2.5-vl-72b-instruct": 1173.0,
+        "gemini-2.0-flash-lite-preview-02-05": 1170.97,
+        "pixtral-large-2411": 1163.08,
+        "gemini-1.5-pro-001": 1158.63,
+        "gpt-4-turbo-2024-04-09": 1157.25,
+        "gemini-1.5-flash-8b-exp-0827": 1137.03,
+        "qwen-vl-max-1119": 1133.27,
+        "step-1v-32k": 1131.17,
+        "gemini-1.5-flash-8b-001": 1130.38,
+        "gpt-4o-2024-08-06": 1129.97,
+        "gpt-4o-mini-2024-07-18": 1126.64,
+        "qwen2-vl-72b": 1113.75,
+        "molmo-72b-0924": 1108.19,
+        "internvl2-26b": 1096.4,
+        "gemini-1.5-flash-001": 1087.35,
+        "pixtral-12b-2409": 1087.22,
+        "c4ai-aya-vision-8b": 1084.31,
+        "hunyuan-standard-vision-2024-12-31": 1080.48,
+        "llama-3.2-vision-90b-instruct": 1080.36,
+        "molmo-7b-d-0924": 1074.28,
+        "claude-3-opus-20240229": 1072.94,
+        "yi-vision": 1071.7,
+        "amazon-nova-lite-v1.0": 1065.1,
+        "qwen2-vl-7b-instruct": 1064.86,
+        "llama-3.2-vision-11b-instruct": 1058.87,
+        "c4ai-aya-vision-32b": 1054.6,
         "claude-3-sonnet-20240229": 1047.38,
         "internvl2-4b": 1046.99,
-        "amazon-nova-pro-v1.0": 1045.48,
-        "llava-v1.6-34b": 1034.22,
-        "cogvlm2-llama3-chat-19b": 1031.0,
-        "reka-core-20240501": 1030.43,
+        "amazon-nova-pro-v1.0": 1045.67,
+        "llava-v1.6-34b": 1034.25,
+        "cogvlm2-llama3-chat-19b": 1031.01,
+        "reka-core-20240501": 1030.42,
         "reka-flash-preview-20240611": 1029.37,
-        "llava-onevision-qwen2-72b-ov": 1027.47,
-        "nvila-internal-15b-v1": 1019.5,
-        "minicpm-v-2_6": 1011.4,
+        "llava-onevision-qwen2-72b-ov": 1027.45,
+        "nvila-internal-15b-v1": 1019.71,
+        "minicpm-v-2_6": 1011.38,
         "claude-3-haiku-20240307": 1000.0,
-        "phi-3.5-vision-instruct": 941.6,
-        "phi-3-vision-128k-instruct": 898.86
+        "phi-3.5-vision-instruct": 941.59,
+        "phi-3-vision-128k-instruct": 898.9
       },
       "confidence_intervals": {
         "gemini-2.5-pro-exp-03-25": {
-          "low": 1300.41,
-          "high": 1347.6
+          "low": 1291.36,
+          "high": 1332.83
         },
         "gemini-exp-1121": {
-          "low": 1292.71,
-          "high": 1327.92
+          "low": 1293.27,
+          "high": 1329.54
         },
         "chatgpt-4o-latest-20250326": {
-          "low": 1284.55,
-          "high": 1324.63
+          "low": 1287.33,
+          "high": 1321.57
         },
         "gemini-2.0-flash-thinking-exp-01-21": {
-          "low": 1282.82,
-          "high": 1303.5
+          "low": 1278.53,
+          "high": 1303.84
         },
         "chatgpt-4o-latest-20250129": {
-          "low": 1272.54,
-          "high": 1296.97
+          "low": 1269.41,
+          "high": 1297.18
         },
         "gemini-exp-1114": {
-          "low": 1262.24,
-          "high": 1295.88
+          "low": 1260.23,
+          "high": 1298.73
         },
         "gemini-2.0-flash-thinking-exp-1219": {
-          "low": 1254.16,
-          "high": 1286.11
+          "low": 1250.56,
+          "high": 1285.54
         },
         "gemini-2.0-flash-exp": {
-          "low": 1255.8,
-          "high": 1279.57
+          "low": 1252.7,
+          "high": 1279.48
         },
         "chatgpt-4o-latest-20240903": {
-          "low": 1247.57,
-          "high": 1266.68
-        },
-        "gemini-exp-1206": {
-          "low": 1244.08,
-          "high": 1266.74
+          "low": 1246.58,
+          "high": 1266.71
         },
         "gemini-2.0-flash-001": {
-          "low": 1234.62,
-          "high": 1265.9
+          "low": 1239.85,
+          "high": 1266.93
+        },
+        "gemini-exp-1206": {
+          "low": 1243.15,
+          "high": 1267.74
         },
         "gpt-4.5-preview-2025-02-27": {
-          "low": 1228.73,
-          "high": 1258.42
+          "low": 1227.5,
+          "high": 1260.09
         },
         "gemini-2.0-pro-exp-02-05": {
-          "low": 1224.35,
-          "high": 1247.28
+          "low": 1225.7,
+          "high": 1248.2
         },
         "gemini-1.5-pro-exp-0827": {
-          "low": 1225.84,
-          "high": 1242.87
+          "low": 1225.58,
+          "high": 1244.61
         },
         "gemini-1.5-flash-exp-0827": {
-          "low": 1217.59,
-          "high": 1242.17
+          "low": 1214.6,
+          "high": 1241.34
         },
         "gemini-1.5-pro-exp-0801": {
-          "low": 1217.87,
-          "high": 1237.82
+          "low": 1219.67,
+          "high": 1235.29
         },
         "chatgpt-4o-latest-20241120": {
-          "low": 1216.54,
-          "high": 1235.45
-        },
-        "o1-2024-12-17": {
-          "low": 1207.09,
-          "high": 1233.3
+          "low": 1213.43,
+          "high": 1234.79
         },
         "gemini-1.5-pro-002": {
-          "low": 1211.84,
-          "high": 1227.77
+          "low": 1212.26,
+          "high": 1226.7
         },
         "gemini-1.5-flash-002": {
-          "low": 1209.78,
-          "high": 1228.81
+          "low": 1206.37,
+          "high": 1228.33
+        },
+        "o1-2024-12-17": {
+          "low": 1203.74,
+          "high": 1229.14
+        },
+        "qwen2.5-vl-32b-instruct": {
+          "low": 1189.49,
+          "high": 1239.59
         },
         "gpt-4o-2024-05-13": {
-          "low": 1206.21,
-          "high": 1219.06
-        },
-        "step-1o-vision-32k-highres": {
-          "low": 1193.52,
-          "high": 1218.18
+          "low": 1204.88,
+          "high": 1219.92
         },
         "claude-3-7-sonnet-20250219": {
-          "low": 1190.67,
-          "high": 1229.34
+          "low": 1189.37,
+          "high": 1225.54
+        },
+        "step-1o-vision-32k-highres": {
+          "low": 1192.31,
+          "high": 1223.09
         },
         "claude-3-5-sonnet-20240620": {
-          "low": 1180.39,
-          "high": 1195.77
+          "low": 1181.43,
+          "high": 1193.31
         },
         "claude-3-5-sonnet-20241022": {
-          "low": 1171.17,
-          "high": 1186.56
+          "low": 1171.92,
+          "high": 1187.26
         },
         "qwen2.5-vl-72b-instruct": {
-          "low": 1158.49,
-          "high": 1184.47
+          "low": 1158.91,
+          "high": 1184.75
         },
         "gemini-2.0-flash-lite-preview-02-05": {
-          "low": 1154.15,
-          "high": 1178.96
+          "low": 1155.47,
+          "high": 1185.12
         },
         "pixtral-large-2411": {
-          "low": 1149.28,
-          "high": 1172.21
+          "low": 1151.64,
+          "high": 1172.54
         },
         "gemini-1.5-pro-001": {
-          "low": 1150.71,
-          "high": 1168.12
+          "low": 1150.73,
+          "high": 1167.38
         },
         "gpt-4-turbo-2024-04-09": {
-          "low": 1150.35,
-          "high": 1167.01
+          "low": 1150.91,
+          "high": 1166.42
         },
         "gemini-1.5-flash-8b-exp-0827": {
-          "low": 1123.02,
-          "high": 1151.92
+          "low": 1124.85,
+          "high": 1150.39
         },
         "qwen-vl-max-1119": {
-          "low": 1112.14,
-          "high": 1154.49
+          "low": 1115.08,
+          "high": 1152.81
         },
         "step-1v-32k": {
-          "low": 1112.63,
-          "high": 1153.18
+          "low": 1111.27,
+          "high": 1149.35
         },
         "gemini-1.5-flash-8b-001": {
-          "low": 1121.26,
-          "high": 1142.04
+          "low": 1118.32,
+          "high": 1140.54
         },
         "gpt-4o-2024-08-06": {
-          "low": 1114.51,
-          "high": 1143.31
+          "low": 1115.48,
+          "high": 1145.13
         },
         "gpt-4o-mini-2024-07-18": {
-          "low": 1120.61,
-          "high": 1133.95
+          "low": 1119.22,
+          "high": 1133.21
         },
         "qwen2-vl-72b": {
-          "low": 1104.63,
-          "high": 1124.6
+          "low": 1104.78,
+          "high": 1125.65
         },
         "molmo-72b-0924": {
-          "low": 1095.74,
-          "high": 1120.18
+          "low": 1091.83,
+          "high": 1124.64
         },
         "internvl2-26b": {
-          "low": 1087.57,
-          "high": 1107.51
+          "low": 1086.1,
+          "high": 1104.97
         },
         "gemini-1.5-flash-001": {
-          "low": 1079.95,
-          "high": 1095.04
+          "low": 1080.48,
+          "high": 1095.93
         },
         "pixtral-12b-2409": {
-          "low": 1078.69,
-          "high": 1096.22
+          "low": 1079.12,
+          "high": 1094.1
         },
-        "llama-3.2-vision-90b-instruct": {
-          "low": 1071.65,
-          "high": 1089.85
+        "c4ai-aya-vision-8b": {
+          "low": 1048.24,
+          "high": 1116.29
         },
         "hunyuan-standard-vision-2024-12-31": {
-          "low": 1051.57,
-          "high": 1101.03
+          "low": 1056.19,
+          "high": 1109.93
+        },
+        "llama-3.2-vision-90b-instruct": {
+          "low": 1069.82,
+          "high": 1088.31
         },
         "molmo-7b-d-0924": {
-          "low": 1059.17,
-          "high": 1088.48
+          "low": 1054.93,
+          "high": 1086.86
         },
         "claude-3-opus-20240229": {
-          "low": 1065.02,
-          "high": 1081.06
+          "low": 1063.64,
+          "high": 1081.13
         },
         "yi-vision": {
-          "low": 1049.87,
-          "high": 1094.02
+          "low": 1048.62,
+          "high": 1091.06
         },
         "amazon-nova-lite-v1.0": {
-          "low": 1047.9,
-          "high": 1083.28
+          "low": 1052.12,
+          "high": 1082.88
         },
         "qwen2-vl-7b-instruct": {
-          "low": 1057.13,
-          "high": 1077.67
+          "low": 1053.06,
+          "high": 1073.26
         },
         "llama-3.2-vision-11b-instruct": {
-          "low": 1049.13,
-          "high": 1072.84
+          "low": 1044.69,
+          "high": 1069.1
         },
         "c4ai-aya-vision-32b": {
-          "low": 1014.6,
-          "high": 1086.77
+          "low": 1021.74,
+          "high": 1079.7
         },
         "claude-3-sonnet-20240229": {
-          "low": 1038.41,
-          "high": 1056.51
+          "low": 1041.73,
+          "high": 1054.51
         },
         "internvl2-4b": {
-          "low": 1035.13,
-          "high": 1060.21
+          "low": 1034.27,
+          "high": 1058.75
         },
         "amazon-nova-pro-v1.0": {
-          "low": 1033.23,
-          "high": 1063.58
+          "low": 1030.18,
+          "high": 1061.21
         },
         "llava-v1.6-34b": {
-          "low": 1022.23,
-          "high": 1045.32
+          "low": 1023.5,
+          "high": 1046.08
         },
         "cogvlm2-llama3-chat-19b": {
-          "low": 1017.06,
-          "high": 1044.38
+          "low": 1015.77,
+          "high": 1047.52
         },
         "reka-core-20240501": {
-          "low": 1019.55,
-          "high": 1039.3
+          "low": 1021.58,
+          "high": 1038.6
         },
         "reka-flash-preview-20240611": {
-          "low": 1019.6,
-          "high": 1037.84
+          "low": 1020.9,
+          "high": 1040.25
         },
         "llava-onevision-qwen2-72b-ov": {
-          "low": 1010.17,
-          "high": 1047.34
+          "low": 1006.75,
+          "high": 1042.8
         },
         "nvila-internal-15b-v1": {
-          "low": 990.67,
-          "high": 1042.55
+          "low": 996.97,
+          "high": 1040.67
         },
         "minicpm-v-2_6": {
-          "low": 991.7,
-          "high": 1029.32
+          "low": 995.48,
+          "high": 1025.88
         },
         "claude-3-haiku-20240307": {
-          "low": 992.2,
-          "high": 1008.6
+          "low": 992.14,
+          "high": 1008.37
         },
         "phi-3.5-vision-instruct": {
-          "low": 928.12,
-          "high": 959.22
+          "low": 925.03,
+          "high": 958.94
         },
         "phi-3-vision-128k-instruct": {
-          "low": 880.95,
-          "high": 918.19
+          "low": 879.22,
+          "high": 924.36
         }
       }
     },
     "chinese": {
       "elo_rating_final": {
-        "gemini-2.5-pro-exp-03-25": 1402.28,
-        "o1-2024-12-17": 1344.3,
-        "chatgpt-4o-latest-20250326": 1341.52,
-        "chatgpt-4o-latest-20250129": 1330.54,
-        "gemini-2.0-flash-thinking-exp-1219": 1312.47,
-        "gemini-exp-1121": 1308.81,
-        "gemini-2.0-pro-exp-02-05": 1299.4,
-        "gemini-2.0-flash-thinking-exp-01-21": 1290.09,
-        "chatgpt-4o-latest-20240903": 1286.24,
-        "gpt-4.5-preview-2025-02-27": 1284.67,
-        "gemini-exp-1114": 1280.77,
-        "step-1o-vision-32k-highres": 1275.21,
-        "chatgpt-4o-latest-20241120": 1260.95,
-        "gemini-1.5-pro-002": 1254.98,
-        "claude-3-7-sonnet-20250219": 1254.2,
-        "gemini-2.0-flash-exp": 1245.06,
-        "gemini-exp-1206": 1243.09,
-        "gemini-2.0-flash-001": 1242.88,
-        "gemini-1.5-flash-exp-0827": 1237.0,
+        "gemini-2.5-pro-exp-03-25": 1385.72,
+        "o1-2024-12-17": 1338.29,
+        "chatgpt-4o-latest-20250326": 1337.31,
+        "chatgpt-4o-latest-20250129": 1327.39,
+        "qwen2.5-vl-32b-instruct": 1312.84,
+        "gemini-2.0-flash-thinking-exp-1219": 1311.83,
+        "gemini-exp-1121": 1308.33,
+        "gemini-2.0-pro-exp-02-05": 1296.17,
+        "gemini-2.0-flash-thinking-exp-01-21": 1291.26,
+        "chatgpt-4o-latest-20240903": 1285.88,
+        "gemini-exp-1114": 1280.38,
+        "gpt-4.5-preview-2025-02-27": 1277.87,
+        "step-1o-vision-32k-highres": 1273.7,
+        "chatgpt-4o-latest-20241120": 1260.35,
+        "gemini-1.5-pro-002": 1254.26,
+        "gemini-2.0-flash-exp": 1244.43,
+        "gemini-exp-1206": 1242.42,
+        "claude-3-7-sonnet-20250219": 1238.78,
+        "gemini-1.5-flash-exp-0827": 1236.92,
+        "gemini-2.0-flash-001": 1235.94,
         "gemini-1.5-pro-exp-0827": 1227.42,
-        "gemini-1.5-flash-002": 1221.55,
-        "gpt-4o-2024-05-13": 1211.89,
-        "qwen2.5-vl-72b-instruct": 1211.73,
-        "claude-3-5-sonnet-20241022": 1195.62,
-        "claude-3-5-sonnet-20240620": 1192.43,
-        "step-1v-32k": 1190.84,
-        "gemini-1.5-pro-exp-0801": 1176.81,
-        "pixtral-large-2411": 1163.61,
-        "gemini-2.0-flash-lite-preview-02-05": 1160.48,
-        "hunyuan-standard-vision-2024-12-31": 1158.45,
-        "qwen2-vl-72b": 1151.01,
-        "internvl2-26b": 1147.74,
-        "qwen-vl-max-1119": 1127.78,
+        "gemini-1.5-flash-002": 1221.07,
+        "gpt-4o-2024-05-13": 1211.78,
+        "qwen2.5-vl-72b-instruct": 1211.15,
+        "claude-3-5-sonnet-20241022": 1195.29,
+        "claude-3-5-sonnet-20240620": 1192.39,
+        "step-1v-32k": 1190.48,
+        "gemini-1.5-pro-exp-0801": 1176.88,
+        "pixtral-large-2411": 1162.79,
+        "gemini-2.0-flash-lite-preview-02-05": 1158.85,
+        "hunyuan-standard-vision-2024-12-31": 1156.1,
+        "qwen2-vl-72b": 1150.61,
+        "internvl2-26b": 1147.76,
+        "qwen-vl-max-1119": 1127.18,
         "gpt-4-turbo-2024-04-09": 1126.58,
-        "gpt-4o-mini-2024-07-18": 1114.67,
-        "gemini-1.5-pro-001": 1114.31,
-        "yi-vision": 1109.36,
-        "gpt-4o-2024-08-06": 1097.57,
-        "qwen2-vl-7b-instruct": 1085.85,
-        "amazon-nova-lite-v1.0": 1080.88,
-        "claude-3-opus-20240229": 1074.95,
-        "gemini-1.5-flash-8b-exp-0827": 1063.2,
-        "gemini-1.5-flash-8b-001": 1057.32,
-        "c4ai-aya-vision-32b": 1054.93,
-        "pixtral-12b-2409": 1054.84,
-        "amazon-nova-pro-v1.0": 1050.24,
-        "llama-3.2-vision-90b-instruct": 1039.79,
+        "gpt-4o-mini-2024-07-18": 1115.1,
+        "gemini-1.5-pro-001": 1114.28,
+        "yi-vision": 1109.29,
+        "gpt-4o-2024-08-06": 1097.17,
+        "qwen2-vl-7b-instruct": 1085.45,
+        "amazon-nova-lite-v1.0": 1080.37,
+        "c4ai-aya-vision-32b": 1078.93,
+        "claude-3-opus-20240229": 1074.93,
+        "gemini-1.5-flash-8b-exp-0827": 1063.11,
+        "gemini-1.5-flash-8b-001": 1056.86,
+        "pixtral-12b-2409": 1054.27,
+        "c4ai-aya-vision-8b": 1052.69,
+        "amazon-nova-pro-v1.0": 1049.73,
         "gemini-1.5-flash-001": 1039.36,
-        "internvl2-4b": 1033.72,
-        "molmo-72b-0924": 1028.89,
-        "claude-3-sonnet-20240229": 1021.6,
+        "llama-3.2-vision-90b-instruct": 1039.27,
+        "internvl2-4b": 1033.61,
+        "molmo-72b-0924": 1028.51,
+        "claude-3-sonnet-20240229": 1021.61,
         "reka-flash-preview-20240611": 1015.38,
-        "minicpm-v-2_6": 1007.51,
-        "llama-3.2-vision-11b-instruct": 1000.98,
+        "minicpm-v-2_6": 1007.53,
+        "llama-3.2-vision-11b-instruct": 1000.63,
         "claude-3-haiku-20240307": 1000.0,
-        "llava-v1.6-34b": 996.62,
-        "reka-core-20240501": 984.24,
-        "nvila-internal-15b-v1": 979.61,
-        "molmo-7b-d-0924": 977.24,
-        "llava-onevision-qwen2-72b-ov": 949.04,
-        "cogvlm2-llama3-chat-19b": 941.1,
-        "phi-3.5-vision-instruct": 887.09,
-        "phi-3-vision-128k-instruct": 794.32
+        "llava-v1.6-34b": 996.6,
+        "reka-core-20240501": 984.25,
+        "nvila-internal-15b-v1": 979.09,
+        "molmo-7b-d-0924": 976.86,
+        "llava-onevision-qwen2-72b-ov": 949.01,
+        "cogvlm2-llama3-chat-19b": 941.08,
+        "phi-3.5-vision-instruct": 887.06,
+        "phi-3-vision-128k-instruct": 794.33
       },
       "confidence_intervals": {
         "gemini-2.5-pro-exp-03-25": {
-          "low": 1331.07,
-          "high": 1481.64
+          "low": 1324.5,
+          "high": 1474.34
         },
         "o1-2024-12-17": {
-          "low": 1286.79,
-          "high": 1404.22
+          "low": 1293.46,
+          "high": 1396.93
         },
         "chatgpt-4o-latest-20250326": {
-          "low": 1280.83,
-          "high": 1432.3
+          "low": 1275.67,
+          "high": 1399.92
         },
         "chatgpt-4o-latest-20250129": {
-          "low": 1289.87,
-          "high": 1374.7
+          "low": 1282.1,
+          "high": 1377.86
+        },
+        "qwen2.5-vl-32b-instruct": {
+          "low": 1232.89,
+          "high": 1415.58
         },
         "gemini-2.0-flash-thinking-exp-1219": {
-          "low": 1266.52,
-          "high": 1386.93
+          "low": 1249.53,
+          "high": 1379.14
         },
         "gemini-exp-1121": {
-          "low": 1246.89,
-          "high": 1358.55
+          "low": 1264.86,
+          "high": 1363.01
         },
         "gemini-2.0-pro-exp-02-05": {
-          "low": 1261.29,
-          "high": 1331.61
+          "low": 1262.57,
+          "high": 1329.99
         },
         "gemini-2.0-flash-thinking-exp-01-21": {
-          "low": 1249.63,
-          "high": 1325.32
+          "low": 1249.87,
+          "high": 1327.9
         },
         "chatgpt-4o-latest-20240903": {
-          "low": 1260.73,
-          "high": 1317.6
-        },
-        "gpt-4.5-preview-2025-02-27": {
-          "low": 1249.75,
-          "high": 1330.16
+          "low": 1257.27,
+          "high": 1318.21
         },
         "gemini-exp-1114": {
-          "low": 1222.78,
-          "high": 1330.72
+          "low": 1226.65,
+          "high": 1348.75
+        },
+        "gpt-4.5-preview-2025-02-27": {
+          "low": 1232.22,
+          "high": 1322.24
         },
         "step-1o-vision-32k-highres": {
-          "low": 1227.75,
-          "high": 1328.94
+          "low": 1221.49,
+          "high": 1343.99
         },
         "chatgpt-4o-latest-20241120": {
-          "low": 1231.9,
-          "high": 1294.2
+          "low": 1231.93,
+          "high": 1291.41
         },
         "gemini-1.5-pro-002": {
-          "low": 1227.93,
-          "high": 1279.93
-        },
-        "claude-3-7-sonnet-20250219": {
-          "low": 1186.88,
-          "high": 1316.78
+          "low": 1230.98,
+          "high": 1281.59
         },
         "gemini-2.0-flash-exp": {
-          "low": 1203.45,
-          "high": 1284.34
+          "low": 1208.92,
+          "high": 1285.9
         },
         "gemini-exp-1206": {
-          "low": 1206.45,
-          "high": 1283.94
+          "low": 1198.84,
+          "high": 1288.22
         },
-        "gemini-2.0-flash-001": {
-          "low": 1195.96,
-          "high": 1285.69
+        "claude-3-7-sonnet-20250219": {
+          "low": 1178.52,
+          "high": 1311.65
         },
         "gemini-1.5-flash-exp-0827": {
-          "low": 1195.68,
-          "high": 1287.15
+          "low": 1204.83,
+          "high": 1278.35
+        },
+        "gemini-2.0-flash-001": {
+          "low": 1182.27,
+          "high": 1283.91
         },
         "gemini-1.5-pro-exp-0827": {
-          "low": 1202.56,
-          "high": 1253.4
+          "low": 1199.98,
+          "high": 1261.88
         },
         "gemini-1.5-flash-002": {
-          "low": 1202.03,
-          "high": 1245.33
+          "low": 1199.62,
+          "high": 1253.5
         },
         "gpt-4o-2024-05-13": {
-          "low": 1191.7,
-          "high": 1228.42
+          "low": 1194.07,
+          "high": 1231.61
         },
         "qwen2.5-vl-72b-instruct": {
-          "low": 1169.59,
-          "high": 1258.21
+          "low": 1174.52,
+          "high": 1260.13
         },
         "claude-3-5-sonnet-20241022": {
-          "low": 1164.53,
-          "high": 1214.45
+          "low": 1173.95,
+          "high": 1217.04
         },
         "claude-3-5-sonnet-20240620": {
-          "low": 1173.45,
-          "high": 1208.06
+          "low": 1172.5,
+          "high": 1214.07
         },
         "step-1v-32k": {
-          "low": 1148.25,
-          "high": 1245.38
+          "low": 1142.5,
+          "high": 1241.11
         },
         "gemini-1.5-pro-exp-0801": {
-          "low": 1148.21,
-          "high": 1207.23
+          "low": 1155.83,
+          "high": 1210.16
         },
         "pixtral-large-2411": {
-          "low": 1139.82,
-          "high": 1195.32
+          "low": 1138.72,
+          "high": 1198.11
         },
         "gemini-2.0-flash-lite-preview-02-05": {
-          "low": 1121.49,
-          "high": 1203.27
+          "low": 1117.63,
+          "high": 1191.78
         },
         "hunyuan-standard-vision-2024-12-31": {
-          "low": 1043.24,
-          "high": 1260.79
+          "low": 1072.37,
+          "high": 1228.39
         },
         "qwen2-vl-72b": {
-          "low": 1116.96,
-          "high": 1181.17
+          "low": 1121.1,
+          "high": 1177.83
         },
         "internvl2-26b": {
-          "low": 1112.55,
-          "high": 1175.45
+          "low": 1114.52,
+          "high": 1190.86
         },
         "qwen-vl-max-1119": {
-          "low": 1064.31,
-          "high": 1180.77
+          "low": 1077.92,
+          "high": 1178.53
         },
         "gpt-4-turbo-2024-04-09": {
-          "low": 1109.69,
-          "high": 1153.29
+          "low": 1104.69,
+          "high": 1153.09
         },
         "gpt-4o-mini-2024-07-18": {
-          "low": 1094.04,
-          "high": 1130.25
+          "low": 1097.23,
+          "high": 1133.98
         },
         "gemini-1.5-pro-001": {
-          "low": 1094.47,
-          "high": 1135.22
+          "low": 1091.16,
+          "high": 1139.46
         },
         "yi-vision": {
-          "low": 1024.86,
-          "high": 1186.77
+          "low": 1018.49,
+          "high": 1181.36
         },
         "gpt-4o-2024-08-06": {
-          "low": 1064.95,
-          "high": 1132.88
+          "low": 1056.12,
+          "high": 1138.62
         },
         "qwen2-vl-7b-instruct": {
-          "low": 1059.41,
-          "high": 1112.25
+          "low": 1057.02,
+          "high": 1109.45
         },
         "amazon-nova-lite-v1.0": {
-          "low": 1018.17,
-          "high": 1140.21
-        },
-        "claude-3-opus-20240229": {
-          "low": 1056.5,
-          "high": 1097.92
-        },
-        "gemini-1.5-flash-8b-exp-0827": {
-          "low": 1025.95,
-          "high": 1097.57
-        },
-        "gemini-1.5-flash-8b-001": {
-          "low": 1026.42,
-          "high": 1087.06
+          "low": 1039.56,
+          "high": 1151.6
         },
         "c4ai-aya-vision-32b": {
-          "low": 956.74,
-          "high": 1153.41
+          "low": 970.96,
+          "high": 1168.36
+        },
+        "claude-3-opus-20240229": {
+          "low": 1053.83,
+          "high": 1098.57
+        },
+        "gemini-1.5-flash-8b-exp-0827": {
+          "low": 1022.31,
+          "high": 1104.75
+        },
+        "gemini-1.5-flash-8b-001": {
+          "low": 1025.52,
+          "high": 1093.7
         },
         "pixtral-12b-2409": {
-          "low": 1029.37,
-          "high": 1077.4
+          "low": 1027.17,
+          "high": 1081.84
+        },
+        "c4ai-aya-vision-8b": {
+          "low": 961.39,
+          "high": 1104.3
         },
         "amazon-nova-pro-v1.0": {
-          "low": 1003.64,
-          "high": 1100.08
-        },
-        "llama-3.2-vision-90b-instruct": {
-          "low": 1016.92,
-          "high": 1064.67
+          "low": 1007.71,
+          "high": 1092.59
         },
         "gemini-1.5-flash-001": {
-          "low": 1014.83,
-          "high": 1059.56
+          "low": 1016.74,
+          "high": 1063.21
+        },
+        "llama-3.2-vision-90b-instruct": {
+          "low": 1013.48,
+          "high": 1062.23
         },
         "internvl2-4b": {
-          "low": 993.72,
-          "high": 1079.94
+          "low": 1001.88,
+          "high": 1068.6
         },
         "molmo-72b-0924": {
-          "low": 995.02,
-          "high": 1069.25
+          "low": 991.21,
+          "high": 1069.35
         },
         "claude-3-sonnet-20240229": {
-          "low": 1003.07,
-          "high": 1038.89
+          "low": 996.29,
+          "high": 1047.44
         },
         "reka-flash-preview-20240611": {
-          "low": 991.71,
-          "high": 1043.72
+          "low": 987.15,
+          "high": 1041.28
         },
         "minicpm-v-2_6": {
-          "low": 949.78,
-          "high": 1056.44
+          "low": 953.45,
+          "high": 1055.53
         },
         "llama-3.2-vision-11b-instruct": {
-          "low": 974.6,
-          "high": 1031.43
+          "low": 967.96,
+          "high": 1041.0
         },
         "claude-3-haiku-20240307": {
-          "low": 975.22,
-          "high": 1018.95
+          "low": 984.55,
+          "high": 1019.88
         },
         "llava-v1.6-34b": {
-          "low": 965.35,
-          "high": 1025.51
+          "low": 972.02,
+          "high": 1032.22
         },
         "reka-core-20240501": {
-          "low": 952.69,
-          "high": 1012.53
+          "low": 951.81,
+          "high": 1012.2
         },
         "nvila-internal-15b-v1": {
-          "low": 894.12,
-          "high": 1057.7
+          "low": 887.66,
+          "high": 1043.16
         },
         "molmo-7b-d-0924": {
-          "low": 933.76,
-          "high": 1019.91
+          "low": 938.0,
+          "high": 1013.28
         },
         "llava-onevision-qwen2-72b-ov": {
-          "low": 851.85,
-          "high": 1026.88
+          "low": 867.62,
+          "high": 1035.53
         },
         "cogvlm2-llama3-chat-19b": {
-          "low": 887.6,
-          "high": 991.25
+          "low": 897.61,
+          "high": 988.83
         },
         "phi-3.5-vision-instruct": {
-          "low": 824.89,
-          "high": 933.29
+          "low": 824.68,
+          "high": 947.25
         },
         "phi-3-vision-128k-instruct": {
-          "low": 707.5,
-          "high": 865.48
+          "low": 722.96,
+          "high": 848.22
         }
       }
     }
