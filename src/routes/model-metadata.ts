@@ -316,6 +316,11 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     organization: "NVIDIA",
   },
   "llama-4-maverick-03-26-experimental": {
+    deprecated: true,
+    isOpen: true,
+    organization: "Meta",
+  },
+  "llama-4-maverick-17b-128e-instruct": {
     price: mixPrice(0.2, 0.6),
     isOpen: true,
     organization: "Meta",
