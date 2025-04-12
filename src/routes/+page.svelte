@@ -68,7 +68,7 @@
     image_arena: {
       Overall: "full",
       "User prompts": "not_preset_generation",
-      "Fixed prompts": "preset_generation",
+      "Fixed prompts": "is_preset_generation",
     },
     image_artificial: {
       Overall: "full",
