@@ -6,6 +6,8 @@ import requests
 from datetime import datetime
 import io
 import re
+import os
+import time
 
 def get_latest_pickle_file():
     """Fetch the latest pickle file from HuggingFace repository."""
@@ -66,6 +68,15 @@ def calculate_confidence_intervals(samples):
 data = get_latest_pickle_file()
 
 processed_data = {}
+model_dates = {}
+
+# Load existing dates file if it exists
+dates_file_path = 'src/routes/assets/dates.json'
+if os.path.exists(dates_file_path):
+    with open(dates_file_path, 'r') as f:
+        model_dates = json.load(f)
+
+current_time = int(time.time())
 
 # Process each category (text/vision)
 for category_type, categories in data.items():
@@ -93,6 +104,9 @@ for category_type, categories in data.items():
             rating = float(rating)
             processed_data[category_type][category_name]['elo_rating_final'][model] = round(rating, 2)
 
+            if model not in model_dates:
+                model_dates[model] = current_time
+
             if model in df.columns:
                 samples = df[model].astype(float).tolist()
                 ci_low, ci_high = calculate_confidence_intervals(samples)
@@ -104,3 +118,6 @@ for category_type, categories in data.items():
 
 with open('src/routes/assets/results.json', 'w') as f:
     json.dump(processed_data, f, indent=2)
+
+with open(dates_file_path, 'w') as f:
+    json.dump(model_dates, f, indent=2)

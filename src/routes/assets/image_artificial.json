@@ -2,180 +2,172 @@
   "full": {
     "elo_rating_final": {
       "amazon-titan-g1-2": 893.03,
-      "grok-2": 924.72,
-      "gpt-4o": 1158.71,
+      "gpt-4o": 1158.7,
       "recraft-3": 1112.07,
+      "reve": 1100.47,
       "midjourney-6": 1039.72,
-      "reve": 1100.5,
       "stable-diffusion-xl-1": 840.24,
-      "stable-diffusion-3.5-medium": 929.22,
-      "infinity-8b": 1023.2,
-      "imagen-3-generate-002": 1087.61,
+      "infinity-8b": 1023.21,
+      "stable-diffusion-3.5-medium": 929.21,
       "stable-diffusion-3-medium": 896.76,
-      "midjourney-v7-alpha": 1036.71,
+      "imagen-3-generate-002": 1087.63,
+      "midjourney-v7-alpha": 1036.7,
+      "luma-photon": 1032.56,
+      "grok-2": 924.59,
       "dalle-3": 921.51,
-      "flux-1-schnell": 1000,
-      "luma-photon": 1032.59,
-      "adobe-firefly-3": 936.58,
       "flux-1-dev": 1044.97,
+      "phoenix-1-ultra": 1023.56,
+      "flux-1-schnell": 1000,
+      "adobe-firefly-3": 936.57,
       "stable-diffusion-2.1": 692.51,
-      "phoenix-1-ultra": 1023.55,
-      "gemini-2-flash-experimental": 963.09,
-      "ideogram-2a": 1002.03,
-      "sana-sprint-1.6b": 874.6,
       "ideogram-2": 1042.52,
+      "ideogram-2a": 1002.02,
+      "gemini-2-flash-experimental": 963.06,
+      "sana-sprint-1.6b": 874.64,
       "dalle-2": 694.49,
-      "ideogram-2-turbo": 1033.65,
-      "playground-3": 996.92,
       "flux-1-pro": 1067.5,
+      "ideogram-2-turbo": 1033.64,
       "stable-diffusion-3.5-large": 1028.46,
+      "playground-3": 996.92,
       "amazon-titan-g1": 872.74,
-      "stable-diffusion-3-large-turbo": 889.66,
-      "stable-diffusion-1.5": 587.02,
       "stable-diffusion-3-large": 1014.64,
       "playground-2.5": 951.02,
-      "image-01": 1049.6,
+      "stable-diffusion-3-large-turbo": 889.65,
+      "stable-diffusion-1.5": 587.02,
       "flux-1.1-pro": 1082.78,
+      "image-01": 1049.55,
       "midjourney-6.1": 1047.38,
-      "luma-photon-flash": 962.36,
-      "janus-pro": 681.77,
+      "luma-photon-flash": 962.33,
       "stable-diffusion-1.6": 878.16,
-      "dalle-3-hd": 936.23,
+      "janus-pro": 681.79,
       "ideogram-1": 1020.91,
-      "phoenix-1-fast": 981.63,
+      "phoenix-1-fast": 981.61,
+      "dalle-3-hd": 936.24,
       "sdxl-lightning": 866.07,
-      "phoenix-0.9-ultra": 991.78,
-      "stable-diffusion-3.5-large-turbo": 1031.96,
       "recraft-20b": 974.81,
-      "ideogram-3": 1093.07,
-      "lumina-image-2": 948.36,
-      "ideogram-2a-turbo": 996.9,
-      "hidream-i1-dev": 1107.07
+      "stable-diffusion-3.5-large-turbo": 1031.96,
+      "phoenix-0.9-ultra": 991.78,
+      "ideogram-3": 1093.1,
+      "ideogram-2a-turbo": 996.89,
+      "lumina-image-2": 948.38,
+      "hidream-i1-dev": 1107.01
     },
     "confidence_intervals": {
       "amazon-titan-g1-2": {
         "low": 890.03,
         "high": 896.03
       },
-      "grok-2": {
-        "low": 915.72,
-        "high": 933.72
-      },
       "gpt-4o": {
-        "low": 1153.71,
-        "high": 1163.71
+        "low": 1153.7,
+        "high": 1163.7
       },
       "recraft-3": {
         "low": 1109.07,
         "high": 1115.07
       },
+      "reve": {
+        "low": 1095.47,
+        "high": 1105.47
+      },
       "midjourney-6": {
         "low": 1036.72,
         "high": 1042.72
-      },
-      "reve": {
-        "low": 1094.5,
-        "high": 1106.5
       },
       "stable-diffusion-xl-1": {
         "low": 837.24,
         "high": 843.24
       },
-      "stable-diffusion-3.5-medium": {
-        "low": 924.22,
-        "high": 934.22
-      },
       "infinity-8b": {
-        "low": 1017.2,
-        "high": 1028.2
+        "low": 1017.21,
+        "high": 1028.21
       },
-      "imagen-3-generate-002": {
-        "low": 1083.61,
-        "high": 1092.61
+      "stable-diffusion-3.5-medium": {
+        "low": 924.21,
+        "high": 934.21
       },
       "stable-diffusion-3-medium": {
         "low": 893.76,
         "high": 899.76
       },
+      "imagen-3-generate-002": {
+        "low": 1083.63,
+        "high": 1092.63
+      },
       "midjourney-v7-alpha": {
-        "low": 1030.71,
-        "high": 1042.71
+        "low": 1030.7,
+        "high": 1043.7
+      },
+      "luma-photon": {
+        "low": 1027.56,
+        "high": 1037.56
+      },
+      "grok-2": {
+        "low": 915.59,
+        "high": 933.59
       },
       "dalle-3": {
         "low": 918.51,
         "high": 924.51
       },
+      "flux-1-dev": {
+        "low": 1041.97,
+        "high": 1047.97
+      },
+      "phoenix-1-ultra": {
+        "low": 1017.56,
+        "high": 1028.56
+      },
       "flux-1-schnell": {
         "low": 1000.0,
         "high": 1000.0
       },
-      "luma-photon": {
-        "low": 1027.59,
-        "high": 1037.59
-      },
       "adobe-firefly-3": {
-        "low": 933.58,
-        "high": 939.58
-      },
-      "flux-1-dev": {
-        "low": 1041.97,
-        "high": 1047.97
+        "low": 933.57,
+        "high": 939.57
       },
       "stable-diffusion-2.1": {
         "low": 689.51,
         "high": 695.51
       },
-      "phoenix-1-ultra": {
-        "low": 1018.55,
-        "high": 1028.55
-      },
-      "gemini-2-flash-experimental": {
-        "low": 957.09,
-        "high": 968.09
-      },
-      "ideogram-2a": {
-        "low": 997.03,
-        "high": 1007.03
-      },
-      "sana-sprint-1.6b": {
-        "low": 868.6,
-        "high": 881.6
-      },
       "ideogram-2": {
         "low": 1039.52,
         "high": 1045.52
+      },
+      "ideogram-2a": {
+        "low": 997.02,
+        "high": 1007.02
+      },
+      "gemini-2-flash-experimental": {
+        "low": 958.06,
+        "high": 968.06
+      },
+      "sana-sprint-1.6b": {
+        "low": 866.64,
+        "high": 881.64
       },
       "dalle-2": {
         "low": 691.49,
         "high": 697.49
       },
-      "ideogram-2-turbo": {
-        "low": 1030.65,
-        "high": 1036.65
-      },
-      "playground-3": {
-        "low": 993.92,
-        "high": 999.92
-      },
       "flux-1-pro": {
         "low": 1064.5,
         "high": 1070.5
+      },
+      "ideogram-2-turbo": {
+        "low": 1030.64,
+        "high": 1036.64
       },
       "stable-diffusion-3.5-large": {
         "low": 1025.46,
         "high": 1031.46
       },
+      "playground-3": {
+        "low": 993.92,
+        "high": 999.92
+      },
       "amazon-titan-g1": {
         "low": 869.74,
         "high": 875.74
-      },
-      "stable-diffusion-3-large-turbo": {
-        "low": 887.66,
-        "high": 891.66
-      },
-      "stable-diffusion-1.5": {
-        "low": 584.02,
-        "high": 591.02
       },
       "stable-diffusion-3-large": {
         "low": 1011.64,
@@ -185,297 +177,313 @@
         "low": 948.02,
         "high": 954.02
       },
-      "image-01": {
-        "low": 1043.6,
-        "high": 1055.6
+      "stable-diffusion-3-large-turbo": {
+        "low": 886.65,
+        "high": 891.65
+      },
+      "stable-diffusion-1.5": {
+        "low": 583.02,
+        "high": 591.02
       },
       "flux-1.1-pro": {
         "low": 1079.78,
         "high": 1085.78
+      },
+      "image-01": {
+        "low": 1043.55,
+        "high": 1054.55
       },
       "midjourney-6.1": {
         "low": 1044.38,
         "high": 1050.38
       },
       "luma-photon-flash": {
-        "low": 958.36,
-        "high": 966.36
-      },
-      "janus-pro": {
-        "low": 676.77,
-        "high": 686.77
+        "low": 958.33,
+        "high": 966.33
       },
       "stable-diffusion-1.6": {
         "low": 875.16,
         "high": 881.16
       },
-      "dalle-3-hd": {
-        "low": 933.23,
-        "high": 939.23
+      "janus-pro": {
+        "low": 676.79,
+        "high": 687.79
       },
       "ideogram-1": {
         "low": 1017.91,
         "high": 1023.91
       },
       "phoenix-1-fast": {
-        "low": 976.63,
-        "high": 986.63
+        "low": 976.61,
+        "high": 986.61
+      },
+      "dalle-3-hd": {
+        "low": 933.24,
+        "high": 939.24
       },
       "sdxl-lightning": {
         "low": 863.07,
         "high": 869.07
       },
-      "phoenix-0.9-ultra": {
-        "low": 988.78,
-        "high": 994.78
+      "recraft-20b": {
+        "low": 971.81,
+        "high": 977.81
       },
       "stable-diffusion-3.5-large-turbo": {
         "low": 1028.96,
         "high": 1034.96
       },
-      "recraft-20b": {
-        "low": 971.81,
-        "high": 977.81
+      "phoenix-0.9-ultra": {
+        "low": 987.78,
+        "high": 994.78
       },
       "ideogram-3": {
-        "low": 1087.07,
-        "high": 1099.07
-      },
-      "lumina-image-2": {
-        "low": 943.36,
-        "high": 953.36
+        "low": 1087.1,
+        "high": 1099.1
       },
       "ideogram-2a-turbo": {
-        "low": 991.9,
-        "high": 1002.9
+        "low": 991.89,
+        "high": 1001.89
+      },
+      "lumina-image-2": {
+        "low": 943.38,
+        "high": 953.38
       },
       "hidream-i1-dev": {
-        "low": 1101.07,
-        "high": 1113.07
+        "low": 1100.01,
+        "high": 1113.01
       }
     },
     "categories": {
       "amazon-titan-g1-2": null,
-      "grok-2": null,
       "gpt-4o": null,
       "recraft-3": null,
-      "midjourney-6": null,
       "reve": null,
+      "midjourney-6": null,
       "stable-diffusion-xl-1": null,
-      "stable-diffusion-3.5-medium": null,
       "infinity-8b": null,
-      "imagen-3-generate-002": null,
+      "stable-diffusion-3.5-medium": null,
       "stable-diffusion-3-medium": null,
+      "imagen-3-generate-002": null,
       "midjourney-v7-alpha": null,
-      "dalle-3": null,
-      "flux-1-schnell": null,
       "luma-photon": null,
-      "adobe-firefly-3": null,
+      "grok-2": null,
+      "dalle-3": null,
       "flux-1-dev": null,
-      "stable-diffusion-2.1": null,
       "phoenix-1-ultra": null,
-      "gemini-2-flash-experimental": null,
-      "ideogram-2a": null,
-      "sana-sprint-1.6b": null,
+      "flux-1-schnell": null,
+      "adobe-firefly-3": null,
+      "stable-diffusion-2.1": null,
       "ideogram-2": null,
+      "ideogram-2a": null,
+      "gemini-2-flash-experimental": null,
+      "sana-sprint-1.6b": null,
       "dalle-2": null,
-      "ideogram-2-turbo": null,
-      "playground-3": null,
       "flux-1-pro": null,
+      "ideogram-2-turbo": null,
       "stable-diffusion-3.5-large": null,
+      "playground-3": null,
       "amazon-titan-g1": null,
-      "stable-diffusion-3-large-turbo": null,
-      "stable-diffusion-1.5": null,
       "stable-diffusion-3-large": null,
       "playground-2.5": null,
-      "image-01": null,
+      "stable-diffusion-3-large-turbo": null,
+      "stable-diffusion-1.5": null,
       "flux-1.1-pro": null,
+      "image-01": null,
       "midjourney-6.1": null,
       "luma-photon-flash": null,
-      "janus-pro": null,
       "stable-diffusion-1.6": null,
-      "dalle-3-hd": null,
+      "janus-pro": null,
       "ideogram-1": null,
       "phoenix-1-fast": null,
+      "dalle-3-hd": null,
       "sdxl-lightning": null,
-      "phoenix-0.9-ultra": null,
-      "stable-diffusion-3.5-large-turbo": null,
       "recraft-20b": null,
+      "stable-diffusion-3.5-large-turbo": null,
+      "phoenix-0.9-ultra": null,
       "ideogram-3": null,
-      "lumina-image-2": null,
       "ideogram-2a-turbo": null,
+      "lumina-image-2": null,
       "hidream-i1-dev": null
     }
   },
   "Commercial": {
     "elo_rating_final": {
       "amazon-titan-g1-2": 911.37,
-      "grok-2": 887.08,
-      "gpt-4o": 1198.14,
+      "gpt-4o": 1198.15,
       "recraft-3": 1099.15,
+      "reve": 1095.98,
       "midjourney-6": 1022.02,
-      "reve": 1095.76,
       "stable-diffusion-xl-1": 753.16,
-      "stable-diffusion-3.5-medium": 925.89,
-      "infinity-8b": 946.65,
-      "imagen-3-generate-002": 1087.96,
-      "stable-diffusion-3-medium": 906.85,
-      "midjourney-v7-alpha": 979.37,
+      "infinity-8b": 946.41,
+      "stable-diffusion-3.5-medium": 925.9,
+      "stable-diffusion-3-medium": 906.86,
+      "imagen-3-generate-002": 1087.97,
+      "midjourney-v7-alpha": 979.05,
+      "luma-photon": 1004.92,
+      "grok-2": 888.18,
       "dalle-3": 918.28,
-      "flux-1-schnell": 1000,
-      "luma-photon": 1004.91,
-      "adobe-firefly-3": 865.3,
       "flux-1-dev": 1056.5,
+      "phoenix-1-ultra": 1010.97,
+      "flux-1-schnell": 1000,
+      "adobe-firefly-3": 865.3,
       "stable-diffusion-2.1": 602.72,
-      "phoenix-1-ultra": 1010.96,
-      "gemini-2-flash-experimental": 992.42,
-      "ideogram-2a": 1044.09,
-      "sana-sprint-1.6b": 758.36,
       "ideogram-2": 1023.41,
+      "ideogram-2a": 1044.23,
+      "gemini-2-flash-experimental": 992.42,
+      "sana-sprint-1.6b": 757.84,
       "dalle-2": 646.97,
-      "ideogram-2-turbo": 1042.45,
-      "playground-3": 953.21,
       "flux-1-pro": 1076.19,
+      "ideogram-2-turbo": 1042.45,
       "stable-diffusion-3.5-large": 1011.76,
+      "playground-3": 953.22,
       "amazon-titan-g1": 879.26,
-      "stable-diffusion-3-large-turbo": 906.1,
-      "stable-diffusion-1.5": 476.6,
       "stable-diffusion-3-large": 984.82,
       "playground-2.5": 892.77,
-      "image-01": 990.88,
+      "stable-diffusion-3-large-turbo": 906.1,
+      "stable-diffusion-1.5": 476.6,
       "flux-1.1-pro": 1059.52,
+      "image-01": 990.89,
       "midjourney-6.1": 1030.73,
       "luma-photon-flash": 909.32,
-      "janus-pro": 579.44,
       "stable-diffusion-1.6": 843.85,
-      "dalle-3-hd": 950.54,
+      "janus-pro": 579.44,
       "ideogram-1": 1055.75,
-      "phoenix-1-fast": 1010.01,
+      "phoenix-1-fast": 1009.62,
+      "dalle-3-hd": 950.54,
       "sdxl-lightning": 775.72,
-      "phoenix-0.9-ultra": 1016.68,
-      "stable-diffusion-3.5-large-turbo": 1009.31,
       "recraft-20b": 951.47,
-      "ideogram-3": 1148.42,
-      "lumina-image-2": 840.99,
-      "ideogram-2a-turbo": 1021.93,
-      "hidream-i1-dev": 1143.73
+      "stable-diffusion-3.5-large-turbo": 1009.31,
+      "phoenix-0.9-ultra": 1016.68,
+      "ideogram-3": 1148.43,
+      "ideogram-2a-turbo": 1022.2,
+      "lumina-image-2": 841.09,
+      "hidream-i1-dev": 1143.67
     },
     "confidence_intervals": {
       "amazon-titan-g1-2": {
         "low": 899.37,
         "high": 923.37
       },
-      "grok-2": {
-        "low": 850.08,
-        "high": 924.08
-      },
       "gpt-4o": {
-        "low": 1173.14,
-        "high": 1221.14
+        "low": 1175.15,
+        "high": 1222.15
       },
       "recraft-3": {
         "low": 1086.15,
         "high": 1112.15
       },
-      "midjourney-6": {
-        "low": 1010.02,
-        "high": 1034.02
-      },
       "reve": {
-        "low": 1071.76,
-        "high": 1121.76
+        "low": 1070.98,
+        "high": 1120.98
+      },
+      "midjourney-6": {
+        "low": 1009.02,
+        "high": 1034.02
       },
       "stable-diffusion-xl-1": {
         "low": 741.16,
         "high": 766.16
       },
-      "stable-diffusion-3.5-medium": {
-        "low": 903.89,
-        "high": 949.89
-      },
       "infinity-8b": {
-        "low": 923.65,
-        "high": 969.65
+        "low": 924.41,
+        "high": 968.41
       },
-      "imagen-3-generate-002": {
-        "low": 1068.96,
-        "high": 1106.96
+      "stable-diffusion-3.5-medium": {
+        "low": 903.9,
+        "high": 948.9
       },
       "stable-diffusion-3-medium": {
-        "low": 894.85,
-        "high": 918.85
+        "low": 893.86,
+        "high": 918.86
+      },
+      "imagen-3-generate-002": {
+        "low": 1068.97,
+        "high": 1107.97
       },
       "midjourney-v7-alpha": {
-        "low": 952.37,
-        "high": 1005.37
+        "low": 951.05,
+        "high": 1007.05
+      },
+      "luma-photon": {
+        "low": 984.92,
+        "high": 1026.92
+      },
+      "grok-2": {
+        "low": 856.18,
+        "high": 922.18
       },
       "dalle-3": {
         "low": 906.28,
         "high": 930.28
       },
+      "flux-1-dev": {
+        "low": 1043.5,
+        "high": 1070.5
+      },
+      "phoenix-1-ultra": {
+        "low": 988.97,
+        "high": 1032.97
+      },
       "flux-1-schnell": {
         "low": 1000.0,
         "high": 1000.0
-      },
-      "luma-photon": {
-        "low": 983.91,
-        "high": 1025.91
       },
       "adobe-firefly-3": {
         "low": 851.3,
         "high": 880.3
       },
-      "flux-1-dev": {
-        "low": 1043.5,
-        "high": 1070.5
-      },
       "stable-diffusion-2.1": {
         "low": 588.72,
         "high": 616.72
-      },
-      "phoenix-1-ultra": {
-        "low": 989.96,
-        "high": 1031.96
-      },
-      "gemini-2-flash-experimental": {
-        "low": 971.42,
-        "high": 1014.42
-      },
-      "ideogram-2a": {
-        "low": 1022.09,
-        "high": 1066.09
-      },
-      "sana-sprint-1.6b": {
-        "low": 725.36,
-        "high": 792.36
       },
       "ideogram-2": {
         "low": 1010.41,
         "high": 1036.41
       },
+      "ideogram-2a": {
+        "low": 1021.23,
+        "high": 1068.23
+      },
+      "gemini-2-flash-experimental": {
+        "low": 969.42,
+        "high": 1014.42
+      },
+      "sana-sprint-1.6b": {
+        "low": 724.84,
+        "high": 787.84
+      },
       "dalle-2": {
         "low": 632.97,
         "high": 661.97
-      },
-      "ideogram-2-turbo": {
-        "low": 1030.45,
-        "high": 1055.45
-      },
-      "playground-3": {
-        "low": 941.21,
-        "high": 966.21
       },
       "flux-1-pro": {
         "low": 1064.19,
         "high": 1089.19
       },
+      "ideogram-2-turbo": {
+        "low": 1030.45,
+        "high": 1056.45
+      },
       "stable-diffusion-3.5-large": {
-        "low": 997.76,
+        "low": 998.76,
         "high": 1025.76
+      },
+      "playground-3": {
+        "low": 941.22,
+        "high": 966.22
       },
       "amazon-titan-g1": {
         "low": 867.26,
-        "high": 892.26
+        "high": 891.26
+      },
+      "stable-diffusion-3-large": {
+        "low": 972.82,
+        "high": 996.82
+      },
+      "playground-2.5": {
+        "low": 881.77,
+        "high": 905.77
       },
       "stable-diffusion-3-large-turbo": {
         "low": 894.1,
@@ -485,21 +493,13 @@
         "low": 455.6,
         "high": 494.6
       },
-      "stable-diffusion-3-large": {
-        "low": 972.82,
-        "high": 996.82
-      },
-      "playground-2.5": {
-        "low": 881.77,
-        "high": 904.77
-      },
-      "image-01": {
-        "low": 968.88,
-        "high": 1013.88
-      },
       "flux-1.1-pro": {
         "low": 1046.52,
         "high": 1072.52
+      },
+      "image-01": {
+        "low": 968.89,
+        "high": 1013.89
       },
       "midjourney-6.1": {
         "low": 1018.73,
@@ -509,281 +509,289 @@
         "low": 889.32,
         "high": 928.32
       },
-      "janus-pro": {
-        "low": 548.44,
-        "high": 607.44
-      },
       "stable-diffusion-1.6": {
         "low": 832.85,
         "high": 855.85
       },
-      "dalle-3-hd": {
-        "low": 938.54,
-        "high": 962.54
+      "janus-pro": {
+        "low": 550.44,
+        "high": 606.44
       },
       "ideogram-1": {
         "low": 1042.75,
         "high": 1069.75
       },
       "phoenix-1-fast": {
-        "low": 987.01,
-        "high": 1033.01
+        "low": 987.62,
+        "high": 1033.62
+      },
+      "dalle-3-hd": {
+        "low": 938.54,
+        "high": 962.54
       },
       "sdxl-lightning": {
-        "low": 763.72,
-        "high": 789.72
+        "low": 762.72,
+        "high": 788.72
       },
-      "phoenix-0.9-ultra": {
-        "low": 1000.68,
-        "high": 1031.68
+      "recraft-20b": {
+        "low": 938.47,
+        "high": 964.47
       },
       "stable-diffusion-3.5-large-turbo": {
         "low": 996.31,
         "high": 1022.31
       },
-      "recraft-20b": {
-        "low": 939.47,
-        "high": 964.47
+      "phoenix-0.9-ultra": {
+        "low": 1001.68,
+        "high": 1032.68
       },
       "ideogram-3": {
-        "low": 1122.42,
-        "high": 1173.42
-      },
-      "lumina-image-2": {
-        "low": 817.99,
-        "high": 863.99
+        "low": 1123.43,
+        "high": 1174.43
       },
       "ideogram-2a-turbo": {
-        "low": 997.93,
-        "high": 1043.93
+        "low": 1001.2,
+        "high": 1044.2
+      },
+      "lumina-image-2": {
+        "low": 819.09,
+        "high": 864.09
       },
       "hidream-i1-dev": {
-        "low": 1114.73,
-        "high": 1174.73
+        "low": 1117.67,
+        "high": 1171.67
       }
     },
     "categories": {
       "amazon-titan-g1-2": null,
-      "grok-2": null,
       "gpt-4o": null,
       "recraft-3": null,
-      "midjourney-6": null,
       "reve": null,
+      "midjourney-6": null,
       "stable-diffusion-xl-1": null,
-      "stable-diffusion-3.5-medium": null,
       "infinity-8b": null,
-      "imagen-3-generate-002": null,
+      "stable-diffusion-3.5-medium": null,
       "stable-diffusion-3-medium": null,
+      "imagen-3-generate-002": null,
       "midjourney-v7-alpha": null,
-      "dalle-3": null,
-      "flux-1-schnell": null,
       "luma-photon": null,
-      "adobe-firefly-3": null,
+      "grok-2": null,
+      "dalle-3": null,
       "flux-1-dev": null,
-      "stable-diffusion-2.1": null,
       "phoenix-1-ultra": null,
-      "gemini-2-flash-experimental": null,
-      "ideogram-2a": null,
-      "sana-sprint-1.6b": null,
+      "flux-1-schnell": null,
+      "adobe-firefly-3": null,
+      "stable-diffusion-2.1": null,
       "ideogram-2": null,
+      "ideogram-2a": null,
+      "gemini-2-flash-experimental": null,
+      "sana-sprint-1.6b": null,
       "dalle-2": null,
-      "ideogram-2-turbo": null,
-      "playground-3": null,
       "flux-1-pro": null,
+      "ideogram-2-turbo": null,
       "stable-diffusion-3.5-large": null,
+      "playground-3": null,
       "amazon-titan-g1": null,
-      "stable-diffusion-3-large-turbo": null,
-      "stable-diffusion-1.5": null,
       "stable-diffusion-3-large": null,
       "playground-2.5": null,
-      "image-01": null,
+      "stable-diffusion-3-large-turbo": null,
+      "stable-diffusion-1.5": null,
       "flux-1.1-pro": null,
+      "image-01": null,
       "midjourney-6.1": null,
       "luma-photon-flash": null,
-      "janus-pro": null,
       "stable-diffusion-1.6": null,
-      "dalle-3-hd": null,
+      "janus-pro": null,
       "ideogram-1": null,
       "phoenix-1-fast": null,
+      "dalle-3-hd": null,
       "sdxl-lightning": null,
-      "phoenix-0.9-ultra": null,
-      "stable-diffusion-3.5-large-turbo": null,
       "recraft-20b": null,
+      "stable-diffusion-3.5-large-turbo": null,
+      "phoenix-0.9-ultra": null,
       "ideogram-3": null,
-      "lumina-image-2": null,
       "ideogram-2a-turbo": null,
+      "lumina-image-2": null,
       "hidream-i1-dev": null
     }
   },
   "Fantasy & Mythical": {
     "elo_rating_final": {
       "amazon-titan-g1-2": 866.43,
-      "grok-2": 935.53,
-      "gpt-4o": 1161.43,
+      "gpt-4o": 1161.37,
       "recraft-3": 1072.02,
+      "reve": 1115.65,
       "midjourney-6": 1063.08,
-      "reve": 1115.64,
       "stable-diffusion-xl-1": 902.37,
-      "stable-diffusion-3.5-medium": 946.58,
-      "infinity-8b": 1080.09,
-      "imagen-3-generate-002": 1094.15,
+      "infinity-8b": 1080.11,
+      "stable-diffusion-3.5-medium": 946.53,
       "stable-diffusion-3-medium": 870.38,
-      "midjourney-v7-alpha": 1072.12,
-      "dalle-3": 999.79,
-      "flux-1-schnell": 1000,
-      "luma-photon": 1071.59,
-      "adobe-firefly-3": 944.01,
+      "imagen-3-generate-002": 1094.21,
+      "midjourney-v7-alpha": 1071.88,
+      "luma-photon": 1071.47,
+      "grok-2": 934.95,
+      "dalle-3": 999.8,
       "flux-1-dev": 1028.04,
+      "phoenix-1-ultra": 1054.38,
+      "flux-1-schnell": 1000,
+      "adobe-firefly-3": 944.01,
       "stable-diffusion-2.1": 652.36,
-      "phoenix-1-ultra": 1054.56,
-      "gemini-2-flash-experimental": 985.5,
-      "ideogram-2a": 997.65,
-      "sana-sprint-1.6b": 936.5,
       "ideogram-2": 1012.28,
+      "ideogram-2a": 997.5,
+      "gemini-2-flash-experimental": 985.56,
+      "sana-sprint-1.6b": 936.6,
       "dalle-2": 650.76,
-      "ideogram-2-turbo": 999.35,
-      "playground-3": 1040.69,
       "flux-1-pro": 1059.17,
+      "ideogram-2-turbo": 999.35,
       "stable-diffusion-3.5-large": 1066.63,
+      "playground-3": 1040.69,
       "amazon-titan-g1": 850.24,
-      "stable-diffusion-3-large-turbo": 935.69,
-      "stable-diffusion-1.5": 584.14,
       "stable-diffusion-3-large": 1052.76,
       "playground-2.5": 991.45,
-      "image-01": 1072.88,
+      "stable-diffusion-3-large-turbo": 935.69,
+      "stable-diffusion-1.5": 584.14,
       "flux-1.1-pro": 1089.67,
-      "midjourney-6.1": 1073.15,
-      "luma-photon-flash": 1012.16,
-      "janus-pro": 733.98,
+      "image-01": 1072.67,
+      "midjourney-6.1": 1073.16,
+      "luma-photon-flash": 1012.15,
       "stable-diffusion-1.6": 946.09,
-      "dalle-3-hd": 1021.23,
+      "janus-pro": 733.96,
       "ideogram-1": 1024.78,
-      "phoenix-1-fast": 1034.64,
+      "phoenix-1-fast": 1034.59,
+      "dalle-3-hd": 1021.26,
       "sdxl-lightning": 910.15,
-      "phoenix-0.9-ultra": 987.91,
-      "stable-diffusion-3.5-large-turbo": 1061.51,
       "recraft-20b": 977.69,
-      "ideogram-3": 1065.34,
-      "lumina-image-2": 1026.52,
-      "ideogram-2a-turbo": 1003.84,
-      "hidream-i1-dev": 1129.22
+      "stable-diffusion-3.5-large-turbo": 1061.51,
+      "phoenix-0.9-ultra": 987.96,
+      "ideogram-3": 1065.38,
+      "ideogram-2a-turbo": 1003.64,
+      "lumina-image-2": 1026.49,
+      "hidream-i1-dev": 1129.14
     },
     "confidence_intervals": {
       "amazon-titan-g1-2": {
         "low": 858.43,
         "high": 875.43
       },
-      "grok-2": {
-        "low": 912.53,
-        "high": 958.53
-      },
       "gpt-4o": {
-        "low": 1148.43,
-        "high": 1174.43
+        "low": 1146.37,
+        "high": 1175.37
       },
       "recraft-3": {
         "low": 1064.02,
         "high": 1081.02
       },
+      "reve": {
+        "low": 1101.65,
+        "high": 1130.65
+      },
       "midjourney-6": {
         "low": 1055.08,
         "high": 1070.08
-      },
-      "reve": {
-        "low": 1100.64,
-        "high": 1130.64
       },
       "stable-diffusion-xl-1": {
         "low": 895.37,
         "high": 909.37
       },
-      "stable-diffusion-3.5-medium": {
-        "low": 932.58,
-        "high": 959.58
-      },
       "infinity-8b": {
-        "low": 1066.09,
-        "high": 1094.09
+        "low": 1065.11,
+        "high": 1095.11
       },
-      "imagen-3-generate-002": {
-        "low": 1082.15,
-        "high": 1106.15
+      "stable-diffusion-3.5-medium": {
+        "low": 932.53,
+        "high": 960.53
       },
       "stable-diffusion-3-medium": {
         "low": 862.38,
         "high": 878.38
       },
+      "imagen-3-generate-002": {
+        "low": 1081.21,
+        "high": 1106.21
+      },
       "midjourney-v7-alpha": {
-        "low": 1055.12,
-        "high": 1089.12
-      },
-      "dalle-3": {
-        "low": 992.79,
-        "high": 1007.79
-      },
-      "flux-1-schnell": {
-        "low": 1000.0,
-        "high": 1000.0
+        "low": 1054.88,
+        "high": 1086.88
       },
       "luma-photon": {
-        "low": 1058.59,
-        "high": 1083.59
+        "low": 1058.47,
+        "high": 1084.47
       },
-      "adobe-firefly-3": {
-        "low": 935.01,
-        "high": 953.01
+      "grok-2": {
+        "low": 910.95,
+        "high": 957.95
+      },
+      "dalle-3": {
+        "low": 992.8,
+        "high": 1006.8
       },
       "flux-1-dev": {
         "low": 1020.04,
         "high": 1036.04
       },
+      "phoenix-1-ultra": {
+        "low": 1042.38,
+        "high": 1069.38
+      },
+      "flux-1-schnell": {
+        "low": 1000.0,
+        "high": 1000.0
+      },
+      "adobe-firefly-3": {
+        "low": 935.01,
+        "high": 953.01
+      },
       "stable-diffusion-2.1": {
         "low": 643.36,
         "high": 660.36
-      },
-      "phoenix-1-ultra": {
-        "low": 1040.56,
-        "high": 1068.56
-      },
-      "gemini-2-flash-experimental": {
-        "low": 971.5,
-        "high": 999.5
-      },
-      "ideogram-2a": {
-        "low": 983.65,
-        "high": 1012.65
-      },
-      "sana-sprint-1.6b": {
-        "low": 919.5,
-        "high": 953.5
       },
       "ideogram-2": {
         "low": 1004.28,
         "high": 1020.28
       },
+      "ideogram-2a": {
+        "low": 983.5,
+        "high": 1010.5
+      },
+      "gemini-2-flash-experimental": {
+        "low": 970.56,
+        "high": 999.56
+      },
+      "sana-sprint-1.6b": {
+        "low": 919.6,
+        "high": 954.6
+      },
       "dalle-2": {
         "low": 642.76,
         "high": 659.76
-      },
-      "ideogram-2-turbo": {
-        "low": 991.35,
-        "high": 1008.35
-      },
-      "playground-3": {
-        "low": 1032.69,
-        "high": 1048.69
       },
       "flux-1-pro": {
         "low": 1051.17,
         "high": 1067.17
       },
+      "ideogram-2-turbo": {
+        "low": 991.35,
+        "high": 1008.35
+      },
       "stable-diffusion-3.5-large": {
         "low": 1058.63,
         "high": 1074.63
       },
+      "playground-3": {
+        "low": 1032.69,
+        "high": 1048.69
+      },
       "amazon-titan-g1": {
         "low": 842.24,
         "high": 858.24
+      },
+      "stable-diffusion-3-large": {
+        "low": 1044.76,
+        "high": 1060.76
+      },
+      "playground-2.5": {
+        "low": 983.45,
+        "high": 998.45
       },
       "stable-diffusion-3-large-turbo": {
         "low": 928.69,
@@ -791,623 +799,607 @@
       },
       "stable-diffusion-1.5": {
         "low": 574.14,
-        "high": 594.14
-      },
-      "stable-diffusion-3-large": {
-        "low": 1045.76,
-        "high": 1060.76
-      },
-      "playground-2.5": {
-        "low": 983.45,
-        "high": 998.45
-      },
-      "image-01": {
-        "low": 1058.88,
-        "high": 1087.88
+        "high": 593.14
       },
       "flux-1.1-pro": {
         "low": 1081.67,
         "high": 1098.67
       },
+      "image-01": {
+        "low": 1058.67,
+        "high": 1087.67
+      },
       "midjourney-6.1": {
-        "low": 1066.15,
-        "high": 1081.15
+        "low": 1066.16,
+        "high": 1081.16
       },
       "luma-photon-flash": {
-        "low": 1000.16,
-        "high": 1023.16
-      },
-      "janus-pro": {
-        "low": 719.98,
-        "high": 747.98
+        "low": 1000.15,
+        "high": 1023.15
       },
       "stable-diffusion-1.6": {
         "low": 939.09,
         "high": 954.09
       },
-      "dalle-3-hd": {
-        "low": 1013.23,
-        "high": 1029.23
+      "janus-pro": {
+        "low": 719.96,
+        "high": 747.96
       },
       "ideogram-1": {
         "low": 1016.78,
-        "high": 1032.78
+        "high": 1031.78
       },
       "phoenix-1-fast": {
-        "low": 1019.64,
-        "high": 1048.64
+        "low": 1020.59,
+        "high": 1048.59
+      },
+      "dalle-3-hd": {
+        "low": 1013.26,
+        "high": 1029.26
       },
       "sdxl-lightning": {
         "low": 902.15,
         "high": 918.15
       },
-      "phoenix-0.9-ultra": {
-        "low": 978.91,
-        "high": 997.91
+      "recraft-20b": {
+        "low": 970.69,
+        "high": 984.69
       },
       "stable-diffusion-3.5-large-turbo": {
         "low": 1053.51,
         "high": 1069.51
       },
-      "recraft-20b": {
-        "low": 970.69,
-        "high": 985.69
+      "phoenix-0.9-ultra": {
+        "low": 978.96,
+        "high": 996.96
       },
       "ideogram-3": {
-        "low": 1049.34,
-        "high": 1080.34
-      },
-      "lumina-image-2": {
-        "low": 1013.52,
-        "high": 1039.52
+        "low": 1050.38,
+        "high": 1082.38
       },
       "ideogram-2a-turbo": {
-        "low": 988.84,
-        "high": 1017.84
+        "low": 989.64,
+        "high": 1018.64
+      },
+      "lumina-image-2": {
+        "low": 1013.49,
+        "high": 1039.49
       },
       "hidream-i1-dev": {
-        "low": 1112.22,
-        "high": 1145.22
+        "low": 1112.14,
+        "high": 1146.14
       }
     },
     "categories": {
       "amazon-titan-g1-2": null,
-      "grok-2": null,
       "gpt-4o": null,
       "recraft-3": null,
-      "midjourney-6": null,
       "reve": null,
+      "midjourney-6": null,
       "stable-diffusion-xl-1": null,
-      "stable-diffusion-3.5-medium": null,
       "infinity-8b": null,
-      "imagen-3-generate-002": null,
+      "stable-diffusion-3.5-medium": null,
       "stable-diffusion-3-medium": null,
+      "imagen-3-generate-002": null,
       "midjourney-v7-alpha": null,
-      "dalle-3": null,
-      "flux-1-schnell": null,
       "luma-photon": null,
-      "adobe-firefly-3": null,
+      "grok-2": null,
+      "dalle-3": null,
       "flux-1-dev": null,
-      "stable-diffusion-2.1": null,
       "phoenix-1-ultra": null,
-      "gemini-2-flash-experimental": null,
-      "ideogram-2a": null,
-      "sana-sprint-1.6b": null,
+      "flux-1-schnell": null,
+      "adobe-firefly-3": null,
+      "stable-diffusion-2.1": null,
       "ideogram-2": null,
+      "ideogram-2a": null,
+      "gemini-2-flash-experimental": null,
+      "sana-sprint-1.6b": null,
       "dalle-2": null,
-      "ideogram-2-turbo": null,
-      "playground-3": null,
       "flux-1-pro": null,
+      "ideogram-2-turbo": null,
       "stable-diffusion-3.5-large": null,
+      "playground-3": null,
       "amazon-titan-g1": null,
-      "stable-diffusion-3-large-turbo": null,
-      "stable-diffusion-1.5": null,
       "stable-diffusion-3-large": null,
       "playground-2.5": null,
-      "image-01": null,
+      "stable-diffusion-3-large-turbo": null,
+      "stable-diffusion-1.5": null,
       "flux-1.1-pro": null,
+      "image-01": null,
       "midjourney-6.1": null,
       "luma-photon-flash": null,
-      "janus-pro": null,
       "stable-diffusion-1.6": null,
-      "dalle-3-hd": null,
+      "janus-pro": null,
       "ideogram-1": null,
       "phoenix-1-fast": null,
+      "dalle-3-hd": null,
       "sdxl-lightning": null,
-      "phoenix-0.9-ultra": null,
-      "stable-diffusion-3.5-large-turbo": null,
       "recraft-20b": null,
+      "stable-diffusion-3.5-large-turbo": null,
+      "phoenix-0.9-ultra": null,
       "ideogram-3": null,
-      "lumina-image-2": null,
       "ideogram-2a-turbo": null,
+      "lumina-image-2": null,
       "hidream-i1-dev": null
     }
   },
   "Futuristic & Sci-Fi": {
     "elo_rating_final": {
       "amazon-titan-g1-2": 863.35,
-      "grok-2": 914.95,
-      "gpt-4o": 1139.55,
-      "recraft-3": 1095.24,
+      "gpt-4o": 1139.54,
+      "recraft-3": 1095.23,
+      "reve": 1089.32,
       "midjourney-6": 1078.48,
-      "reve": 1089.52,
       "stable-diffusion-xl-1": 871.56,
-      "stable-diffusion-3.5-medium": 950.86,
-      "infinity-8b": 1067.42,
-      "imagen-3-generate-002": 1091.91,
+      "infinity-8b": 1067.57,
+      "stable-diffusion-3.5-medium": 950.85,
       "stable-diffusion-3-medium": 897.88,
-      "midjourney-v7-alpha": 1034.33,
-      "dalle-3": 944.75,
-      "flux-1-schnell": 1000,
+      "imagen-3-generate-002": 1091.9,
+      "midjourney-v7-alpha": 1034.07,
       "luma-photon": 1056.06,
-      "adobe-firefly-3": 939.88,
+      "grok-2": 915.05,
+      "dalle-3": 944.75,
       "flux-1-dev": 1036.13,
+      "phoenix-1-ultra": 1032.77,
+      "flux-1-schnell": 1000,
+      "adobe-firefly-3": 939.88,
       "stable-diffusion-2.1": 695.13,
-      "phoenix-1-ultra": 1032.54,
-      "gemini-2-flash-experimental": 938.95,
-      "ideogram-2a": 1005.26,
-      "sana-sprint-1.6b": 929.29,
       "ideogram-2": 1038.9,
-      "dalle-2": 642.2,
-      "ideogram-2-turbo": 1038.42,
-      "playground-3": 1016.23,
+      "ideogram-2a": 1005.11,
+      "gemini-2-flash-experimental": 938.83,
+      "sana-sprint-1.6b": 929.33,
+      "dalle-2": 642.21,
       "flux-1-pro": 1064.67,
+      "ideogram-2-turbo": 1038.43,
       "stable-diffusion-3.5-large": 1052.64,
-      "amazon-titan-g1": 834.09,
-      "stable-diffusion-3-large-turbo": 903.42,
-      "stable-diffusion-1.5": 585.79,
+      "playground-3": 1016.23,
+      "amazon-titan-g1": 834.1,
       "stable-diffusion-3-large": 1042.89,
       "playground-2.5": 970.82,
-      "image-01": 1040.67,
+      "stable-diffusion-3-large-turbo": 903.42,
+      "stable-diffusion-1.5": 585.79,
       "flux-1.1-pro": 1094.46,
+      "image-01": 1040.65,
       "midjourney-6.1": 1089.87,
-      "luma-photon-flash": 989.62,
-      "janus-pro": 718.8,
+      "luma-photon-flash": 989.72,
       "stable-diffusion-1.6": 899.51,
-      "dalle-3-hd": 963.07,
+      "janus-pro": 718.8,
       "ideogram-1": 1030.27,
-      "phoenix-1-fast": 991.63,
-      "sdxl-lightning": 894.71,
-      "phoenix-0.9-ultra": 986.04,
-      "stable-diffusion-3.5-large-turbo": 1054.5,
+      "phoenix-1-fast": 991.62,
+      "dalle-3-hd": 963.08,
+      "sdxl-lightning": 894.74,
       "recraft-20b": 947.92,
-      "ideogram-3": 1056.48,
-      "lumina-image-2": 1007.44,
-      "ideogram-2a-turbo": 990.8,
-      "hidream-i1-dev": 1115.8
+      "stable-diffusion-3.5-large-turbo": 1054.5,
+      "phoenix-0.9-ultra": 985.99,
+      "ideogram-3": 1056.67,
+      "ideogram-2a-turbo": 990.64,
+      "lumina-image-2": 1007.43,
+      "hidream-i1-dev": 1115.06
     },
     "confidence_intervals": {
       "amazon-titan-g1-2": {
         "low": 855.35,
         "high": 871.35
       },
-      "grok-2": {
-        "low": 888.95,
-        "high": 939.95
-      },
       "gpt-4o": {
-        "low": 1124.55,
-        "high": 1154.55
+        "low": 1124.54,
+        "high": 1155.54
       },
       "recraft-3": {
-        "low": 1086.24,
-        "high": 1104.24
+        "low": 1086.23,
+        "high": 1104.23
+      },
+      "reve": {
+        "low": 1074.32,
+        "high": 1106.32
       },
       "midjourney-6": {
         "low": 1070.48,
         "high": 1086.48
       },
-      "reve": {
-        "low": 1073.52,
-        "high": 1105.52
-      },
       "stable-diffusion-xl-1": {
         "low": 863.56,
         "high": 879.56
       },
-      "stable-diffusion-3.5-medium": {
-        "low": 935.86,
-        "high": 967.86
-      },
       "infinity-8b": {
-        "low": 1052.42,
-        "high": 1083.42
+        "low": 1052.57,
+        "high": 1083.57
       },
-      "imagen-3-generate-002": {
-        "low": 1077.91,
-        "high": 1105.91
+      "stable-diffusion-3.5-medium": {
+        "low": 934.85,
+        "high": 966.85
       },
       "stable-diffusion-3-medium": {
         "low": 888.88,
-        "high": 906.88
+        "high": 905.88
+      },
+      "imagen-3-generate-002": {
+        "low": 1078.9,
+        "high": 1105.9
       },
       "midjourney-v7-alpha": {
-        "low": 1016.33,
-        "high": 1050.33
+        "low": 1016.07,
+        "high": 1052.07
+      },
+      "luma-photon": {
+        "low": 1043.06,
+        "high": 1069.06
+      },
+      "grok-2": {
+        "low": 889.05,
+        "high": 939.05
       },
       "dalle-3": {
         "low": 936.75,
         "high": 952.75
       },
+      "flux-1-dev": {
+        "low": 1028.13,
+        "high": 1043.13
+      },
+      "phoenix-1-ultra": {
+        "low": 1018.77,
+        "high": 1047.77
+      },
       "flux-1-schnell": {
         "low": 1000.0,
         "high": 1000.0
       },
-      "luma-photon": {
-        "low": 1043.06,
-        "high": 1070.06
-      },
       "adobe-firefly-3": {
         "low": 929.88,
-        "high": 947.88
-      },
-      "flux-1-dev": {
-        "low": 1028.13,
-        "high": 1044.13
+        "high": 948.88
       },
       "stable-diffusion-2.1": {
         "low": 686.13,
         "high": 703.13
       },
-      "phoenix-1-ultra": {
-        "low": 1019.54,
-        "high": 1047.54
-      },
-      "gemini-2-flash-experimental": {
-        "low": 922.95,
-        "high": 952.95
-      },
-      "ideogram-2a": {
-        "low": 988.26,
-        "high": 1020.26
-      },
-      "sana-sprint-1.6b": {
-        "low": 910.29,
-        "high": 946.29
-      },
       "ideogram-2": {
         "low": 1030.9,
         "high": 1046.9
       },
+      "ideogram-2a": {
+        "low": 989.11,
+        "high": 1019.11
+      },
+      "gemini-2-flash-experimental": {
+        "low": 922.83,
+        "high": 953.83
+      },
+      "sana-sprint-1.6b": {
+        "low": 910.33,
+        "high": 946.33
+      },
       "dalle-2": {
-        "low": 633.2,
-        "high": 651.2
-      },
-      "ideogram-2-turbo": {
-        "low": 1029.42,
-        "high": 1047.42
-      },
-      "playground-3": {
-        "low": 1008.23,
-        "high": 1024.23
+        "low": 633.21,
+        "high": 651.21
       },
       "flux-1-pro": {
         "low": 1056.67,
         "high": 1072.67
       },
+      "ideogram-2-turbo": {
+        "low": 1029.43,
+        "high": 1047.43
+      },
       "stable-diffusion-3.5-large": {
         "low": 1043.64,
-        "high": 1061.64
+        "high": 1060.64
+      },
+      "playground-3": {
+        "low": 1008.23,
+        "high": 1024.23
       },
       "amazon-titan-g1": {
-        "low": 825.09,
-        "high": 842.09
-      },
-      "stable-diffusion-3-large-turbo": {
-        "low": 895.42,
-        "high": 911.42
-      },
-      "stable-diffusion-1.5": {
-        "low": 573.79,
-        "high": 597.79
+        "low": 825.1,
+        "high": 842.1
       },
       "stable-diffusion-3-large": {
         "low": 1034.89,
         "high": 1050.89
       },
       "playground-2.5": {
-        "low": 962.82,
+        "low": 963.82,
         "high": 978.82
       },
-      "image-01": {
-        "low": 1026.67,
-        "high": 1055.67
+      "stable-diffusion-3-large-turbo": {
+        "low": 895.42,
+        "high": 910.42
+      },
+      "stable-diffusion-1.5": {
+        "low": 573.79,
+        "high": 596.79
       },
       "flux-1.1-pro": {
         "low": 1085.46,
         "high": 1103.46
+      },
+      "image-01": {
+        "low": 1026.65,
+        "high": 1055.65
       },
       "midjourney-6.1": {
         "low": 1081.87,
         "high": 1098.87
       },
       "luma-photon-flash": {
-        "low": 977.62,
-        "high": 1002.62
-      },
-      "janus-pro": {
-        "low": 702.8,
-        "high": 733.8
+        "low": 977.72,
+        "high": 1002.72
       },
       "stable-diffusion-1.6": {
         "low": 891.51,
         "high": 907.51
       },
-      "dalle-3-hd": {
-        "low": 955.07,
-        "high": 971.07
+      "janus-pro": {
+        "low": 703.8,
+        "high": 733.8
       },
       "ideogram-1": {
         "low": 1021.27,
-        "high": 1039.27
+        "high": 1038.27
       },
       "phoenix-1-fast": {
-        "low": 976.63,
-        "high": 1005.63
+        "low": 976.62,
+        "high": 1007.62
+      },
+      "dalle-3-hd": {
+        "low": 955.08,
+        "high": 971.08
       },
       "sdxl-lightning": {
-        "low": 886.71,
-        "high": 902.71
-      },
-      "phoenix-0.9-ultra": {
-        "low": 976.04,
-        "high": 996.04
-      },
-      "stable-diffusion-3.5-large-turbo": {
-        "low": 1045.5,
-        "high": 1063.5
+        "low": 886.74,
+        "high": 902.74
       },
       "recraft-20b": {
         "low": 939.92,
         "high": 955.92
       },
-      "ideogram-3": {
-        "low": 1038.48,
-        "high": 1073.48
+      "stable-diffusion-3.5-large-turbo": {
+        "low": 1045.5,
+        "high": 1063.5
       },
-      "lumina-image-2": {
-        "low": 993.44,
-        "high": 1020.44
+      "phoenix-0.9-ultra": {
+        "low": 975.99,
+        "high": 995.99
+      },
+      "ideogram-3": {
+        "low": 1039.67,
+        "high": 1073.67
       },
       "ideogram-2a-turbo": {
-        "low": 974.8,
-        "high": 1005.8
+        "low": 975.64,
+        "high": 1004.64
+      },
+      "lumina-image-2": {
+        "low": 993.43,
+        "high": 1020.43
       },
       "hidream-i1-dev": {
-        "low": 1097.8,
-        "high": 1133.8
+        "low": 1095.06,
+        "high": 1134.06
       }
     },
     "categories": {
       "amazon-titan-g1-2": null,
-      "grok-2": null,
       "gpt-4o": null,
       "recraft-3": null,
-      "midjourney-6": null,
       "reve": null,
+      "midjourney-6": null,
       "stable-diffusion-xl-1": null,
-      "stable-diffusion-3.5-medium": null,
       "infinity-8b": null,
-      "imagen-3-generate-002": null,
+      "stable-diffusion-3.5-medium": null,
       "stable-diffusion-3-medium": null,
+      "imagen-3-generate-002": null,
       "midjourney-v7-alpha": null,
-      "dalle-3": null,
-      "flux-1-schnell": null,
       "luma-photon": null,
-      "adobe-firefly-3": null,
+      "grok-2": null,
+      "dalle-3": null,
       "flux-1-dev": null,
-      "stable-diffusion-2.1": null,
       "phoenix-1-ultra": null,
-      "gemini-2-flash-experimental": null,
-      "ideogram-2a": null,
-      "sana-sprint-1.6b": null,
+      "flux-1-schnell": null,
+      "adobe-firefly-3": null,
+      "stable-diffusion-2.1": null,
       "ideogram-2": null,
+      "ideogram-2a": null,
+      "gemini-2-flash-experimental": null,
+      "sana-sprint-1.6b": null,
       "dalle-2": null,
-      "ideogram-2-turbo": null,
-      "playground-3": null,
       "flux-1-pro": null,
+      "ideogram-2-turbo": null,
       "stable-diffusion-3.5-large": null,
+      "playground-3": null,
       "amazon-titan-g1": null,
-      "stable-diffusion-3-large-turbo": null,
-      "stable-diffusion-1.5": null,
       "stable-diffusion-3-large": null,
       "playground-2.5": null,
-      "image-01": null,
+      "stable-diffusion-3-large-turbo": null,
+      "stable-diffusion-1.5": null,
       "flux-1.1-pro": null,
+      "image-01": null,
       "midjourney-6.1": null,
       "luma-photon-flash": null,
-      "janus-pro": null,
       "stable-diffusion-1.6": null,
-      "dalle-3-hd": null,
+      "janus-pro": null,
       "ideogram-1": null,
       "phoenix-1-fast": null,
+      "dalle-3-hd": null,
       "sdxl-lightning": null,
-      "phoenix-0.9-ultra": null,
-      "stable-diffusion-3.5-large-turbo": null,
       "recraft-20b": null,
+      "stable-diffusion-3.5-large-turbo": null,
+      "phoenix-0.9-ultra": null,
       "ideogram-3": null,
-      "lumina-image-2": null,
       "ideogram-2a-turbo": null,
+      "lumina-image-2": null,
       "hidream-i1-dev": null
     }
   },
   "Nature & Landscapes": {
     "elo_rating_final": {
       "amazon-titan-g1-2": 959.8,
-      "grok-2": 964.91,
-      "gpt-4o": 1140.75,
+      "gpt-4o": 1140.78,
       "recraft-3": 1181.04,
+      "reve": 1117.7,
       "midjourney-6": 1073.35,
-      "reve": 1117.92,
       "stable-diffusion-xl-1": 896.8,
-      "stable-diffusion-3.5-medium": 998.22,
-      "infinity-8b": 1047.72,
-      "imagen-3-generate-002": 1115.45,
+      "infinity-8b": 1047.74,
+      "stable-diffusion-3.5-medium": 998.1,
       "stable-diffusion-3-medium": 922.49,
-      "midjourney-v7-alpha": 1107.21,
+      "imagen-3-generate-002": 1115.34,
+      "midjourney-v7-alpha": 1107.06,
+      "luma-photon": 1017.44,
+      "grok-2": 964.57,
       "dalle-3": 901.29,
-      "flux-1-schnell": 1000,
-      "luma-photon": 1017.42,
-      "adobe-firefly-3": 1047.93,
       "flux-1-dev": 1075.92,
+      "phoenix-1-ultra": 1018.33,
+      "flux-1-schnell": 1000,
+      "adobe-firefly-3": 1047.93,
       "stable-diffusion-2.1": 806.74,
-      "phoenix-1-ultra": 1018.32,
-      "gemini-2-flash-experimental": 990.19,
-      "ideogram-2a": 1015.21,
-      "sana-sprint-1.6b": 965.74,
       "ideogram-2": 1091.18,
+      "ideogram-2a": 1015.23,
+      "gemini-2-flash-experimental": 990.07,
+      "sana-sprint-1.6b": 966.09,
       "dalle-2": 825.84,
-      "ideogram-2-turbo": 1047.81,
-      "playground-3": 1021.12,
       "flux-1-pro": 1117.45,
+      "ideogram-2-turbo": 1047.81,
       "stable-diffusion-3.5-large": 1053.54,
+      "playground-3": 1021.12,
       "amazon-titan-g1": 948.73,
-      "stable-diffusion-3-large-turbo": 857.16,
-      "stable-diffusion-1.5": 707.03,
       "stable-diffusion-3-large": 1044.79,
       "playground-2.5": 1014.81,
-      "image-01": 1103.86,
+      "stable-diffusion-3-large-turbo": 857.16,
+      "stable-diffusion-1.5": 707.03,
       "flux-1.1-pro": 1117.19,
+      "image-01": 1103.88,
       "midjourney-6.1": 1087.44,
-      "luma-photon-flash": 969.93,
-      "janus-pro": 752.53,
+      "luma-photon-flash": 969.94,
       "stable-diffusion-1.6": 908.18,
-      "dalle-3-hd": 902.08,
+      "janus-pro": 752.53,
       "ideogram-1": 1066.83,
-      "phoenix-1-fast": 984.04,
+      "phoenix-1-fast": 984.06,
+      "dalle-3-hd": 902.08,
       "sdxl-lightning": 929.68,
-      "phoenix-0.9-ultra": 1007.18,
-      "stable-diffusion-3.5-large-turbo": 1070.4,
       "recraft-20b": 1013.74,
-      "ideogram-3": 1109.76,
-      "lumina-image-2": 1000.8,
-      "ideogram-2a-turbo": 1001.98,
-      "hidream-i1-dev": 1032.63
+      "stable-diffusion-3.5-large-turbo": 1070.4,
+      "phoenix-0.9-ultra": 1007.18,
+      "ideogram-3": 1110.18,
+      "ideogram-2a-turbo": 1002.14,
+      "lumina-image-2": 1000.82,
+      "hidream-i1-dev": 1033.15
     },
     "confidence_intervals": {
       "amazon-titan-g1-2": {
         "low": 951.8,
-        "high": 967.8
-      },
-      "grok-2": {
-        "low": 934.91,
-        "high": 991.91
+        "high": 968.8
       },
       "gpt-4o": {
-        "low": 1124.75,
-        "high": 1156.75
+        "low": 1123.78,
+        "high": 1156.78
       },
       "recraft-3": {
         "low": 1172.04,
         "high": 1190.04
       },
+      "reve": {
+        "low": 1100.7,
+        "high": 1134.7
+      },
       "midjourney-6": {
         "low": 1065.35,
         "high": 1082.35
-      },
-      "reve": {
-        "low": 1100.92,
-        "high": 1133.92
       },
       "stable-diffusion-xl-1": {
         "low": 888.8,
         "high": 904.8
       },
-      "stable-diffusion-3.5-medium": {
-        "low": 982.22,
-        "high": 1014.22
-      },
       "infinity-8b": {
-        "low": 1031.72,
-        "high": 1063.72
+        "low": 1031.74,
+        "high": 1065.74
       },
-      "imagen-3-generate-002": {
-        "low": 1101.45,
-        "high": 1129.45
+      "stable-diffusion-3.5-medium": {
+        "low": 982.1,
+        "high": 1014.1
       },
       "stable-diffusion-3-medium": {
         "low": 914.49,
         "high": 931.49
       },
+      "imagen-3-generate-002": {
+        "low": 1100.34,
+        "high": 1129.34
+      },
       "midjourney-v7-alpha": {
-        "low": 1087.21,
-        "high": 1127.21
+        "low": 1087.06,
+        "high": 1127.06
+      },
+      "luma-photon": {
+        "low": 1003.44,
+        "high": 1030.44
+      },
+      "grok-2": {
+        "low": 935.57,
+        "high": 992.57
       },
       "dalle-3": {
         "low": 893.29,
         "high": 909.29
       },
+      "flux-1-dev": {
+        "low": 1066.92,
+        "high": 1084.92
+      },
+      "phoenix-1-ultra": {
+        "low": 1002.33,
+        "high": 1035.33
+      },
       "flux-1-schnell": {
         "low": 1000.0,
         "high": 1000.0
       },
-      "luma-photon": {
-        "low": 1002.42,
-        "high": 1031.42
-      },
       "adobe-firefly-3": {
         "low": 1037.93,
-        "high": 1056.93
-      },
-      "flux-1-dev": {
-        "low": 1066.92,
-        "high": 1084.92
+        "high": 1057.93
       },
       "stable-diffusion-2.1": {
         "low": 797.74,
         "high": 814.74
       },
-      "phoenix-1-ultra": {
-        "low": 1003.32,
-        "high": 1034.32
-      },
-      "gemini-2-flash-experimental": {
-        "low": 973.19,
-        "high": 1006.19
-      },
-      "ideogram-2a": {
-        "low": 999.21,
-        "high": 1032.21
-      },
-      "sana-sprint-1.6b": {
-        "low": 945.74,
-        "high": 986.74
-      },
       "ideogram-2": {
         "low": 1082.18,
-        "high": 1100.18
+        "high": 1099.18
+      },
+      "ideogram-2a": {
+        "low": 999.23,
+        "high": 1031.23
+      },
+      "gemini-2-flash-experimental": {
+        "low": 974.07,
+        "high": 1006.07
+      },
+      "sana-sprint-1.6b": {
+        "low": 946.09,
+        "high": 986.09
       },
       "dalle-2": {
         "low": 817.84,
         "high": 833.84
       },
+      "flux-1-pro": {
+        "low": 1108.45,
+        "high": 1125.45
+      },
       "ideogram-2-turbo": {
         "low": 1038.81,
         "high": 1055.81
+      },
+      "stable-diffusion-3.5-large": {
+        "low": 1045.54,
+        "high": 1062.54
       },
       "playground-3": {
         "low": 1013.12,
         "high": 1030.12
       },
-      "flux-1-pro": {
-        "low": 1108.45,
-        "high": 1126.45
-      },
-      "stable-diffusion-3.5-large": {
-        "low": 1044.54,
-        "high": 1062.54
-      },
       "amazon-titan-g1": {
         "low": 940.73,
         "high": 956.73
-      },
-      "stable-diffusion-3-large-turbo": {
-        "low": 849.16,
-        "high": 866.16
-      },
-      "stable-diffusion-1.5": {
-        "low": 697.03,
-        "high": 717.03
       },
       "stable-diffusion-3-large": {
         "low": 1036.79,
@@ -1417,613 +1409,613 @@
         "low": 1006.81,
         "high": 1022.81
       },
-      "image-01": {
-        "low": 1087.86,
-        "high": 1120.86
+      "stable-diffusion-3-large-turbo": {
+        "low": 849.16,
+        "high": 865.16
+      },
+      "stable-diffusion-1.5": {
+        "low": 696.03,
+        "high": 717.03
       },
       "flux-1.1-pro": {
         "low": 1108.19,
         "high": 1126.19
       },
+      "image-01": {
+        "low": 1087.88,
+        "high": 1121.88
+      },
       "midjourney-6.1": {
         "low": 1078.44,
-        "high": 1095.44
+        "high": 1096.44
       },
       "luma-photon-flash": {
-        "low": 957.93,
-        "high": 982.93
-      },
-      "janus-pro": {
-        "low": 737.53,
-        "high": 768.53
+        "low": 956.94,
+        "high": 982.94
       },
       "stable-diffusion-1.6": {
         "low": 899.18,
         "high": 916.18
       },
-      "dalle-3-hd": {
-        "low": 894.08,
-        "high": 910.08
+      "janus-pro": {
+        "low": 737.53,
+        "high": 768.53
       },
       "ideogram-1": {
         "low": 1058.83,
         "high": 1075.83
       },
       "phoenix-1-fast": {
-        "low": 968.04,
-        "high": 1001.04
+        "low": 969.06,
+        "high": 1000.06
+      },
+      "dalle-3-hd": {
+        "low": 894.08,
+        "high": 910.08
       },
       "sdxl-lightning": {
         "low": 921.68,
         "high": 937.68
       },
-      "phoenix-0.9-ultra": {
-        "low": 998.18,
-        "high": 1018.18
-      },
-      "stable-diffusion-3.5-large-turbo": {
-        "low": 1060.4,
-        "high": 1079.4
-      },
       "recraft-20b": {
         "low": 1004.74,
-        "high": 1021.74
+        "high": 1022.74
+      },
+      "stable-diffusion-3.5-large-turbo": {
+        "low": 1061.4,
+        "high": 1079.4
+      },
+      "phoenix-0.9-ultra": {
+        "low": 998.18,
+        "high": 1017.18
       },
       "ideogram-3": {
-        "low": 1089.76,
-        "high": 1128.76
-      },
-      "lumina-image-2": {
-        "low": 986.8,
-        "high": 1015.8
+        "low": 1091.18,
+        "high": 1130.18
       },
       "ideogram-2a-turbo": {
-        "low": 984.98,
-        "high": 1017.98
+        "low": 985.14,
+        "high": 1018.14
+      },
+      "lumina-image-2": {
+        "low": 986.82,
+        "high": 1015.82
       },
       "hidream-i1-dev": {
-        "low": 1013.63,
-        "high": 1053.63
+        "low": 1012.15,
+        "high": 1053.15
       }
     },
     "categories": {
       "amazon-titan-g1-2": null,
-      "grok-2": null,
       "gpt-4o": null,
       "recraft-3": null,
-      "midjourney-6": null,
       "reve": null,
+      "midjourney-6": null,
       "stable-diffusion-xl-1": null,
-      "stable-diffusion-3.5-medium": null,
       "infinity-8b": null,
-      "imagen-3-generate-002": null,
+      "stable-diffusion-3.5-medium": null,
       "stable-diffusion-3-medium": null,
+      "imagen-3-generate-002": null,
       "midjourney-v7-alpha": null,
-      "dalle-3": null,
-      "flux-1-schnell": null,
       "luma-photon": null,
-      "adobe-firefly-3": null,
+      "grok-2": null,
+      "dalle-3": null,
       "flux-1-dev": null,
-      "stable-diffusion-2.1": null,
       "phoenix-1-ultra": null,
-      "gemini-2-flash-experimental": null,
-      "ideogram-2a": null,
-      "sana-sprint-1.6b": null,
+      "flux-1-schnell": null,
+      "adobe-firefly-3": null,
+      "stable-diffusion-2.1": null,
       "ideogram-2": null,
+      "ideogram-2a": null,
+      "gemini-2-flash-experimental": null,
+      "sana-sprint-1.6b": null,
       "dalle-2": null,
-      "ideogram-2-turbo": null,
-      "playground-3": null,
       "flux-1-pro": null,
+      "ideogram-2-turbo": null,
       "stable-diffusion-3.5-large": null,
+      "playground-3": null,
       "amazon-titan-g1": null,
-      "stable-diffusion-3-large-turbo": null,
-      "stable-diffusion-1.5": null,
       "stable-diffusion-3-large": null,
       "playground-2.5": null,
-      "image-01": null,
+      "stable-diffusion-3-large-turbo": null,
+      "stable-diffusion-1.5": null,
       "flux-1.1-pro": null,
+      "image-01": null,
       "midjourney-6.1": null,
       "luma-photon-flash": null,
-      "janus-pro": null,
       "stable-diffusion-1.6": null,
-      "dalle-3-hd": null,
+      "janus-pro": null,
       "ideogram-1": null,
       "phoenix-1-fast": null,
+      "dalle-3-hd": null,
       "sdxl-lightning": null,
-      "phoenix-0.9-ultra": null,
-      "stable-diffusion-3.5-large-turbo": null,
       "recraft-20b": null,
+      "stable-diffusion-3.5-large-turbo": null,
+      "phoenix-0.9-ultra": null,
       "ideogram-3": null,
-      "lumina-image-2": null,
       "ideogram-2a-turbo": null,
+      "lumina-image-2": null,
       "hidream-i1-dev": null
     }
   },
   "People: Groups & Activities": {
     "elo_rating_final": {
       "amazon-titan-g1-2": 916.58,
-      "grok-2": 971.52,
-      "gpt-4o": 1205.62,
+      "gpt-4o": 1205.61,
       "recraft-3": 1141.38,
+      "reve": 1156.83,
       "midjourney-6": 1038.89,
-      "reve": 1156.85,
       "stable-diffusion-xl-1": 805.52,
-      "stable-diffusion-3.5-medium": 905.24,
-      "infinity-8b": 1054.08,
-      "imagen-3-generate-002": 1157.62,
+      "infinity-8b": 1054.07,
+      "stable-diffusion-3.5-medium": 905.29,
       "stable-diffusion-3-medium": 878.4,
-      "midjourney-v7-alpha": 1060.69,
-      "dalle-3": 896.07,
-      "flux-1-schnell": 1000,
+      "imagen-3-generate-002": 1157.61,
+      "midjourney-v7-alpha": 1060.65,
       "luma-photon": 1046.91,
-      "adobe-firefly-3": 940.23,
+      "grok-2": 971.55,
+      "dalle-3": 896.07,
       "flux-1-dev": 1103.57,
+      "phoenix-1-ultra": 1072.01,
+      "flux-1-schnell": 1000,
+      "adobe-firefly-3": 940.23,
       "stable-diffusion-2.1": 632.92,
-      "phoenix-1-ultra": 1072.02,
-      "gemini-2-flash-experimental": 978.65,
-      "ideogram-2a": 1054.08,
-      "sana-sprint-1.6b": 790.02,
       "ideogram-2": 1085.23,
+      "ideogram-2a": 1054.07,
+      "gemini-2-flash-experimental": 978.64,
+      "sana-sprint-1.6b": 789.99,
       "dalle-2": 619.42,
+      "flux-1-pro": 1116.78,
       "ideogram-2-turbo": 1069.38,
-      "playground-3": 1006.21,
-      "flux-1-pro": 1116.79,
       "stable-diffusion-3.5-large": 1028.2,
+      "playground-3": 1006.21,
       "amazon-titan-g1": 901.05,
-      "stable-diffusion-3-large-turbo": 904.82,
-      "stable-diffusion-1.5": 517.5,
       "stable-diffusion-3-large": 1005.84,
       "playground-2.5": 937.14,
-      "image-01": 1102.94,
+      "stable-diffusion-3-large-turbo": 904.82,
+      "stable-diffusion-1.5": 517.5,
       "flux-1.1-pro": 1127.19,
+      "image-01": 1102.92,
       "midjourney-6.1": 1063.3,
-      "luma-photon-flash": 999.58,
-      "janus-pro": 599.74,
+      "luma-photon-flash": 999.57,
       "stable-diffusion-1.6": 834.71,
-      "dalle-3-hd": 907.89,
+      "janus-pro": 599.64,
       "ideogram-1": 1069.11,
-      "phoenix-1-fast": 1006.45,
+      "phoenix-1-fast": 1006.44,
+      "dalle-3-hd": 907.89,
       "sdxl-lightning": 878.17,
-      "phoenix-0.9-ultra": 1017.23,
-      "stable-diffusion-3.5-large-turbo": 1025.34,
       "recraft-20b": 969.15,
-      "ideogram-3": 1130.84,
-      "lumina-image-2": 958.79,
-      "ideogram-2a-turbo": 1057.54,
-      "hidream-i1-dev": 1166.47
+      "stable-diffusion-3.5-large-turbo": 1025.34,
+      "phoenix-0.9-ultra": 1017.23,
+      "ideogram-3": 1130.81,
+      "ideogram-2a-turbo": 1057.53,
+      "lumina-image-2": 958.97,
+      "hidream-i1-dev": 1166.43
     },
     "confidence_intervals": {
       "amazon-titan-g1-2": {
         "low": 905.58,
         "high": 926.58
       },
-      "grok-2": {
-        "low": 942.52,
-        "high": 998.52
-      },
       "gpt-4o": {
-        "low": 1187.62,
-        "high": 1223.62
+        "low": 1187.61,
+        "high": 1222.61
       },
       "recraft-3": {
         "low": 1128.38,
         "high": 1153.38
       },
+      "reve": {
+        "low": 1138.83,
+        "high": 1175.83
+      },
       "midjourney-6": {
         "low": 1027.89,
         "high": 1048.89
       },
-      "reve": {
-        "low": 1137.85,
-        "high": 1176.85
-      },
       "stable-diffusion-xl-1": {
         "low": 794.52,
-        "high": 815.52
-      },
-      "stable-diffusion-3.5-medium": {
-        "low": 886.24,
-        "high": 924.24
+        "high": 814.52
       },
       "infinity-8b": {
-        "low": 1035.08,
-        "high": 1072.08
+        "low": 1035.07,
+        "high": 1071.07
       },
-      "imagen-3-generate-002": {
-        "low": 1137.62,
-        "high": 1179.62
+      "stable-diffusion-3.5-medium": {
+        "low": 885.29,
+        "high": 924.29
       },
       "stable-diffusion-3-medium": {
         "low": 867.4,
         "high": 888.4
       },
+      "imagen-3-generate-002": {
+        "low": 1136.61,
+        "high": 1178.61
+      },
       "midjourney-v7-alpha": {
-        "low": 1039.69,
-        "high": 1080.69
-      },
-      "dalle-3": {
-        "low": 885.07,
-        "high": 906.07
-      },
-      "flux-1-schnell": {
-        "low": 1000.0,
-        "high": 1000.0
+        "low": 1038.65,
+        "high": 1081.65
       },
       "luma-photon": {
         "low": 1029.91,
         "high": 1063.91
       },
+      "grok-2": {
+        "low": 942.55,
+        "high": 998.55
+      },
+      "dalle-3": {
+        "low": 885.07,
+        "high": 906.07
+      },
+      "flux-1-dev": {
+        "low": 1090.57,
+        "high": 1114.57
+      },
+      "phoenix-1-ultra": {
+        "low": 1054.01,
+        "high": 1091.01
+      },
+      "flux-1-schnell": {
+        "low": 1000.0,
+        "high": 1000.0
+      },
       "adobe-firefly-3": {
         "low": 927.23,
         "high": 952.23
       },
-      "flux-1-dev": {
-        "low": 1091.57,
-        "high": 1113.57
-      },
       "stable-diffusion-2.1": {
         "low": 620.92,
-        "high": 643.92
-      },
-      "phoenix-1-ultra": {
-        "low": 1054.02,
-        "high": 1090.02
-      },
-      "gemini-2-flash-experimental": {
-        "low": 959.65,
-        "high": 996.65
-      },
-      "ideogram-2a": {
-        "low": 1035.08,
-        "high": 1070.08
-      },
-      "sana-sprint-1.6b": {
-        "low": 764.02,
-        "high": 812.02
+        "high": 644.92
       },
       "ideogram-2": {
         "low": 1073.23,
-        "high": 1095.23
+        "high": 1096.23
+      },
+      "ideogram-2a": {
+        "low": 1034.07,
+        "high": 1071.07
+      },
+      "gemini-2-flash-experimental": {
+        "low": 960.64,
+        "high": 995.64
+      },
+      "sana-sprint-1.6b": {
+        "low": 764.99,
+        "high": 811.99
       },
       "dalle-2": {
         "low": 607.42,
-        "high": 631.42
+        "high": 630.42
+      },
+      "flux-1-pro": {
+        "low": 1105.78,
+        "high": 1127.78
       },
       "ideogram-2-turbo": {
         "low": 1057.38,
         "high": 1080.38
       },
-      "playground-3": {
-        "low": 995.21,
-        "high": 1016.21
-      },
-      "flux-1-pro": {
-        "low": 1105.79,
-        "high": 1127.79
-      },
       "stable-diffusion-3.5-large": {
         "low": 1017.2,
         "high": 1038.2
+      },
+      "playground-3": {
+        "low": 995.21,
+        "high": 1016.21
       },
       "amazon-titan-g1": {
         "low": 890.05,
         "high": 911.05
       },
+      "stable-diffusion-3-large": {
+        "low": 995.84,
+        "high": 1014.84
+      },
+      "playground-2.5": {
+        "low": 927.14,
+        "high": 947.14
+      },
       "stable-diffusion-3-large-turbo": {
-        "low": 894.82,
+        "low": 893.82,
         "high": 914.82
       },
       "stable-diffusion-1.5": {
         "low": 502.5,
         "high": 531.5
       },
-      "stable-diffusion-3-large": {
-        "low": 995.84,
-        "high": 1015.84
-      },
-      "playground-2.5": {
-        "low": 927.14,
-        "high": 947.14
-      },
-      "image-01": {
-        "low": 1083.94,
-        "high": 1121.94
-      },
       "flux-1.1-pro": {
         "low": 1115.19,
         "high": 1139.19
       },
+      "image-01": {
+        "low": 1084.92,
+        "high": 1120.92
+      },
       "midjourney-6.1": {
-        "low": 1052.3,
+        "low": 1051.3,
         "high": 1074.3
       },
       "luma-photon-flash": {
-        "low": 983.58,
-        "high": 1016.58
-      },
-      "janus-pro": {
-        "low": 574.74,
-        "high": 619.74
+        "low": 984.57,
+        "high": 1015.57
       },
       "stable-diffusion-1.6": {
         "low": 822.71,
         "high": 844.71
       },
-      "dalle-3-hd": {
-        "low": 896.89,
-        "high": 917.89
+      "janus-pro": {
+        "low": 575.64,
+        "high": 619.64
       },
       "ideogram-1": {
-        "low": 1057.11,
+        "low": 1058.11,
         "high": 1080.11
       },
       "phoenix-1-fast": {
-        "low": 988.45,
-        "high": 1024.45
+        "low": 989.44,
+        "high": 1024.44
+      },
+      "dalle-3-hd": {
+        "low": 896.89,
+        "high": 917.89
       },
       "sdxl-lightning": {
         "low": 867.17,
         "high": 888.17
       },
-      "phoenix-0.9-ultra": {
-        "low": 1004.23,
-        "high": 1029.23
+      "recraft-20b": {
+        "low": 958.15,
+        "high": 980.15
       },
       "stable-diffusion-3.5-large-turbo": {
         "low": 1014.34,
         "high": 1036.34
       },
-      "recraft-20b": {
-        "low": 958.15,
-        "high": 979.15
+      "phoenix-0.9-ultra": {
+        "low": 1004.23,
+        "high": 1029.23
       },
       "ideogram-3": {
-        "low": 1111.84,
-        "high": 1150.84
-      },
-      "lumina-image-2": {
-        "low": 942.79,
-        "high": 975.79
+        "low": 1110.81,
+        "high": 1150.81
       },
       "ideogram-2a-turbo": {
-        "low": 1039.54,
-        "high": 1075.54
+        "low": 1038.53,
+        "high": 1075.53
+      },
+      "lumina-image-2": {
+        "low": 942.97,
+        "high": 975.97
       },
       "hidream-i1-dev": {
-        "low": 1144.47,
-        "high": 1188.47
+        "low": 1145.43,
+        "high": 1188.43
       }
     },
     "categories": {
       "amazon-titan-g1-2": null,
-      "grok-2": null,
       "gpt-4o": null,
       "recraft-3": null,
-      "midjourney-6": null,
       "reve": null,
+      "midjourney-6": null,
       "stable-diffusion-xl-1": null,
-      "stable-diffusion-3.5-medium": null,
       "infinity-8b": null,
-      "imagen-3-generate-002": null,
+      "stable-diffusion-3.5-medium": null,
       "stable-diffusion-3-medium": null,
+      "imagen-3-generate-002": null,
       "midjourney-v7-alpha": null,
-      "dalle-3": null,
-      "flux-1-schnell": null,
       "luma-photon": null,
-      "adobe-firefly-3": null,
+      "grok-2": null,
+      "dalle-3": null,
       "flux-1-dev": null,
-      "stable-diffusion-2.1": null,
       "phoenix-1-ultra": null,
-      "gemini-2-flash-experimental": null,
-      "ideogram-2a": null,
-      "sana-sprint-1.6b": null,
+      "flux-1-schnell": null,
+      "adobe-firefly-3": null,
+      "stable-diffusion-2.1": null,
       "ideogram-2": null,
+      "ideogram-2a": null,
+      "gemini-2-flash-experimental": null,
+      "sana-sprint-1.6b": null,
       "dalle-2": null,
-      "ideogram-2-turbo": null,
-      "playground-3": null,
       "flux-1-pro": null,
+      "ideogram-2-turbo": null,
       "stable-diffusion-3.5-large": null,
+      "playground-3": null,
       "amazon-titan-g1": null,
-      "stable-diffusion-3-large-turbo": null,
-      "stable-diffusion-1.5": null,
       "stable-diffusion-3-large": null,
       "playground-2.5": null,
-      "image-01": null,
+      "stable-diffusion-3-large-turbo": null,
+      "stable-diffusion-1.5": null,
       "flux-1.1-pro": null,
+      "image-01": null,
       "midjourney-6.1": null,
       "luma-photon-flash": null,
-      "janus-pro": null,
       "stable-diffusion-1.6": null,
-      "dalle-3-hd": null,
+      "janus-pro": null,
       "ideogram-1": null,
       "phoenix-1-fast": null,
+      "dalle-3-hd": null,
       "sdxl-lightning": null,
-      "phoenix-0.9-ultra": null,
-      "stable-diffusion-3.5-large-turbo": null,
       "recraft-20b": null,
+      "stable-diffusion-3.5-large-turbo": null,
+      "phoenix-0.9-ultra": null,
       "ideogram-3": null,
-      "lumina-image-2": null,
       "ideogram-2a-turbo": null,
+      "lumina-image-2": null,
       "hidream-i1-dev": null
     }
   },
   "People: Portraits": {
     "elo_rating_final": {
       "amazon-titan-g1-2": 913.16,
-      "grok-2": 942.69,
-      "gpt-4o": 1196.64,
+      "gpt-4o": 1196.68,
       "recraft-3": 1138.22,
+      "reve": 1108.77,
       "midjourney-6": 1037.38,
-      "reve": 1108.74,
       "stable-diffusion-xl-1": 840.65,
-      "stable-diffusion-3.5-medium": 893.03,
-      "infinity-8b": 1041.68,
-      "imagen-3-generate-002": 1097.06,
+      "infinity-8b": 1041.71,
+      "stable-diffusion-3.5-medium": 893.06,
       "stable-diffusion-3-medium": 861.19,
-      "midjourney-v7-alpha": 1086.69,
-      "dalle-3": 851.65,
-      "flux-1-schnell": 1000,
-      "luma-photon": 1062.67,
-      "adobe-firefly-3": 922.66,
+      "imagen-3-generate-002": 1097.25,
+      "midjourney-v7-alpha": 1086.76,
+      "luma-photon": 1062.7,
+      "grok-2": 942.04,
+      "dalle-3": 851.64,
       "flux-1-dev": 1073.63,
-      "stable-diffusion-2.1": 612.78,
-      "phoenix-1-ultra": 1002.13,
-      "gemini-2-flash-experimental": 999.01,
-      "ideogram-2a": 1027.41,
-      "sana-sprint-1.6b": 870.21,
+      "phoenix-1-ultra": 1002.16,
+      "flux-1-schnell": 1000,
+      "adobe-firefly-3": 922.57,
+      "stable-diffusion-2.1": 612.77,
       "ideogram-2": 1070.62,
+      "ideogram-2a": 1027.44,
+      "gemini-2-flash-experimental": 998.81,
+      "sana-sprint-1.6b": 870.27,
       "dalle-2": 670.21,
-      "ideogram-2-turbo": 1023.77,
-      "playground-3": 1025.83,
       "flux-1-pro": 1103.87,
+      "ideogram-2-turbo": 1023.77,
       "stable-diffusion-3.5-large": 972.78,
+      "playground-3": 1025.83,
       "amazon-titan-g1": 873.46,
-      "stable-diffusion-3-large-turbo": 842.03,
-      "stable-diffusion-1.5": 475.6,
       "stable-diffusion-3-large": 950.66,
       "playground-2.5": 967.66,
-      "image-01": 1075.24,
+      "stable-diffusion-3-large-turbo": 841.99,
+      "stable-diffusion-1.5": 475.6,
       "flux-1.1-pro": 1095.03,
+      "image-01": 1075.27,
       "midjourney-6.1": 1052.44,
-      "luma-photon-flash": 958.42,
-      "janus-pro": 647.31,
-      "stable-diffusion-1.6": 858.18,
-      "dalle-3-hd": 879.74,
+      "luma-photon-flash": 958.26,
+      "stable-diffusion-1.6": 858.17,
+      "janus-pro": 647.33,
       "ideogram-1": 1068.39,
-      "phoenix-1-fast": 950.58,
-      "sdxl-lightning": 872.37,
-      "phoenix-0.9-ultra": 933.76,
-      "stable-diffusion-3.5-large-turbo": 992.23,
+      "phoenix-1-fast": 950.61,
+      "dalle-3-hd": 879.74,
+      "sdxl-lightning": 872.36,
       "recraft-20b": 986.71,
-      "ideogram-3": 1116.87,
-      "lumina-image-2": 954.74,
-      "ideogram-2a-turbo": 1019.99,
-      "hidream-i1-dev": 1105.15
+      "stable-diffusion-3.5-large-turbo": 992.22,
+      "phoenix-0.9-ultra": 933.75,
+      "ideogram-3": 1116.92,
+      "ideogram-2a-turbo": 1020.13,
+      "lumina-image-2": 954.99,
+      "hidream-i1-dev": 1105.37
     },
     "confidence_intervals": {
       "amazon-titan-g1-2": {
-        "low": 898.16,
-        "high": 928.16
-      },
-      "grok-2": {
-        "low": 916.69,
-        "high": 971.69
+        "low": 899.16,
+        "high": 929.16
       },
       "gpt-4o": {
-        "low": 1177.64,
-        "high": 1215.64
+        "low": 1178.68,
+        "high": 1214.68
       },
       "recraft-3": {
         "low": 1122.22,
-        "high": 1155.22
-      },
-      "midjourney-6": {
-        "low": 1023.38,
-        "high": 1051.38
+        "high": 1156.22
       },
       "reve": {
-        "low": 1088.74,
-        "high": 1128.74
+        "low": 1088.77,
+        "high": 1129.77
+      },
+      "midjourney-6": {
+        "low": 1022.38,
+        "high": 1052.38
       },
       "stable-diffusion-xl-1": {
-        "low": 827.65,
-        "high": 854.65
-      },
-      "stable-diffusion-3.5-medium": {
-        "low": 871.03,
-        "high": 915.03
+        "low": 826.65,
+        "high": 855.65
       },
       "infinity-8b": {
-        "low": 1021.68,
-        "high": 1061.68
+        "low": 1022.71,
+        "high": 1061.71
       },
-      "imagen-3-generate-002": {
-        "low": 1076.06,
-        "high": 1121.06
+      "stable-diffusion-3.5-medium": {
+        "low": 871.06,
+        "high": 915.06
       },
       "stable-diffusion-3-medium": {
         "low": 848.19,
         "high": 876.19
       },
+      "imagen-3-generate-002": {
+        "low": 1075.25,
+        "high": 1119.25
+      },
       "midjourney-v7-alpha": {
-        "low": 1064.69,
-        "high": 1108.69
+        "low": 1065.76,
+        "high": 1107.76
+      },
+      "luma-photon": {
+        "low": 1043.7,
+        "high": 1084.7
+      },
+      "grok-2": {
+        "low": 912.04,
+        "high": 969.04
       },
       "dalle-3": {
-        "low": 838.65,
-        "high": 865.65
+        "low": 837.64,
+        "high": 865.64
+      },
+      "flux-1-dev": {
+        "low": 1059.63,
+        "high": 1088.63
+      },
+      "phoenix-1-ultra": {
+        "low": 982.16,
+        "high": 1023.16
       },
       "flux-1-schnell": {
         "low": 1000.0,
         "high": 1000.0
       },
-      "luma-photon": {
-        "low": 1042.67,
-        "high": 1083.67
-      },
       "adobe-firefly-3": {
-        "low": 906.66,
-        "high": 938.66
-      },
-      "flux-1-dev": {
-        "low": 1059.63,
-        "high": 1087.63
+        "low": 906.57,
+        "high": 938.57
       },
       "stable-diffusion-2.1": {
-        "low": 597.78,
-        "high": 628.78
-      },
-      "phoenix-1-ultra": {
-        "low": 982.13,
-        "high": 1023.13
-      },
-      "gemini-2-flash-experimental": {
-        "low": 979.01,
-        "high": 1020.01
-      },
-      "ideogram-2a": {
-        "low": 1008.41,
-        "high": 1048.41
-      },
-      "sana-sprint-1.6b": {
-        "low": 847.21,
-        "high": 893.21
+        "low": 597.77,
+        "high": 628.77
       },
       "ideogram-2": {
         "low": 1057.62,
         "high": 1085.62
       },
+      "ideogram-2a": {
+        "low": 1008.44,
+        "high": 1048.44
+      },
+      "gemini-2-flash-experimental": {
+        "low": 979.81,
+        "high": 1019.81
+      },
+      "sana-sprint-1.6b": {
+        "low": 848.27,
+        "high": 893.27
+      },
       "dalle-2": {
         "low": 654.21,
         "high": 685.21
+      },
+      "flux-1-pro": {
+        "low": 1088.87,
+        "high": 1119.87
       },
       "ideogram-2-turbo": {
         "low": 1008.77,
         "high": 1038.77
       },
-      "playground-3": {
-        "low": 1010.83,
-        "high": 1041.83
-      },
-      "flux-1-pro": {
-        "low": 1088.87,
-        "high": 1120.87
-      },
       "stable-diffusion-3.5-large": {
         "low": 958.78,
         "high": 988.78
       },
+      "playground-3": {
+        "low": 1010.83,
+        "high": 1040.83
+      },
       "amazon-titan-g1": {
         "low": 859.46,
         "high": 887.46
-      },
-      "stable-diffusion-3-large-turbo": {
-        "low": 828.03,
-        "high": 856.03
-      },
-      "stable-diffusion-1.5": {
-        "low": 450.6,
-        "high": 500.6
       },
       "stable-diffusion-3-large": {
         "low": 936.66,
@@ -2033,305 +2025,305 @@
         "low": 954.66,
         "high": 981.66
       },
-      "image-01": {
-        "low": 1053.24,
-        "high": 1097.24
+      "stable-diffusion-3-large-turbo": {
+        "low": 827.99,
+        "high": 855.99
+      },
+      "stable-diffusion-1.5": {
+        "low": 450.6,
+        "high": 500.6
       },
       "flux-1.1-pro": {
         "low": 1080.03,
         "high": 1112.03
+      },
+      "image-01": {
+        "low": 1056.27,
+        "high": 1095.27
       },
       "midjourney-6.1": {
         "low": 1037.44,
         "high": 1067.44
       },
       "luma-photon-flash": {
-        "low": 938.42,
-        "high": 977.42
-      },
-      "janus-pro": {
-        "low": 621.31,
-        "high": 673.31
+        "low": 938.26,
+        "high": 978.26
       },
       "stable-diffusion-1.6": {
-        "low": 844.18,
-        "high": 872.18
+        "low": 844.17,
+        "high": 873.17
+      },
+      "janus-pro": {
+        "low": 621.33,
+        "high": 671.33
+      },
+      "ideogram-1": {
+        "low": 1053.39,
+        "high": 1084.39
+      },
+      "phoenix-1-fast": {
+        "low": 929.61,
+        "high": 970.61
       },
       "dalle-3-hd": {
         "low": 866.74,
         "high": 893.74
       },
-      "ideogram-1": {
-        "low": 1054.39,
-        "high": 1084.39
-      },
-      "phoenix-1-fast": {
-        "low": 930.58,
-        "high": 972.58
-      },
       "sdxl-lightning": {
-        "low": 858.37,
-        "high": 886.37
-      },
-      "phoenix-0.9-ultra": {
-        "low": 915.76,
-        "high": 950.76
-      },
-      "stable-diffusion-3.5-large-turbo": {
-        "low": 976.23,
-        "high": 1007.23
+        "low": 858.36,
+        "high": 886.36
       },
       "recraft-20b": {
-        "low": 972.71,
-        "high": 1000.71
+        "low": 971.71,
+        "high": 1001.71
+      },
+      "stable-diffusion-3.5-large-turbo": {
+        "low": 977.22,
+        "high": 1007.22
+      },
+      "phoenix-0.9-ultra": {
+        "low": 915.75,
+        "high": 950.75
       },
       "ideogram-3": {
-        "low": 1095.87,
-        "high": 1136.87
-      },
-      "lumina-image-2": {
-        "low": 933.74,
-        "high": 976.74
+        "low": 1097.92,
+        "high": 1136.92
       },
       "ideogram-2a-turbo": {
-        "low": 999.99,
-        "high": 1040.99
+        "low": 1000.13,
+        "high": 1041.13
+      },
+      "lumina-image-2": {
+        "low": 933.99,
+        "high": 976.99
       },
       "hidream-i1-dev": {
-        "low": 1084.15,
-        "high": 1128.15
+        "low": 1083.37,
+        "high": 1127.37
       }
     },
     "categories": {
       "amazon-titan-g1-2": null,
-      "grok-2": null,
       "gpt-4o": null,
       "recraft-3": null,
-      "midjourney-6": null,
       "reve": null,
+      "midjourney-6": null,
       "stable-diffusion-xl-1": null,
-      "stable-diffusion-3.5-medium": null,
       "infinity-8b": null,
-      "imagen-3-generate-002": null,
+      "stable-diffusion-3.5-medium": null,
       "stable-diffusion-3-medium": null,
+      "imagen-3-generate-002": null,
       "midjourney-v7-alpha": null,
-      "dalle-3": null,
-      "flux-1-schnell": null,
       "luma-photon": null,
-      "adobe-firefly-3": null,
+      "grok-2": null,
+      "dalle-3": null,
       "flux-1-dev": null,
-      "stable-diffusion-2.1": null,
       "phoenix-1-ultra": null,
-      "gemini-2-flash-experimental": null,
-      "ideogram-2a": null,
-      "sana-sprint-1.6b": null,
+      "flux-1-schnell": null,
+      "adobe-firefly-3": null,
+      "stable-diffusion-2.1": null,
       "ideogram-2": null,
+      "ideogram-2a": null,
+      "gemini-2-flash-experimental": null,
+      "sana-sprint-1.6b": null,
       "dalle-2": null,
-      "ideogram-2-turbo": null,
-      "playground-3": null,
       "flux-1-pro": null,
+      "ideogram-2-turbo": null,
       "stable-diffusion-3.5-large": null,
+      "playground-3": null,
       "amazon-titan-g1": null,
-      "stable-diffusion-3-large-turbo": null,
-      "stable-diffusion-1.5": null,
       "stable-diffusion-3-large": null,
       "playground-2.5": null,
-      "image-01": null,
+      "stable-diffusion-3-large-turbo": null,
+      "stable-diffusion-1.5": null,
       "flux-1.1-pro": null,
+      "image-01": null,
       "midjourney-6.1": null,
       "luma-photon-flash": null,
-      "janus-pro": null,
       "stable-diffusion-1.6": null,
-      "dalle-3-hd": null,
+      "janus-pro": null,
       "ideogram-1": null,
       "phoenix-1-fast": null,
+      "dalle-3-hd": null,
       "sdxl-lightning": null,
-      "phoenix-0.9-ultra": null,
-      "stable-diffusion-3.5-large-turbo": null,
       "recraft-20b": null,
+      "stable-diffusion-3.5-large-turbo": null,
+      "phoenix-0.9-ultra": null,
       "ideogram-3": null,
-      "lumina-image-2": null,
       "ideogram-2a-turbo": null,
+      "lumina-image-2": null,
       "hidream-i1-dev": null
     }
   },
   "Physical Spaces": {
     "elo_rating_final": {
       "amazon-titan-g1-2": 890.4,
-      "grok-2": 927.22,
-      "gpt-4o": 1111.97,
-      "recraft-3": 1133.8,
+      "gpt-4o": 1111.94,
+      "recraft-3": 1133.79,
+      "reve": 1090.06,
       "midjourney-6": 1052.33,
-      "reve": 1090.09,
       "stable-diffusion-xl-1": 842.45,
-      "stable-diffusion-3.5-medium": 936.26,
-      "infinity-8b": 1032.86,
-      "imagen-3-generate-002": 1083.86,
+      "infinity-8b": 1032.83,
+      "stable-diffusion-3.5-medium": 936.23,
       "stable-diffusion-3-medium": 901.92,
-      "midjourney-v7-alpha": 1049.57,
+      "imagen-3-generate-002": 1083.85,
+      "midjourney-v7-alpha": 1049.98,
+      "luma-photon": 1008.74,
+      "grok-2": 926.82,
       "dalle-3": 903.18,
-      "flux-1-schnell": 1000,
-      "luma-photon": 1008.76,
-      "adobe-firefly-3": 957.71,
       "flux-1-dev": 1036.46,
+      "phoenix-1-ultra": 1021.39,
+      "flux-1-schnell": 1000,
+      "adobe-firefly-3": 957.71,
       "stable-diffusion-2.1": 741.21,
-      "phoenix-1-ultra": 1021.41,
-      "gemini-2-flash-experimental": 921.54,
-      "ideogram-2a": 986.5,
-      "sana-sprint-1.6b": 906.16,
       "ideogram-2": 1041.09,
+      "ideogram-2a": 986.47,
+      "gemini-2-flash-experimental": 921.51,
+      "sana-sprint-1.6b": 905.77,
       "dalle-2": 718.81,
-      "ideogram-2-turbo": 1028.45,
-      "playground-3": 969.9,
       "flux-1-pro": 1054.31,
+      "ideogram-2-turbo": 1028.45,
       "stable-diffusion-3.5-large": 1024.64,
+      "playground-3": 969.9,
       "amazon-titan-g1": 884.65,
-      "stable-diffusion-3-large-turbo": 862.66,
-      "stable-diffusion-1.5": 592.32,
       "stable-diffusion-3-large": 1015.17,
       "playground-2.5": 975.71,
-      "image-01": 1055.23,
-      "flux-1.1-pro": 1073.52,
+      "stable-diffusion-3-large-turbo": 862.66,
+      "stable-diffusion-1.5": 592.33,
+      "flux-1.1-pro": 1073.53,
+      "image-01": 1055.2,
       "midjourney-6.1": 1058.86,
       "luma-photon-flash": 959.77,
-      "janus-pro": 671.78,
       "stable-diffusion-1.6": 862.86,
-      "dalle-3-hd": 900.52,
+      "janus-pro": 671.95,
       "ideogram-1": 1028.1,
-      "phoenix-1-fast": 931.42,
+      "phoenix-1-fast": 931.39,
+      "dalle-3-hd": 900.52,
       "sdxl-lightning": 877.35,
-      "phoenix-0.9-ultra": 992.02,
-      "stable-diffusion-3.5-large-turbo": 1022.52,
       "recraft-20b": 983.46,
-      "ideogram-3": 1090.25,
-      "lumina-image-2": 965.32,
-      "ideogram-2a-turbo": 978.13,
-      "hidream-i1-dev": 1086.82
+      "stable-diffusion-3.5-large-turbo": 1022.52,
+      "phoenix-0.9-ultra": 992.02,
+      "ideogram-3": 1090,
+      "ideogram-2a-turbo": 978.1,
+      "lumina-image-2": 965.31,
+      "hidream-i1-dev": 1086.53
     },
     "confidence_intervals": {
       "amazon-titan-g1-2": {
         "low": 883.4,
         "high": 897.4
       },
-      "grok-2": {
-        "low": 901.22,
-        "high": 952.22
-      },
       "gpt-4o": {
-        "low": 1096.97,
-        "high": 1126.97
+        "low": 1095.94,
+        "high": 1126.94
       },
       "recraft-3": {
-        "low": 1126.8,
-        "high": 1141.8
+        "low": 1126.79,
+        "high": 1141.79
+      },
+      "reve": {
+        "low": 1075.06,
+        "high": 1104.06
       },
       "midjourney-6": {
         "low": 1045.33,
         "high": 1059.33
       },
-      "reve": {
-        "low": 1076.09,
-        "high": 1103.09
-      },
       "stable-diffusion-xl-1": {
         "low": 835.45,
-        "high": 849.45
-      },
-      "stable-diffusion-3.5-medium": {
-        "low": 923.26,
-        "high": 949.26
+        "high": 848.45
       },
       "infinity-8b": {
-        "low": 1017.86,
-        "high": 1046.86
+        "low": 1017.83,
+        "high": 1046.83
       },
-      "imagen-3-generate-002": {
-        "low": 1071.86,
-        "high": 1094.86
+      "stable-diffusion-3.5-medium": {
+        "low": 921.23,
+        "high": 948.23
       },
       "stable-diffusion-3-medium": {
         "low": 894.92,
         "high": 908.92
       },
+      "imagen-3-generate-002": {
+        "low": 1071.85,
+        "high": 1094.85
+      },
       "midjourney-v7-alpha": {
-        "low": 1031.57,
-        "high": 1067.57
+        "low": 1032.98,
+        "high": 1066.98
+      },
+      "luma-photon": {
+        "low": 997.74,
+        "high": 1020.74
+      },
+      "grok-2": {
+        "low": 901.82,
+        "high": 950.82
       },
       "dalle-3": {
         "low": 896.18,
         "high": 909.18
       },
+      "flux-1-dev": {
+        "low": 1029.46,
+        "high": 1043.46
+      },
+      "phoenix-1-ultra": {
+        "low": 1007.39,
+        "high": 1034.39
+      },
       "flux-1-schnell": {
         "low": 1000.0,
         "high": 1000.0
       },
-      "luma-photon": {
-        "low": 996.76,
-        "high": 1020.76
-      },
       "adobe-firefly-3": {
         "low": 948.71,
-        "high": 965.71
-      },
-      "flux-1-dev": {
-        "low": 1029.46,
-        "high": 1043.46
+        "high": 966.71
       },
       "stable-diffusion-2.1": {
         "low": 734.21,
         "high": 748.21
       },
-      "phoenix-1-ultra": {
-        "low": 1008.41,
-        "high": 1034.41
-      },
-      "gemini-2-flash-experimental": {
-        "low": 908.54,
-        "high": 935.54
-      },
-      "ideogram-2a": {
-        "low": 972.5,
-        "high": 999.5
-      },
-      "sana-sprint-1.6b": {
-        "low": 887.16,
-        "high": 924.16
-      },
       "ideogram-2": {
         "low": 1034.09,
         "high": 1048.09
+      },
+      "ideogram-2a": {
+        "low": 971.47,
+        "high": 1000.47
+      },
+      "gemini-2-flash-experimental": {
+        "low": 907.51,
+        "high": 934.51
+      },
+      "sana-sprint-1.6b": {
+        "low": 886.77,
+        "high": 924.77
       },
       "dalle-2": {
         "low": 711.81,
         "high": 725.81
       },
-      "ideogram-2-turbo": {
-        "low": 1022.45,
-        "high": 1035.45
-      },
-      "playground-3": {
-        "low": 962.9,
-        "high": 976.9
-      },
       "flux-1-pro": {
         "low": 1047.31,
         "high": 1061.31
+      },
+      "ideogram-2-turbo": {
+        "low": 1021.45,
+        "high": 1035.45
       },
       "stable-diffusion-3.5-large": {
         "low": 1017.64,
         "high": 1032.64
       },
+      "playground-3": {
+        "low": 962.9,
+        "high": 976.9
+      },
       "amazon-titan-g1": {
         "low": 877.65,
         "high": 891.65
-      },
-      "stable-diffusion-3-large-turbo": {
-        "low": 855.66,
-        "high": 869.66
-      },
-      "stable-diffusion-1.5": {
-        "low": 583.32,
-        "high": 601.32
       },
       "stable-diffusion-3-large": {
         "low": 1008.17,
@@ -2339,15 +2331,23 @@
       },
       "playground-2.5": {
         "low": 969.71,
-        "high": 982.71
+        "high": 981.71
       },
-      "image-01": {
-        "low": 1041.23,
-        "high": 1070.23
+      "stable-diffusion-3-large-turbo": {
+        "low": 855.66,
+        "high": 869.66
+      },
+      "stable-diffusion-1.5": {
+        "low": 583.33,
+        "high": 601.33
       },
       "flux-1.1-pro": {
-        "low": 1066.52,
-        "high": 1081.52
+        "low": 1066.53,
+        "high": 1081.53
+      },
+      "image-01": {
+        "low": 1041.2,
+        "high": 1069.2
       },
       "midjourney-6.1": {
         "low": 1051.86,
@@ -2355,599 +2355,591 @@
       },
       "luma-photon-flash": {
         "low": 949.77,
-        "high": 970.77
-      },
-      "janus-pro": {
-        "low": 658.78,
-        "high": 683.78
+        "high": 971.77
       },
       "stable-diffusion-1.6": {
         "low": 855.86,
         "high": 869.86
       },
-      "dalle-3-hd": {
-        "low": 893.52,
-        "high": 907.52
+      "janus-pro": {
+        "low": 658.95,
+        "high": 683.95
       },
       "ideogram-1": {
         "low": 1021.1,
         "high": 1035.1
       },
       "phoenix-1-fast": {
-        "low": 917.42,
-        "high": 943.42
+        "low": 917.39,
+        "high": 943.39
+      },
+      "dalle-3-hd": {
+        "low": 893.52,
+        "high": 907.52
       },
       "sdxl-lightning": {
         "low": 871.35,
         "high": 884.35
       },
-      "phoenix-0.9-ultra": {
-        "low": 984.02,
-        "high": 1000.02
-      },
-      "stable-diffusion-3.5-large-turbo": {
-        "low": 1014.52,
-        "high": 1029.52
-      },
       "recraft-20b": {
         "low": 976.46,
         "high": 990.46
       },
-      "ideogram-3": {
-        "low": 1073.25,
-        "high": 1107.25
+      "stable-diffusion-3.5-large-turbo": {
+        "low": 1015.52,
+        "high": 1029.52
       },
-      "lumina-image-2": {
-        "low": 952.32,
-        "high": 978.32
+      "phoenix-0.9-ultra": {
+        "low": 984.02,
+        "high": 1000.02
+      },
+      "ideogram-3": {
+        "low": 1072.0,
+        "high": 1106.0
       },
       "ideogram-2a-turbo": {
-        "low": 964.13,
-        "high": 992.13
+        "low": 964.1,
+        "high": 992.1
+      },
+      "lumina-image-2": {
+        "low": 952.31,
+        "high": 977.31
       },
       "hidream-i1-dev": {
-        "low": 1067.82,
-        "high": 1104.82
+        "low": 1066.53,
+        "high": 1105.53
       }
     },
     "categories": {
       "amazon-titan-g1-2": null,
-      "grok-2": null,
       "gpt-4o": null,
       "recraft-3": null,
-      "midjourney-6": null,
       "reve": null,
+      "midjourney-6": null,
       "stable-diffusion-xl-1": null,
-      "stable-diffusion-3.5-medium": null,
       "infinity-8b": null,
-      "imagen-3-generate-002": null,
+      "stable-diffusion-3.5-medium": null,
       "stable-diffusion-3-medium": null,
+      "imagen-3-generate-002": null,
       "midjourney-v7-alpha": null,
-      "dalle-3": null,
-      "flux-1-schnell": null,
       "luma-photon": null,
-      "adobe-firefly-3": null,
+      "grok-2": null,
+      "dalle-3": null,
       "flux-1-dev": null,
-      "stable-diffusion-2.1": null,
       "phoenix-1-ultra": null,
-      "gemini-2-flash-experimental": null,
-      "ideogram-2a": null,
-      "sana-sprint-1.6b": null,
+      "flux-1-schnell": null,
+      "adobe-firefly-3": null,
+      "stable-diffusion-2.1": null,
       "ideogram-2": null,
+      "ideogram-2a": null,
+      "gemini-2-flash-experimental": null,
+      "sana-sprint-1.6b": null,
       "dalle-2": null,
-      "ideogram-2-turbo": null,
-      "playground-3": null,
       "flux-1-pro": null,
+      "ideogram-2-turbo": null,
       "stable-diffusion-3.5-large": null,
+      "playground-3": null,
       "amazon-titan-g1": null,
-      "stable-diffusion-3-large-turbo": null,
-      "stable-diffusion-1.5": null,
       "stable-diffusion-3-large": null,
       "playground-2.5": null,
-      "image-01": null,
+      "stable-diffusion-3-large-turbo": null,
+      "stable-diffusion-1.5": null,
       "flux-1.1-pro": null,
+      "image-01": null,
       "midjourney-6.1": null,
       "luma-photon-flash": null,
-      "janus-pro": null,
       "stable-diffusion-1.6": null,
-      "dalle-3-hd": null,
+      "janus-pro": null,
       "ideogram-1": null,
       "phoenix-1-fast": null,
+      "dalle-3-hd": null,
       "sdxl-lightning": null,
-      "phoenix-0.9-ultra": null,
-      "stable-diffusion-3.5-large-turbo": null,
       "recraft-20b": null,
+      "stable-diffusion-3.5-large-turbo": null,
+      "phoenix-0.9-ultra": null,
       "ideogram-3": null,
-      "lumina-image-2": null,
       "ideogram-2a-turbo": null,
+      "lumina-image-2": null,
       "hidream-i1-dev": null
     }
   },
   "Text & Typography": {
     "elo_rating_final": {
       "amazon-titan-g1-2": 860.68,
-      "grok-2": 893.42,
-      "gpt-4o": 1148.27,
+      "gpt-4o": 1148.34,
       "recraft-3": 1091.71,
+      "reve": 1070.56,
       "midjourney-6": 956.37,
-      "reve": 1070.48,
       "stable-diffusion-xl-1": 737.07,
-      "stable-diffusion-3.5-medium": 890.74,
-      "infinity-8b": 967.12,
-      "imagen-3-generate-002": 1063.6,
+      "infinity-8b": 967.18,
+      "stable-diffusion-3.5-medium": 890.8,
       "stable-diffusion-3-medium": 901.4,
-      "midjourney-v7-alpha": 934.35,
+      "imagen-3-generate-002": 1063.63,
+      "midjourney-v7-alpha": 934.48,
+      "luma-photon": 1033.68,
+      "grok-2": 894.79,
       "dalle-3": 884.28,
-      "flux-1-schnell": 1000,
-      "luma-photon": 1033.65,
-      "adobe-firefly-3": 902.32,
       "flux-1-dev": 984.6,
+      "phoenix-1-ultra": 961.54,
+      "flux-1-schnell": 1000,
+      "adobe-firefly-3": 902.33,
       "stable-diffusion-2.1": 595.67,
-      "phoenix-1-ultra": 961.48,
-      "gemini-2-flash-experimental": 983.7,
-      "ideogram-2a": 986.27,
-      "sana-sprint-1.6b": 786.29,
       "ideogram-2": 1037.25,
-      "dalle-2": 707.6,
-      "ideogram-2-turbo": 1016.96,
-      "playground-3": 976.13,
+      "ideogram-2a": 986.32,
+      "gemini-2-flash-experimental": 983.76,
+      "sana-sprint-1.6b": 786.45,
+      "dalle-2": 707.59,
       "flux-1-pro": 1027.66,
+      "ideogram-2-turbo": 1016.86,
       "stable-diffusion-3.5-large": 983.82,
+      "playground-3": 976.13,
       "amazon-titan-g1": 833.78,
-      "stable-diffusion-3-large-turbo": 852.23,
-      "stable-diffusion-1.5": 599.94,
       "stable-diffusion-3-large": 974.88,
       "playground-2.5": 792.24,
-      "image-01": 996.57,
+      "stable-diffusion-3-large-turbo": 852.23,
+      "stable-diffusion-1.5": 599.94,
       "flux-1.1-pro": 1026.97,
+      "image-01": 996.63,
       "midjourney-6.1": 998.53,
-      "luma-photon-flash": 944.9,
-      "janus-pro": 663.56,
+      "luma-photon-flash": 944.92,
       "stable-diffusion-1.6": 798.22,
-      "dalle-3-hd": 966.37,
+      "janus-pro": 663.58,
       "ideogram-1": 1008.58,
-      "phoenix-1-fast": 969.68,
+      "phoenix-1-fast": 969.74,
+      "dalle-3-hd": 966.37,
       "sdxl-lightning": 669.9,
-      "phoenix-0.9-ultra": 992.55,
-      "stable-diffusion-3.5-large-turbo": 976.15,
       "recraft-20b": 966.52,
-      "ideogram-3": 1084.76,
-      "lumina-image-2": 820.18,
-      "ideogram-2a-turbo": 981.14,
-      "hidream-i1-dev": 1149.27
+      "stable-diffusion-3.5-large-turbo": 976.15,
+      "phoenix-0.9-ultra": 992.55,
+      "ideogram-3": 1084.86,
+      "ideogram-2a-turbo": 981.2,
+      "lumina-image-2": 820.22,
+      "hidream-i1-dev": 1149.71
     },
     "confidence_intervals": {
       "amazon-titan-g1-2": {
-        "low": 848.68,
+        "low": 847.68,
         "high": 873.68
       },
-      "grok-2": {
-        "low": 853.42,
-        "high": 931.42
-      },
       "gpt-4o": {
-        "low": 1122.27,
-        "high": 1173.27
+        "low": 1121.34,
+        "high": 1174.34
       },
       "recraft-3": {
         "low": 1076.71,
         "high": 1105.71
       },
+      "reve": {
+        "low": 1044.56,
+        "high": 1095.56
+      },
       "midjourney-6": {
-        "low": 943.37,
+        "low": 944.37,
         "high": 969.37
       },
-      "reve": {
-        "low": 1045.48,
-        "high": 1095.48
-      },
       "stable-diffusion-xl-1": {
-        "low": 724.07,
+        "low": 723.07,
         "high": 750.07
       },
-      "stable-diffusion-3.5-medium": {
-        "low": 867.74,
-        "high": 913.74
-      },
       "infinity-8b": {
-        "low": 943.12,
-        "high": 990.12
+        "low": 944.18,
+        "high": 992.18
       },
-      "imagen-3-generate-002": {
-        "low": 1041.6,
-        "high": 1084.6
+      "stable-diffusion-3.5-medium": {
+        "low": 866.8,
+        "high": 912.8
       },
       "stable-diffusion-3-medium": {
         "low": 888.4,
         "high": 914.4
       },
+      "imagen-3-generate-002": {
+        "low": 1042.63,
+        "high": 1083.63
+      },
       "midjourney-v7-alpha": {
-        "low": 904.35,
-        "high": 965.35
-      },
-      "dalle-3": {
-        "low": 872.28,
-        "high": 896.28
-      },
-      "flux-1-schnell": {
-        "low": 1000.0,
-        "high": 1000.0
+        "low": 905.48,
+        "high": 963.48
       },
       "luma-photon": {
-        "low": 1012.65,
-        "high": 1055.65
+        "low": 1013.68,
+        "high": 1053.68
       },
-      "adobe-firefly-3": {
-        "low": 886.32,
-        "high": 917.32
+      "grok-2": {
+        "low": 856.79,
+        "high": 933.79
+      },
+      "dalle-3": {
+        "low": 871.28,
+        "high": 897.28
       },
       "flux-1-dev": {
         "low": 970.6,
         "high": 999.6
       },
+      "phoenix-1-ultra": {
+        "low": 938.54,
+        "high": 985.54
+      },
+      "flux-1-schnell": {
+        "low": 1000.0,
+        "high": 1000.0
+      },
+      "adobe-firefly-3": {
+        "low": 885.33,
+        "high": 917.33
+      },
       "stable-diffusion-2.1": {
-        "low": 580.67,
+        "low": 579.67,
         "high": 609.67
       },
-      "phoenix-1-ultra": {
-        "low": 937.48,
-        "high": 985.48
-      },
-      "gemini-2-flash-experimental": {
-        "low": 961.7,
-        "high": 1006.7
-      },
-      "ideogram-2a": {
-        "low": 961.27,
-        "high": 1009.27
-      },
-      "sana-sprint-1.6b": {
-        "low": 753.29,
-        "high": 818.29
-      },
       "ideogram-2": {
-        "low": 1024.25,
+        "low": 1023.25,
         "high": 1050.25
       },
+      "ideogram-2a": {
+        "low": 961.32,
+        "high": 1009.32
+      },
+      "gemini-2-flash-experimental": {
+        "low": 960.76,
+        "high": 1005.76
+      },
+      "sana-sprint-1.6b": {
+        "low": 755.45,
+        "high": 817.45
+      },
       "dalle-2": {
-        "low": 694.6,
-        "high": 720.6
-      },
-      "ideogram-2-turbo": {
-        "low": 1002.96,
-        "high": 1029.96
-      },
-      "playground-3": {
-        "low": 963.13,
-        "high": 990.13
+        "low": 694.59,
+        "high": 720.59
       },
       "flux-1-pro": {
-        "low": 1013.66,
+        "low": 1014.66,
         "high": 1040.66
+      },
+      "ideogram-2-turbo": {
+        "low": 1002.86,
+        "high": 1029.86
       },
       "stable-diffusion-3.5-large": {
         "low": 969.82,
         "high": 997.82
       },
+      "playground-3": {
+        "low": 963.13,
+        "high": 990.13
+      },
       "amazon-titan-g1": {
         "low": 820.78,
         "high": 845.78
       },
+      "stable-diffusion-3-large": {
+        "low": 962.88,
+        "high": 986.88
+      },
+      "playground-2.5": {
+        "low": 777.24,
+        "high": 806.24
+      },
       "stable-diffusion-3-large-turbo": {
         "low": 839.23,
-        "high": 865.23
+        "high": 864.23
       },
       "stable-diffusion-1.5": {
         "low": 581.94,
         "high": 616.94
       },
-      "stable-diffusion-3-large": {
-        "low": 961.88,
-        "high": 986.88
-      },
-      "playground-2.5": {
-        "low": 778.24,
-        "high": 805.24
-      },
-      "image-01": {
-        "low": 972.57,
-        "high": 1019.57
-      },
       "flux-1.1-pro": {
         "low": 1013.97,
-        "high": 1041.97
+        "high": 1040.97
+      },
+      "image-01": {
+        "low": 973.63,
+        "high": 1020.63
       },
       "midjourney-6.1": {
         "low": 985.53,
         "high": 1011.53
       },
       "luma-photon-flash": {
-        "low": 925.9,
-        "high": 962.9
-      },
-      "janus-pro": {
-        "low": 640.56,
-        "high": 686.56
+        "low": 925.92,
+        "high": 962.92
       },
       "stable-diffusion-1.6": {
         "low": 785.22,
         "high": 812.22
       },
-      "dalle-3-hd": {
-        "low": 954.37,
-        "high": 978.37
+      "janus-pro": {
+        "low": 640.58,
+        "high": 684.58
       },
       "ideogram-1": {
         "low": 995.58,
         "high": 1023.58
       },
       "phoenix-1-fast": {
-        "low": 945.68,
-        "high": 992.68
+        "low": 945.74,
+        "high": 991.74
+      },
+      "dalle-3-hd": {
+        "low": 954.37,
+        "high": 978.37
       },
       "sdxl-lightning": {
         "low": 655.9,
         "high": 682.9
       },
-      "phoenix-0.9-ultra": {
-        "low": 976.55,
-        "high": 1008.55
+      "recraft-20b": {
+        "low": 952.52,
+        "high": 979.52
       },
       "stable-diffusion-3.5-large-turbo": {
         "low": 963.15,
         "high": 990.15
       },
-      "recraft-20b": {
-        "low": 952.52,
-        "high": 979.52
+      "phoenix-0.9-ultra": {
+        "low": 976.55,
+        "high": 1008.55
       },
       "ideogram-3": {
-        "low": 1056.76,
-        "high": 1111.76
-      },
-      "lumina-image-2": {
-        "low": 796.18,
-        "high": 842.18
+        "low": 1057.86,
+        "high": 1112.86
       },
       "ideogram-2a-turbo": {
-        "low": 958.14,
-        "high": 1005.14
+        "low": 957.2,
+        "high": 1006.2
+      },
+      "lumina-image-2": {
+        "low": 796.22,
+        "high": 842.22
       },
       "hidream-i1-dev": {
-        "low": 1116.27,
-        "high": 1184.27
+        "low": 1120.71,
+        "high": 1183.71
       }
     },
     "categories": {
       "amazon-titan-g1-2": null,
-      "grok-2": null,
       "gpt-4o": null,
       "recraft-3": null,
-      "midjourney-6": null,
       "reve": null,
+      "midjourney-6": null,
       "stable-diffusion-xl-1": null,
-      "stable-diffusion-3.5-medium": null,
       "infinity-8b": null,
-      "imagen-3-generate-002": null,
+      "stable-diffusion-3.5-medium": null,
       "stable-diffusion-3-medium": null,
+      "imagen-3-generate-002": null,
       "midjourney-v7-alpha": null,
-      "dalle-3": null,
-      "flux-1-schnell": null,
       "luma-photon": null,
-      "adobe-firefly-3": null,
+      "grok-2": null,
+      "dalle-3": null,
       "flux-1-dev": null,
-      "stable-diffusion-2.1": null,
       "phoenix-1-ultra": null,
-      "gemini-2-flash-experimental": null,
-      "ideogram-2a": null,
-      "sana-sprint-1.6b": null,
+      "flux-1-schnell": null,
+      "adobe-firefly-3": null,
+      "stable-diffusion-2.1": null,
       "ideogram-2": null,
+      "ideogram-2a": null,
+      "gemini-2-flash-experimental": null,
+      "sana-sprint-1.6b": null,
       "dalle-2": null,
-      "ideogram-2-turbo": null,
-      "playground-3": null,
       "flux-1-pro": null,
+      "ideogram-2-turbo": null,
       "stable-diffusion-3.5-large": null,
+      "playground-3": null,
       "amazon-titan-g1": null,
-      "stable-diffusion-3-large-turbo": null,
-      "stable-diffusion-1.5": null,
       "stable-diffusion-3-large": null,
       "playground-2.5": null,
-      "image-01": null,
+      "stable-diffusion-3-large-turbo": null,
+      "stable-diffusion-1.5": null,
       "flux-1.1-pro": null,
+      "image-01": null,
       "midjourney-6.1": null,
       "luma-photon-flash": null,
-      "janus-pro": null,
       "stable-diffusion-1.6": null,
-      "dalle-3-hd": null,
+      "janus-pro": null,
       "ideogram-1": null,
       "phoenix-1-fast": null,
+      "dalle-3-hd": null,
       "sdxl-lightning": null,
-      "phoenix-0.9-ultra": null,
-      "stable-diffusion-3.5-large-turbo": null,
       "recraft-20b": null,
+      "stable-diffusion-3.5-large-turbo": null,
+      "phoenix-0.9-ultra": null,
       "ideogram-3": null,
-      "lumina-image-2": null,
       "ideogram-2a-turbo": null,
+      "lumina-image-2": null,
       "hidream-i1-dev": null
     }
   },
   "UI/UX Design": {
     "elo_rating_final": {
       "amazon-titan-g1-2": 849.05,
-      "grok-2": 846.71,
-      "gpt-4o": 1201.18,
+      "gpt-4o": 1201.25,
       "recraft-3": 1051.96,
+      "reve": 1090.38,
       "midjourney-6": 919.05,
-      "reve": 1090.32,
       "stable-diffusion-xl-1": 732.24,
-      "stable-diffusion-3.5-medium": 855.08,
-      "infinity-8b": 843,
-      "imagen-3-generate-002": 988.99,
+      "infinity-8b": 843.04,
+      "stable-diffusion-3.5-medium": 855.12,
       "stable-diffusion-3-medium": 898.95,
-      "midjourney-v7-alpha": 851.42,
+      "imagen-3-generate-002": 989.19,
+      "midjourney-v7-alpha": 852.21,
+      "luma-photon": 988.02,
+      "grok-2": 846.85,
       "dalle-3": 877.01,
-      "flux-1-schnell": 1000,
-      "luma-photon": 988.23,
-      "adobe-firefly-3": 767.68,
       "flux-1-dev": 1027.85,
+      "phoenix-1-ultra": 975.77,
+      "flux-1-schnell": 1000,
+      "adobe-firefly-3": 767.67,
       "stable-diffusion-2.1": 624.05,
-      "phoenix-1-ultra": 975.72,
-      "gemini-2-flash-experimental": 879.65,
-      "ideogram-2a": 867.74,
-      "sana-sprint-1.6b": 753.68,
       "ideogram-2": 1007.01,
+      "ideogram-2a": 867.8,
+      "gemini-2-flash-experimental": 879.69,
+      "sana-sprint-1.6b": 754.38,
       "dalle-2": 635.68,
-      "ideogram-2-turbo": 1058.28,
-      "playground-3": 947.66,
       "flux-1-pro": 1018.29,
+      "ideogram-2-turbo": 1058.28,
       "stable-diffusion-3.5-large": 966.27,
+      "playground-3": 947.67,
       "amazon-titan-g1": 802.17,
-      "stable-diffusion-3-large-turbo": 901.86,
-      "stable-diffusion-1.5": 487.3,
       "stable-diffusion-3-large": 943.44,
       "playground-2.5": 844.41,
-      "image-01": 870.99,
+      "stable-diffusion-3-large-turbo": 901.86,
+      "stable-diffusion-1.5": 487.3,
       "flux-1.1-pro": 1030.54,
+      "image-01": 871.04,
       "midjourney-6.1": 877.82,
-      "luma-photon-flash": 835.7,
-      "janus-pro": 560.75,
-      "stable-diffusion-1.6": 836.05,
-      "dalle-3-hd": 896.82,
+      "luma-photon-flash": 835.34,
+      "stable-diffusion-1.6": 836.04,
+      "janus-pro": 560.76,
       "ideogram-1": 810.07,
-      "phoenix-1-fast": 956.48,
+      "phoenix-1-fast": 956.52,
+      "dalle-3-hd": 896.82,
       "sdxl-lightning": 782.53,
-      "phoenix-0.9-ultra": 966.06,
-      "stable-diffusion-3.5-large-turbo": 985.77,
       "recraft-20b": 966.72,
-      "ideogram-3": 1096.63,
-      "lumina-image-2": 724.7,
-      "ideogram-2a-turbo": 883.19,
-      "hidream-i1-dev": 1115.89
+      "stable-diffusion-3.5-large-turbo": 985.77,
+      "phoenix-0.9-ultra": 966.06,
+      "ideogram-3": 1096.73,
+      "ideogram-2a-turbo": 883.24,
+      "lumina-image-2": 724.73,
+      "hidream-i1-dev": 1116.13
     },
     "confidence_intervals": {
       "amazon-titan-g1-2": {
         "low": 839.05,
         "high": 860.05
       },
-      "grok-2": {
-        "low": 803.71,
-        "high": 889.71
-      },
       "gpt-4o": {
-        "low": 1171.18,
-        "high": 1235.18
+        "low": 1170.25,
+        "high": 1235.25
       },
       "recraft-3": {
         "low": 1039.96,
         "high": 1063.96
       },
+      "reve": {
+        "low": 1065.38,
+        "high": 1115.38
+      },
       "midjourney-6": {
         "low": 908.05,
         "high": 930.05
       },
-      "reve": {
-        "low": 1067.32,
-        "high": 1116.32
-      },
       "stable-diffusion-xl-1": {
-        "low": 720.24,
+        "low": 721.24,
         "high": 744.24
       },
-      "stable-diffusion-3.5-medium": {
-        "low": 832.08,
-        "high": 878.08
-      },
       "infinity-8b": {
-        "low": 821.0,
-        "high": 866.0
+        "low": 820.04,
+        "high": 865.04
       },
-      "imagen-3-generate-002": {
-        "low": 971.99,
-        "high": 1006.99
+      "stable-diffusion-3.5-medium": {
+        "low": 834.12,
+        "high": 877.12
       },
       "stable-diffusion-3-medium": {
         "low": 887.95,
         "high": 910.95
       },
+      "imagen-3-generate-002": {
+        "low": 972.19,
+        "high": 1006.19
+      },
       "midjourney-v7-alpha": {
-        "low": 819.42,
-        "high": 881.42
+        "low": 821.21,
+        "high": 881.21
+      },
+      "luma-photon": {
+        "low": 968.02,
+        "high": 1008.02
+      },
+      "grok-2": {
+        "low": 803.85,
+        "high": 891.85
       },
       "dalle-3": {
         "low": 866.01,
         "high": 888.01
       },
-      "flux-1-schnell": {
-        "low": 1000.0,
-        "high": 1000.0
-      },
-      "luma-photon": {
-        "low": 968.23,
-        "high": 1007.23
-      },
-      "adobe-firefly-3": {
-        "low": 753.68,
-        "high": 781.68
-      },
       "flux-1-dev": {
         "low": 1015.85,
         "high": 1039.85
       },
-      "stable-diffusion-2.1": {
-        "low": 613.05,
-        "high": 635.05
-      },
       "phoenix-1-ultra": {
-        "low": 952.72,
-        "high": 998.72
+        "low": 951.77,
+        "high": 998.77
       },
-      "gemini-2-flash-experimental": {
-        "low": 858.65,
-        "high": 901.65
+      "flux-1-schnell": {
+        "low": 1000.0,
+        "high": 1000.0
       },
-      "ideogram-2a": {
-        "low": 842.74,
-        "high": 891.74
+      "adobe-firefly-3": {
+        "low": 753.67,
+        "high": 781.67
       },
-      "sana-sprint-1.6b": {
-        "low": 717.68,
-        "high": 785.68
+      "stable-diffusion-2.1": {
+        "low": 612.05,
+        "high": 635.05
       },
       "ideogram-2": {
         "low": 995.01,
         "high": 1019.01
       },
+      "ideogram-2a": {
+        "low": 844.8,
+        "high": 890.8
+      },
+      "gemini-2-flash-experimental": {
+        "low": 857.69,
+        "high": 900.69
+      },
+      "sana-sprint-1.6b": {
+        "low": 719.38,
+        "high": 786.38
+      },
       "dalle-2": {
         "low": 623.68,
         "high": 646.68
-      },
-      "ideogram-2-turbo": {
-        "low": 1046.28,
-        "high": 1070.28
-      },
-      "playground-3": {
-        "low": 936.66,
-        "high": 958.66
       },
       "flux-1-pro": {
         "low": 1006.29,
         "high": 1029.29
       },
+      "ideogram-2-turbo": {
+        "low": 1046.28,
+        "high": 1070.28
+      },
       "stable-diffusion-3.5-large": {
         "low": 954.27,
         "high": 978.27
       },
+      "playground-3": {
+        "low": 936.67,
+        "high": 958.67
+      },
       "amazon-titan-g1": {
         "low": 791.17,
         "high": 813.17
-      },
-      "stable-diffusion-3-large-turbo": {
-        "low": 890.86,
-        "high": 912.86
-      },
-      "stable-diffusion-1.5": {
-        "low": 472.3,
-        "high": 502.3
       },
       "stable-diffusion-3-large": {
         "low": 933.44,
@@ -2957,297 +2949,313 @@
         "low": 833.41,
         "high": 855.41
       },
-      "image-01": {
-        "low": 847.99,
-        "high": 892.99
+      "stable-diffusion-3-large-turbo": {
+        "low": 890.86,
+        "high": 912.86
+      },
+      "stable-diffusion-1.5": {
+        "low": 472.3,
+        "high": 502.3
       },
       "flux-1.1-pro": {
         "low": 1018.54,
         "high": 1043.54
+      },
+      "image-01": {
+        "low": 848.04,
+        "high": 893.04
       },
       "midjourney-6.1": {
         "low": 865.82,
         "high": 889.82
       },
       "luma-photon-flash": {
-        "low": 818.7,
-        "high": 852.7
-      },
-      "janus-pro": {
-        "low": 536.75,
-        "high": 582.75
+        "low": 818.34,
+        "high": 852.34
       },
       "stable-diffusion-1.6": {
-        "low": 825.05,
-        "high": 847.05
+        "low": 825.04,
+        "high": 847.04
       },
-      "dalle-3-hd": {
-        "low": 885.82,
-        "high": 907.82
+      "janus-pro": {
+        "low": 536.76,
+        "high": 582.76
       },
       "ideogram-1": {
         "low": 798.07,
         "high": 822.07
       },
       "phoenix-1-fast": {
-        "low": 935.48,
-        "high": 977.48
+        "low": 935.52,
+        "high": 977.52
+      },
+      "dalle-3-hd": {
+        "low": 885.82,
+        "high": 907.82
       },
       "sdxl-lightning": {
         "low": 771.53,
         "high": 793.53
       },
-      "phoenix-0.9-ultra": {
-        "low": 953.06,
-        "high": 981.06
+      "recraft-20b": {
+        "low": 955.72,
+        "high": 977.72
       },
       "stable-diffusion-3.5-large-turbo": {
         "low": 973.77,
         "high": 996.77
       },
-      "recraft-20b": {
-        "low": 955.72,
-        "high": 977.72
+      "phoenix-0.9-ultra": {
+        "low": 953.06,
+        "high": 980.06
       },
       "ideogram-3": {
-        "low": 1063.63,
-        "high": 1127.63
-      },
-      "lumina-image-2": {
-        "low": 705.7,
-        "high": 744.7
+        "low": 1065.73,
+        "high": 1128.73
       },
       "ideogram-2a-turbo": {
-        "low": 861.19,
-        "high": 906.19
+        "low": 860.24,
+        "high": 906.24
+      },
+      "lumina-image-2": {
+        "low": 703.73,
+        "high": 744.73
       },
       "hidream-i1-dev": {
-        "low": 1083.89,
-        "high": 1151.89
+        "low": 1082.13,
+        "high": 1154.13
       }
     },
     "categories": {
       "amazon-titan-g1-2": null,
-      "grok-2": null,
       "gpt-4o": null,
       "recraft-3": null,
-      "midjourney-6": null,
       "reve": null,
+      "midjourney-6": null,
       "stable-diffusion-xl-1": null,
-      "stable-diffusion-3.5-medium": null,
       "infinity-8b": null,
-      "imagen-3-generate-002": null,
+      "stable-diffusion-3.5-medium": null,
       "stable-diffusion-3-medium": null,
+      "imagen-3-generate-002": null,
       "midjourney-v7-alpha": null,
-      "dalle-3": null,
-      "flux-1-schnell": null,
       "luma-photon": null,
-      "adobe-firefly-3": null,
+      "grok-2": null,
+      "dalle-3": null,
       "flux-1-dev": null,
-      "stable-diffusion-2.1": null,
       "phoenix-1-ultra": null,
-      "gemini-2-flash-experimental": null,
-      "ideogram-2a": null,
-      "sana-sprint-1.6b": null,
+      "flux-1-schnell": null,
+      "adobe-firefly-3": null,
+      "stable-diffusion-2.1": null,
       "ideogram-2": null,
+      "ideogram-2a": null,
+      "gemini-2-flash-experimental": null,
+      "sana-sprint-1.6b": null,
       "dalle-2": null,
-      "ideogram-2-turbo": null,
-      "playground-3": null,
       "flux-1-pro": null,
+      "ideogram-2-turbo": null,
       "stable-diffusion-3.5-large": null,
+      "playground-3": null,
       "amazon-titan-g1": null,
-      "stable-diffusion-3-large-turbo": null,
-      "stable-diffusion-1.5": null,
       "stable-diffusion-3-large": null,
       "playground-2.5": null,
-      "image-01": null,
+      "stable-diffusion-3-large-turbo": null,
+      "stable-diffusion-1.5": null,
       "flux-1.1-pro": null,
+      "image-01": null,
       "midjourney-6.1": null,
       "luma-photon-flash": null,
-      "janus-pro": null,
       "stable-diffusion-1.6": null,
-      "dalle-3-hd": null,
+      "janus-pro": null,
       "ideogram-1": null,
       "phoenix-1-fast": null,
+      "dalle-3-hd": null,
       "sdxl-lightning": null,
-      "phoenix-0.9-ultra": null,
-      "stable-diffusion-3.5-large-turbo": null,
       "recraft-20b": null,
+      "stable-diffusion-3.5-large-turbo": null,
+      "phoenix-0.9-ultra": null,
       "ideogram-3": null,
-      "lumina-image-2": null,
       "ideogram-2a-turbo": null,
+      "lumina-image-2": null,
       "hidream-i1-dev": null
     }
   },
   "Vintage & Retro": {
     "elo_rating_final": {
       "amazon-titan-g1-2": 872.17,
-      "grok-2": 884.34,
-      "gpt-4o": 1201.93,
+      "gpt-4o": 1201.9,
       "recraft-3": 1132.98,
+      "reve": 1077.98,
       "midjourney-6": 1064.08,
-      "reve": 1077.99,
       "stable-diffusion-xl-1": 810.92,
+      "infinity-8b": 949.52,
       "stable-diffusion-3.5-medium": 902.18,
-      "infinity-8b": 949.53,
-      "imagen-3-generate-002": 1083.03,
       "stable-diffusion-3-medium": 918.5,
-      "midjourney-v7-alpha": 972.79,
+      "imagen-3-generate-002": 1083.02,
+      "midjourney-v7-alpha": 972.74,
+      "luma-photon": 1026.05,
+      "grok-2": 883.42,
       "dalle-3": 979.8,
-      "flux-1-schnell": 1000,
-      "luma-photon": 1026.06,
-      "adobe-firefly-3": 907.75,
       "flux-1-dev": 1033.05,
-      "stable-diffusion-2.1": 659.9,
       "phoenix-1-ultra": 1068.46,
-      "gemini-2-flash-experimental": 1017.96,
-      "ideogram-2a": 1044.65,
-      "sana-sprint-1.6b": 761.75,
+      "flux-1-schnell": 1000,
+      "adobe-firefly-3": 907.75,
+      "stable-diffusion-2.1": 659.9,
       "ideogram-2": 1027.74,
+      "ideogram-2a": 1044.93,
+      "gemini-2-flash-experimental": 1017.94,
+      "sana-sprint-1.6b": 761.72,
       "dalle-2": 654.13,
-      "ideogram-2-turbo": 1059.06,
-      "playground-3": 974.55,
       "flux-1-pro": 1022.72,
-      "stable-diffusion-3.5-large": 1024.95,
+      "ideogram-2-turbo": 1059.06,
+      "stable-diffusion-3.5-large": 1024.96,
+      "playground-3": 974.55,
       "amazon-titan-g1": 853.31,
-      "stable-diffusion-3-large-turbo": 906.79,
-      "stable-diffusion-1.5": 621.78,
       "stable-diffusion-3-large": 1039.41,
       "playground-2.5": 884.07,
-      "image-01": 1102.61,
+      "stable-diffusion-3-large-turbo": 906.79,
+      "stable-diffusion-1.5": 621.78,
       "flux-1.1-pro": 1069.12,
+      "image-01": 1101.89,
       "midjourney-6.1": 1017.46,
-      "luma-photon-flash": 897,
-      "janus-pro": 671.53,
+      "luma-photon-flash": 896.99,
       "stable-diffusion-1.6": 852.81,
-      "dalle-3-hd": 950.01,
+      "janus-pro": 671.53,
       "ideogram-1": 1053.39,
-      "phoenix-1-fast": 994.18,
+      "phoenix-1-fast": 994.82,
+      "dalle-3-hd": 950.01,
       "sdxl-lightning": 809.65,
+      "recraft-20b": 930.67,
+      "stable-diffusion-3.5-large-turbo": 1032.32,
       "phoenix-0.9-ultra": 1025.48,
-      "stable-diffusion-3.5-large-turbo": 1032.31,
-      "recraft-20b": 930.66,
-      "ideogram-3": 1166.97,
-      "lumina-image-2": 899.58,
-      "ideogram-2a-turbo": 1043.71,
-      "hidream-i1-dev": 1134.07
+      "ideogram-3": 1166.93,
+      "ideogram-2a-turbo": 1043.69,
+      "lumina-image-2": 899.56,
+      "hidream-i1-dev": 1134.03
     },
     "confidence_intervals": {
       "amazon-titan-g1-2": {
-        "low": 851.17,
+        "low": 852.17,
         "high": 892.17
       },
-      "grok-2": {
-        "low": 835.34,
-        "high": 931.34
-      },
       "gpt-4o": {
-        "low": 1171.93,
-        "high": 1233.93
+        "low": 1170.9,
+        "high": 1231.9
       },
       "recraft-3": {
-        "low": 1112.98,
+        "low": 1111.98,
         "high": 1154.98
       },
-      "midjourney-6": {
-        "low": 1044.08,
-        "high": 1083.08
-      },
       "reve": {
-        "low": 1048.99,
-        "high": 1108.99
+        "low": 1047.98,
+        "high": 1105.98
+      },
+      "midjourney-6": {
+        "low": 1046.08,
+        "high": 1083.08
       },
       "stable-diffusion-xl-1": {
         "low": 790.92,
         "high": 828.92
       },
+      "infinity-8b": {
+        "low": 916.52,
+        "high": 980.52
+      },
       "stable-diffusion-3.5-medium": {
         "low": 870.18,
-        "high": 934.18
-      },
-      "infinity-8b": {
-        "low": 916.53,
-        "high": 980.53
-      },
-      "imagen-3-generate-002": {
-        "low": 1053.03,
-        "high": 1114.03
+        "high": 933.18
       },
       "stable-diffusion-3-medium": {
-        "low": 898.5,
+        "low": 897.5,
         "high": 937.5
       },
+      "imagen-3-generate-002": {
+        "low": 1053.02,
+        "high": 1112.02
+      },
       "midjourney-v7-alpha": {
-        "low": 937.79,
-        "high": 1004.79
+        "low": 939.74,
+        "high": 1006.74
+      },
+      "luma-photon": {
+        "low": 994.05,
+        "high": 1057.05
+      },
+      "grok-2": {
+        "low": 833.42,
+        "high": 928.42
       },
       "dalle-3": {
         "low": 960.8,
-        "high": 998.8
-      },
-      "flux-1-schnell": {
-        "low": 1000.0,
-        "high": 1000.0
-      },
-      "luma-photon": {
-        "low": 995.06,
-        "high": 1056.06
-      },
-      "adobe-firefly-3": {
-        "low": 883.75,
-        "high": 930.75
+        "high": 997.8
       },
       "flux-1-dev": {
         "low": 1014.05,
-        "high": 1054.05
-      },
-      "stable-diffusion-2.1": {
-        "low": 638.9,
-        "high": 679.9
+        "high": 1053.05
       },
       "phoenix-1-ultra": {
         "low": 1035.46,
         "high": 1099.46
       },
-      "gemini-2-flash-experimental": {
-        "low": 984.96,
-        "high": 1048.96
+      "flux-1-schnell": {
+        "low": 1000.0,
+        "high": 1000.0
       },
-      "ideogram-2a": {
-        "low": 1011.65,
-        "high": 1075.65
+      "adobe-firefly-3": {
+        "low": 883.75,
+        "high": 930.75
       },
-      "sana-sprint-1.6b": {
-        "low": 720.75,
-        "high": 799.75
+      "stable-diffusion-2.1": {
+        "low": 639.9,
+        "high": 679.9
       },
       "ideogram-2": {
         "low": 1007.74,
         "high": 1046.74
       },
+      "ideogram-2a": {
+        "low": 1013.93,
+        "high": 1075.93
+      },
+      "gemini-2-flash-experimental": {
+        "low": 985.94,
+        "high": 1048.94
+      },
+      "sana-sprint-1.6b": {
+        "low": 719.72,
+        "high": 801.72
+      },
       "dalle-2": {
         "low": 634.13,
         "high": 673.13
-      },
-      "ideogram-2-turbo": {
-        "low": 1038.06,
-        "high": 1079.06
-      },
-      "playground-3": {
-        "low": 954.55,
-        "high": 993.55
       },
       "flux-1-pro": {
         "low": 1002.72,
         "high": 1042.72
       },
+      "ideogram-2-turbo": {
+        "low": 1039.06,
+        "high": 1080.06
+      },
       "stable-diffusion-3.5-large": {
-        "low": 1004.95,
-        "high": 1043.95
+        "low": 1004.96,
+        "high": 1044.96
+      },
+      "playground-3": {
+        "low": 953.55,
+        "high": 993.55
       },
       "amazon-titan-g1": {
         "low": 832.31,
         "high": 872.31
+      },
+      "stable-diffusion-3-large": {
+        "low": 1021.41,
+        "high": 1059.41
+      },
+      "playground-2.5": {
+        "low": 865.07,
+        "high": 903.07
       },
       "stable-diffusion-3-large-turbo": {
         "low": 887.79,
@@ -3257,133 +3265,125 @@
         "low": 594.78,
         "high": 646.78
       },
-      "stable-diffusion-3-large": {
-        "low": 1020.41,
-        "high": 1058.41
-      },
-      "playground-2.5": {
-        "low": 864.07,
-        "high": 903.07
+      "flux-1.1-pro": {
+        "low": 1047.12,
+        "high": 1090.12
       },
       "image-01": {
-        "low": 1070.61,
-        "high": 1134.61
-      },
-      "flux-1.1-pro": {
-        "low": 1048.12,
-        "high": 1090.12
+        "low": 1068.89,
+        "high": 1134.89
       },
       "midjourney-6.1": {
         "low": 998.46,
         "high": 1037.46
       },
       "luma-photon-flash": {
-        "low": 867.0,
-        "high": 924.0
-      },
-      "janus-pro": {
-        "low": 634.53,
-        "high": 708.53
+        "low": 866.99,
+        "high": 924.99
       },
       "stable-diffusion-1.6": {
         "low": 833.81,
         "high": 872.81
       },
-      "dalle-3-hd": {
-        "low": 930.01,
-        "high": 969.01
+      "janus-pro": {
+        "low": 632.53,
+        "high": 708.53
       },
       "ideogram-1": {
         "low": 1031.39,
-        "high": 1072.39
+        "high": 1073.39
       },
       "phoenix-1-fast": {
-        "low": 961.18,
-        "high": 1024.18
+        "low": 964.82,
+        "high": 1025.82
+      },
+      "dalle-3-hd": {
+        "low": 930.01,
+        "high": 969.01
       },
       "sdxl-lightning": {
         "low": 791.65,
         "high": 828.65
       },
+      "recraft-20b": {
+        "low": 910.67,
+        "high": 949.67
+      },
+      "stable-diffusion-3.5-large-turbo": {
+        "low": 1013.32,
+        "high": 1053.32
+      },
       "phoenix-0.9-ultra": {
         "low": 1002.48,
         "high": 1049.48
       },
-      "stable-diffusion-3.5-large-turbo": {
-        "low": 1013.31,
-        "high": 1054.31
-      },
-      "recraft-20b": {
-        "low": 910.66,
-        "high": 949.66
-      },
       "ideogram-3": {
-        "low": 1132.97,
-        "high": 1201.97
-      },
-      "lumina-image-2": {
-        "low": 868.58,
-        "high": 930.58
+        "low": 1131.93,
+        "high": 1199.93
       },
       "ideogram-2a-turbo": {
-        "low": 1011.71,
-        "high": 1075.71
+        "low": 1012.69,
+        "high": 1077.69
+      },
+      "lumina-image-2": {
+        "low": 868.56,
+        "high": 929.56
       },
       "hidream-i1-dev": {
-        "low": 1098.07,
-        "high": 1168.07
+        "low": 1099.03,
+        "high": 1171.03
       }
     },
     "categories": {
       "amazon-titan-g1-2": null,
-      "grok-2": null,
       "gpt-4o": null,
       "recraft-3": null,
-      "midjourney-6": null,
       "reve": null,
+      "midjourney-6": null,
       "stable-diffusion-xl-1": null,
-      "stable-diffusion-3.5-medium": null,
       "infinity-8b": null,
-      "imagen-3-generate-002": null,
+      "stable-diffusion-3.5-medium": null,
       "stable-diffusion-3-medium": null,
+      "imagen-3-generate-002": null,
       "midjourney-v7-alpha": null,
-      "dalle-3": null,
-      "flux-1-schnell": null,
       "luma-photon": null,
-      "adobe-firefly-3": null,
+      "grok-2": null,
+      "dalle-3": null,
       "flux-1-dev": null,
-      "stable-diffusion-2.1": null,
       "phoenix-1-ultra": null,
-      "gemini-2-flash-experimental": null,
-      "ideogram-2a": null,
-      "sana-sprint-1.6b": null,
+      "flux-1-schnell": null,
+      "adobe-firefly-3": null,
+      "stable-diffusion-2.1": null,
       "ideogram-2": null,
+      "ideogram-2a": null,
+      "gemini-2-flash-experimental": null,
+      "sana-sprint-1.6b": null,
       "dalle-2": null,
-      "ideogram-2-turbo": null,
-      "playground-3": null,
       "flux-1-pro": null,
+      "ideogram-2-turbo": null,
       "stable-diffusion-3.5-large": null,
+      "playground-3": null,
       "amazon-titan-g1": null,
-      "stable-diffusion-3-large-turbo": null,
-      "stable-diffusion-1.5": null,
       "stable-diffusion-3-large": null,
       "playground-2.5": null,
-      "image-01": null,
+      "stable-diffusion-3-large-turbo": null,
+      "stable-diffusion-1.5": null,
       "flux-1.1-pro": null,
+      "image-01": null,
       "midjourney-6.1": null,
       "luma-photon-flash": null,
-      "janus-pro": null,
       "stable-diffusion-1.6": null,
-      "dalle-3-hd": null,
+      "janus-pro": null,
       "ideogram-1": null,
       "phoenix-1-fast": null,
+      "dalle-3-hd": null,
       "sdxl-lightning": null,
-      "phoenix-0.9-ultra": null,
-      "stable-diffusion-3.5-large-turbo": null,
       "recraft-20b": null,
+      "stable-diffusion-3.5-large-turbo": null,
+      "phoenix-0.9-ultra": null,
       "ideogram-3": null,
-      "lumina-image-2": null,
       "ideogram-2a-turbo": null,
+      "lumina-image-2": null,
       "hidream-i1-dev": null
     }
   }

@@ -1,6 +1,7 @@
 import requests
 import json
 import os
+import time
 
 def transform_model_name(name):
     name = name.lower()
@@ -63,14 +64,25 @@ response = requests.get(url)
 data = response.json()
 
 # Initialize the output structure
-output = {
-}
+output = {}
+
+model_dates = {}
+
+dates_file_path = 'src/routes/assets/dates.json'
+if os.path.exists(dates_file_path):
+    with open(dates_file_path, 'r') as f:
+        model_dates = json.load(f)
+
+current_time = int(time.time())
 
 # Extract and transform the data
 for result in data:
     model_name = result.get("name", "")
     if not model_name:
         continue
+
+    if model_name not in model_dates:
+        model_dates[model_name] = current_time
 
     transformed_name = transform_model_name(model_name)
     categories = result.get("categories")
@@ -110,3 +122,6 @@ os.makedirs("src/routes/assets", exist_ok=True)
 # Write to file
 with open("src/routes/assets/image_artificial.json", "w") as f:
     json.dump(output, f, indent=2)
+
+with open(dates_file_path, 'w') as f:
+    json.dump(model_dates, f, indent=2)

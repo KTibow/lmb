@@ -15,6 +15,7 @@
   import { default as imageArenaBoard } from "./assets/image_arena.json";
   import { default as imageArtificialBoard } from "./assets/image_artificial.json";
   import { default as imageFalBoard } from "./assets/image_fal.json";
+  import { default as dates } from "./assets/dates.json";
   import ModelTable from "./ModelTable.svelte";
   import Dropdown from "./Dropdown.svelte";
   import {
@@ -154,6 +155,7 @@
 
 <ModelTable
   {paradigm}
+  {dates}
   board={getCurrentBoard()}
   {category}
   {styleControl}

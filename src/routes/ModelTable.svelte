@@ -4,6 +4,7 @@
   import ScatterChart from "./ScatterChart.svelte";
 
   export let paradigm: string;
+  export let dates: Record<string, number>;
   export let board: Record<string, Record<string, any>>;
   export let category: string;
   export let styleControl: boolean;
@@ -14,6 +15,8 @@
   export let rankStrategy: string;
   export let filterStrategy: FilterStrategy;
   export let selectedPriceRanges: Set<PriceRange>;
+
+  const newCutoff = Math.max(Date.now() / 1000 - 60 * 60 * 24 * 7, 1744493596); // in the future we can remove this
 
   $: categoryName = `${category}${styleControl ? "_style_control" : ""}`;
   $: models = filterModels(
@@ -83,6 +86,9 @@
         {name}
         {#if modelMetadata[name]?.isOpen}
           <span class="badge">open</span>
+        {/if}
+        {#if dates[name] > newCutoff}
+          <span class="badge">new</span>
         {/if}
       {/snippet}
       <tr
