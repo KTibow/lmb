@@ -32428,17 +32428,17 @@
   "image": {
     "is_preset_generation": {
       "elo_rating_final": {
-        "imagen-3.0-generate-002": 1078.1,
+        "imagen-3-generate-002": 1078.1,
         "flux-1.1-pro": 1067.4,
-        "recraft-v3": 1051.91,
-        "ideogram-v2": 1008.95,
-        "photon": 1007.17,
-        "flux-1-dev-fp8": 1006.95,
-        "stable-diffusion-v35-large": 1006.53,
-        "dall-e-3": 978.0
+        "recraft-3": 1051.91,
+        "ideogram-2": 1008.95,
+        "luma-photon": 1007.17,
+        "flux-1-dev": 1006.95,
+        "stable-diffusion-3.5-large": 1006.53,
+        "dalle-3": 978.0
       },
       "confidence_intervals": {
-        "imagen-3.0-generate-002": {
+        "imagen-3-generate-002": {
           "low": 1074.88,
           "high": 1081.14
         },
@@ -32446,27 +32446,27 @@
           "low": 1064.15,
           "high": 1073.08
         },
-        "recraft-v3": {
+        "recraft-3": {
           "low": 1047.34,
           "high": 1057.06
         },
-        "ideogram-v2": {
+        "ideogram-2": {
           "low": 1004.45,
           "high": 1012.58
         },
-        "photon": {
+        "luma-photon": {
           "low": 999.14,
           "high": 1012.62
         },
-        "flux-1-dev-fp8": {
+        "flux-1-dev": {
           "low": 1002.56,
           "high": 1011.65
         },
-        "stable-diffusion-v35-large": {
+        "stable-diffusion-3.5-large": {
           "low": 1000.48,
           "high": 1013.93
         },
-        "dall-e-3": {
+        "dalle-3": {
           "low": 973.01,
           "high": 982.83
         }
@@ -32474,29 +32474,29 @@
     },
     "not_preset_generation": {
       "elo_rating_final": {
-        "imagen-3.0-generate-002": 1092.51,
-        "photon": 1024.18,
-        "ideogram-v2": 1023.41,
-        "recraft-v3": 1013.38,
+        "imagen-3-generate-002": 1092.51,
+        "luma-photon": 1024.18,
+        "ideogram-2": 1023.41,
+        "recraft-3": 1013.38,
         "flux-1.1-pro": 1001.16,
-        "dall-e-3": 978.0,
-        "flux-1-dev-fp8": 959.52,
-        "stable-diffusion-v35-large": 922.41
+        "dalle-3": 978.0,
+        "flux-1-dev": 959.52,
+        "stable-diffusion-3.5-large": 922.41
       },
       "confidence_intervals": {
-        "imagen-3.0-generate-002": {
+        "imagen-3-generate-002": {
           "low": 1090.21,
           "high": 1094.65
         },
-        "photon": {
+        "luma-photon": {
           "low": 1020.37,
           "high": 1027.41
         },
-        "ideogram-v2": {
+        "ideogram-2": {
           "low": 1021.01,
           "high": 1025.81
         },
-        "recraft-v3": {
+        "recraft-3": {
           "low": 1010.73,
           "high": 1015.45
         },
@@ -32504,15 +32504,15 @@
           "low": 999.74,
           "high": 1003.64
         },
-        "dall-e-3": {
+        "dalle-3": {
           "low": 975.48,
           "high": 979.75
         },
-        "flux-1-dev-fp8": {
+        "flux-1-dev": {
           "low": 957.0,
           "high": 962.32
         },
-        "stable-diffusion-v35-large": {
+        "stable-diffusion-3.5-large": {
           "low": 918.9,
           "high": 926.1
         }
@@ -32520,25 +32520,25 @@
     },
     "full": {
       "elo_rating_final": {
-        "imagen-3.0-generate-002": 1087.34,
-        "recraft-v3": 1024.51,
-        "photon": 1020.59,
+        "imagen-3-generate-002": 1087.34,
+        "recraft-3": 1024.51,
+        "luma-photon": 1020.59,
         "flux-1.1-pro": 1019.53,
-        "ideogram-v2": 1019.43,
-        "dall-e-3": 978.0,
-        "flux-1-dev-fp8": 973.29,
-        "stable-diffusion-v35-large": 943.11
+        "ideogram-2": 1019.43,
+        "dalle-3": 978.0,
+        "flux-1-dev": 973.29,
+        "stable-diffusion-3.5-large": 943.11
       },
       "confidence_intervals": {
-        "imagen-3.0-generate-002": {
+        "imagen-3-generate-002": {
           "low": 1085.72,
           "high": 1089.18
         },
-        "recraft-v3": {
+        "recraft-3": {
           "low": 1021.97,
           "high": 1026.13
         },
-        "photon": {
+        "luma-photon": {
           "low": 1016.18,
           "high": 1024.77
         },
@@ -32546,19 +32546,19 @@
           "low": 1017.48,
           "high": 1021.65
         },
-        "ideogram-v2": {
+        "ideogram-2": {
           "low": 1016.64,
           "high": 1021.49
         },
-        "dall-e-3": {
+        "dalle-3": {
           "low": 975.76,
           "high": 980.11
         },
-        "flux-1-dev-fp8": {
+        "flux-1-dev": {
           "low": 971.58,
           "high": 975.67
         },
-        "stable-diffusion-v35-large": {
+        "stable-diffusion-3.5-large": {
           "low": 940.81,
           "high": 946.33
         }

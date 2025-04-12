@@ -12,7 +12,7 @@
   } from "m3-svelte";
   import { text as textBoard } from "./assets/results.json";
   import { vision as visionBoard } from "./assets/results.json";
-  import { default as imageArenaBoard } from "./assets/image_arena.json";
+  import { image as imageArenaBoard } from "./assets/results.json";
   import { default as imageArtificialBoard } from "./assets/image_artificial.json";
   import { default as imageFalBoard } from "./assets/image_fal.json";
   import { default as dates } from "./assets/dates.json";
@@ -61,7 +61,11 @@
       "Exclude refusal": "no_refusal",
     },
     vision: { Overall: "full", English: "english", Chinese: "chinese" },
-    image_arena: { Overall: "full" },
+    image_arena: {
+      Overall: "full",
+      "User prompts": "not_preset_generation",
+      "Fixed prompts": "preset_generation",
+    },
     image_artificial: {
       Overall: "full",
       ...Object.fromEntries(

@@ -64,6 +64,20 @@ def calculate_confidence_intervals(samples):
     high_value = 0.5 * sorted_samples[99 - 2] + 0.5 * sorted_samples[99 - 3]
     return low_value, high_value
 
+def transform_model_name(name):
+    name = name.lower()
+    if "photon" in name:
+        name = f"luma-{name}"
+    name = name.replace("v1", "1")
+    name = name.replace("v2", "2")
+    name = name.replace("v3", "3")
+    name = name.replace("v6", "6")
+    name = name.replace(".0", "")
+    name = name.replace("-fp8", "")
+    name = name.replace("35-large", "3.5-large")
+    name = name.replace("dall-e", "dalle")
+    return name
+
 """Convert pickle file to JSON, handling numpy and pandas objects."""
 data = get_latest_pickle_file()
 
@@ -101,17 +115,19 @@ for category_type, categories in data.items():
         df = category_data['bootstrap_df']
 
         for model, rating in category_data['elo_rating_final'].items():
-            rating = float(rating)
-            processed_data[category_type][category_name]['elo_rating_final'][model] = round(rating, 2)
+            transformed_name = transform_model_name(model) if category_type == "image" else model
 
-            if model not in model_dates:
-                model_dates[model] = current_time
+            rating = float(rating)
+            processed_data[category_type][category_name]['elo_rating_final'][transformed_name] = round(rating, 2)
+
+            if transformed_name not in model_dates:
+                model_dates[transformed_name] = current_time
 
             if model in df.columns:
                 samples = df[model].astype(float).tolist()
                 ci_low, ci_high = calculate_confidence_intervals(samples)
                 if ci_low is not None and ci_high is not None:
-                    processed_data[category_type][category_name]['confidence_intervals'][model] = {
+                    processed_data[category_type][category_name]['confidence_intervals'][transformed_name] = {
                         'low': round(ci_low, 2),
                         'high': round(ci_high, 2)
                     }

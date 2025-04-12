@@ -16,7 +16,7 @@
   export let filterStrategy: FilterStrategy;
   export let selectedPriceRanges: Set<PriceRange>;
 
-  const newCutoff = Math.max(Date.now() / 1000 - 60 * 60 * 24 * 7, 1744493596); // in the future we can remove this
+  const newCutoff = Math.max(Date.now() / 1000 - 60 * 60 * 24 * 7, 1744494480); // in the future we can remove this
 
   $: categoryName = `${category}${styleControl ? "_style_control" : ""}`;
   $: models = filterModels(

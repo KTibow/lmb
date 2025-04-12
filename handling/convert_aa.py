@@ -77,15 +77,15 @@ current_time = int(time.time())
 
 # Extract and transform the data
 for result in data:
-    model_name = result.get("name", "")
-    if not model_name:
+    model = result.get("name", "")
+    if not model:
         continue
 
-    if model_name not in model_dates:
-        model_dates[model_name] = current_time
-
-    transformed_name = transform_model_name(model_name)
+    transformed_name = transform_model_name(model)
     categories = result.get("categories")
+
+    if transformed_name not in model_dates:
+        model_dates[transformed_name] = current_time
 
     # Iterate over all subsets in arena["total"]
     total_sections = result.get("arena", {}).get("total", {})
