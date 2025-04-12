@@ -12,7 +12,6 @@
   export let showOpenOnly = false;
   export let vizBorder = false;
   export let vizBar = false;
-  export let rankStrategy: string;
   export let filterStrategy: FilterStrategy;
   export let selectedPriceRanges: Set<PriceRange>;
 
@@ -24,7 +23,6 @@
     categoryName,
     searches,
     showOpenOnly,
-    rankStrategy,
     filterStrategy,
     selectedPriceRanges,
   );

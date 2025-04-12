@@ -9,7 +9,11 @@
     Icon,
     Dialog,
     Switch,
+    Snackbar,
+    type SnackbarIn,
   } from "m3-svelte";
+  import { browser } from "$app/environment";
+  import { page } from "$app/stores";
   import { text as textBoard } from "./assets/results.json";
   import { vision as visionBoard } from "./assets/results.json";
   import { image as imageArenaBoard } from "./assets/results.json";
@@ -24,7 +28,6 @@
     getFilterDescription,
     getPriceRangeLabel,
   } from "./model-metadata";
-  import { browser } from "$app/environment";
 
   let paradigm = "text",
     category = "full",
@@ -34,9 +37,10 @@
   let showOpenOnly = false;
   let vizBorder = false;
   let vizBar = false;
-  let rankStrategy = "comparable";
   let filterStrategy: FilterStrategy = "hideDeprecated";
   let selectedPriceRanges = new Set<PriceRange>();
+
+  let snackbar: (snackbar: SnackbarIn) => void;
 
   const categories = {
     text: {
@@ -109,11 +113,39 @@
     }
   }
 
-  $: if (browser) {
+  const share = () => {
+    const settings = { paradigm, category, styleControl };
+    const settingsHash = JSON.stringify(settings);
+    const url = `https://ktibow.github.io/lmb/#${settingsHash}`;
+    navigator.clipboard.writeText(url).then(
+      () => {
+        snackbar({
+          message: "Settings link copied",
+          closable: true,
+        });
+      },
+      () => {
+        snackbar({
+          message: "Failed to copy link",
+          closable: true,
+        });
+      },
+    );
+  };
+
+  if (browser) {
     if (localStorage["lmb-vizBorder"]) vizBorder = JSON.parse(localStorage["lmb-vizBorder"]);
     if (localStorage["lmb-vizBar"]) vizBar = JSON.parse(localStorage["lmb-vizBar"]);
     if (localStorage["lmb-styleControl"])
       styleControl = JSON.parse(localStorage["lmb-styleControl"]);
+
+    const settingsHash = $page.url.hash;
+    if (settingsHash) {
+      const settings = JSON.parse(decodeURIComponent(settingsHash.slice(1)));
+      if (settings.paradigm) paradigm = settings.paradigm;
+      if (settings.category) category = settings.category;
+      if (settings.styleControl) styleControl = settings.styleControl;
+    }
   }
   $: if (browser) localStorage["lmb-vizBorder"] = JSON.stringify(vizBorder);
   $: if (browser) localStorage["lmb-vizBar"] = JSON.stringify(vizBar);
@@ -167,7 +199,6 @@
   {showOpenOnly}
   {vizBorder}
   {vizBar}
-  {rankStrategy}
   {filterStrategy}
   {selectedPriceRanges}
 />
@@ -186,28 +217,6 @@
         <SegmentedButtonItem input="vizBorder">With moats</SegmentedButtonItem>
         <input type="checkbox" bind:checked={vizBar} id="vizBar" />
         <SegmentedButtonItem input="vizBar">With charts</SegmentedButtonItem>
-      </SegmentedButtonContainer>
-    </div>
-
-    <div class="filter-section">
-      <span>Ranks are the same when</span>
-      <SegmentedButtonContainer>
-        <input
-          type="radio"
-          name="rankStrategy"
-          bind:group={rankStrategy}
-          value="comparable"
-          id="comparable"
-        />
-        <SegmentedButtonItem input="comparable">~50% chance of losing</SegmentedButtonItem>
-        <input
-          type="radio"
-          name="rankStrategy"
-          bind:group={rankStrategy}
-          value="league"
-          id="league"
-        />
-        <SegmentedButtonItem input="league">~40% chance of losing</SegmentedButtonItem>
       </SegmentedButtonContainer>
     </div>
 
@@ -253,11 +262,15 @@
         {/each}
       </SegmentedButtonContainer>
     </div>
+    <p><em>Remember: You need a 70 point difference for a 60% win rate</em></p>
   </div>
   <svelte:fragment slot="buttons">
-    <Button type="text" on:click={() => (settingsOpen = false)}>Done</Button>
+    <Button type="text" on:click={share}>Share</Button>
+    <Button type="tonal" on:click={() => (settingsOpen = false)}>Done</Button>
   </svelte:fragment>
 </Dialog>
+
+<Snackbar bind:show={snackbar} />
 
 <style>
   .settings-content {

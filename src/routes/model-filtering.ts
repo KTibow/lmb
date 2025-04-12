@@ -59,7 +59,6 @@ export function filterModels(
   categoryName: string,
   searches: string[],
   showOpenOnly: boolean,
-  rankStrategy: string,
   filterStrategy: FilterStrategy,
   selectedPriceRanges: Set<PriceRange>,
 ): ModelData[] {
@@ -86,16 +85,8 @@ export function filterModels(
   for (const model of models) {
     let thisBar;
     let thisScore;
-    if (rankStrategy == "league") {
-      thisBar = model.rating - 70;
-    } else {
-      thisBar = model.ciLow;
-    }
-    if (rankStrategy == "league") {
-      thisScore = model.rating;
-    } else {
-      thisScore = model.ciHigh;
-    }
+    thisBar = model.ciLow;
+    thisScore = model.ciHigh;
 
     const metadata = modelMetadata[model.name];
     const isFilteredOut =
