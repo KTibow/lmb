@@ -191,20 +191,21 @@
       position: absolute;
       top: 0;
       bottom: 0;
-      background-color: rgb(var(--m3-scheme-secondary) / 0.2);
+      background-color: rgb(var(--m3-scheme-primary) / 0.2);
       border-radius: 0.5rem;
+      z-index: 1;
     }
 
     .bar {
       position: absolute;
       top: 0;
       bottom: 0;
-      background-color: rgb(var(--m3-scheme-secondary) / 0.8);
+      background-color: rgb(var(--m3-scheme-primary-container));
       border-radius: 0.5rem;
     }
 
     span {
-      color: rgb(var(--m3-scheme-on-secondary));
+      color: rgb(var(--m3-scheme-on-primary-container));
       padding-left: 0.5rem;
       z-index: 1;
     }
