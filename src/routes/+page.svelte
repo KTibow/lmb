@@ -114,7 +114,15 @@
   }
 
   const share = () => {
-    const settings = { paradigm, category, styleControl, vizBorder, vizBar, searches };
+    const settings = {
+      paradigm,
+      category,
+      styleControl,
+      searches,
+      filterStrategy,
+      vizBorder,
+      vizBar,
+    };
     const settingsHash = JSON.stringify(settings);
     const url = `https://ktibow.github.io/lmb/#${settingsHash}`;
     navigator.clipboard.writeText(url).then(
@@ -145,9 +153,10 @@
       paradigm = settings.paradigm;
       category = settings.category;
       styleControl = Boolean(settings.styleControl);
+      searches = settings.searches || [];
+      filterStrategy = settings.filterStrategy || filterStrategy;
       vizBorder = Boolean(settings.vizBorder);
       vizBar = Boolean(settings.vizBar);
-      searches = settings.searches || [];
     }
   }
   $: if (browser) localStorage["lmb-vizBorder"] = JSON.stringify(vizBorder);
@@ -249,7 +258,7 @@
     </div>
 
     <div class="filter-section">
-      <span>Drop similar models</span>
+      <span>Filter models</span>
       <SegmentedButtonContainer>
         {#each ["showAll", "hideDeprecated", "hideOld", "onePerOrg"] as FilterStrategy[] as strategy}
           <input
