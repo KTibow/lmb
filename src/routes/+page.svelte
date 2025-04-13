@@ -114,7 +114,7 @@
   }
 
   const share = () => {
-    const settings = { paradigm, category, styleControl, vizBorder, vizBar };
+    const settings = { paradigm, category, styleControl, vizBorder, vizBar, searches };
     const settingsHash = JSON.stringify(settings);
     const url = `https://ktibow.github.io/lmb/#${settingsHash}`;
     navigator.clipboard.writeText(url).then(
@@ -144,9 +144,10 @@
       const settings = JSON.parse(decodeURIComponent(settingsHash.slice(1)));
       paradigm = settings.paradigm;
       category = settings.category;
-      styleControl = settings.styleControl;
-      vizBorder = settings.vizBorder;
-      vizBar = settings.vizBar;
+      styleControl = Boolean(settings.styleControl);
+      vizBorder = Boolean(settings.vizBorder);
+      vizBar = Boolean(settings.vizBar);
+      searches = settings.searches || [];
     }
   }
   $: if (browser) localStorage["lmb-vizBorder"] = JSON.stringify(vizBorder);
