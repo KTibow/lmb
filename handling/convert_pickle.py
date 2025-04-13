@@ -8,6 +8,7 @@ import io
 import re
 import os
 import time
+import calendar
 
 def get_latest_pickle_file():
     """Fetch the latest pickle file from HuggingFace repository."""
@@ -29,14 +30,17 @@ def get_latest_pickle_file():
         raise Exception("No pickle files found in repository")
 
     # Get the most recent file
-    latest_file = max(pickle_files, key=lambda x: x[0])[1]
+    pickle_files.sort(key=lambda x: x[0], reverse=True)
+    latest_file = pickle_files[0][1]
 
     # Download the file content
     raw_url = f"https://huggingface.co/spaces/lmarena-ai/chatbot-arena-leaderboard/resolve/main/{latest_file}"
     response = requests.get(raw_url)
     response.raise_for_status()
 
-    return pickle.loads(response.content)
+    data = pickle.loads(response.content)
+    timestamp = calendar.timegm(time.strptime(latest_file.split('_')[2].split('.')[0], '%Y%m%d'))
+    return data, timestamp
 
 def convert_to_serializable(obj):
     """Convert numpy/pandas objects to JSON serializable types."""
@@ -79,7 +83,7 @@ def transform_model_name(name):
     return name
 
 """Convert pickle file to JSON, handling numpy and pandas objects."""
-data = get_latest_pickle_file()
+data, timestamp = get_latest_pickle_file()
 
 processed_data = {}
 model_dates = {}
@@ -89,8 +93,6 @@ dates_file_path = 'src/routes/assets/dates.json'
 if os.path.exists(dates_file_path):
     with open(dates_file_path, 'r') as f:
         model_dates = json.load(f)
-
-current_time = int(time.time())
 
 # Process each category (text/vision)
 for category_type, categories in data.items():
@@ -121,7 +123,7 @@ for category_type, categories in data.items():
             processed_data[category_type][category_name]['elo_rating_final'][transformed_name] = round(rating, 2)
 
             if transformed_name not in model_dates:
-                model_dates[transformed_name] = current_time
+                model_dates[transformed_name] = timestamp
 
             if model in df.columns:
                 samples = df[model].astype(float).tolist()
