@@ -82,7 +82,6 @@ for result in data:
         continue
 
     transformed_name = transform_model_name(model)
-    categories = result.get("categories")
 
     if transformed_name not in model_dates:
         model_dates[transformed_name] = current_time
@@ -100,7 +99,6 @@ for result in data:
             output[subcat] = {
                 "elo_rating_final": {},
                 "confidence_intervals": {},
-                "categories": {}
             }
 
         output[subcat]["elo_rating_final"][transformed_name] = round(elo_rating, 2)
@@ -112,9 +110,6 @@ for result in data:
                 "low": round(elo_rating - minus_ci, 2),
                 "high": round(elo_rating + plus_ci, 2)
             }
-
-        # Add categories list (same for all subsets)
-        output[subcat]["categories"][transformed_name] = categories
 
 # Ensure directory exists
 os.makedirs("src/routes/assets", exist_ok=True)
