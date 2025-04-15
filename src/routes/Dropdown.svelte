@@ -17,6 +17,6 @@
   select {
     height: 100%;
     padding-left: 1rem;
-    background-color: transparent;
+    background-color: rgb(var(--m3-scheme-background));
   }
 </style>
