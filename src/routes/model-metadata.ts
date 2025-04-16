@@ -494,7 +494,7 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   reve: { organization: "Reve" },
   "gpt-4o": { organization: "OpenAI" },
   "recraft-3": { price: 0.04, organization: "Recraft" },
-  "hidream-i1-dev": { price: 0.05, isOpen: true, organization: "HiDream" },
+  "hidream-i1-dev": { price: 0.03, isOpen: true, organization: "HiDream" },
   "imagen-3-generate-002": { organization: "Google" },
   "flux-1.1-pro": { price: 0.04, organization: "Black Forest Labs" },
   "flux-1-pro": { price: 0.05, organization: "Black Forest Labs" },
