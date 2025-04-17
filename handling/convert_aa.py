@@ -76,18 +76,18 @@ if os.path.exists(dates_file_path):
 current_time = int(time.time())
 
 # Extract and transform the data
-for result in data:
-    model = result.get("name", "")
-    if not model:
+for model in data["models"]:
+    model_name = model.get("name", "")
+    if not model_name:
         continue
 
-    transformed_name = transform_model_name(model)
+    transformed_name = transform_model_name(model_name)
 
     if transformed_name not in model_dates:
         model_dates[transformed_name] = current_time
 
     # Iterate over all subsets in arena["total"]
-    total_sections = result.get("arena", {}).get("total", {})
+    total_sections = model.get("arena", {}).get("total", {})
     for subset_key, subset_stats in total_sections.items():
         # Map 'total' to 'full' for compatibility
         subcat = "full" if subset_key == "total" else subset_key
