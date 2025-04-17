@@ -115,7 +115,7 @@ for model in data["models"]:
 os.makedirs("src/routes/assets", exist_ok=True)
 
 # Write to file
-with open("src/routes/assets/image_artificial.json", "w") as f:
+with open("src/routes/assets/image_aa.json", "w") as f:
     json.dump(output, f, indent=2)
 
 with open(dates_file_path, 'w') as f:

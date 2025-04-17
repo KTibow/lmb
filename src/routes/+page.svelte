@@ -17,7 +17,7 @@
   import { text as textBoard } from "./assets/results.json";
   import { vision as visionBoard } from "./assets/results.json";
   import { image as imageArenaBoard } from "./assets/results.json";
-  import { default as imageArtificialBoard } from "./assets/image_artificial.json";
+  import { default as imageAABoard } from "./assets/image_aa.json";
   import { default as imageFalBoard } from "./assets/image_fal.json";
   import { default as dates } from "./assets/dates.json";
   import ModelTable from "./ModelTable.svelte";
@@ -70,10 +70,10 @@
       "User prompts": "not_preset_generation",
       "Fixed prompts": "is_preset_generation",
     },
-    image_artificial: {
+    image_aa: {
       Overall: "full",
       ...Object.fromEntries(
-        Object.keys(imageArtificialBoard)
+        Object.keys(imageAABoard)
           .filter((k) => k != "full")
           .map((k) => [k, k]),
       ),
@@ -104,8 +104,8 @@
         return visionBoard;
       case "image_arena":
         return imageArenaBoard;
-      case "image_artificial":
-        return imageArtificialBoard;
+      case "image_aa":
+        return imageAABoard;
       case "image_fal":
         return imageFalBoard;
       default:
@@ -172,7 +172,7 @@
         Text: "text",
         Vision: "vision",
         "Image (LM Arena)": "image_arena",
-        "Image (Artificial Analysis)": "image_artificial",
+        "Image (Artificial Analysis)": "image_aa",
         "Image (Fal)": "image_fal",
       }}
     />
