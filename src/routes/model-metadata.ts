@@ -227,6 +227,7 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   "gpt-4o-2024-05-13": { price: mixPrice(5, 15), organization: "OpenAI" },
   "gpt-4o-2024-08-06": { price: mixPrice(2.5, 10), organization: "OpenAI" },
   "gpt-4o-mini-2024-07-18": { price: mixPrice(0.15, 0.6), organization: "OpenAI" },
+  "gpt-4.1-nano-2025-04-14": { price: mixPrice(0.1, 0.4), organization: "OpenAI" },
   "gpt-4.5-preview-2025-02-27": { price: mixPrice(75, 150), organization: "OpenAI" },
   "gpt4all-13b-snoozy": { isOpen: true },
   "granite-3.0-2b-instruct": { isOpen: true },
@@ -449,6 +450,11 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     organization: "Qwen",
   },
   "qwen2.5-plus-1127": { price: mixPrice(3, 9), organization: "Qwen" },
+  "qwen2.5-max": {
+    price: mixPrice(1.6, 6.4),
+    organization: "Qwen",
+  },
+  "qwen2.5-vl-32b-instruct": { isOpen: true, price: mixPrice(0.9, 0.9), organization: "Qwen" },
   "qwq-32b-preview": {
     price: mixPrice(0.12, 0.18 * 4),
     isOpen: true,
@@ -457,10 +463,6 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   "qwq-32b": {
     price: mixPrice(0.12, 0.18 * 7.71),
     isOpen: true,
-    organization: "Qwen",
-  },
-  "qwen2.5-max": {
-    price: mixPrice(1.6, 6.4),
     organization: "Qwen",
   },
   "reka-core-20240501": { deprecated: true, organization: "Reka AI" },
