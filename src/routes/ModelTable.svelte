@@ -82,11 +82,11 @@
       {@const link = getModelLink(name)}
       {#snippet text()}
         {name}
-        {#if modelMetadata[name]?.isOpen}
-          <span class="badge">open</span>
-        {/if}
         {#if dates[name] > newCutoff}
           <span class="badge">new</span>
+        {/if}
+        {#if modelMetadata[name]?.isOpen}
+          <span class="badge open">open</span>
         {/if}
       {/snippet}
       <tr
@@ -171,10 +171,14 @@
     font-size: 0.75rem;
     padding: 0.1rem 0.4rem;
     border-radius: 1rem;
-    background-color: rgb(var(--m3-scheme-tertiary-container));
-    color: rgb(var(--m3-scheme-on-tertiary-container));
+    background-color: rgb(var(--m3-scheme-primary));
+    color: rgb(var(--m3-scheme-on-primary));
     margin-left: 0.5rem;
     vertical-align: middle;
+    &.open {
+      background-color: rgb(var(--m3-scheme-tertiary-container));
+      color: rgb(var(--m3-scheme-on-tertiary-container));
+    }
   }
 
   .viz-bar {
