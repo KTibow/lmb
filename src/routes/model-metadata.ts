@@ -143,9 +143,13 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     isOpen: true,
     organization: "DeepSeek",
   },
-  "deepseek-r1": { price: mixPrice(0.55, 2.19 * 5.7), isOpen: true, organization: "DeepSeek" },
+  "deepseek-r1": { price: mixPrice(0.54, 2.18 * 5.7), isOpen: true, organization: "DeepSeek" },
   "deepseek-v3": { price: mixPrice(0.27, 1.1), isOpen: true, organization: "DeepSeek" },
-  "deepseek-v3-0324": { price: mixPrice(0.27, 1.1), isOpen: true, organization: "DeepSeek" },
+  "deepseek-v3-0324": {
+    price: Math.min(mixPrice(0.27, 1.1), mixPrice(0.34, 0.88)),
+    isOpen: true,
+    organization: "DeepSeek",
+  },
   "dolly-v2-12b": { isOpen: true },
   "falcon-180b-chat": { isOpen: true },
   "fastchat-t5-3b": { isOpen: true },
@@ -289,7 +293,7 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     organization: "NVIDIA",
   },
   "llama-3.2-1b-instruct": {
-    price: mixPrice(0.01, 0.02),
+    price: mixPrice(0.01, 0.01),
     isOpen: true,
     organization: "Meta",
   },
@@ -309,7 +313,7 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     organization: "Meta",
   },
   "llama-3.3-70b-instruct": {
-    price: mixPrice(0.12, 0.3),
+    price: mixPrice(0.12, 0.28),
     isOpen: true,
     organization: "Meta",
   },
@@ -323,7 +327,7 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     organization: "Meta",
   },
   "llama-4-maverick-17b-128e-instruct": {
-    price: mixPrice(0.2, 0.6),
+    price: mixPrice(0.18, 0.6),
     isOpen: true,
     organization: "Meta",
   },
