@@ -395,7 +395,7 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   "o3-2025-04-16": { organization: "OpenAI" }, // TODO: add price once Dubesor data is in
   "o3-mini": { price: mixPrice(1.1, 4.4 * 4.3), organization: "OpenAI" },
   "o3-mini-high": { price: mixPrice(1.1, 4.4 * 9.5), organization: "OpenAI" },
-  "o4-mini": { price: mixPrice(1.1, 4.4 * 3.5), organization: "OpenAI" },
+  "o4-mini-2025-04-16": { price: mixPrice(1.1, 4.4 * 3.5), organization: "OpenAI" },
   "oasst-pythia-12b": { isOpen: true },
   "olmo-7b-instruct": { isOpen: true },
   "openchat-3.5": { isOpen: true },
