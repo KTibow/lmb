@@ -64,6 +64,42 @@
 
     return undefined;
   }
+
+  function splitUp(name: string) {
+    if (/-v\d+$/.test(name)) {
+      const [, pt1, pt2] = name.match(/^(.+)-v(\d+)$/);
+      return [pt1, `v${+pt2}`];
+    }
+    if (/-\d{3}$/.test(name)) {
+      const [, pt1, pt2] = name.match(/^(.+)-(\d{3})$/);
+      return [pt1, `v${+pt2}`];
+    }
+    if (/-\d{4}[01]\d\d{2}$/.test(name)) {
+      const [, pt1, y, m, d] = name.match(/^(.+)-(\d{4})(\d{2})(\d{2})$/);
+      const timeSinceCheckpoint = Date.now() - new Date(`${y}-${m}-${d}`).getTime();
+      return [
+        pt1,
+        timeSinceCheckpoint < 1000 * 60 * 60 * 24 * 365 ? `${+m}/${d}` : `${y}-${m}-${d}`,
+      ];
+    }
+    if (/-\d{4}-[01]\d-\d{2}$/.test(name)) {
+      const [, pt1, y, m, d] = name.match(/^(.+)-(\d{4})-(\d{2})-(\d{2})$/);
+      const timeSinceCheckpoint = Date.now() - new Date(`${y}-${m}-${d}`).getTime();
+      return [
+        pt1,
+        timeSinceCheckpoint < 1000 * 60 * 60 * 24 * 365 ? `${+m}/${d}` : `${y}-${m}-${d}`,
+      ];
+    }
+    if (/-[01]\d\d{2}$/.test(name)) {
+      const [, pt1, m, d] = name.match(/^(.+)-(\d{2})(\d{2})$/);
+      return [pt1, `${+m}/${d}`];
+    }
+    if (/-[01]\d-\d{2}$/.test(name)) {
+      const [, pt1, m, d] = name.match(/^(.+)-(\d{2})-(\d{2})$/);
+      return [pt1, `${+m}/${d}`];
+    }
+    return [name, ""];
+  }
 </script>
 
 <table>
@@ -80,10 +116,14 @@
   <tbody>
     {#each models as { name, rating, rank, ciLow, ciHigh }, i (name)}
       {@const link = getModelLink(name)}
+      {@const [pt1, pt2] = splitUp(name)}
       {#snippet text()}
-        {name}
+        {pt1}
+        {#if pt2}
+          <span class="badge">{pt2}</span>
+        {/if}
         {#if dates[name] > newCutoff}
-          <span class="badge">new</span>
+          <span class="badge new">new</span>
         {/if}
         {#if modelMetadata[name]?.isOpen}
           <span class="badge open">open</span>
@@ -171,10 +211,13 @@
     font-size: 0.75rem;
     padding: 0.1rem 0.4rem;
     border-radius: 1rem;
-    background-color: rgb(var(--m3-scheme-primary));
-    color: rgb(var(--m3-scheme-on-primary));
     margin-left: 0.5rem;
     vertical-align: middle;
+    background-color: rgb(var(--m3-scheme-surface-container));
+    &.new {
+      background-color: rgb(var(--m3-scheme-primary));
+      color: rgb(var(--m3-scheme-on-primary));
+    }
     &.open {
       background-color: rgb(var(--m3-scheme-tertiary-container));
       color: rgb(var(--m3-scheme-on-tertiary-container));
