@@ -65,40 +65,72 @@
     return undefined;
   }
 
+  function formatMD(m: number, d: number) {
+    return `${m}/${d}`;
+  }
+  function formatYMD(y: number, m: number, d: number) {
+    const thisYear = new Date().getFullYear();
+    if (y == thisYear) {
+      return formatMD(m, d);
+    } else {
+      return `${formatMD(m, d)} ${y}`;
+    }
+  }
+  function formatM(m: number) {
+    return ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][
+      m - 1
+    ];
+  }
+  function formatMY(m: number, y: number) {
+    const thisYear = new Date().getFullYear();
+    if (y == thisYear) {
+      return formatM(m);
+    } else {
+      return `${formatM(m)} ${y}`;
+    }
+  }
   function splitUp(name: string) {
-    if (/-v\d+$/.test(name)) {
-      const [, pt1, pt2] = name.match(/^(.+)-v(\d+)$/);
-      return [pt1, `v${+pt2}`];
+    let pt1 = name;
+    let pt2 = "";
+    if (/\d{4}-?[01]\d-?\d{2}/.test(name)) {
+      const [match, y, m, d] = name.match(/(\d{4})-?(\d{2})-?(\d{2})/);
+      pt1 = pt1.replace(`-${match}`, "");
+      pt2 = formatYMD(+y, +m, +d);
+    } else if (/-[01]\d-\d{2}$/.test(name)) {
+      const [, a, m, d] = name.match(/^(.+)-(\d{2})-(\d{2})$/);
+      pt1 = a;
+      pt2 = formatMD(+m, +d);
+    } else if (/-[01]\d\d{2}$/.test(name)) {
+      const [, a, m, d] = name.match(/^(.+)-(\d{2})(\d{2})$/);
+      pt1 = a;
+      pt2 = formatMD(+m, +d);
+    } else if (/-[01]\d-\d{4}$/.test(name)) {
+      const [, a, m, y] = name.match(/^(.+)-(\d{2})-(\d{4})$/);
+      pt1 = a;
+      pt2 = formatMY(+m, +y);
+    } else if (/-\d{4}[01]\d$/.test(name)) {
+      const [, a, y, m] = name.match(/^(.+)-(\d{4})(\d{2})$/);
+      pt1 = a;
+      pt2 = formatMY(+m, +y);
+    } else if (/-\d{2}[01]\d$/.test(name)) {
+      const [, a, y, m] = name.match(/^(.+)-(\d{2})(\d{2})$/);
+      pt1 = a;
+      pt2 = formatMY(+m, +`20${y}`);
+    } else if (/-\d{3}$/.test(name)) {
+      const [, a, b] = name.match(/^(.+)-(\d{3})$/);
+      pt1 = a;
+      pt2 = `v${+b}`;
     }
-    if (/-\d{3}$/.test(name)) {
-      const [, pt1, pt2] = name.match(/^(.+)-(\d{3})$/);
-      return [pt1, `v${+pt2}`];
+    if (/-v[0-9.]+$/.test(pt1)) {
+      const [, a, b] = pt1.match(/^(.+)-v([0-9.]+)$/);
+      pt1 = a;
+      if (pt2) {
+        pt2 = `v${+b} ${pt2}`;
+      } else {
+        pt2 = `v${+b}`;
+      }
     }
-    if (/-\d{4}[01]\d\d{2}$/.test(name)) {
-      const [, pt1, y, m, d] = name.match(/^(.+)-(\d{4})(\d{2})(\d{2})$/);
-      const timeSinceCheckpoint = Date.now() - new Date(`${y}-${m}-${d}`).getTime();
-      return [
-        pt1,
-        timeSinceCheckpoint < 1000 * 60 * 60 * 24 * 365 ? `${+m}/${d}` : `${y}-${m}-${d}`,
-      ];
-    }
-    if (/-\d{4}-[01]\d-\d{2}$/.test(name)) {
-      const [, pt1, y, m, d] = name.match(/^(.+)-(\d{4})-(\d{2})-(\d{2})$/);
-      const timeSinceCheckpoint = Date.now() - new Date(`${y}-${m}-${d}`).getTime();
-      return [
-        pt1,
-        timeSinceCheckpoint < 1000 * 60 * 60 * 24 * 365 ? `${+m}/${d}` : `${y}-${m}-${d}`,
-      ];
-    }
-    if (/-[01]\d\d{2}$/.test(name)) {
-      const [, pt1, m, d] = name.match(/^(.+)-(\d{2})(\d{2})$/);
-      return [pt1, `${+m}/${d}`];
-    }
-    if (/-[01]\d-\d{2}$/.test(name)) {
-      const [, pt1, m, d] = name.match(/^(.+)-(\d{2})-(\d{2})$/);
-      return [pt1, `${+m}/${d}`];
-    }
-    return [name, ""];
+    return [pt1, pt2];
   }
 </script>
 
