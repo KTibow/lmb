@@ -120,15 +120,10 @@
       const [, a, b] = name.match(/^(.+)-(\d{3})$/);
       pt1 = a;
       pt2 = `v${+b}`;
-    }
-    if (/-v[0-9.]+$/.test(pt1)) {
+    } else if (/^.+[0-9].+-v[0-9.]+$/.test(pt1)) {
       const [, a, b] = pt1.match(/^(.+)-v([0-9.]+)$/);
       pt1 = a;
-      if (pt2) {
-        pt2 = `v${+b} ${pt2}`;
-      } else {
-        pt2 = `v${+b}`;
-      }
+      pt2 = `v${+b}`;
     }
     return [pt1, pt2];
   }
