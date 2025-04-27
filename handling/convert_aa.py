@@ -103,7 +103,7 @@ for model in data["models"]:
         # Parse and add confidence intervals
         minus_ci, plus_ci = parse_ci95(subset_stats.get("ci95"))
         if minus_ci is not None and plus_ci is not None:
-            space["data"][subcat] = [round(elo - minus_ci, 2), round(elo, 2), round(elo + plus_ci, 2)]
+            space["data"][subcat] = [round(minus_ci, 2), round(elo, 2), round(plus_ci, 2)]
             continue
         space["data"][subcat] = [None, round(elo, 2), None]
 

@@ -87,8 +87,8 @@ export function filterModels(
       name,
       date: model.first_seen,
       rating: details[1],
-      ciLow: details[0] || details[1],
-      ciHigh: details[2] || details[1],
+      ciLow: details[1] - (details[0] || 0),
+      ciHigh: details[1] + (details[2] || 0),
       rank: 0,
     });
   }

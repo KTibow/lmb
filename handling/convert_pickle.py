@@ -133,9 +133,9 @@ for category_type, categories in data.items():
                 ci_low, ci_high = calculate_confidence_intervals(samples)
                 if ci_low is not None and ci_high is not None:
                     space["data"][category_name] = [
-                        round(ci_low, 2),
+                        round(elo - ci_low, 2),
                         round(elo, 2),
-                        round(ci_high, 2)
+                        round(ci_high - elo, 2),
                     ]
                     continue
             space["data"][category_name] = [

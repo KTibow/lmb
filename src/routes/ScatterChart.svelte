@@ -5,23 +5,12 @@
     LinearScale,
     LogarithmicScale,
     PointElement,
-    LineElement,
-    Legend,
     Tooltip,
   } from "chart.js";
-  import { onMount } from "svelte";
   import type { ModelData } from "./model-filtering";
   import { modelMetadata } from "./model-metadata";
 
-  Chart.register(
-    ScatterController,
-    LinearScale,
-    LogarithmicScale,
-    PointElement,
-    LineElement,
-    Legend,
-    Tooltip,
-  );
+  Chart.register(ScatterController, LinearScale, LogarithmicScale, PointElement, Tooltip);
 
   let { models, unit }: { models: ModelData[]; unit: string } = $props();
 
