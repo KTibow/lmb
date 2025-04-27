@@ -14,11 +14,7 @@
   } from "m3-svelte";
   import { browser } from "$app/environment";
   import { page } from "$app/stores";
-  import { default as models } from "./assets/all_models.json";
-  import { text as textBoard } from "./assets/lmarena.json";
-  import { vision as visionBoard } from "./assets/lmarena.json";
-  import { image as imageArenaBoard } from "./assets/lmarena.json";
-  import { default as imageAABoard } from "./assets/aa_image.json";
+  import { default as data } from "./assets/data.json";
   import ModelTable from "./ModelTable.svelte";
   import Dropdown from "./Dropdown.svelte";
   import {
@@ -28,7 +24,7 @@
     getPriceRangeLabel,
   } from "./model-metadata";
 
-  let paradigm = "text",
+  let paradigm = "lmarena_text",
     category = "full",
     styleControl = true;
   let searches: string[] = [];
@@ -41,8 +37,14 @@
 
   let snackbar: (snackbar: SnackbarIn) => void;
 
+  const getFullCategories = (paradigm: string) => {
+    const example = Object.values(data).find((m) => paradigm in m);
+    if (!example) return [];
+    return Object.keys(example[paradigm].data);
+  };
+
   const categories = {
-    text: {
+    lmarena_text: {
       Overall: "full",
       "Hard prompts": "hard_6",
       "Hard prompts (english)": "hard_english_6",
@@ -63,51 +65,38 @@
       "Exclude <5 tok query": "no_short",
       "Exclude refusal": "no_refusal",
     },
-    vision: { Overall: "full", English: "english", Chinese: "chinese" },
-    image_arena: {
+    lmarena_vision: { Overall: "full", English: "english", Chinese: "chinese" },
+    lmarena_image: {
       Overall: "full",
       "User prompts": "not_preset_generation",
       "Fixed prompts": "is_preset_generation",
     },
-    image_aa: {
+    aa_image: {
       Overall: "full",
       ...Object.fromEntries(
-        Object.keys(imageAABoard)
+        getFullCategories("aa_image")
           .filter((k) => k != "full")
           .map((k) => [k, k]),
       ),
     },
   } as Record<string, Record<string, string>>;
+  $: paradigmCategories = Object.values(categories[paradigm]);
+  $: paradigmCategoriesWithStyleControl = getFullCategories(paradigm);
 
   const categoryName = (category: string, styleControl: boolean) =>
     `${category}${styleControl ? "_style_control" : ""}`;
 
   const normalizeStep = () => {
-    if (!Object.values(categories[paradigm]).includes(category)) {
+    if (!paradigmCategories.includes(category)) {
       category = "full";
     }
 
     const targetCategory = categoryName(category, styleControl);
-    if (!(targetCategory in getCurrentBoard())) {
+    if (!paradigmCategoriesWithStyleControl.includes(targetCategory)) {
       styleControl = false;
     }
   };
   $: category, paradigm, styleControl, normalizeStep();
-
-  function getCurrentBoard() {
-    switch (paradigm) {
-      case "text":
-        return textBoard;
-      case "vision":
-        return visionBoard;
-      case "image_arena":
-        return imageArenaBoard;
-      case "image_aa":
-        return imageAABoard;
-      default:
-        return textBoard;
-    }
-  }
 
   const share = () => {
     const settings = {
@@ -146,6 +135,10 @@
     const settingsHash = $page.url.hash;
     if (settingsHash) {
       const settings = JSON.parse(decodeURIComponent(settingsHash.slice(1)));
+      if (settings.paradigm == "text") settings.paradigm = "lmarena_text";
+      if (settings.paradigm == "vision") settings.paradigm = "lmarena_vision";
+      if (settings.paradigm == "image_arena") settings.paradigm = "lmarena_image";
+      if (settings.paradigm == "image_aa") settings.paradigm = "aa_image";
       paradigm = settings.paradigm;
       category = settings.category;
       styleControl = Boolean(settings.styleControl);
@@ -165,16 +158,16 @@
     <Dropdown
       bind:value={paradigm}
       options={{
-        Text: "text",
-        Vision: "vision",
-        "Image (LM Arena)": "image_arena",
-        "Image (Artificial Analysis)": "image_aa",
+        Text: "lmarena_text",
+        Vision: "lmarena_vision",
+        "Image (LM Arena)": "lmarena_image",
+        "Image (Artificial Analysis)": "aa_image",
       }}
     />
     {#if Object.keys(categories[paradigm]).length > 1}
       <Dropdown bind:value={category} options={categories[paradigm]} />
     {/if}
-    {#if categoryName(category, true) in getCurrentBoard()}
+    {#if paradigmCategoriesWithStyleControl.includes(categoryName(category, true))}
       <input type="checkbox" bind:checked={styleControl} id="styleControl" />
       <SegmentedButtonItem input="styleControl">Style control</SegmentedButtonItem>
     {/if}
@@ -197,9 +190,8 @@
 </div>
 
 <ModelTable
+  {data}
   {paradigm}
-  dates={Object.fromEntries(Object.entries(models).map(([k, v]) => [k, v.first_seen]))}
-  board={getCurrentBoard()}
   {category}
   {styleControl}
   {searches}

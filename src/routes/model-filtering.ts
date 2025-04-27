@@ -48,6 +48,7 @@ function shouldShowModel(
 
 export interface ModelData {
   name: string;
+  date: number;
   rating: number;
   ciLow: number;
   ciHigh: number;
@@ -55,7 +56,18 @@ export interface ModelData {
 }
 
 export function filterModels(
-  board: Record<string, Record<string, any>>,
+  data: Record<
+    string,
+    Record<
+      string,
+      {
+        first_seen: number;
+        last_seen: number;
+        data: Record<string, number[]>;
+      }
+    >
+  >,
+  paradigm: string,
   categoryName: string,
   searches: string[],
   showOpenOnly: boolean,
@@ -65,14 +77,18 @@ export function filterModels(
   let models: ModelData[] = [];
 
   // Build initial model data
-  for (const [name, rating] of Object.entries(board[categoryName]?.elo_rating_final || {})) {
-    const ci = board[categoryName]?.confidence_intervals?.[name] || {};
-
+  for (const [name, v] of Object.entries(data)) {
+    if (!(paradigm in v)) continue;
+    const model = v[paradigm];
+    if (model.dead) continue;
+    if (!(categoryName in model.data)) continue;
+    const details = model.data[categoryName];
     models.push({
       name,
-      rating: Number(rating),
-      ciLow: Number(ci.low) || Number(rating),
-      ciHigh: Number(ci.high) || Number(rating),
+      date: model.first_seen,
+      rating: details[1],
+      ciLow: details[0] || details[1],
+      ciHigh: details[2] || details[1],
       rank: 0,
     });
   }

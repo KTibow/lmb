@@ -86,22 +86,16 @@ def transform_model_name(name):
     name = name.replace("dall-e", "dalle")
     return name
 
-"""Convert pickle file to JSON, handling numpy and pandas objects."""
 data, timestamp = get_latest_pickle_file(0)
 
-processed_data = {}
-all_models = {}
-
-# Load existing dates file if it exists
-models_file_path = 'src/routes/assets/all_models.json'
-if os.path.exists(models_file_path):
-    with open(models_file_path, 'r') as f:
-        all_models = json.load(f)
+slop = {}
+slop_file_path = 'src/routes/assets/data.json'
+if os.path.exists(slop_file_path):
+    with open(slop_file_path, 'r') as f:
+        slop = json.load(f)
 
 # Process each category (text/vision)
 for category_type, categories in data.items():
-    processed_data[category_type] = {}
-
     # Process each subcategory (full, english, etc)
     for category_name, category_data in categories.items():
         if 'elo_rating_final' not in category_data:
@@ -111,12 +105,6 @@ for category_type, categories in data.items():
             print("skipping", category_name)
             continue
 
-        processed_data[category_type][category_name] = {
-            'elo_rating_final': {},
-            'confidence_intervals': {}
-        }
-        # print(category_data)
-
         # Process ratings and bootstrap data together
         df = category_data['bootstrap_df']
 
@@ -124,39 +112,49 @@ for category_type, categories in data.items():
             transformed_name = transform_model_name(model) if category_type == "image" else model
 
             elo = float(elo)
-            processed_data[category_type][category_name]['elo_rating_final'][transformed_name] = round(elo, 2)
 
-            if transformed_name not in all_models:
-                all_models[transformed_name] = {
-                    "platform": "lmarena",
+            if transformed_name not in slop:
+                slop[transformed_name] = {}
+            space_name = f"lmarena_{category_type}"
+            if space_name in slop[transformed_name]:
+                space = slop[transformed_name][space_name]
+            else:
+                space = slop[transformed_name][space_name] = {
                     "first_seen": timestamp,
                     "last_seen": 0,
-                    "elos": {}
+                    "data": {}
                 }
-            all_models[transformed_name]["last_seen"] = timestamp
-            all_models[transformed_name]["elos"][category_name] = round(elo)
+            if timestamp > space["last_seen"]:
+                space["last_seen"] = timestamp
+                space["data"] = {}
 
             if model in df.columns:
                 samples = df[model].astype(float).tolist()
                 ci_low, ci_high = calculate_confidence_intervals(samples)
                 if ci_low is not None and ci_high is not None:
-                    processed_data[category_type][category_name]['confidence_intervals'][transformed_name] = {
-                        'low': round(ci_low, 2),
-                        'high': round(ci_high, 2)
-                    }
+                    space["data"][category_name] = [
+                        round(ci_low, 2),
+                        round(elo, 2),
+                        round(ci_high, 2)
+                    ]
+                    continue
+            space["data"][category_name] = [
+                None,
+                round(elo, 2),
+                None,
+            ]
 
-for model in all_models.values():
-    if model["platform"] != "lmarena":
-        continue
-    try:
-        del model["dead"]
-    except KeyError:
-        pass
-    if model["last_seen"] != timestamp:
-        model["dead"] = True
+for model in slop.values():
+    for k in ["lmarena_text", "lmarena_vision", "lmarena_image"]:
+        if k not in model:
+            continue
+        space = model[k]
+        try:
+            del space["dead"]
+        except KeyError:
+            pass
+        if space["last_seen"] != timestamp:
+            space["dead"] = True
 
-with open('src/routes/assets/lmarena.json', 'w') as f:
-    json.dump(processed_data, f, indent=2)
-
-with open(models_file_path, 'w') as f:
-    json.dump(all_models, f, indent=2)
+with open(slop_file_path, 'w') as f:
+    json.dump(slop, f, indent=2)

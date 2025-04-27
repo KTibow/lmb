@@ -3,9 +3,18 @@
   import { filterModels } from "./model-filtering";
   import ScatterChart from "./ScatterChart.svelte";
 
+  export let data: Record<
+    string,
+    Record<
+      string,
+      {
+        first_seen: number;
+        last_seen: number;
+        data: Record<string, number[]>;
+      }
+    >
+  >;
   export let paradigm: string;
-  export let dates: Record<string, number>;
-  export let board: Record<string, Record<string, any>>;
   export let category: string;
   export let styleControl: boolean;
   export let searches: string[];
@@ -19,7 +28,8 @@
 
   $: categoryName = `${category}${styleControl ? "_style_control" : ""}`;
   $: models = filterModels(
-    board,
+    data,
+    paradigm,
     categoryName,
     searches,
     showOpenOnly,
@@ -141,7 +151,7 @@
     </tr>
   </thead>
   <tbody>
-    {#each models as { name, rating, rank, ciLow, ciHigh }, i (name)}
+    {#each models as { name, date, rating, rank, ciLow, ciHigh }, i (name)}
       {@const link = getModelLink(name)}
       {@const [pt1, pt2] = splitUp(name)}
       {#snippet text()}
@@ -149,7 +159,7 @@
         {#if pt2}
           <span class="badge">{pt2}</span>
         {/if}
-        {#if dates[name] > newCutoff}
+        {#if date > newCutoff}
           <span class="badge new">new</span>
         {/if}
         {#if modelMetadata[name]?.isOpen}
