@@ -1,3 +1,6 @@
+# /// script
+# dependencies = ["numpy", "pandas", "requests", "plotly==5.24.1"]
+# ///
 import pickle
 import json
 import numpy as np
@@ -10,7 +13,7 @@ import os
 import time
 import calendar
 
-def get_latest_pickle_file():
+def get_latest_pickle_file(index):
     """Fetch the latest pickle file from HuggingFace repository."""
     api_url = "https://huggingface.co/api/spaces/lmarena-ai/chatbot-arena-leaderboard/tree/main"
 
@@ -31,7 +34,8 @@ def get_latest_pickle_file():
 
     # Get the most recent file
     pickle_files.sort(key=lambda x: x[0], reverse=True)
-    latest_file = pickle_files[0][1]
+    latest_file = pickle_files[index][1]
+    latest_id = latest_file.split('_')[2].split('.')[0]
 
     # Download the file content
     raw_url = f"https://huggingface.co/spaces/lmarena-ai/chatbot-arena-leaderboard/resolve/main/{latest_file}"
@@ -39,7 +43,7 @@ def get_latest_pickle_file():
     response.raise_for_status()
 
     data = pickle.loads(response.content)
-    timestamp = calendar.timegm(time.strptime(latest_file.split('_')[2].split('.')[0], '%Y%m%d'))
+    timestamp = calendar.timegm(time.strptime(latest_id, '%Y%m%d'))
     return data, timestamp
 
 def convert_to_serializable(obj):
@@ -83,16 +87,16 @@ def transform_model_name(name):
     return name
 
 """Convert pickle file to JSON, handling numpy and pandas objects."""
-data, timestamp = get_latest_pickle_file()
+data, timestamp = get_latest_pickle_file(0)
 
 processed_data = {}
-model_dates = {}
+all_models = {}
 
 # Load existing dates file if it exists
-dates_file_path = 'src/routes/assets/dates.json'
-if os.path.exists(dates_file_path):
-    with open(dates_file_path, 'r') as f:
-        model_dates = json.load(f)
+models_file_path = 'src/routes/assets/all_models.json'
+if os.path.exists(models_file_path):
+    with open(models_file_path, 'r') as f:
+        all_models = json.load(f)
 
 # Process each category (text/vision)
 for category_type, categories in data.items():
@@ -116,14 +120,21 @@ for category_type, categories in data.items():
         # Process ratings and bootstrap data together
         df = category_data['bootstrap_df']
 
-        for model, rating in category_data['elo_rating_final'].items():
+        for model, elo in category_data['elo_rating_final'].items():
             transformed_name = transform_model_name(model) if category_type == "image" else model
 
-            rating = float(rating)
-            processed_data[category_type][category_name]['elo_rating_final'][transformed_name] = round(rating, 2)
+            elo = float(elo)
+            processed_data[category_type][category_name]['elo_rating_final'][transformed_name] = round(elo, 2)
 
-            if transformed_name not in model_dates:
-                model_dates[transformed_name] = timestamp
+            if transformed_name not in all_models:
+                all_models[transformed_name] = {
+                    "platform": "lmarena",
+                    "first_seen": timestamp,
+                    "last_seen": 0,
+                    "elos": {}
+                }
+            all_models[transformed_name]["last_seen"] = timestamp
+            all_models[transformed_name]["elos"][category_name] = round(elo)
 
             if model in df.columns:
                 samples = df[model].astype(float).tolist()
@@ -134,8 +145,18 @@ for category_type, categories in data.items():
                         'high': round(ci_high, 2)
                     }
 
-with open('src/routes/assets/results.json', 'w') as f:
+for model in all_models.values():
+    if model["platform"] != "lmarena":
+        continue
+    try:
+        del model["dead"]
+    except KeyError:
+        pass
+    if model["last_seen"] != timestamp:
+        model["dead"] = True
+
+with open('src/routes/assets/lmarena.json', 'w') as f:
     json.dump(processed_data, f, indent=2)
 
-with open(dates_file_path, 'w') as f:
-    json.dump(model_dates, f, indent=2)
+with open(models_file_path, 'w') as f:
+    json.dump(all_models, f, indent=2)

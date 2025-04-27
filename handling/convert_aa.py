@@ -66,14 +66,14 @@ data = response.json()
 # Initialize the output structure
 output = {}
 
-model_dates = {}
+all_models = {}
 
-dates_file_path = 'src/routes/assets/dates.json'
-if os.path.exists(dates_file_path):
-    with open(dates_file_path, 'r') as f:
-        model_dates = json.load(f)
+models_file_path = 'src/routes/assets/all_models.json'
+if os.path.exists(models_file_path):
+    with open(models_file_path, 'r') as f:
+        all_models = json.load(f)
 
-current_time = int(time.time())
+timestamp = int(time.time())
 
 # Extract and transform the data
 for model in data["models"]:
@@ -83,8 +83,14 @@ for model in data["models"]:
 
     transformed_name = transform_model_name(model_name)
 
-    if transformed_name not in model_dates:
-        model_dates[transformed_name] = current_time
+    if transformed_name not in all_models:
+        all_models[transformed_name] = {
+            "platform": "aa",
+            "first_seen": timestamp,
+            "last_seen": 0,
+            "elos": {}
+        }
+    all_models[transformed_name]["last_seen"] = timestamp
 
     # Iterate over all subsets in arena["total"]
     total_sections = model.get("arena", {}).get("total", {})
@@ -92,7 +98,7 @@ for model in data["models"]:
         # Map 'total' to 'full' for compatibility
         subcat = "full" if subset_key == "total" else subset_key
 
-        elo_rating = subset_stats["elo"]
+        elo = subset_stats["elo"]
 
         # Initialize subcategory dicts if missing
         if subcat not in output:
@@ -101,22 +107,33 @@ for model in data["models"]:
                 "confidence_intervals": {},
             }
 
-        output[subcat]["elo_rating_final"][transformed_name] = round(elo_rating, 2)
+        output[subcat]["elo_rating_final"][transformed_name] = round(elo, 2)
+        all_models[transformed_name]["elos"][subcat] = round(elo)
 
         # Parse and add confidence intervals
         minus_ci, plus_ci = parse_ci95(subset_stats.get("ci95"))
         if minus_ci is not None and plus_ci is not None:
             output[subcat]["confidence_intervals"][transformed_name] = {
-                "low": round(elo_rating - minus_ci, 2),
-                "high": round(elo_rating + plus_ci, 2)
+                "low": round(elo - minus_ci, 2),
+                "high": round(elo + plus_ci, 2)
             }
 
 # Ensure directory exists
 os.makedirs("src/routes/assets", exist_ok=True)
 
+for model in all_models.values():
+    if model["platform"] != "aa":
+        continue
+    try:
+        del model["dead"]
+    except KeyError:
+        pass
+    if model["last_seen"] != timestamp:
+        model["dead"] = True
+
 # Write to file
 with open("src/routes/assets/image_aa.json", "w") as f:
     json.dump(output, f, indent=2)
 
-with open(dates_file_path, 'w') as f:
-    json.dump(model_dates, f, indent=2)
+with open(models_file_path, 'w') as f:
+    json.dump(all_models, f, indent=2)

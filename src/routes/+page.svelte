@@ -14,12 +14,11 @@
   } from "m3-svelte";
   import { browser } from "$app/environment";
   import { page } from "$app/stores";
-  import { text as textBoard } from "./assets/results.json";
-  import { vision as visionBoard } from "./assets/results.json";
-  import { image as imageArenaBoard } from "./assets/results.json";
-  import { default as imageAABoard } from "./assets/image_aa.json";
-  import { default as imageFalBoard } from "./assets/image_fal.json";
-  import { default as dates } from "./assets/dates.json";
+  import { default as models } from "./assets/all_models.json";
+  import { text as textBoard } from "./assets/lmarena.json";
+  import { vision as visionBoard } from "./assets/lmarena.json";
+  import { image as imageArenaBoard } from "./assets/lmarena.json";
+  import { default as imageAABoard } from "./assets/aa_image.json";
   import ModelTable from "./ModelTable.svelte";
   import Dropdown from "./Dropdown.svelte";
   import {
@@ -78,7 +77,6 @@
           .map((k) => [k, k]),
       ),
     },
-    image_fal: { Overall: "full" },
   } as Record<string, Record<string, string>>;
 
   const categoryName = (category: string, styleControl: boolean) =>
@@ -106,8 +104,6 @@
         return imageArenaBoard;
       case "image_aa":
         return imageAABoard;
-      case "image_fal":
-        return imageFalBoard;
       default:
         return textBoard;
     }
@@ -173,7 +169,6 @@
         Vision: "vision",
         "Image (LM Arena)": "image_arena",
         "Image (Artificial Analysis)": "image_aa",
-        "Image (Fal)": "image_fal",
       }}
     />
     {#if Object.keys(categories[paradigm]).length > 1}
@@ -203,7 +198,7 @@
 
 <ModelTable
   {paradigm}
-  {dates}
+  dates={Object.fromEntries(Object.entries(models).map(([k, v]) => [k, v.first_seen]))}
   board={getCurrentBoard()}
   {category}
   {styleControl}
