@@ -56,7 +56,7 @@
       OpenAI: "https://platform.openai.com/docs/models/",
       Amazon: "https://docs.aws.amazon.com/nova/latest/userguide/what-is-nova.html",
       Anthropic: "https://www.anthropic.com/claude",
-      Google: "https://ai.google.dev/models/",
+      Google: "https://ai.google.dev/gemini-api/docs/models",
       Deepseek: "https://www.deepseek.com/",
       Meta: "https://ai.meta.com/llama/",
       Mistral: "https://mistral.ai/",
