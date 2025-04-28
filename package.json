@@ -16,16 +16,16 @@
   "devDependencies": {
     "@ktibow/iconset-material-symbols": "^0.0.1738223466",
     "@sveltejs/adapter-static": "^3.0.8",
-    "@sveltejs/kit": "^2.16.0",
-    "@sveltejs/vite-plugin-svelte": "^5.0.0",
-    "chart.js": "^4.4.8",
-    "m3-svelte": "^3.4.8",
-    "prettier": "^3.4.2",
+    "@sveltejs/kit": "^2.20.7",
+    "@sveltejs/vite-plugin-svelte": "^5.0.3",
+    "chart.js": "^4.4.9",
+    "m3-svelte": "^3.5.1",
+    "prettier": "^3.5.3",
     "prettier-plugin-svelte": "^3.3.3",
-    "svelte": "^5.0.0",
-    "svelte-check": "^4.0.0",
-    "typescript": "^5.0.0",
-    "vite": "^6.0.0"
+    "svelte": "^5.28.2",
+    "svelte-check": "^4.1.6",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.3"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
