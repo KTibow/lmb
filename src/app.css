@@ -1,4 +1,5 @@
 @import url("m3-svelte/misc/styles.css");
+@import url("m3-svelte/misc/recommended-styles.css");
 @media (prefers-color-scheme: light) {
   :root {
     color-scheme: light;

@@ -24,8 +24,8 @@ importers:
         specifier: ^4.4.9
         version: 4.4.9
       m3-svelte:
-        specifier: ^3.5.1
-        version: 3.5.1
+        specifier: ^3.6.1
+        version: 3.6.1
       prettier:
         specifier: ^3.5.3
         version: 3.5.3
@@ -459,8 +459,8 @@ packages:
   locate-character@3.0.0:
     resolution: {integrity: sha512-SW13ws7BjaeJ6p7Q6CO2nchbYEc3X3J6WrmTTDto7yMPqVSZTUyY5Tjbid+Ab8gLnATtygYtiDIJGQRRn2ZOiA==}
 
-  m3-svelte@3.5.1:
-    resolution: {integrity: sha512-PV/zD9jNYZm/7eNenvVaZkkTyMisMFmNs9NHhOhzy9MmqczkWDpBiHYQsoQ0p6NnDfnOqWM0/nqEP8s3BHEpGA==}
+  m3-svelte@3.6.1:
+    resolution: {integrity: sha512-1isGD9AmfKFwhlJvWipnj+mOX3hPDj3P+Wjl52bzXhiqX1JcNLRvaYdsdK4P9yofOm3oBo++flGbzgabM1NeZA==}
 
   magic-string@0.30.17:
     resolution: {integrity: sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==}
@@ -906,7 +906,7 @@ snapshots:
 
   locate-character@3.0.0: {}
 
-  m3-svelte@3.5.1:
+  m3-svelte@3.6.1:
     dependencies:
       '@iconify/types': 2.0.0
       '@ktibow/iconset-material-symbols': 0.0.1742538575
