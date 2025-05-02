@@ -282,7 +282,7 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     organization: "Meta",
   },
   "llama-3.1-8b-instruct": {
-    price: mixPrice(0.02, 0.05),
+    price: mixPrice(0.02, 0.03),
     isOpen: true,
     organization: "Meta",
   },
@@ -290,22 +290,22 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   "llama-3.1-tulu-3-8b": { isOpen: true, organization: "Allen" },
   "llama-3.1-nemotron-51b-instruct": { isOpen: true, organization: "NVIDIA" },
   "llama-3.1-nemotron-70b-instruct": {
-    price: 0.24 + 0.3,
+    price: mixPrice(0.12, 0.3),
     isOpen: true,
     organization: "NVIDIA",
   },
   "llama-3.2-1b-instruct": {
-    price: mixPrice(0.01, 0.01),
+    price: mixPrice(0.005, 0.01),
     isOpen: true,
     organization: "Meta",
   },
   "llama-3.2-3b-instruct": {
-    price: mixPrice(0.015, 0.025),
+    price: mixPrice(0.01, 0.02),
     isOpen: true,
     organization: "Meta",
   },
   "llama-3.2-vision-11b-instruct": {
-    price: mixPrice(0.055, 0.055),
+    price: mixPrice(0.049, 0.049),
     isOpen: true,
     organization: "Meta",
   },
@@ -315,7 +315,7 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     organization: "Meta",
   },
   "llama-3.3-70b-instruct": {
-    price: mixPrice(0.12, 0.28),
+    price: mixPrice(0.10, 0.25),
     isOpen: true,
     organization: "Meta",
   },
@@ -329,7 +329,7 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     organization: "Meta",
   },
   "llama-4-maverick-17b-128e-instruct": {
-    price: mixPrice(0.18, 0.6),
+    price: mixPrice(0.17, 0.6),
     isOpen: true,
     organization: "Meta",
   },
@@ -448,28 +448,28 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   },
   "qwen2.5-vl-72b-instruct": { isOpen: true, organization: "Qwen" },
   "qwen2.5-72b-instruct": {
-    price: mixPrice(0.23, 0.4),
+    price: mixPrice(0.12, 0.39),
     isOpen: true,
     organization: "Qwen",
   },
   "qwen2.5-coder-32b-instruct": {
-    price: mixPrice(0.07, 0.16),
+    price: Math.min(mixPrice(0.06, 0.18), mixPrice(0.07, 0.15)),
     isOpen: true,
     organization: "Qwen",
   },
-  "qwen2.5-plus-1127": { price: mixPrice(3, 9), organization: "Qwen" },
+  "qwen2.5-plus-1127": { price: mixPrice(0.4, 1.2), organization: "Qwen" },
   "qwen2.5-max": {
     price: mixPrice(1.6, 6.4),
     organization: "Qwen",
   },
   "qwen2.5-vl-32b-instruct": { isOpen: true, price: mixPrice(0.9, 0.9), organization: "Qwen" },
   "qwq-32b-preview": {
-    price: mixPrice(0.12, 0.18 * 4),
+    price: Math.min(mixPrice(0.09, 0.27 * 4), mixPrice(0.2, 0.2 * 4)),
     isOpen: true,
     organization: "Qwen",
   },
   "qwq-32b": {
-    price: mixPrice(0.12, 0.18 * 7.71),
+    price: mixPrice(0.15, 0.2 * 7.71),
     isOpen: true,
     organization: "Qwen",
   },
