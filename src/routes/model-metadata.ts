@@ -1,8 +1,14 @@
+import openrouterData from "./assets/openrouter.json";
+
 export interface ModelMetadata {
   deprecated?: boolean;
   isOpen?: boolean;
   organization?: string;
+  // Original single price field (used for image generation models)
   price?: number;
+  // OpenRouter fields
+  openrouterSlug?: string;
+  reasoningMultiplier?: number;
 }
 
 export type FilterStrategy = "showAll" | "hideDeprecated" | "hideOld" | "onePerOrg";
@@ -44,10 +50,48 @@ export function getFilterDescription(strategy: FilterStrategy): string {
 
 const mixPrice = (input: number, output: number) => (2 / 3) * input + (1 / 3) * output;
 
+export function getPrice(modelName: string): number | undefined {
+  const metadata = modelMetadata[modelName];
+  if (!metadata) return undefined;
+
+  if (metadata.price !== undefined) {
+    return metadata.price;
+  }
+
+  // For OpenRouter models, calculate the optimal price from all available providers
+  const openrouterSlug = metadata.openrouterSlug;
+  const reasoningMultiplier = metadata.reasoningMultiplier || 1;
+  if (openrouterSlug) {
+    const providers = (openrouterData as unknown as Record<string, [number, number][]>)[
+      openrouterSlug
+    ];
+    if (!providers) {
+      console.warn("No providers for", openrouterSlug);
+      return undefined;
+    }
+
+    // Find the provider with the lowest mixed price based on our mixPrice formula
+    let bestPrice = Number.MAX_VALUE;
+
+    for (const [inputPrice, outputPrice] of providers) {
+      const currentPrice = mixPrice(inputPrice, outputPrice * reasoningMultiplier);
+      if (currentPrice < bestPrice) {
+        bestPrice = currentPrice;
+      }
+    }
+
+    if (bestPrice !== Number.MAX_VALUE) {
+      return bestPrice;
+    }
+  }
+
+  return undefined;
+}
+
 export const modelMetadata: Record<string, ModelMetadata> = {
-  "amazon-nova-lite-v1.0": { price: mixPrice(0.06, 0.24), organization: "Amazon" },
-  "amazon-nova-micro-v1.0": { price: mixPrice(0.035, 0.14), organization: "Amazon" },
-  "amazon-nova-pro-v1.0": { price: mixPrice(0.8, 3.2), organization: "Amazon" },
+  "amazon-nova-lite-v1.0": { organization: "Amazon", openrouterSlug: "amazon/nova-lite-v1" },
+  "amazon-nova-micro-v1.0": { organization: "Amazon", openrouterSlug: "amazon/nova-micro-v1" },
+  "amazon-nova-pro-v1.0": { organization: "Amazon", openrouterSlug: "amazon/nova-pro-v1" },
   "athene-70b-0725": { isOpen: true, organization: "NexusFlow" },
   "athene-v2-chat": { isOpen: true, organization: "NexusFlow" },
   "bard-jan-24-gemini-pro": { deprecated: true, organization: "Google" },
@@ -66,65 +110,77 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   "chatglm3-6b": { isOpen: true },
   "chatgpt-4o-latest-20240808": { deprecated: true, organization: "OpenAI" },
   "chatgpt-4o-latest-20240903": { deprecated: true, organization: "OpenAI" },
-  "chatgpt-4o-latest-20241120": { price: mixPrice(2.5, 10), organization: "OpenAI" },
+  "chatgpt-4o-latest-20241120": {
+    organization: "OpenAI",
+    openrouterSlug: "openai/gpt-4o-2024-11-20",
+  },
   "chatgpt-4o-latest-20250129": {
     deprecated: true,
-    price: mixPrice(5, 15),
     organization: "OpenAI",
   },
-  "chatgpt-4o-latest-20250326": { price: mixPrice(5, 15), organization: "OpenAI" },
+  "chatgpt-4o-latest-20250326": {
+    organization: "OpenAI",
+    openrouterSlug: "openai/chatgpt-4o-latest",
+  },
   "claude-1": { organization: "Anthropic" },
-  "claude-2.0": { price: mixPrice(8, 24), organization: "Anthropic" },
-  "claude-2.1": { price: mixPrice(8, 24), organization: "Anthropic" },
+  "claude-2.0": { organization: "Anthropic", openrouterSlug: "anthropic/claude-2.0" },
+  "claude-2.1": { organization: "Anthropic", openrouterSlug: "anthropic/claude-2.1" },
   "claude-3-5-haiku-20241022": {
-    price: mixPrice(0.8, 4),
     organization: "Anthropic",
+    openrouterSlug: "anthropic/claude-3.5-haiku-20241022",
   },
   "claude-3-5-sonnet-20240620": {
-    price: mixPrice(3, 15),
     organization: "Anthropic",
+    openrouterSlug: "anthropic/claude-3.5-sonnet-20240620",
   },
   "claude-3-5-sonnet-20241022": {
-    price: mixPrice(3, 15),
     organization: "Anthropic",
+    openrouterSlug: "anthropic/claude-3.5-sonnet",
   },
   "claude-3-7-sonnet-20250219": {
-    price: mixPrice(3, 15),
     organization: "Anthropic",
+    openrouterSlug: "anthropic/claude-3.7-sonnet",
   },
   "claude-3-7-sonnet-20250219-thinking-32k": {
-    price: mixPrice(3, 15 * 7.44),
     organization: "Anthropic",
+    openrouterSlug: "anthropic/claude-3.7-sonnet:thinking",
+    reasoningMultiplier: 7.44,
   },
   "claude-3-haiku-20240307": {
-    price: mixPrice(0.25, 1.25),
     organization: "Anthropic",
+    openrouterSlug: "anthropic/claude-3-haiku",
   },
-  "claude-3-opus-20240229": { price: mixPrice(15, 75), organization: "Anthropic" },
-  "claude-3-sonnet-20240229": { price: mixPrice(3, 15), organization: "Anthropic" },
+  "claude-3-opus-20240229": {
+    organization: "Anthropic",
+    openrouterSlug: "anthropic/claude-3-opus",
+  },
+  "claude-3-sonnet-20240229": {
+    organization: "Anthropic",
+    openrouterSlug: "anthropic/claude-3-sonnet",
+  },
   "claude-instant-1": { organization: "Anthropic" },
   "codellama-34b-instruct": { isOpen: true },
   "codellama-70b-instruct": { isOpen: true },
-  "command-r": { price: mixPrice(0.5, 1.5), isOpen: true, organization: "Cohere" },
+  "command-r": { isOpen: true, organization: "Cohere", openrouterSlug: "cohere/command-r" },
   "command-r-08-2024": {
-    price: mixPrice(0.15, 0.6),
     isOpen: true,
     organization: "Cohere",
+    openrouterSlug: "cohere/command-r-08-2024",
   },
   "command-r-plus": {
-    price: mixPrice(3, 15),
     isOpen: true,
     organization: "Cohere",
+    openrouterSlug: "cohere/command-r-plus",
   },
   "command-r-plus-08-2024": {
-    price: mixPrice(2.5, 10),
     isOpen: true,
     organization: "Cohere",
+    openrouterSlug: "cohere/command-r-plus-08-2024",
   },
   "command-a-03-2025": {
-    price: mixPrice(2.5, 10),
     isOpen: true,
     organization: "Cohere",
+    openrouterSlug: "cohere/command-a",
   },
   "dbrx-instruct-preview": { isOpen: true },
   "deepseek-coder-v2": { deprecated: true, isOpen: true, organization: "DeepSeek" },
@@ -143,40 +199,69 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     isOpen: true,
     organization: "DeepSeek",
   },
-  "deepseek-r1": { price: mixPrice(0.54, 2.18 * 5.7), isOpen: true, organization: "DeepSeek" },
-  "deepseek-v3": { price: mixPrice(0.27, 1.1), isOpen: true, organization: "DeepSeek" },
-  "deepseek-v3-0324": {
-    price: Math.min(mixPrice(0.27, 1.1), mixPrice(0.34, 0.88)),
+  "deepseek-r1": {
     isOpen: true,
     organization: "DeepSeek",
+    openrouterSlug: "deepseek/deepseek-r1",
+    reasoningMultiplier: 5.7,
+  },
+  "deepseek-v3": {
+    isOpen: true,
+    organization: "DeepSeek",
+    openrouterSlug: "deepseek/deepseek-chat",
+  },
+  "deepseek-v3-0324": {
+    isOpen: true,
+    organization: "DeepSeek",
+    openrouterSlug: "deepseek/deepseek-chat-v3-0324",
   },
   "dolly-v2-12b": { isOpen: true },
   "falcon-180b-chat": { isOpen: true },
   "fastchat-t5-3b": { isOpen: true },
   "gemini-1.5-flash-001": { deprecated: true, organization: "Google" },
-  "gemini-1.5-flash-002": { price: mixPrice(0.075, 0.3), organization: "Google" },
-  "gemini-1.5-flash-8b-001": {
-    price: mixPrice(0.0375, 0.15),
+  "gemini-1.5-flash-002": {
     organization: "Google",
+    openrouterSlug: "google/gemini-flash-1.5",
+  },
+  "gemini-1.5-flash-8b-001": {
+    organization: "Google",
+    openrouterSlug: "google/gemini-flash-1.5-8b",
   },
   "gemini-1.5-flash-8b-exp-0827": { deprecated: true, organization: "Google" },
   "gemini-1.5-flash-exp-0827": { deprecated: true, organization: "Google" },
   "gemini-1.5-pro-001": { deprecated: true, organization: "Google" },
-  "gemini-1.5-pro-002": { price: mixPrice(1.25, 5), organization: "Google" },
+  "gemini-1.5-pro-002": {
+    organization: "Google",
+    openrouterSlug: "google/gemini-pro-1.5",
+  },
   "gemini-1.5-pro-api-0409-preview": {
     deprecated: true,
     organization: "Google",
   },
   "gemini-1.5-pro-exp-0801": { deprecated: true, organization: "Google" },
   "gemini-1.5-pro-exp-0827": { deprecated: true, organization: "Google" },
-  "gemini-2.0-flash-001": { price: mixPrice(0.1, 0.4), organization: "Google" },
+  "gemini-2.0-flash-001": {
+    organization: "Google",
+    openrouterSlug: "google/gemini-2.0-flash-001",
+  },
   "gemini-2.0-flash-exp": { deprecated: true, organization: "Google" },
   "gemini-2.0-flash-thinking-exp-01-21": { deprecated: true, organization: "Google" },
   "gemini-2.0-flash-thinking-exp-1219": { deprecated: true, organization: "Google" },
   "gemini-2.0-pro-exp-02-05": { deprecated: true, organization: "Google" },
-  "gemini-2.0-flash-lite-preview-02-05": { price: mixPrice(0.075, 0.3), organization: "Google" },
-  "gemini-2.5-pro-exp-03-25": { price: mixPrice(1.25, 10 * 2.9), organization: "Google" },
-  "gemini-2.5-flash-preview-04-17": { price: mixPrice(0.15, 3.5 * 3.9), organization: "Google" },
+  "gemini-2.0-flash-lite-preview-02-05": {
+    organization: "Google",
+    openrouterSlug: "google/gemini-2.0-flash-lite-001",
+  },
+  "gemini-2.5-pro-exp-03-25": {
+    organization: "Google",
+    openrouterSlug: "google/gemini-2.5-pro-preview-03-25",
+    reasoningMultiplier: 2.9,
+  },
+  "gemini-2.5-flash-preview-04-17": {
+    organization: "Google",
+    openrouterSlug: "google/gemini-2.5-flash-preview:thinking",
+    reasoningMultiplier: 3.9,
+  },
   "gemini-advanced-0514": { deprecated: true, organization: "Google" },
   "gemini-exp-1114": { deprecated: true, organization: "Google" },
   "gemini-exp-1121": { deprecated: true, organization: "Google" },
@@ -194,18 +279,22 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     organization: "Google Open",
   },
   "gemma-2-27b-it": {
-    price: mixPrice(0.27, 0.27),
     isOpen: true,
     organization: "Google Open",
+    openrouterSlug: "google/gemma-2-27b-it",
   },
   "gemma-2-2b-it": { isOpen: true, organization: "Google Open" },
   "gemma-2-9b-it": {
-    price: mixPrice(0.03, 0.06),
     isOpen: true,
     organization: "Google Open",
+    openrouterSlug: "google/gemma-2-9b-it",
   },
   "gemma-2-9b-it-simpo": { isOpen: true, organization: "Google Open" },
-  "gemma-3-27b-it": { isOpen: true, price: mixPrice(0.1, 0.2), organization: "Google Open" },
+  "gemma-3-27b-it": {
+    isOpen: true,
+    organization: "Google Open",
+    openrouterSlug: "google/gemma-3-27b-it",
+  },
   "gemma-2b-it": {
     deprecated: true,
     isOpen: true,
@@ -219,9 +308,15 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   "glm-4-0116": { organization: "Zhipu" },
   "glm-4-0520": { organization: "Zhipu" },
   "glm-4-plus": { organization: "Zhipu" },
-  "gpt-3.5-turbo-0125": { price: mixPrice(0.5, 1.5), organization: "OpenAI" },
+  "gpt-3.5-turbo-0125": {
+    organization: "OpenAI",
+    openrouterSlug: "openai/gpt-3.5-turbo-0125",
+  },
   "gpt-3.5-turbo-0314": { price: mixPrice(1.5, 2), organization: "OpenAI" },
-  "gpt-3.5-turbo-0613": { price: mixPrice(1.5, 2), organization: "OpenAI" },
+  "gpt-3.5-turbo-0613": {
+    organization: "OpenAI",
+    openrouterSlug: "openai/gpt-3.5-turbo-0613",
+  },
   "gpt-3.5-turbo-1106": { price: mixPrice(1, 2), organization: "OpenAI" },
   "gpt-4-0125-preview": { price: mixPrice(10, 30), organization: "OpenAI" },
   "gpt-4-0314": { price: mixPrice(30, 60), organization: "OpenAI" },
@@ -231,19 +326,22 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   "gpt-4o-2024-05-13": { price: mixPrice(5, 15), organization: "OpenAI" },
   "gpt-4o-2024-08-06": { price: mixPrice(2.5, 10), organization: "OpenAI" },
   "gpt-4o-mini-2024-07-18": { price: mixPrice(0.15, 0.6), organization: "OpenAI" },
-  "gpt-4.1-2025-04-14": { price: mixPrice(2, 8), organization: "OpenAI" },
-  "gpt-4.1-mini-2025-04-14": { price: mixPrice(0.4, 1.6), organization: "OpenAI" },
-  "gpt-4.1-nano-2025-04-14": { price: mixPrice(0.1, 0.4), organization: "OpenAI" },
-  "gpt-4.5-preview-2025-02-27": { price: mixPrice(75, 150), organization: "OpenAI" },
+  "gpt-4.1-2025-04-14": { organization: "OpenAI", openrouterSlug: "openai/gpt-4.1" },
+  "gpt-4.1-mini-2025-04-14": { organization: "OpenAI", openrouterSlug: "openai/gpt-4.1-mini" },
+  "gpt-4.1-nano-2025-04-14": { organization: "OpenAI", openrouterSlug: "openai/gpt-4.1-nano" },
+  "gpt-4.5-preview-2025-02-27": {
+    organization: "OpenAI",
+    openrouterSlug: "openai/gpt-4.5-preview",
+  },
   "gpt4all-13b-snoozy": { isOpen: true },
   "granite-3.0-2b-instruct": { isOpen: true },
   "granite-3.0-8b-instruct": { isOpen: true },
   "granite-3.1-2b-instruct": { isOpen: true },
   "granite-3.1-8b-instruct": { isOpen: true },
-  "grok-2-2024-08-13": { price: mixPrice(2, 10), organization: "xAI" },
+  "grok-2-2024-08-13": { organization: "xAI", openrouterSlug: "x-ai/grok-2-1212" },
   "grok-2-mini-2024-08-13": { organization: "xAI" },
   "early-grok-3": { deprecated: true, organization: "xAI" },
-  "grok-3-preview-02-24": { price: mixPrice(3, 15), organization: "xAI" },
+  "grok-3-preview-02-24": { organization: "xAI", openrouterSlug: "x-ai/grok-3-beta" },
   "guanaco-33b": { isOpen: true },
   "internlm2_5-20b-chat": { isOpen: true },
   "internvl2-26b": { isOpen: true },
@@ -257,67 +355,67 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   "llama-2-70b-chat": { deprecated: true, isOpen: true, organization: "Meta" },
   "llama-2-7b-chat": { deprecated: true, isOpen: true, organization: "Meta" },
   "llama-3-70b-instruct": {
-    price: mixPrice(0.23, 0.4),
     isOpen: true,
     organization: "Meta",
+    openrouterSlug: "meta-llama/llama-3-70b-instruct",
   },
   "llama-3-8b-instruct": {
-    price: mixPrice(0.03, 0.06),
     isOpen: true,
     organization: "Meta",
+    openrouterSlug: "meta-llama/llama-3-8b-instruct",
   },
   "llama-3.1-405b-instruct-bf16": {
-    price: mixPrice(3, 3),
+    price: mixPrice(4, 4),
     isOpen: true,
     organization: "Meta",
   },
   "llama-3.1-405b-instruct-fp8": {
-    price: mixPrice(0.8, 0.8),
     isOpen: true,
     organization: "Meta",
+    openrouterSlug: "meta-llama/llama-3.1-405b-instruct",
   },
   "llama-3.1-70b-instruct": {
-    price: mixPrice(0.12, 0.3),
     isOpen: true,
     organization: "Meta",
+    openrouterSlug: "meta-llama/llama-3.1-70b-instruct",
   },
   "llama-3.1-8b-instruct": {
-    price: mixPrice(0.02, 0.03),
     isOpen: true,
     organization: "Meta",
+    openrouterSlug: "meta-llama/llama-3.1-8b-instruct",
   },
   "llama-3.1-tulu-3-70b": { isOpen: true, organization: "Allen" },
   "llama-3.1-tulu-3-8b": { isOpen: true, organization: "Allen" },
   "llama-3.1-nemotron-51b-instruct": { isOpen: true, organization: "NVIDIA" },
   "llama-3.1-nemotron-70b-instruct": {
-    price: mixPrice(0.12, 0.3),
     isOpen: true,
     organization: "NVIDIA",
+    openrouterSlug: "nvidia/llama-3.1-nemotron-70b-instruct",
   },
   "llama-3.2-1b-instruct": {
-    price: mixPrice(0.005, 0.01),
     isOpen: true,
     organization: "Meta",
+    openrouterSlug: "meta-llama/llama-3.2-1b-instruct",
   },
   "llama-3.2-3b-instruct": {
-    price: mixPrice(0.01, 0.02),
     isOpen: true,
     organization: "Meta",
+    openrouterSlug: "meta-llama/llama-3.2-3b-instruct",
   },
   "llama-3.2-vision-11b-instruct": {
-    price: mixPrice(0.049, 0.049),
     isOpen: true,
     organization: "Meta",
+    openrouterSlug: "meta-llama/llama-3.2-11b-vision-instruct",
   },
   "llama-3.2-vision-90b-instruct": {
-    price: mixPrice(0.35, 0.4),
     isOpen: true,
     organization: "Meta",
+    openrouterSlug: "meta-llama/llama-3.2-90b-vision-instruct",
   },
   "llama-3.3-70b-instruct": {
-    price: mixPrice(0.10, 0.25),
     isOpen: true,
     organization: "Meta",
+    openrouterSlug: "meta-llama/llama-3.3-70b-instruct",
   },
   "llama-3.3-nemotron-49b-super-v1": {
     isOpen: true,
@@ -329,9 +427,9 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     organization: "Meta",
   },
   "llama-4-maverick-17b-128e-instruct": {
-    price: mixPrice(0.17, 0.6),
     isOpen: true,
     organization: "Meta",
+    openrouterSlug: "meta-llama/llama-4-maverick",
   },
   "llama2-70b-steerlm-chat": {
     deprecated: true,
@@ -341,47 +439,53 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   "llava-v1.6-34b": { isOpen: true },
   "minicpm-v-2_6": { isOpen: true },
   "ministral-8b-2410": {
-    price: mixPrice(0.1, 0.1),
     isOpen: true,
     organization: "Mistral",
+    openrouterSlug: "mistralai/ministral-8b",
   },
   "mistral-7b-instruct": {
-    price: mixPrice(0.03, 0.055),
     isOpen: true,
     organization: "Mistral",
+    openrouterSlug: "mistralai/mistral-7b-instruct",
   },
   "mistral-7b-instruct-v0.2": {
-    price: mixPrice(0.18, 0.18),
     isOpen: true,
     organization: "Mistral",
+    openrouterSlug: "mistralai/mistral-7b-instruct-v0.2",
   },
-  "mistral-large-2402": { price: mixPrice(2, 6), organization: "Mistral" },
+  "mistral-large-2402": {
+    organization: "Mistral",
+    openrouterSlug: "mistralai/mistral-large",
+  },
   "mistral-large-2407": {
-    price: mixPrice(2, 6),
     isOpen: true,
     organization: "Mistral",
+    openrouterSlug: "mistralai/mistral-large-2407",
   },
   "mistral-large-2411": {
-    price: mixPrice(2, 6),
     isOpen: true,
     organization: "Mistral",
+    openrouterSlug: "mistralai/mistral-large-2411",
   },
-  "mistral-medium": { price: mixPrice(2.75, 8.1), organization: "Mistral" },
+  "mistral-medium": {
+    organization: "Mistral",
+    openrouterSlug: "mistralai/mistral-medium",
+  },
   "mistral-next": { organization: "Mistral" },
   "mistral-small-24b-instruct-2501": {
-    price: mixPrice(0.07, 0.14),
     isOpen: true,
     organization: "Mistral",
+    openrouterSlug: "mistralai/mistral-small-24b-instruct-2501",
   },
   "mixtral-8x22b-instruct-v0.1": {
-    price: mixPrice(0.9, 0.9),
     isOpen: true,
     organization: "Mistral",
+    openrouterSlug: "mistralai/mixtral-8x22b-instruct",
   },
   "mixtral-8x7b-instruct-v0.1": {
-    price: mixPrice(0.24, 0.24),
     isOpen: true,
     organization: "Mistral",
+    openrouterSlug: "mistralai/mixtral-8x7b-instruct",
   },
   "molmo-72b-0924": { isOpen: true, organization: "Allen" },
   "molmo-7b-d-0924": { isOpen: true, organization: "Allen" },
@@ -389,13 +493,29 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   "mpt-7b-chat": { isOpen: true },
   "nemotron-4-340b-instruct": { isOpen: true, organization: "NVIDIA" },
   "nous-hermes-2-mixtral-8x7b-dpo": { isOpen: true },
-  "o1-mini": { price: mixPrice(3, 12 * 2.1), organization: "OpenAI" },
-  "o1-preview": { price: mixPrice(15, 60 * 4.3), organization: "OpenAI" },
-  "o1-2024-12-17": { price: mixPrice(15, 60 * 3.9), organization: "OpenAI" },
+  "o1-mini": { organization: "OpenAI", openrouterSlug: "openai/o1-mini", reasoningMultiplier: 2.1 },
+  "o1-preview": {
+    organization: "OpenAI",
+    openrouterSlug: "openai/o1-preview",
+    reasoningMultiplier: 4.3,
+  },
+  "o1-2024-12-17": {
+    organization: "OpenAI",
+    openrouterSlug: "openai/o1",
+    reasoningMultiplier: 3.9,
+  },
   "o3-2025-04-16": { organization: "OpenAI" }, // TODO: add price once Dubesor data is in
-  "o3-mini": { price: mixPrice(1.1, 4.4 * 4.3), organization: "OpenAI" },
-  "o3-mini-high": { price: mixPrice(1.1, 4.4 * 9.5), organization: "OpenAI" },
-  "o4-mini-2025-04-16": { price: mixPrice(1.1, 4.4 * 3.5), organization: "OpenAI" },
+  "o3-mini": { organization: "OpenAI", openrouterSlug: "openai/o3-mini", reasoningMultiplier: 4.3 },
+  "o3-mini-high": {
+    organization: "OpenAI",
+    openrouterSlug: "openai/o3-mini",
+    reasoningMultiplier: 9.5,
+  },
+  "o4-mini-2025-04-16": {
+    organization: "OpenAI",
+    openrouterSlug: "openai/o4-mini",
+    reasoningMultiplier: 3.5,
+  },
   "oasst-pythia-12b": { isOpen: true },
   "olmo-7b-instruct": { isOpen: true },
   "openchat-3.5": { isOpen: true },
@@ -412,22 +532,22 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   "phi-3-small-8k-instruct": { isOpen: true, organization: "Microsoft" },
   "phi-3-vision-128k-instruct": { isOpen: true, organization: "Microsoft" },
   "phi-3.5-vision-instruct": { isOpen: true, organization: "Microsoft" },
-  "phi-4": { price: mixPrice(0.07, 0.14), isOpen: true, organization: "Microsoft" },
+  "phi-4": { isOpen: true, organization: "Microsoft", openrouterSlug: "microsoft/phi-4" },
   "pixtral-12b-2409": {
-    price: mixPrice(0.1, 0.1),
     isOpen: true,
     organization: "Mistral",
+    openrouterSlug: "mistralai/pixtral-12b",
   },
   "pixtral-large-2411": {
-    price: mixPrice(2, 6),
     isOpen: true,
     organization: "Mistral",
+    openrouterSlug: "mistralai/pixtral-large-2411",
   },
   "qwen-14b-chat": { deprecated: true, isOpen: true, organization: "Qwen" },
-  "qwen-max-0428": { price: mixPrice(10, 30), organization: "Qwen" },
-  "qwen-max-0919": { price: mixPrice(10, 30), organization: "Qwen" },
-  "qwen-plus-0828": { deprecated: true, price: mixPrice(3, 9), organization: "Qwen" },
-  "qwen-plus-0125": { price: mixPrice(0.4, 1.2), organization: "Qwen" },
+  "qwen-max-0428": { deprecated: true, organization: "Qwen" },
+  "qwen-max-0919": { deprecated: true, organization: "Qwen" },
+  "qwen-plus-0828": { deprecated: true, organization: "Qwen" },
+  "qwen-plus-0125": { deprecated: true, organization: "Qwen" },
   "qwen-vl-max-1119": { organization: "Qwen" },
   "qwen1.5-110b-chat": { deprecated: true, isOpen: true, organization: "Qwen" },
   "qwen1.5-14b-chat": { deprecated: true, isOpen: true, organization: "Qwen" },
@@ -436,42 +556,49 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   "qwen1.5-72b-chat": { deprecated: true, isOpen: true, organization: "Qwen" },
   "qwen1.5-7b-chat": { deprecated: true, isOpen: true, organization: "Qwen" },
   "qwen2-72b-instruct": {
-    price: mixPrice(0.34, 0.39),
     isOpen: true,
     organization: "Qwen",
+    openrouterSlug: "qwen/qwen-2-72b-instruct",
   },
-  "qwen2-vl-72b": { price: mixPrice(0.4, 0.4), isOpen: true, organization: "Qwen" },
+  "qwen2-vl-72b": { isOpen: true, organization: "Qwen" },
   "qwen2-vl-7b-instruct": {
-    price: mixPrice(0.1, 0.1),
     isOpen: true,
     organization: "Qwen",
   },
-  "qwen2.5-vl-72b-instruct": { isOpen: true, organization: "Qwen" },
-  "qwen2.5-72b-instruct": {
-    price: mixPrice(0.12, 0.39),
+  "qwen2.5-vl-72b-instruct": {
     isOpen: true,
     organization: "Qwen",
+    openrouterSlug: "qwen/qwen2.5-vl-72b-instruct",
+  },
+  "qwen2.5-72b-instruct": {
+    isOpen: true,
+    organization: "Qwen",
+    openrouterSlug: "qwen/qwen-2.5-72b-instruct",
   },
   "qwen2.5-coder-32b-instruct": {
-    price: Math.min(mixPrice(0.06, 0.18), mixPrice(0.07, 0.15)),
     isOpen: true,
     organization: "Qwen",
+    openrouterSlug: "qwen/qwen-2.5-coder-32b-instruct",
   },
-  "qwen2.5-plus-1127": { price: mixPrice(0.4, 1.2), organization: "Qwen" },
-  "qwen2.5-max": {
-    price: mixPrice(1.6, 6.4),
+  "qwen2.5-plus-1127": { deprecated: true, organization: "Qwen" },
+  "qwen2.5-max": { deprecated: true, organization: "Qwen" },
+  "qwen2.5-vl-32b-instruct": {
+    isOpen: true,
     organization: "Qwen",
+    openrouterSlug: "qwen/qwen2.5-vl-32b-instruct",
   },
-  "qwen2.5-vl-32b-instruct": { isOpen: true, price: mixPrice(0.9, 0.9), organization: "Qwen" },
   "qwq-32b-preview": {
-    price: Math.min(mixPrice(0.09, 0.27 * 4), mixPrice(0.2, 0.2 * 4)),
     isOpen: true,
+    deprecated: true,
     organization: "Qwen",
+    openrouterSlug: "qwen/qwq-32b-preview",
+    reasoningMultiplier: 4,
   },
   "qwq-32b": {
-    price: mixPrice(0.15, 0.2 * 7.71),
     isOpen: true,
     organization: "Qwen",
+    openrouterSlug: "qwen/qwq-32b",
+    reasoningMultiplier: 7.71,
   },
   "reka-core-20240501": { deprecated: true, organization: "Reka AI" },
   "reka-core-20240722": { deprecated: true, organization: "Reka AI" },
@@ -495,7 +622,7 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   "wizardlm-70b": { isOpen: true },
   "yi-1.5-34b-chat": { isOpen: true, organization: "01" },
   "yi-34b-chat": { isOpen: true, organization: "01" },
-  "yi-large": { organization: "01" },
+  "yi-large": { organization: "01", openrouterSlug: "01-ai/yi-large" },
   "yi-large-preview": { organization: "01" },
   "yi-lightning": { organization: "01" },
   "yi-lightning-lite": { organization: "01" },

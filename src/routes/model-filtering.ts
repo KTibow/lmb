@@ -4,6 +4,7 @@ import {
   type ModelMetadata,
   modelMetadata,
   getPriceRange,
+  getPrice,
 } from "./model-metadata";
 
 function shouldShowModel(
@@ -19,17 +20,22 @@ function shouldShowModel(
       return !metadata.deprecated;
     case "hideOld": {
       if (metadata.deprecated) return false;
-      if (!metadata.organization || !metadata.price) return true;
+      if (!metadata.organization) return true;
+      
+      const price = getPrice(model);
+      if (!price) return true;
 
       const thisModelScore = allModels.find((m) => m.name === model)?.rating;
       if (!thisModelScore) return true;
 
-      const price = metadata.price;
       const org = metadata.organization;
       return !allModels.some((other) => {
         const otherMeta = modelMetadata[other.name];
-        if (otherMeta && otherMeta.organization == org && otherMeta.price) {
-          return other.rating > thisModelScore && otherMeta.price <= price;
+        if (otherMeta && otherMeta.organization == org) {
+          const otherPrice = getPrice(other.name);
+          if (otherPrice) {
+            return other.rating > thisModelScore && otherPrice <= price;
+          }
         }
         return false;
       });
@@ -141,9 +147,8 @@ export function filterModels(
 
   models = models.filter((model) => {
     if (selectedPriceRanges.size == 0) return true;
-    const metadata = modelMetadata[model.name];
-    const avgPrice = metadata?.price;
-    const priceRange = avgPrice && getPriceRange(avgPrice);
+    const price = getPrice(model.name);
+    const priceRange = price && getPriceRange(price);
     if (!priceRange) return false;
     return selectedPriceRanges.has(priceRange);
   });

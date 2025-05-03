@@ -8,7 +8,7 @@
     Tooltip,
   } from "chart.js";
   import type { ModelData } from "./model-filtering";
-  import { modelMetadata } from "./model-metadata";
+  import { modelMetadata, getPrice } from "./model-metadata";
 
   Chart.register(ScatterController, LinearScale, LogarithmicScale, PointElement, Tooltip);
 
@@ -41,8 +41,9 @@
       .map((model) => {
         const metadata = modelMetadata[model.name];
         const isOpen = metadata?.isOpen;
+        const price = getPrice(model.name);
         return {
-          x: metadata?.price || 0,
+          x: price || 0,
           y: model.rating,
           label: model.name,
           backgroundColor: isOpen ? tertiaryPointColor : primaryPointColor,
