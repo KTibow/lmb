@@ -39,7 +39,7 @@ async function extractModelMetadata() {
 // Main script
 console.log("Updating OpenRouter prices...");
 const slugs = await extractModelMetadata();
-const result = {};
+let result = {};
 
 const work = async () => {
   while (true) {
@@ -52,11 +52,13 @@ const work = async () => {
     const { data } = await response.json();
 
     const prices = getAllPricing(data?.endpoints);
-    if (prices) result[openrouterSlug] = prices;
+    result[openrouterSlug] = prices;
   }
 };
 
 await Promise.all([work(), work(), work(), work(), work()]);
+
+result = Object.fromEntries(Object.entries(result).sort(([a], [b]) => a.localeCompare(b)));
 
 await fs.writeFile(OUTPUT_PATH, JSON.stringify(result, null, 2));
 console.log(`Done. Saved ${Object.keys(result).length} models.`);
