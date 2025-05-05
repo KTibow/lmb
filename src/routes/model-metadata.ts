@@ -295,6 +295,16 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     organization: "Google Open",
     openrouterSlug: "google/gemma-3-27b-it",
   },
+  "gemma-3-12b-it": {
+    isOpen: true,
+    organization: "Google Open",
+    openrouterSlug: "google/gemma-3-12b-it",
+  },
+  "gemma-3-4b-it": {
+    isOpen: true,
+    organization: "Google Open",
+    openrouterSlug: "google/gemma-3-4b-it",
+  },
   "gemma-2b-it": {
     deprecated: true,
     isOpen: true,
@@ -586,6 +596,12 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     isOpen: true,
     organization: "Qwen",
     openrouterSlug: "qwen/qwen2.5-vl-32b-instruct",
+  },
+  "qwen3-235b-a22b": {
+    isOpen: true,
+    organization: "Qwen",
+    openrouterSlug: "qwen/qwen3-235b-a22b",
+    reasoningMultiplier: 6.2,
   },
   "qwq-32b-preview": {
     isOpen: true,
