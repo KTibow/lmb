@@ -21,7 +21,7 @@ function shouldShowModel(
     case "hideOld": {
       if (metadata.deprecated) return false;
       if (!metadata.organization) return true;
-      
+
       const price = getPrice(model);
       if (!price) return true;
 
@@ -62,17 +62,16 @@ export interface ModelData {
 }
 
 export function filterModels(
-  data: Record<
+  rows: [
     string,
-    Record<
-      string,
-      {
-        first_seen: number;
-        last_seen: number;
-        data: Record<string, number[]>;
-      }
-    >
-  >,
+    string,
+    {
+      first_seen: number;
+      last_seen: number;
+      data: Record<string, number[]>;
+      dead?: boolean;
+    },
+  ][],
   paradigm: string,
   categoryName: string,
   searches: string[],
@@ -83,9 +82,8 @@ export function filterModels(
   let models: ModelData[] = [];
 
   // Build initial model data
-  for (const [name, v] of Object.entries(data)) {
-    if (!(paradigm in v)) continue;
-    const model = v[paradigm];
+  for (const [name, p, model] of rows) {
+    if (paradigm != p) continue;
     if (model.dead) continue;
     if (!(categoryName in model.data)) continue;
     const details = model.data[categoryName];

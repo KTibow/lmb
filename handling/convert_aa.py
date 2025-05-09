@@ -1,7 +1,8 @@
 import requests
-import json
+import ujson
 import os
 import time
+
 
 def transform_model_name(name):
     name = name.lower()
@@ -46,29 +47,35 @@ def transform_model_name(name):
 
     return name
 
+
 def parse_ci95(ci95_str):
     """Parse CI95 string in format '-X/+Y' and return (low, high) offsets"""
     if not ci95_str:
         return None, None
     try:
-        minus, plus = ci95_str.split('/')
-        minus_val = float(minus.strip('-'))
-        plus_val = float(plus.strip('+'))
+        minus, plus = ci95_str.split("/")
+        minus_val = float(minus.strip("-"))
+        plus_val = float(plus.strip("+"))
         return minus_val, plus_val
     except:
         return None, None
+
 
 # Fetch and transform the data
 url = "https://artificialanalysis.ai/api/text-to-image/arena/preferences/total"
 response = requests.get(url)
 data = response.json()
 
-# Initialize the output structure
+# Load existing data from JSONL
 slop = {}
-slop_file_path = 'src/routes/assets/data.json'
+slop_file_path = "src/routes/assets/data.jsonl"
 if os.path.exists(slop_file_path):
-    with open(slop_file_path, 'r') as f:
-        slop = json.load(f)
+    with open(slop_file_path, "r") as f:
+        for line in f:
+            model, modality, modality_data = ujson.loads(line)
+            if model not in slop:
+                slop[model] = {}
+            slop[model][modality] = modality_data
 
 timestamp = int(time.time()) - 7 * 24 * 60 * 60
 
@@ -88,7 +95,7 @@ for model in data["models"]:
         space = slop[transformed_name]["aa_image"] = {
             "first_seen": timestamp,
             "last_seen": 0,
-            "data": {}
+            "data": {},
         }
     space["last_seen"] = timestamp
 
@@ -103,7 +110,11 @@ for model in data["models"]:
         # Parse and add confidence intervals
         minus_ci, plus_ci = parse_ci95(subset_stats.get("ci95"))
         if minus_ci is not None and plus_ci is not None:
-            space["data"][subcat] = [round(minus_ci, 2), round(elo, 2), round(plus_ci, 2)]
+            space["data"][subcat] = [
+                round(minus_ci, 2),
+                round(elo, 2),
+                round(plus_ci, 2),
+            ]
             continue
         space["data"][subcat] = [None, round(elo, 2), None]
 
@@ -118,5 +129,8 @@ for model in slop.values():
     if space["last_seen"] != timestamp:
         space["dead"] = True
 
-with open(slop_file_path, 'w') as f:
-    json.dump(slop, f, indent=2)
+# Write directly to JSONL
+with open(slop_file_path, "w") as f:
+    for model_name, model_data in slop.items():
+        for modality, modality_data in model_data.items():
+            f.write(ujson.dumps([model_name, modality, modality_data]) + "\n")

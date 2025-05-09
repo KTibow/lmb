@@ -14,7 +14,7 @@
   } from "m3-svelte";
   import { browser } from "$app/environment";
   import { page } from "$app/stores";
-  import { default as data } from "./assets/data.json";
+  import rowsRaw from "./assets/data.jsonl?raw";
   import ModelTable from "./ModelTable.svelte";
   import Dropdown from "./Dropdown.svelte";
   import {
@@ -23,6 +23,11 @@
     getFilterDescription,
     getPriceRangeLabel,
   } from "./model-metadata";
+
+  const rows = rowsRaw
+    .split("\n")
+    .filter(Boolean)
+    .map((x) => JSON.parse(x));
 
   let paradigm = "lmarena_text",
     category = "full",
@@ -38,9 +43,9 @@
   let snackbar: (snackbar: SnackbarIn) => void;
 
   const getFullCategories = (paradigm: string) => {
-    const example = Object.values(data).find((m) => paradigm in m);
+    const example = rows.find((example) => example[1] == paradigm);
     if (!example) return [];
-    return Object.keys(example[paradigm].data);
+    return Object.keys(example[2].data);
   };
 
   const categories = {
@@ -190,7 +195,7 @@
 </div>
 
 <ModelTable
-  {data}
+  {rows}
   {paradigm}
   {category}
   {styleControl}

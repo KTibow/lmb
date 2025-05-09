@@ -1,8 +1,8 @@
 # /// script
-# dependencies = ["numpy", "pandas", "requests", "plotly==5.24.1"]
+# dependencies = ["numpy", "pandas", "requests", "plotly==5.24.1", "ujson"]
 # ///
 import pickle
-import json
+import ujson
 import numpy as np
 import pandas as pd
 import requests
@@ -12,6 +12,7 @@ import re
 import os
 import time
 import calendar
+
 
 def get_latest_pickle_file(index):
     """Fetch the latest pickle file from HuggingFace repository."""
@@ -24,10 +25,10 @@ def get_latest_pickle_file(index):
     # Filter for pickle files and extract dates
     pickle_files = []
     for file in files:
-        if match := re.match(r'elo_results_(\d{8})\.pkl', file['path']):
+        if match := re.match(r"elo_results_(\d{8})\.pkl", file["path"]):
             date_str = match.group(1)
-            date = datetime.strptime(date_str, '%Y%m%d')
-            pickle_files.append((date, file['path']))
+            date = datetime.strptime(date_str, "%Y%m%d")
+            pickle_files.append((date, file["path"]))
 
     if not pickle_files:
         raise Exception("No pickle files found in repository")
@@ -35,7 +36,7 @@ def get_latest_pickle_file(index):
     # Get the most recent file
     pickle_files.sort(key=lambda x: x[0], reverse=True)
     latest_file = pickle_files[index][1]
-    latest_id = latest_file.split('_')[2].split('.')[0]
+    latest_id = latest_file.split("_")[2].split(".")[0]
 
     # Download the file content
     raw_url = f"https://huggingface.co/spaces/lmarena-ai/chatbot-arena-leaderboard/resolve/main/{latest_file}"
@@ -43,8 +44,9 @@ def get_latest_pickle_file(index):
     response.raise_for_status()
 
     data = pickle.loads(response.content)
-    timestamp = calendar.timegm(time.strptime(latest_id, '%Y%m%d'))
+    timestamp = calendar.timegm(time.strptime(latest_id, "%Y%m%d"))
     return data, timestamp
+
 
 def convert_to_serializable(obj):
     """Convert numpy/pandas objects to JSON serializable types."""
@@ -62,6 +64,7 @@ def convert_to_serializable(obj):
         return obj
     return "..."
 
+
 def calculate_confidence_intervals(samples):
     """Calculate 95% confidence intervals from bootstrap samples."""
     if not samples or len(samples) == 0:
@@ -71,6 +74,7 @@ def calculate_confidence_intervals(samples):
     low_value = 0.5 * sorted_samples[2] + 0.5 * sorted_samples[3]
     high_value = 0.5 * sorted_samples[99 - 2] + 0.5 * sorted_samples[99 - 3]
     return low_value, high_value
+
 
 def transform_model_name(name):
     name = name.lower()
@@ -86,30 +90,38 @@ def transform_model_name(name):
     name = name.replace("dall-e", "dalle")
     return name
 
+
 data, timestamp = get_latest_pickle_file(0)
 
+# Load existing data from JSONL
 slop = {}
-slop_file_path = 'src/routes/assets/data.json'
+slop_file_path = "src/routes/assets/data.jsonl"
 if os.path.exists(slop_file_path):
-    with open(slop_file_path, 'r') as f:
-        slop = json.load(f)
+    with open(slop_file_path, "r") as f:
+        for line in f:
+            model, modality, modality_data = ujson.loads(line)
+            if model not in slop:
+                slop[model] = {}
+            slop[model][modality] = modality_data
 
 # Process each category (text/vision)
 for category_type, categories in data.items():
     # Process each subcategory (full, english, etc)
     for category_name, category_data in categories.items():
-        if 'elo_rating_final' not in category_data:
+        if "elo_rating_final" not in category_data:
             print("skipping", category_name)
             continue
-        if 'bootstrap_df' not in category_data:
+        if "bootstrap_df" not in category_data:
             print("skipping", category_name)
             continue
 
         # Process ratings and bootstrap data together
-        df = category_data['bootstrap_df']
+        df = category_data["bootstrap_df"]
 
-        for model, elo in category_data['elo_rating_final'].items():
-            transformed_name = transform_model_name(model) if category_type == "image" else model
+        for model, elo in category_data["elo_rating_final"].items():
+            transformed_name = (
+                transform_model_name(model) if category_type == "image" else model
+            )
 
             elo = float(elo)
 
@@ -122,7 +134,7 @@ for category_type, categories in data.items():
                 space = slop[transformed_name][space_name] = {
                     "first_seen": timestamp,
                     "last_seen": 0,
-                    "data": {}
+                    "data": {},
                 }
             if timestamp > space["last_seen"]:
                 space["last_seen"] = timestamp
@@ -156,5 +168,8 @@ for model in slop.values():
         if space["last_seen"] != timestamp:
             space["dead"] = True
 
-with open(slop_file_path, 'w') as f:
-    json.dump(slop, f, indent=2)
+# Write directly to JSONL
+with open(slop_file_path, "w") as f:
+    for model_name, model_data in slop.items():
+        for modality, modality_data in model_data.items():
+            f.write(ujson.dumps([model_name, modality, modality_data]) + "\n")

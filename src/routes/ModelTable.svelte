@@ -3,17 +3,15 @@
   import { filterModels } from "./model-filtering";
   import ScatterChart from "./ScatterChart.svelte";
 
-  export let data: Record<
+  export let rows: [
     string,
-    Record<
-      string,
-      {
-        first_seen: number;
-        last_seen: number;
-        data: Record<string, number[]>;
-      }
-    >
-  >;
+    string,
+    {
+      first_seen: number;
+      last_seen: number;
+      data: Record<string, number[]>;
+    },
+  ][];
   export let paradigm: string;
   export let category: string;
   export let styleControl: boolean;
@@ -28,7 +26,7 @@
 
   $: categoryName = `${category}${styleControl ? "_style_control" : ""}`;
   $: models = filterModels(
-    data,
+    rows,
     paradigm,
     categoryName,
     searches,
