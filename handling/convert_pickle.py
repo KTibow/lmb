@@ -7,7 +7,6 @@ import numpy as np
 import pandas as pd
 import requests
 from datetime import datetime
-import io
 import re
 import os
 import time

@@ -1,3 +1,6 @@
+# /// script
+# dependencies = ["requests", "ujson"]
+# ///
 import requests
 import ujson
 import os
