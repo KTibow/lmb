@@ -6,7 +6,7 @@ import { fileURLToPath } from "url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PROJECT_ROOT = path.resolve(__dirname, "..");
 const METADATA_PATH = path.resolve(PROJECT_ROOT, "src", "routes", "model-metadata.ts");
-const OUTPUT_PATH = path.resolve(PROJECT_ROOT, "src", "routes", "assets", "openrouter.json");
+const OUTPUT_PATH = path.resolve(PROJECT_ROOT, "src", "routes", "assets", "openrouter.jsonl");
 
 function getAllPricing(endpoints) {
   if (!endpoints?.length) return null;
@@ -39,7 +39,7 @@ async function extractModelMetadata() {
 // Main script
 console.log("Updating OpenRouter prices...");
 const slugs = await extractModelMetadata();
-let result = {};
+let result = [];
 
 const work = async () => {
   while (true) {
@@ -52,13 +52,13 @@ const work = async () => {
     const { data } = await response.json();
 
     const prices = getAllPricing(data?.endpoints);
-    result[openrouterSlug] = prices;
+    result.push([openrouterSlug, prices]);
   }
 };
 
 await Promise.all([work(), work(), work(), work(), work()]);
 
-result = Object.fromEntries(Object.entries(result).sort(([a], [b]) => a.localeCompare(b)));
+result.sort((a, b) => a[0].localeCompare(b[0]));
 
-await fs.writeFile(OUTPUT_PATH, JSON.stringify(result, null, 2));
+await fs.writeFile(OUTPUT_PATH, result.map(JSON.stringify).join("\n"));
 console.log(`Done. Saved ${Object.keys(result).length} models.`);

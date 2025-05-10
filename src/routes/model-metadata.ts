@@ -1,4 +1,4 @@
-import openrouterData from "./assets/openrouter.json";
+import openrouterRaw from "./assets/openrouter.jsonl?raw";
 
 export interface ModelMetadata {
   deprecated?: boolean;
@@ -50,6 +50,9 @@ export function getFilterDescription(strategy: FilterStrategy): string {
 
 const mixPrice = (input: number, output: number) => (2 / 3) * input + (1 / 3) * output;
 
+const openrouterData: [string, [number, number][]][] = openrouterRaw
+  .split("\n")
+  .map((x) => JSON.parse(x));
 export function getPrice(modelName: string): number | undefined {
   const metadata = modelMetadata[modelName];
   if (!metadata) return undefined;
@@ -62,9 +65,7 @@ export function getPrice(modelName: string): number | undefined {
   const openrouterSlug = metadata.openrouterSlug;
   const reasoningMultiplier = metadata.reasoningMultiplier || 1;
   if (openrouterSlug) {
-    const providers = (openrouterData as unknown as Record<string, [number, number][]>)[
-      openrouterSlug
-    ];
+    const providers = openrouterData.find((x) => x[0] == openrouterSlug)?.[1];
     if (!providers) {
       console.warn("No providers for", openrouterSlug);
       return undefined;
