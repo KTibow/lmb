@@ -11,18 +11,14 @@
     Switch,
     Snackbar,
     type SnackbarIn,
+    Checkbox,
   } from "m3-svelte";
   import { browser } from "$app/environment";
   import { page } from "$app/stores";
   import rowsRaw from "./assets/data.jsonl?raw";
   import ModelTable from "./ModelTable.svelte";
   import Dropdown from "./Dropdown.svelte";
-  import {
-    type FilterStrategy,
-    type PriceRange,
-    getFilterDescription,
-    getPriceRangeLabel,
-  } from "./model-metadata";
+  import { type PriceRange, getPriceRangeLabel } from "./model-metadata";
 
   const rows = rowsRaw
     .split("\n")
@@ -37,7 +33,11 @@
   let showOpenOnly = false;
   let vizBorder = false;
   let vizBar = false;
-  let filterStrategy: FilterStrategy = "hideDeprecated";
+  let dropDeprecated = true;
+  let dropSemidead = false;
+  let dropNonPareto = false;
+  let dropNonParetoOrg = false;
+  let dropNonParetoConservative = false;
   let selectedPriceRanges = new Set<PriceRange>();
 
   let snackbar: (snackbar: SnackbarIn) => void;
@@ -109,7 +109,6 @@
       category,
       styleControl,
       searches,
-      filterStrategy,
       vizBorder,
       vizBar,
     };
@@ -148,7 +147,6 @@
       category = settings.category;
       styleControl = Boolean(settings.styleControl);
       searches = settings.searches || [];
-      filterStrategy = settings.filterStrategy || filterStrategy;
       vizBorder = Boolean(settings.vizBorder);
       vizBar = Boolean(settings.vizBar);
     }
@@ -203,7 +201,11 @@
   {showOpenOnly}
   {vizBorder}
   {vizBar}
-  {filterStrategy}
+  {dropDeprecated}
+  {dropSemidead}
+  {dropNonPareto}
+  {dropNonParetoOrg}
+  {dropNonParetoConservative}
   {selectedPriceRanges}
 />
 
@@ -250,21 +252,39 @@
     </div>
 
     <div class="filter-section">
-      <span>Filter models</span>
-      <SegmentedButtonContainer>
-        {#each ["showAll", "hideDeprecated", "hideOld", "onePerOrg"] as FilterStrategy[] as strategy}
-          <input
-            type="radio"
-            name="filterStrategy"
-            bind:group={filterStrategy}
-            value={strategy}
-            id={strategy}
-          />
-          <SegmentedButtonItem input={strategy}>
-            {getFilterDescription(strategy)}
-          </SegmentedButtonItem>
-        {/each}
-      </SegmentedButtonContainer>
+      <span>Drop models</span>
+      <div class="boxes">
+        <label>
+          <Checkbox>
+            <input type="checkbox" bind:checked={dropDeprecated} />
+          </Checkbox>
+          Deprecated
+        </label>
+        <label>
+          <Checkbox>
+            <input type="checkbox" bind:checked={dropSemidead} />
+          </Checkbox>
+          Retired
+        </label>
+        <label>
+          <Checkbox>
+            <input type="checkbox" bind:checked={dropNonPareto} />
+          </Checkbox>
+          Non pareto
+        </label>
+        <label>
+          <Checkbox>
+            <input type="checkbox" bind:checked={dropNonParetoOrg} />
+          </Checkbox>
+          Non pareto (org specific)
+        </label>
+        <label>
+          <Checkbox>
+            <input type="checkbox" bind:checked={dropNonParetoConservative} />
+          </Checkbox>
+          Non pareto (conservative)
+        </label>
+      </div>
     </div>
     <p><em>Remember: You need a 70 point difference for a 60% win rate</em></p>
   </div>
@@ -281,7 +301,6 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    padding: 1rem 0;
   }
 
   .settings-content label {
@@ -303,6 +322,15 @@
     }
     :global(label) {
       flex-grow: 1;
+    }
+  }
+  .boxes {
+    display: flex;
+    flex-direction: column;
+    label {
+      display: flex;
+      justify-content: start;
+      height: 2.5rem;
     }
   }
 

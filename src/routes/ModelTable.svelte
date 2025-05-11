@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { modelMetadata, type FilterStrategy, type PriceRange } from "./model-metadata";
+  import { modelMetadata, type PriceRange } from "./model-metadata";
   import { filterModels } from "./model-filtering";
   import ScatterChart from "./ScatterChart.svelte";
 
@@ -17,9 +17,13 @@
   export let styleControl: boolean;
   export let searches: string[];
   export let showOpenOnly = false;
-  export let vizBorder = false;
-  export let vizBar = false;
-  export let filterStrategy: FilterStrategy;
+  export let vizBorder;
+  export let vizBar;
+  export let dropDeprecated: boolean;
+  export let dropSemidead: boolean;
+  export let dropNonPareto: boolean;
+  export let dropNonParetoOrg: boolean;
+  export let dropNonParetoConservative: boolean;
   export let selectedPriceRanges: Set<PriceRange>;
 
   const newCutoff = Date.now() / 1000 - 60 * 60 * 24 * 7;
@@ -31,7 +35,13 @@
     categoryName,
     searches,
     showOpenOnly,
-    filterStrategy,
+    [
+      dropDeprecated && "deprecated",
+      dropSemidead && "semidead",
+      dropNonPareto && "nonpareto",
+      dropNonParetoOrg && "nonparetoorg",
+      dropNonParetoConservative && "nonparetoconservative",
+    ].filter((x): x is string => Boolean(x)),
     selectedPriceRanges,
   );
   $: anyCi = models.some((m) => m.ciLow !== m.ciHigh);

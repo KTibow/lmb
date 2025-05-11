@@ -11,7 +11,6 @@ export interface ModelMetadata {
   reasoningMultiplier?: number;
 }
 
-export type FilterStrategy = "showAll" | "hideDeprecated" | "hideOld" | "onePerOrg";
 export type PriceRange = "$" | "$$" | "$$$" | "$$$$";
 
 export function getPriceRange(price: number | undefined): PriceRange | undefined {
@@ -32,19 +31,6 @@ export function getPriceRangeLabel(range: PriceRange): string {
       return "$1-$10";
     case "$$$$":
       return "$10+";
-  }
-}
-
-export function getFilterDescription(strategy: FilterStrategy): string {
-  switch (strategy) {
-    case "showAll":
-      return "Never";
-    case "hideDeprecated":
-      return "Drop deprecated";
-    case "hideOld":
-      return "Drop old";
-    case "onePerOrg":
-      return "Best / org";
   }
 }
 

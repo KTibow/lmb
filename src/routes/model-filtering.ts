@@ -1,5 +1,4 @@
 import {
-  type FilterStrategy,
   type PriceRange,
   type ModelMetadata,
   modelMetadata,
@@ -7,49 +6,70 @@ import {
   getPrice,
 } from "./model-metadata";
 
+type Model = {
+  first_seen: number;
+  last_seen: number;
+  data: Record<string, number[]>;
+  status?: string;
+};
+
 function shouldShowModel(
-  model: string,
+  name: string,
+  model: Model,
   metadata: ModelMetadata,
-  strategy: FilterStrategy,
-  allModels: Array<{ name: string; rating: number }>,
+  drop: string[],
+  models: { name: string; rating: number }[],
 ): boolean {
-  switch (strategy) {
-    case "showAll":
-      return true;
-    case "hideDeprecated":
-      return !metadata.deprecated;
-    case "hideOld": {
-      if (metadata.deprecated) return false;
-      if (!metadata.organization) return true;
+  if (model.status == "dead") return false;
+  if (drop.includes("deprecated") && metadata?.deprecated) return false;
+  if (drop.includes("semidead") && model.status == "semidead") return false;
+  if (drop.includes("nonpareto")) {
+    const price = getPrice(name);
 
-      const price = getPrice(model);
-      if (!price) return true;
+    const thisModelScore = models.find((m) => m.name === name)?.rating;
 
-      const thisModelScore = allModels.find((m) => m.name === model)?.rating;
-      if (!thisModelScore) return true;
-
-      const org = metadata.organization;
-      return !allModels.some((other) => {
-        const otherMeta = modelMetadata[other.name];
-        if (otherMeta && otherMeta.organization == org) {
-          const otherPrice = getPrice(other.name);
-          if (otherPrice) {
-            return other.rating > thisModelScore && otherPrice <= price;
-          }
+    if (!price) return false;
+    if (!thisModelScore) return false;
+    if (
+      models.some((other) => {
+        const otherPrice = getPrice(other.name);
+        if (otherPrice) {
+          return other.rating > thisModelScore && otherPrice <= price;
         }
-        return false;
-      });
-    }
-    case "onePerOrg":
-      if (!metadata.organization) return true;
-      const orgModels = allModels.filter(
-        (m) => modelMetadata[m.name]?.organization === metadata.organization,
-      );
-      const bestOrgModel = orgModels.reduce((best, current) =>
-        current.rating > best.rating ? current : best,
-      );
-      return bestOrgModel.name === model;
+      })
+    )
+      return false;
   }
+  if (drop.includes("nonparetoorg") || drop.includes("nonparetoconservative")) {
+    const price = getPrice(name);
+
+    const thisModelScore = models.find((m) => m.name === name)?.rating;
+
+    const org = metadata?.organization;
+
+    if (price && thisModelScore && org) {
+      if (
+        models.some((other) => {
+          const otherPrice = getPrice(other.name);
+          const otherMetadata = modelMetadata[other.name];
+          return (
+            otherPrice &&
+            otherMetadata &&
+            otherMetadata.organization == org &&
+            other.rating > thisModelScore &&
+            otherPrice <= price
+          );
+        })
+      ) {
+        return false;
+      }
+    } else {
+      if (drop.includes("nonparetoorg")) {
+        return false;
+      }
+    }
+  }
+  return true;
 }
 
 export interface ModelData {
@@ -62,21 +82,12 @@ export interface ModelData {
 }
 
 export function filterModels(
-  rows: [
-    string,
-    string,
-    {
-      first_seen: number;
-      last_seen: number;
-      data: Record<string, number[]>;
-      status?: string;
-    },
-  ][],
+  rows: [string, string, Model][],
   paradigm: string,
   categoryName: string,
   searches: string[],
   showOpenOnly: boolean,
-  filterStrategy: FilterStrategy,
+  drop: string[],
   selectedPriceRanges: Set<PriceRange>,
 ): ModelData[] {
   let models: ModelData[] = [];
@@ -84,7 +95,6 @@ export function filterModels(
   // Build initial model data
   for (const [name, p, model] of rows) {
     if (paradigm != p) continue;
-    if (model.status == "dead") continue;
     if (!(categoryName in model.data)) continue;
     const details = model.data[categoryName];
     models.push({
@@ -108,14 +118,15 @@ export function filterModels(
     thisBar = model.ciLow;
     thisScore = model.ciHigh;
 
-    const metadata = modelMetadata[model.name];
-    const isFilteredOut =
-      filterStrategy == "showAll"
-        ? false
-        : filterStrategy == "hideDeprecated"
-          ? metadata && !shouldShowModel(model.name, metadata, filterStrategy, models)
-          : !metadata || !shouldShowModel(model.name, metadata, filterStrategy, models);
-    if (!isFilteredOut) {
+    const name = model.name;
+    const show = shouldShowModel(
+      name,
+      rows.find((m) => m[0] == name && m[1] == paradigm)![2],
+      modelMetadata[name],
+      drop,
+      models,
+    );
+    if (show) {
       if (!bar) {
         bar = thisBar;
       }
@@ -151,12 +162,16 @@ export function filterModels(
     return selectedPriceRanges.has(priceRange);
   });
 
-  if (filterStrategy != "showAll") {
-    models = models.filter((model) => {
-      const metadata = modelMetadata[model.name];
-      return !metadata || shouldShowModel(model.name, metadata, filterStrategy, models);
-    });
-  }
+  models = models.filter((model) => {
+    const name = model.name;
+    return shouldShowModel(
+      name,
+      rows.find((m) => m[0] == name && m[1] == paradigm)![2],
+      modelMetadata[name],
+      drop,
+      models,
+    );
+  });
 
   return models;
 }
