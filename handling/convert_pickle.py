@@ -117,23 +117,30 @@ def process_model(name, paradigm, category_data):
         space = slop[transformed_name][space_name] = {
             "first_seen": timestamp,
             "last_seen": 0,
+            "votes": 0,
             "data": {},
         }
 
-    try:
-        del space["status"]
-    except KeyError:
-        pass
+    full_table = categories["full"]["leaderboard_table_df"].loc
+    votes = full_table[model]["num_battles"]
 
-    if timestamp > space["last_seen"]:
+    is_update = timestamp > space["last_seen"]
+    if True:
+        try:
+            del space["status"]
+        except KeyError:
+            pass
+
+        old_votes = space["votes"] if "votes" in space else 0
+        if is_update and old_votes == votes:
+            space["status"] = "semidead"
+
         space["last_seen"] = timestamp
+        space["votes"] = votes
         space["data"] = {}
 
     # Process all categories for this model
     for category_name, category_data in categories.items():
-        if "elo_rating_final" not in category_data or "bootstrap_df" not in category_data:
-            continue
-
         if model not in category_data["elo_rating_final"]:
             continue
 
@@ -160,22 +167,11 @@ def process_model(name, paradigm, category_data):
 for paradigm, categories in data.items():
     models_in_paradigm = set()
     for category_name, category_data in categories.items():
-        if "elo_rating_final" not in category_data:
-            print("skipping", category_name)
-            continue
-        if "bootstrap_df" not in category_data:
-            print("skipping", category_name)
-            continue
-
         for model in category_data["elo_rating_final"].keys():
             models_in_paradigm.add(model)
 
     for model in models_in_paradigm:
-        if model not in categories:
-            continue
-
-        category_data = categories[model]
-        process_model(model, paradigm, category_data)
+        process_model(model, paradigm, categories)
 
 for model in slop.values():
     for k in ["lmarena_text", "lmarena_vision", "lmarena_image"]:

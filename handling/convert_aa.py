@@ -130,7 +130,7 @@ for model in slop.values():
         continue
     space = model["aa_image"]
     if space["last_seen"] != timestamp:
-        space["dead"] = True
+        space["status"] = "dead"
 
 # Write directly to JSONL
 with open(slop_file_path, "w") as f:

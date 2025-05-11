@@ -69,7 +69,7 @@ export function filterModels(
       first_seen: number;
       last_seen: number;
       data: Record<string, number[]>;
-      dead?: boolean;
+      status?: string;
     },
   ][],
   paradigm: string,
@@ -84,7 +84,7 @@ export function filterModels(
   // Build initial model data
   for (const [name, p, model] of rows) {
     if (paradigm != p) continue;
-    if (model.dead) continue;
+    if (model.status == "dead") continue;
     if (!(categoryName in model.data)) continue;
     const details = model.data[categoryName];
     models.push({
