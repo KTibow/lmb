@@ -242,6 +242,7 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   "gemini-2.5-pro-exp-03-25": {
     organization: "Google",
     reasoningMultiplier: 2.9,
+    deprecated: true,
   },
   "gemini-2.5-pro-preview-05-06": {
     organization: "Google",
