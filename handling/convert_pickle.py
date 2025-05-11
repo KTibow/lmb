@@ -103,9 +103,62 @@ if os.path.exists(slop_file_path):
                 slop[model] = {}
             slop[model][modality] = modality_data
 
+def process_model(name, paradigm, category_data):
+    transformed_name = (
+        transform_model_name(model) if paradigm == "image" else model
+    )
+    if transformed_name not in slop:
+        slop[transformed_name] = {}
+
+    space_name = f"lmarena_{paradigm}"
+    if space_name in slop[transformed_name]:
+        space = slop[transformed_name][space_name]
+    else:
+        space = slop[transformed_name][space_name] = {
+            "first_seen": timestamp,
+            "last_seen": 0,
+            "data": {},
+        }
+
+    try:
+        del space["status"]
+    except KeyError:
+        pass
+
+    if timestamp > space["last_seen"]:
+        space["last_seen"] = timestamp
+        space["data"] = {}
+
+    # Process all categories for this model
+    for category_name, category_data in categories.items():
+        if "elo_rating_final" not in category_data or "bootstrap_df" not in category_data:
+            continue
+
+        if model not in category_data["elo_rating_final"]:
+            continue
+
+        elo = float(category_data["elo_rating_final"][model])
+        df = category_data["bootstrap_df"]
+
+        if model in df.columns:
+            samples = df[model].astype(float).tolist()
+            ci_low, ci_high = calculate_confidence_intervals(samples)
+            if ci_low is not None and ci_high is not None:
+                space["data"][category_name] = [
+                    round(elo - ci_low, 2),
+                    round(elo, 2),
+                    round(ci_high - elo, 2),
+                ]
+                continue
+        space["data"][category_name] = [
+            None,
+            round(elo, 2),
+            None,
+        ]
+
 # Process each category (text/vision)
-for category_type, categories in data.items():
-    # Process each subcategory (full, english, etc)
+for paradigm, categories in data.items():
+    models_in_paradigm = set()
     for category_name, category_data in categories.items():
         if "elo_rating_final" not in category_data:
             print("skipping", category_name)
@@ -114,58 +167,23 @@ for category_type, categories in data.items():
             print("skipping", category_name)
             continue
 
-        # Process ratings and bootstrap data together
-        df = category_data["bootstrap_df"]
+        for model in category_data["elo_rating_final"].keys():
+            models_in_paradigm.add(model)
 
-        for model, elo in category_data["elo_rating_final"].items():
-            transformed_name = (
-                transform_model_name(model) if category_type == "image" else model
-            )
+    for model in models_in_paradigm:
+        if model not in categories:
+            continue
 
-            elo = float(elo)
-
-            if transformed_name not in slop:
-                slop[transformed_name] = {}
-            space_name = f"lmarena_{category_type}"
-            if space_name in slop[transformed_name]:
-                space = slop[transformed_name][space_name]
-            else:
-                space = slop[transformed_name][space_name] = {
-                    "first_seen": timestamp,
-                    "last_seen": 0,
-                    "data": {},
-                }
-            if timestamp > space["last_seen"]:
-                space["last_seen"] = timestamp
-                space["data"] = {}
-
-            if model in df.columns:
-                samples = df[model].astype(float).tolist()
-                ci_low, ci_high = calculate_confidence_intervals(samples)
-                if ci_low is not None and ci_high is not None:
-                    space["data"][category_name] = [
-                        round(elo - ci_low, 2),
-                        round(elo, 2),
-                        round(ci_high - elo, 2),
-                    ]
-                    continue
-            space["data"][category_name] = [
-                None,
-                round(elo, 2),
-                None,
-            ]
+        category_data = categories[model]
+        process_model(model, paradigm, category_data)
 
 for model in slop.values():
     for k in ["lmarena_text", "lmarena_vision", "lmarena_image"]:
         if k not in model:
-            continue
+          continue
         space = model[k]
-        try:
-            del space["dead"]
-        except KeyError:
-            pass
         if space["last_seen"] != timestamp:
-            space["dead"] = True
+            space["status"] = "dead"
 
 # Write directly to JSONL
 with open(slop_file_path, "w") as f:

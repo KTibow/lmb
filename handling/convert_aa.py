@@ -101,6 +101,10 @@ for model in data["models"]:
             "data": {},
         }
     space["last_seen"] = timestamp
+    try:
+        del space["status"]
+    except KeyError:
+        pass
 
     # Iterate over all subsets in arena["total"]
     total_sections = model.get("arena", {}).get("total", {})
@@ -125,10 +129,6 @@ for model in slop.values():
     if "aa_image" not in model:
         continue
     space = model["aa_image"]
-    try:
-        del space["dead"]
-    except KeyError:
-        pass
     if space["last_seen"] != timestamp:
         space["dead"] = True
 
