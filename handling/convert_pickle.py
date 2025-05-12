@@ -125,7 +125,7 @@ def process_model(name, paradigm, category_data):
     votes = full_table[model]["num_battles"]
 
     is_update = timestamp > space["last_seen"]
-    if True:
+    if is_update:
         try:
             del space["status"]
         except KeyError:
