@@ -109,34 +109,22 @@ export function filterModels(
 
   // Sort and assign ranks
   models.sort((a, b) => b.rating - a.rating);
-  let rank = 1;
-  let nextRank = 1;
-  let bar: number | undefined;
-  for (const model of models) {
-    let thisBar;
-    let thisScore;
-    thisBar = model.ciLow;
-    thisScore = model.ciHigh;
-
-    const name = model.name;
-    const show = shouldShowModel(
-      name,
-      rows.find((m) => m[0] == name && m[1] == paradigm)![2],
-      modelMetadata[name],
-      drop,
-      models,
-    );
-    if (show) {
-      if (!bar) {
-        bar = thisBar;
-      }
-      if (thisScore < bar) {
-        bar = thisBar;
-        rank = nextRank;
-      }
-      nextRank++;
-    }
-    model.rank = rank;
+  for (const m of models) {
+    const { ciHigh } = m;
+    const nBetter = models
+      .filter((other) =>
+        shouldShowModel(
+          other.name,
+          rows.find((m) => m[0] == other.name && m[1] == paradigm)![2],
+          modelMetadata[other.name],
+          drop,
+          models,
+        ),
+      )
+      .filter((other) => {
+        return other.ciLow > ciHigh;
+      }).length;
+    m.rank = nBetter + 1;
   }
 
   // Apply other filters
