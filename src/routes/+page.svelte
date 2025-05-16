@@ -19,6 +19,7 @@
   import ModelTable from "./ModelTable.svelte";
   import Dropdown from "./Dropdown.svelte";
   import { type PriceRange, getPriceRangeLabel } from "./model-metadata";
+  import Branding from "./Branding.svelte";
 
   const rows = rowsRaw
     .split("\n")
@@ -156,40 +157,45 @@
   $: if (browser) localStorage["lmb-styleControl"] = JSON.stringify(styleControl);
 </script>
 
-<div class="search">
-  <SegmentedButtonContainer>
-    <Dropdown
-      bind:value={paradigm}
-      options={{
-        Text: "lmarena_text",
-        Vision: "lmarena_vision",
-        "Image (LM Arena)": "lmarena_image",
-        "Image (Artificial Analysis)": "aa_image",
-      }}
-    />
-    {#if Object.keys(categories[paradigm]).length > 1}
-      <Dropdown bind:value={category} options={categories[paradigm]} />
-    {/if}
-    {#if paradigmCategoriesWithStyleControl.includes(categoryName(category, true))}
-      <input type="checkbox" bind:checked={styleControl} id="styleControl" />
-      <SegmentedButtonItem input="styleControl">Style control</SegmentedButtonItem>
-    {/if}
-  </SegmentedButtonContainer>
+<div class="bar">
+  <div class="branding-wrapper">
+    <Branding />
+  </div>
+  <div class="search">
+    <SegmentedButtonContainer>
+      <Dropdown
+        bind:value={paradigm}
+        options={{
+          Text: "lmarena_text",
+          Vision: "lmarena_vision",
+          "Image (LM Arena)": "lmarena_image",
+          "Image (Artificial Analysis)": "aa_image",
+        }}
+      />
+      {#if Object.keys(categories[paradigm]).length > 1}
+        <Dropdown bind:value={category} options={categories[paradigm]} />
+      {/if}
+      {#if paradigmCategoriesWithStyleControl.includes(categoryName(category, true))}
+        <input type="checkbox" bind:checked={styleControl} id="styleControl" />
+        <SegmentedButtonItem input="styleControl">Style control</SegmentedButtonItem>
+      {/if}
+    </SegmentedButtonContainer>
 
-  <div class="search-container">
-    {#each searches as search, i}
-      <div class="search-field">
-        <Icon icon={iconSearch} />
-        <input type="text" bind:value={searches[i]} placeholder="Search for a model" />
-      </div>
-    {/each}
-    <Button type="text" iconType="full" on:click={() => (searches = [...searches, ""])}>
-      <Icon icon={searches.length ? iconAdd : iconSearch} />
+    <div class="search-container">
+      {#each searches as search, i}
+        <div class="search-field">
+          <Icon icon={iconSearch} />
+          <input type="text" bind:value={searches[i]} placeholder="Search for a model" />
+        </div>
+      {/each}
+      <Button type="text" iconType="full" on:click={() => (searches = [...searches, ""])}>
+        <Icon icon={searches.length ? iconAdd : iconSearch} />
+      </Button>
+    </div>
+    <Button type="text" iconType="full" on:click={() => (settingsOpen = true)}>
+      <Icon icon={iconSettings} />
     </Button>
   </div>
-  <Button type="text" iconType="full" on:click={() => (settingsOpen = true)}>
-    <Icon icon={iconSettings} />
-  </Button>
 </div>
 
 <ModelTable
@@ -348,6 +354,13 @@
     }
   }
 
+  .bar {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+  }
+  .branding-wrapper {
+    display: flex;
+  }
   .search {
     display: flex;
     gap: 0.5rem;
