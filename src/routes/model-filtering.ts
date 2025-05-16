@@ -25,7 +25,7 @@ export type ModelRaw = {
 function shouldShowModel(
   model: Model,
   modelRaw: ModelRaw,
-  metadata: ModelMetadata,
+  metadata: ModelMetadata | undefined,
   drop: string[],
   models: Model[],
 ): boolean {
@@ -37,7 +37,6 @@ function shouldShowModel(
     const rating = model.rating;
 
     if (!price) return false;
-    if (!rating) return false;
     if (
       models.some((other) => {
         return other.price && other.rating > rating && other.price <= price;
@@ -50,7 +49,7 @@ function shouldShowModel(
     const rating = model.rating;
     const org = metadata?.organization;
 
-    if (price && rating && org) {
+    if (price && org) {
       if (
         models.some((other) => {
           const otherMetadata = modelMetadata[other.name];
