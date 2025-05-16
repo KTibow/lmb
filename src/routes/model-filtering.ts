@@ -34,25 +34,23 @@ function shouldShowModel(
   if (drop.includes("semidead") && modelRaw.status == "semidead") return false;
   if (drop.includes("nonpareto")) {
     const price = model.price;
-
-    const thisModelScore = models.find((m) => m.name === model.name)?.rating;
+    const rating = model.rating;
 
     if (!price) return false;
-    if (!thisModelScore) return false;
+    if (!rating) return false;
     if (
       models.some((other) => {
-        return other.price && other.rating > thisModelScore && other.price <= price;
+        return other.price && other.rating > rating && other.price <= price;
       })
     )
       return false;
   }
   if (drop.includes("nonparetoorg") || drop.includes("nonparetoconservative")) {
-    const thisModelScore = models.find((m) => m.name === model.name)?.rating;
-
+    const price = model.price;
+    const rating = model.rating;
     const org = metadata?.organization;
 
-    const price = model.price;
-    if (price && thisModelScore && org) {
+    if (price && rating && org) {
       if (
         models.some((other) => {
           const otherMetadata = modelMetadata[other.name];
@@ -60,7 +58,7 @@ function shouldShowModel(
             other.price &&
             otherMetadata &&
             otherMetadata.organization == org &&
-            other.rating > thisModelScore &&
+            other.rating > rating &&
             other.price <= price
           );
         })
