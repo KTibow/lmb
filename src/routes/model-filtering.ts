@@ -6,7 +6,16 @@ import {
   getPrice,
 } from "./model-metadata";
 
-type Model = {
+export type Model = {
+  name: string;
+  date: number;
+  rating: number;
+  ciLow: number;
+  ciHigh: number;
+  rank: number;
+  price: number | undefined;
+};
+export type ModelRaw = {
   first_seen: number;
   last_seen: number;
   data: Record<string, number[]>;
@@ -14,50 +23,45 @@ type Model = {
 };
 
 function shouldShowModel(
-  name: string,
   model: Model,
+  modelRaw: ModelRaw,
   metadata: ModelMetadata,
   drop: string[],
-  models: { name: string; rating: number }[],
+  models: Model[],
 ): boolean {
-  if (model.status == "dead") return false;
+  if (modelRaw.status == "dead") return false;
   if (drop.includes("deprecated") && metadata?.deprecated) return false;
-  if (drop.includes("semidead") && model.status == "semidead") return false;
+  if (drop.includes("semidead") && modelRaw.status == "semidead") return false;
   if (drop.includes("nonpareto")) {
-    const price = getPrice(name);
+    const price = model.price;
 
-    const thisModelScore = models.find((m) => m.name === name)?.rating;
+    const thisModelScore = models.find((m) => m.name === model.name)?.rating;
 
     if (!price) return false;
     if (!thisModelScore) return false;
     if (
       models.some((other) => {
-        const otherPrice = getPrice(other.name);
-        if (otherPrice) {
-          return other.rating > thisModelScore && otherPrice <= price;
-        }
+        return other.price && other.rating > thisModelScore && other.price <= price;
       })
     )
       return false;
   }
   if (drop.includes("nonparetoorg") || drop.includes("nonparetoconservative")) {
-    const price = getPrice(name);
-
-    const thisModelScore = models.find((m) => m.name === name)?.rating;
+    const thisModelScore = models.find((m) => m.name === model.name)?.rating;
 
     const org = metadata?.organization;
 
+    const price = model.price;
     if (price && thisModelScore && org) {
       if (
         models.some((other) => {
-          const otherPrice = getPrice(other.name);
           const otherMetadata = modelMetadata[other.name];
           return (
-            otherPrice &&
+            other.price &&
             otherMetadata &&
             otherMetadata.organization == org &&
             other.rating > thisModelScore &&
-            otherPrice <= price
+            other.price <= price
           );
         })
       ) {
@@ -72,25 +76,16 @@ function shouldShowModel(
   return true;
 }
 
-export interface ModelData {
-  name: string;
-  date: number;
-  rating: number;
-  ciLow: number;
-  ciHigh: number;
-  rank: number;
-}
-
 export function filterModels(
-  rows: [string, string, Model][],
+  rows: [string, string, ModelRaw][],
   paradigm: string,
   categoryName: string,
   searches: string[],
   showOpenOnly: boolean,
   drop: string[],
   selectedPriceRanges: Set<PriceRange>,
-): ModelData[] {
-  let models: ModelData[] = [];
+): Model[] {
+  let models: Model[] = [];
 
   // Build initial model data
   for (const [name, p, model] of rows) {
@@ -104,6 +99,7 @@ export function filterModels(
       ciLow: details[1] - (details[0] || 0),
       ciHigh: details[1] + (details[2] || 0),
       rank: 0,
+      price: getPrice(name),
     });
   }
 
@@ -114,7 +110,7 @@ export function filterModels(
     const nBetter = models
       .filter((other) =>
         shouldShowModel(
-          other.name,
+          other,
           rows.find((m) => m[0] == other.name && m[1] == paradigm)![2],
           modelMetadata[other.name],
           drop,
@@ -144,18 +140,16 @@ export function filterModels(
 
   models = models.filter((model) => {
     if (selectedPriceRanges.size == 0) return true;
-    const price = getPrice(model.name);
-    const priceRange = price && getPriceRange(price);
+    const priceRange = model.price && getPriceRange(model.price);
     if (!priceRange) return false;
     return selectedPriceRanges.has(priceRange);
   });
 
   models = models.filter((model) => {
-    const name = model.name;
     return shouldShowModel(
-      name,
-      rows.find((m) => m[0] == name && m[1] == paradigm)![2],
-      modelMetadata[name],
+      model,
+      rows.find((m) => m[0] == model.name && m[1] == paradigm)![2],
+      modelMetadata[model.name],
       drop,
       models,
     );
