@@ -6,6 +6,12 @@ import {
   getPrice,
 } from "./model-metadata";
 
+export type ModelRaw = {
+  first_seen: number;
+  last_seen: number;
+  data: Record<string, number[]>;
+  status?: string;
+};
 export type Model = {
   name: string;
   date: number;
@@ -13,25 +19,19 @@ export type Model = {
   ciLow: number;
   ciHigh: number;
   rank: number;
+  raw: ModelRaw;
   price: number | undefined;
-};
-export type ModelRaw = {
-  first_seen: number;
-  last_seen: number;
-  data: Record<string, number[]>;
-  status?: string;
 };
 
 function shouldShowModel(
   model: Model,
-  modelRaw: ModelRaw,
   metadata: ModelMetadata | undefined,
   drop: string[],
   models: Model[],
 ): boolean {
-  if (modelRaw.status == "dead") return false;
+  if (model.raw.status == "dead") return false;
   if (drop.includes("deprecated") && metadata?.deprecated) return false;
-  if (drop.includes("semidead") && modelRaw.status == "semidead") return false;
+  if (drop.includes("semidead") && model.raw.status == "semidead") return false;
   if (drop.includes("nonpareto")) {
     const price = model.price;
     const rating = model.rating;
@@ -96,6 +96,7 @@ export function filterModels(
       ciLow: details[1] - (details[0] || 0),
       ciHigh: details[1] + (details[2] || 0),
       rank: 0,
+      raw: model,
       price: getPrice(name),
     });
   }
@@ -105,15 +106,7 @@ export function filterModels(
   for (const m of models) {
     const { ciHigh } = m;
     const nBetter = models
-      .filter((other) =>
-        shouldShowModel(
-          other,
-          rows.find((m) => m[0] == other.name && m[1] == paradigm)![2],
-          modelMetadata[other.name],
-          drop,
-          models,
-        ),
-      )
+      .filter((other) => shouldShowModel(other, modelMetadata[other.name], drop, models))
       .filter((other) => {
         return other.ciLow > ciHigh;
       }).length;
@@ -143,13 +136,7 @@ export function filterModels(
   });
 
   models = models.filter((model) => {
-    return shouldShowModel(
-      model,
-      rows.find((m) => m[0] == model.name && m[1] == paradigm)![2],
-      modelMetadata[model.name],
-      drop,
-      models,
-    );
+    return shouldShowModel(model, modelMetadata[model.name], drop, models);
   });
 
   return models;
