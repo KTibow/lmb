@@ -3,8 +3,7 @@
   import iconAdd from "@ktibow/iconset-material-symbols/add";
   import iconSettings from "@ktibow/iconset-material-symbols/settings-rounded";
   import {
-    SegmentedButtonContainer,
-    SegmentedButtonItem,
+    ConnectedButtons,
     Button,
     Icon,
     Dialog,
@@ -41,7 +40,7 @@
   let dropNonParetoConservative = false;
   let selectedPriceRanges = new Set<PriceRange>();
 
-  let snackbar: (snackbar: SnackbarIn) => void;
+  let snackbar: ReturnType<typeof Snackbar>;
 
   const getFullCategories = (paradigm: string) => {
     const example = rows.find((example) => example[1] == paradigm);
@@ -117,7 +116,7 @@
     const url = `https://ktibow.github.io/lmb/#${settingsHash}`;
     navigator.clipboard.writeText(url).then(
       () => {
-        snackbar({
+        snackbar.show({
           message: "Settings link copied",
           closable: true,
         });
@@ -162,7 +161,7 @@
     <Branding />
   </div>
   <div class="search">
-    <SegmentedButtonContainer>
+    <ConnectedButtons>
       <Dropdown
         bind:value={paradigm}
         options={{
@@ -177,9 +176,9 @@
       {/if}
       {#if paradigmCategoriesWithStyleControl.includes(categoryName(category, true))}
         <input type="checkbox" bind:checked={styleControl} id="styleControl" />
-        <SegmentedButtonItem input="styleControl">Style control</SegmentedButtonItem>
+        <Button for="styleControl" variant="filled" square>Style control</Button>
       {/if}
-    </SegmentedButtonContainer>
+    </ConnectedButtons>
 
     <div class="search-container">
       {#each searches as search, i}
@@ -188,11 +187,11 @@
           <input type="text" bind:value={searches[i]} placeholder="Search for a model" />
         </div>
       {/each}
-      <Button type="text" iconType="full" on:click={() => (searches = [...searches, ""])}>
+      <Button variant="text" iconType="full" click={() => (searches = [...searches, ""])}>
         <Icon icon={searches.length ? iconAdd : iconSearch} />
       </Button>
     </div>
-    <Button type="text" iconType="full" on:click={() => (settingsOpen = true)}>
+    <Button variant="text" iconType="full" click={() => (settingsOpen = true)}>
       <Icon icon={iconSettings} />
     </Button>
   </div>
@@ -224,17 +223,17 @@
 
     <div class="filter-section-inline">
       <span>Visualize scores</span>
-      <SegmentedButtonContainer>
+      <ConnectedButtons>
         <input type="checkbox" bind:checked={vizBorder} id="vizBorder" />
-        <SegmentedButtonItem input="vizBorder">With moats</SegmentedButtonItem>
+        <Button variant="filled" square for="vizBorder">With moats</Button>
         <input type="checkbox" bind:checked={vizBar} id="vizBar" />
-        <SegmentedButtonItem input="vizBar">With charts</SegmentedButtonItem>
-      </SegmentedButtonContainer>
+        <Button variant="filled" square for="vizBar">With charts</Button>
+      </ConnectedButtons>
     </div>
 
     <div class="filter-section">
       <span>Price ranges</span>
-      <SegmentedButtonContainer>
+      <ConnectedButtons>
         {#each ["$", "$$", "$$$", "$$$$"] as range, i}
           {@const isSelected = selectedPriceRanges.has(range as PriceRange)}
           <input
@@ -250,11 +249,11 @@
             }}
             id="price-{i}"
           />
-          <SegmentedButtonItem input="price-{i}">
+          <Button variant="filled" square for="price-{i}">
             {getPriceRangeLabel(range as PriceRange)}
-          </SegmentedButtonItem>
+          </Button>
         {/each}
-      </SegmentedButtonContainer>
+      </ConnectedButtons>
     </div>
 
     <div class="filter-section">
@@ -294,13 +293,13 @@
     </div>
     <p><em>Remember: You need a 70 point difference for a 60% win rate</em></p>
   </div>
-  <svelte:fragment slot="buttons">
-    <Button type="text" on:click={share}>Share</Button>
-    <Button type="tonal" on:click={() => (settingsOpen = false)}>Done</Button>
-  </svelte:fragment>
+  {#snippet buttons()}
+    <Button variant="text" click={share}>Share</Button>
+    <Button variant="tonal" click={() => (settingsOpen = false)}>Done</Button>
+  {/snippet}
 </Dialog>
 
-<Snackbar bind:show={snackbar} />
+<Snackbar bind:this={snackbar} />
 
 <style>
   .settings-content {
@@ -373,12 +372,15 @@
     padding: 0 1rem;
     border-radius: 1.25rem;
   }
+  .search > :global(.m3-container.text) {
+    background-color: rgb(var(--m3-scheme-surface-container)) !important;
+  }
 
   .search-container {
     display: flex;
     gap: 0.5rem;
     padding: 0;
-    align-items: center;
+    overflow: hidden;
   }
   .search-field {
     display: flex;
@@ -397,9 +399,5 @@
     border: none;
     outline: none;
     color: inherit;
-  }
-
-  .search > :global(.m3-container.text) {
-    background-color: rgb(var(--m3-scheme-surface-container));
   }
 </style>

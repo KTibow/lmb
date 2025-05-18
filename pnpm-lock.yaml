@@ -24,8 +24,8 @@ importers:
         specifier: ^4.4.9
         version: 4.4.9
       m3-svelte:
-        specifier: ^3.6.1
-        version: 3.6.1
+        specifier: 4.0.0-beta.0
+        version: 4.0.0-beta.0
       prettier:
         specifier: ^3.5.3
         version: 3.5.3
@@ -225,8 +225,8 @@ packages:
   '@ktibow/iconset-material-symbols@0.0.1738223466':
     resolution: {integrity: sha512-248Qruj0ceiTVIL3Ny2LO08DsKC2ezT+3Ag1qGKhTct1sXsM/clvLDBn0pQgCOPDmzO0/P2Ad+uPFUX6ozxJOQ==}
 
-  '@ktibow/iconset-material-symbols@0.0.1742538575':
-    resolution: {integrity: sha512-LkmsT1A/htlrqpFQbChAEfm0KVf8o58SiR/IrlcdVuNmoRPMfhm4pperByYCBbeJkfeKkZ1t9CtPFI9faKYHpA==}
+  '@ktibow/iconset-material-symbols@0.0.1747426012':
+    resolution: {integrity: sha512-lLiDCN8lSwzZvva+kF5J+q8MkVGpXfPlEc7IB/VSCTWv8rGt1XShE64gqwCgS4v0kk4tG7k6U90+EZwENZZ4vQ==}
 
   '@kurkle/color@0.3.4':
     resolution: {integrity: sha512-M5UknZPHRu3DEDWoipU6sE8PdkZ6Z/S+v4dD+Ke8IaNlpdSQah50lz1KtcFBa2vsdOnwbbnxJwVM4wty6udA5w==}
@@ -456,8 +456,8 @@ packages:
   locate-character@3.0.0:
     resolution: {integrity: sha512-SW13ws7BjaeJ6p7Q6CO2nchbYEc3X3J6WrmTTDto7yMPqVSZTUyY5Tjbid+Ab8gLnATtygYtiDIJGQRRn2ZOiA==}
 
-  m3-svelte@3.6.1:
-    resolution: {integrity: sha512-1isGD9AmfKFwhlJvWipnj+mOX3hPDj3P+Wjl52bzXhiqX1JcNLRvaYdsdK4P9yofOm3oBo++flGbzgabM1NeZA==}
+  m3-svelte@4.0.0-beta.0:
+    resolution: {integrity: sha512-c4CVAec/PrBVDX4zJORHg1vha1qZq1qCDFsziRl5oS9zsXhqTzjjmatvUaJhG0abAUp+rcj5BpCx+ZVOcI9aPA==}
 
   magic-string@0.30.17:
     resolution: {integrity: sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==}
@@ -705,7 +705,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@ktibow/iconset-material-symbols@0.0.1742538575':
+  '@ktibow/iconset-material-symbols@0.0.1747426012':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -902,10 +902,10 @@ snapshots:
 
   locate-character@3.0.0: {}
 
-  m3-svelte@3.6.1:
+  m3-svelte@4.0.0-beta.0:
     dependencies:
       '@iconify/types': 2.0.0
-      '@ktibow/iconset-material-symbols': 0.0.1742538575
+      '@ktibow/iconset-material-symbols': 0.0.1747426012
       '@material/material-color-utilities': 0.3.0
       svelte: 5.30.1
 
