@@ -479,6 +479,15 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     organization: "Mistral",
     openrouterSlug: "mistralai/mistral-small-24b-instruct-2501",
   },
+  "mistral-small-3.1-24b-instruct-2503": {
+    isOpen: true,
+    organization: "Mistral",
+    openrouterSlug: "mistralai/mistral-small-3.1-24b-instruct",
+  },
+  "mistral-medium-2505": {
+    organization: "Mistral",
+    openrouterSlug: "mistralai/mistral-medium-3",
+  },
   "mixtral-8x22b-instruct-v0.1": {
     isOpen: true,
     organization: "Mistral",
@@ -593,6 +602,18 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     isOpen: true,
     organization: "Qwen",
     openrouterSlug: "qwen/qwen3-235b-a22b",
+    reasoningMultiplier: 6.2,
+  },
+  "qwen3-32b": {
+    isOpen: true,
+    organization: "Qwen",
+    openrouterSlug: "qwen/qwen3-32b",
+    reasoningMultiplier: 6.2,
+  },
+  "qwen3-30b-a3b": {
+    isOpen: true,
+    organization: "Qwen",
+    openrouterSlug: "qwen/qwen3-30b-a3b",
     reasoningMultiplier: 6.2,
   },
   "qwq-32b-preview": {
