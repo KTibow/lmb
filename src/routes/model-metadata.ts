@@ -252,7 +252,12 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   "gemini-2.5-flash-preview-04-17": {
     organization: "Google",
     openrouterSlug: "google/gemini-2.5-flash-preview:thinking",
+    deprecated: true,
     reasoningMultiplier: 3.9,
+  },
+  "gemini-2.5-flash-preview-05-20": {
+    organization: "Google",
+    openrouterSlug: "google/gemini-2.5-flash-preview-05-20:thinking",
   },
   "gemini-advanced-0514": { deprecated: true, organization: "Google" },
   "gemini-exp-1114": { deprecated: true, organization: "Google" },
