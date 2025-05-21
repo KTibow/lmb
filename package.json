@@ -16,13 +16,13 @@
   "devDependencies": {
     "@ktibow/iconset-material-symbols": "^0.0.1738223466",
     "@sveltejs/adapter-static": "^3.0.8",
-    "@sveltejs/kit": "^2.21.0",
+    "@sveltejs/kit": "^2.21.1",
     "@sveltejs/vite-plugin-svelte": "^5.0.3",
     "chart.js": "^4.4.9",
-    "m3-svelte": "4.0.0-beta.0",
+    "m3-svelte": "4.0.0",
     "prettier": "^3.5.3",
     "prettier-plugin-svelte": "^3.4.0",
-    "svelte": "^5.30.1",
+    "svelte": "^5.32.1",
     "svelte-check": "^4.2.1",
     "typescript": "^5.8.3",
     "vite": "^6.3.5"
