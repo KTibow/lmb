@@ -80,7 +80,7 @@ if os.path.exists(slop_file_path):
                 slop[model] = {}
             slop[model][modality] = modality_data
 
-timestamp = int(time.time()) - 7 * 24 * 60 * 60
+timestamp = int(time.time())
 
 # Extract and transform the data
 for model in data["models"]:
