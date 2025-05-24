@@ -438,6 +438,11 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     organization: "Meta",
     openrouterSlug: "meta-llama/llama-4-maverick",
   },
+  "llama-4-scout-17b-16e-instruct": {
+    isOpen: true,
+    organization: "Meta",
+    openrouterSlug: "meta-llama/llama-4-scout",
+  },
   "llama2-70b-steerlm-chat": {
     deprecated: true,
     isOpen: true,
