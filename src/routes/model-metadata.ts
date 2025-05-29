@@ -130,7 +130,7 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   },
   "claude-3-7-sonnet-20250219-thinking-32k": {
     organization: "Anthropic",
-    openrouterSlug: "anthropic/claude-3.7-sonnet:thinking",
+    openrouterSlug: "anthropic/claude-3.7-sonnet",
     reasoningMultiplier: 7.44,
   },
   "claude-3-haiku-20240307": {

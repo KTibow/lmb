@@ -13,8 +13,7 @@
     },
   ][];
   export let paradigm: string;
-  export let category: string;
-  export let styleControl: boolean;
+  export let categoryName: string;
   export let searches: string[];
   export let showOpenOnly = false;
   export let vizBorder;
@@ -28,7 +27,6 @@
 
   const newCutoff = Date.now() / 1000 - 60 * 60 * 24 * 7;
 
-  $: categoryName = `${category}${styleControl ? "_style_control" : ""}`;
   $: models = filterModels(
     rows,
     paradigm,

@@ -95,11 +95,6 @@
     if (!paradigmCategories.includes(category)) {
       category = "full";
     }
-
-    const targetCategory = categoryName(category, styleControl);
-    if (!paradigmCategoriesWithStyleControl.includes(targetCategory)) {
-      styleControl = false;
-    }
   };
   $: category, paradigm, styleControl, normalizeStep();
 
@@ -122,7 +117,7 @@
         });
       },
       () => {
-        snackbar({
+        snackbar.show({
           message: "Failed to copy link",
           closable: true,
         });
@@ -200,8 +195,9 @@
 <ModelTable
   {rows}
   {paradigm}
-  {category}
-  {styleControl}
+  categoryName={paradigmCategoriesWithStyleControl.includes(categoryName(category, true))
+    ? categoryName(category, styleControl)
+    : category}
   {searches}
   {showOpenOnly}
   {vizBorder}
