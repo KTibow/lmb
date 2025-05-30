@@ -280,7 +280,11 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     organization: "Google Open",
     openrouterSlug: "google/gemma-2-27b-it",
   },
-  "gemma-2-2b-it": { isOpen: true, organization: "Google Open" },
+  "gemma-2-2b-it": {
+    isOpen: true,
+    organization: "Google Open",
+    openrouterSlug: "google/gemma-2b-it",
+  },
   "gemma-2-9b-it": {
     isOpen: true,
     organization: "Google Open",
