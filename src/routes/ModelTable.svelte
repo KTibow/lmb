@@ -210,7 +210,7 @@
   </tbody>
 </table>
 
-<ScatterChart {models} unit={paradigm.startsWith("image") ? "generation" : "1M tokens (mixed)"} />
+<ScatterChart {models} unit={paradigm.includes("image") ? "generation" : "1M tokens (mixed)"} />
 
 <style>
   table {
