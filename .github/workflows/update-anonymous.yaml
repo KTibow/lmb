@@ -26,12 +26,20 @@ jobs:
         with:
           dotnet-version: "8.0.x"
 
-      - name: Install DiscordChatExporter
-        run: dotnet tool install --global DiscordChatExporter.Cli
+      - name: Start setting up DiscordChatExporter
+        run: mkdir -p /tmp/discord-export
+
+      - name: Download DiscordChatExporter
+        working-directory: /tmp/discord-export
+        run: |
+          wget https://github.com/Tyrrrz/DiscordChatExporter/releases/latest/download/DiscordChatExporter.Cli.linux-x64.zip
+          unzip DiscordChatExporter.Cli.linux-x64.zip -d ./dce
+          chmod +x ./dce/DiscordChatExporter.Cli
 
       - name: Export channel
+        working-directory: /tmp/discord-export
         run: |
-          dotnet DiscordChatExporter.Cli export \
+          ./dce/DiscordChatExporter.Cli export \
             --token "${{ secrets.DISCORD_TOKEN }}" \
             --channel "1340554757827461211" \
             --format Json \
