@@ -42,15 +42,17 @@ console.log("Loading LM Arena");
 const title: string = await page.evaluate(() => document.title);
 
 if (title != "LMArena") {
-  await page.waitForNetworkIdle({ idleTime: 2000 });
+  console.log("Captcha A");
+  await page.waitForNetworkIdle({ idleTime: 4000 });
   const iframe = (await page.$("div > div > div"))!;
   const box = (await iframe.boundingBox())!;
   await page.mouse.click(box.x + 10, box.y + box.height / 2);
-  await page.waitForNetworkIdle({ idleTime: 2000 });
+  await page.waitForNetworkIdle({ idleTime: 4000 });
 }
 
 const iframe = await page.$("#turnstile-container");
 if (iframe) {
+  console.log("Captcha B");
   await page.waitForNetworkIdle({ idleTime: 1000 });
   await page.evaluate(() => {
     // @ts-ignore don't worry
@@ -58,16 +60,22 @@ if (iframe) {
       "arena-auth-prod-v1=base64-eyJhY2Nlc3NfdG9rZW4iOiJleUpoYkdjaU9pSklVekkxTmlJc0ltdHBaQ0k2SWtOVFQwNHhkM05uU0hkRlNFTkNNbGNpTENKMGVYQWlPaUpLVjFRaWZRLmV5SnBjM01pT2lKb2RIUndjem92TDJoMWIyZDZiMlZ4ZW1OeVpIWnJkM1IyYjJScExuTjFjR0ZpWVhObExtTnZMMkYxZEdndmRqRWlMQ0p6ZFdJaU9pSXdNVFpqTldVME5TMHpPVGs1TFRRMFpqY3RPR1JtT0MwNU5EVmtZekF3WWpGbE1HWWlMQ0poZFdRaU9pSmhkWFJvWlc1MGFXTmhkR1ZrSWl3aVpYaHdJam94TnpRNE9ERTJPVFV3TENKcFlYUWlPakUzTkRnNE1UTXpOVEFzSW1WdFlXbHNJam9pSWl3aWNHaHZibVVpT2lJaUxDSmhjSEJmYldWMFlXUmhkR0VpT250OUxDSjFjMlZ5WDIxbGRHRmtZWFJoSWpwN0ltbGtJam9pWmpkak5tWTBZemd0TjJGbFppMDBNelkwTFRrd1lqa3RPVFkyWWpObU1URm1aVGsySW4wc0luSnZiR1VpT2lKaGRYUm9aVzUwYVdOaGRHVmtJaXdpWVdGc0lqb2lZV0ZzTVNJc0ltRnRjaUk2VzNzaWJXVjBhRzlrSWpvaVlXNXZibmx0YjNWeklpd2lkR2x0WlhOMFlXMXdJam94TnpRNE9ERXpNelV3ZlYwc0luTmxjM05wYjI1ZmFXUWlPaUppWkRFME1UWXhPUzAxWWpVd0xUUTBNV0V0T1RBMk9TMDBNVFpsWkRCbU1EbGhOV01pTENKcGMxOWhibTl1ZVcxdmRYTWlPblJ5ZFdWOS5HVkh2U0FWTEdPNDZ6WlJXR0hfcS03cVI4LU9sQTZNOXRtMFBlMXRqVjJFIiwidG9rZW5fdHlwZSI6ImJlYXJlciIsImV4cGlyZXNfaW4iOjM2MDAsImV4cGlyZXNfYXQiOjE3NDg4MTY5NTAsInJlZnJlc2hfdG9rZW4iOiJtanUzaGJyYXZmeWEiLCJ1c2VyIjp7ImlkIjoiMDE2YzVlNDUtMzk5OS00NGY3LThkZjgtOTQ1ZGMwMGIxZTBmIiwiYXVkIjoiYXV0aGVudGljYXRlZCIsInJvbGUiOiJhdXRoZW50aWNhdGVkIiwiZW1haWwiOiIiLCJwaG9uZSI6IiIsImxhc3Rfc2lnbl9pbl9hdCI6IjIwMjUtMDYtMDFUMjE6Mjk6MTAuNDQxMTIyNDk0WiIsImFwcF9tZXRhZGF0YSI6e30sInVzZXJfbWV0YWRhdGEiOnsiaWQiOiJmN2M2ZjRjOC03YWVmLTQzNjQtOTBiOS05NjZiM2YxMWZlOTYifSwiaWRlbnRpdGllcyI6W10sImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTAxVDIxOjI5OjEwLjQzOTYyM1oiLCJ1cGRhdGVkX2F0IjoiMjAyNS0wNi0wMVQyMToyOToxMC40NDI1NjlaIiwiaXNfYW5vbnltb3VzIjp0cnVlfX0";
     location.reload();
   });
-  await page.waitForNavigation({ idleTime: 3000 });
+  await page.waitForNavigation({ idleTime: 4000 });
 }
 
 console.log("Loaded");
 const models: any[] = await page.evaluate(() => {
   // @ts-ignore don't worry
-  const rsc = globalThis.__next_f.map((x) => x[1]).find((x) => x?.includes("claude"));
+  const datum = globalThis.__next_f;
+  if (!datum) {
+    console.error(datum);
+    return null;
+  }
+  // @ts-ignore don't worry
+  const rsc = datum.map((x) => x[1]).find((x) => x?.includes("claude"));
   if (!rsc) {
     // @ts-ignore don't worry
-    console.error(globalThis.__next_f.map((x) => x[1]));
+    console.error(datum.map((x) => x[1]));
     return null;
   }
 
