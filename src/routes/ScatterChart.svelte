@@ -7,12 +7,12 @@
     PointElement,
     Tooltip,
   } from "chart.js";
-  import type { ModelData } from "./model-filtering";
+  import type { Model } from "./model-filtering";
   import { modelMetadata, getPrice } from "./model-metadata";
 
   Chart.register(ScatterController, LinearScale, LogarithmicScale, PointElement, Tooltip);
 
-  let { models, unit }: { models: ModelData[]; unit: string } = $props();
+  let { models, unit }: { models: Model[]; unit: string } = $props();
 
   let chart: Chart | undefined;
 

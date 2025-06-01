@@ -1,12 +1,9 @@
-import fs from "fs/promises";
-import path from "path";
-import { fileURLToPath } from "url";
+import { join, dirname, fromFileUrl } from "jsr:@std/path";
 
 // Configuration
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const PROJECT_ROOT = path.resolve(__dirname, "..");
-const METADATA_PATH = path.resolve(PROJECT_ROOT, "src", "routes", "model-metadata.ts");
-const OUTPUT_PATH = path.resolve(PROJECT_ROOT, "src", "routes", "assets", "openrouter.jsonl");
+const PROJECT_ROOT = join(dirname(fromFileUrl(import.meta.url)), "..");
+const METADATA_PATH = join(PROJECT_ROOT, "src", "routes", "model-metadata.ts");
+const OUTPUT_PATH = join(PROJECT_ROOT, "src", "routes", "assets", "openrouter.jsonl");
 
 function getAllPricing(endpoints) {
   if (!endpoints?.length) return null;
@@ -23,7 +20,7 @@ function getAllPricing(endpoints) {
 }
 
 async function extractModelMetadata() {
-  const data = await fs.readFile(METADATA_PATH, "utf8");
+  const data = await Deno.readTextFile(METADATA_PATH);
   const slugs = new Set();
 
   const slugRegex = /openrouterSlug\s*:\s*"([^"]+)"/g;
@@ -60,5 +57,5 @@ await Promise.all([work(), work(), work(), work(), work()]);
 
 result.sort((a, b) => a[0].localeCompare(b[0]));
 
-await fs.writeFile(OUTPUT_PATH, result.map(JSON.stringify).join("\n"));
+await Deno.writeTextFile(OUTPUT_PATH, result.map(JSON.stringify).join("\n"));
 console.log(`Done. Saved ${Object.keys(result).length} models.`);

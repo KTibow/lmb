@@ -109,7 +109,7 @@
 dialog {
   max-width: 100dvw !important;
 }
-*:not(b) {
+*:not(b, i, strong, em) {
   font: inherit;
 }
 :root {

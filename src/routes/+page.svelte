@@ -2,16 +2,7 @@
   import iconSearch from "@ktibow/iconset-material-symbols/search-rounded";
   import iconAdd from "@ktibow/iconset-material-symbols/add";
   import iconSettings from "@ktibow/iconset-material-symbols/settings-rounded";
-  import {
-    ConnectedButtons,
-    Button,
-    Icon,
-    Dialog,
-    Switch,
-    Snackbar,
-    type SnackbarIn,
-    Checkbox,
-  } from "m3-svelte";
+  import { ConnectedButtons, Button, Icon, Dialog, Switch, Snackbar, Checkbox } from "m3-svelte";
   import { browser } from "$app/environment";
   import { page } from "$app/stores";
   import rowsRaw from "./assets/data.jsonl?raw";

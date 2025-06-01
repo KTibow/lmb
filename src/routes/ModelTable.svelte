@@ -109,35 +109,35 @@
     let pt1 = name;
     let pt2 = "";
     if (/\d{4}-?[01]\d-?\d{2}/.test(name)) {
-      const [match, y, m, d] = name.match(/(\d{4})-?(\d{2})-?(\d{2})/);
+      const [match, y, m, d] = name.match(/(\d{4})-?(\d{2})-?(\d{2})/)!;
       pt1 = pt1.replace(`-${match}`, "");
       pt2 = formatYMD(+y, +m, +d);
     } else if (/-[01]\d-\d{2}$/.test(name)) {
-      const [, a, m, d] = name.match(/^(.+)-(\d{2})-(\d{2})$/);
+      const [, a, m, d] = name.match(/^(.+)-(\d{2})-(\d{2})$/)!;
       pt1 = a;
       pt2 = formatMD(+m, +d);
     } else if (/-[01]\d\d{2}$/.test(name)) {
-      const [, a, m, d] = name.match(/^(.+)-(\d{2})(\d{2})$/);
+      const [, a, m, d] = name.match(/^(.+)-(\d{2})(\d{2})$/)!;
       pt1 = a;
       pt2 = formatMD(+m, +d);
     } else if (/-[01]\d-\d{4}$/.test(name)) {
-      const [, a, m, y] = name.match(/^(.+)-(\d{2})-(\d{4})$/);
+      const [, a, m, y] = name.match(/^(.+)-(\d{2})-(\d{4})$/)!;
       pt1 = a;
       pt2 = formatMY(+m, +y);
     } else if (/-\d{4}[01]\d$/.test(name)) {
-      const [, a, y, m] = name.match(/^(.+)-(\d{4})(\d{2})$/);
+      const [, a, y, m] = name.match(/^(.+)-(\d{4})(\d{2})$/)!;
       pt1 = a;
       pt2 = formatMY(+m, +y);
     } else if (/-\d{2}[01]\d$/.test(name)) {
-      const [, a, y, m] = name.match(/^(.+)-(\d{2})(\d{2})$/);
+      const [, a, y, m] = name.match(/^(.+)-(\d{2})(\d{2})$/)!;
       pt1 = a;
       pt2 = formatMY(+m, +`20${y}`);
     } else if (/-\d{3}$/.test(name)) {
-      const [, a, b] = name.match(/^(.+)-(\d{3})$/);
+      const [, a, b] = name.match(/^(.+)-(\d{3})$/)!;
       pt1 = a;
       pt2 = `v${+b}`;
     } else if (/^.+[0-9].+-v[0-9.]+$/.test(pt1)) {
-      const [, a, b] = pt1.match(/^(.+)-v([0-9.]+)$/);
+      const [, a, b] = pt1.match(/^(.+)-v([0-9.]+)$/)!;
       pt1 = a;
       pt2 = `v${+b}`;
     }

@@ -21,8 +21,10 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Set up Node
-        uses: actions/setup-node@v4
+      - name: Set up Deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: latest
 
       - name: Install dependencies
         run: |
@@ -36,7 +38,7 @@ jobs:
         run: python handling/convert_aa.py
 
       - name: Also update pricing
-        run: node handling/openrouter-updater.js
+        run: deno run --allow-all handling/openrouter-updater.js
 
       - name: Commit report
         run: |
