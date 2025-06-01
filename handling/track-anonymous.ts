@@ -30,7 +30,9 @@ exec flatpak run org.chromium.Chromium "$@"
     headless: false,
   };
 } else {
-  astralArgs = {};
+  astralArgs = {
+    args: ["--no-sandbox"],
+  };
 }
 await using browser = await launch(astralArgs);
 await using page = await browser.newPage("https://lmarena.ai");
