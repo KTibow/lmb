@@ -64,17 +64,6 @@ def convert_to_serializable(obj):
     return "..."
 
 
-def calculate_confidence_intervals(samples):
-    """Calculate 95% confidence intervals from bootstrap samples."""
-    if not samples or len(samples) == 0:
-        return None, None
-
-    sorted_samples = sorted(samples)
-    low_value = 0.5 * sorted_samples[2] + 0.5 * sorted_samples[3]
-    high_value = 0.5 * sorted_samples[99 - 2] + 0.5 * sorted_samples[99 - 3]
-    return low_value, high_value
-
-
 def transform_model_name(name):
     name = name.lower()
     if "photon" in name:
@@ -103,9 +92,9 @@ if os.path.exists(slop_file_path):
                 slop[model] = {}
             slop[model][modality] = modality_data
 
-def process_model(name, paradigm, category_data):
+def process_model(name, paradigm, categories):
     transformed_name = (
-        transform_model_name(model) if paradigm == "image" else model
+        transform_model_name(name) if paradigm == "image" else name
     )
     if transformed_name not in slop:
         slop[transformed_name] = {}
@@ -121,8 +110,8 @@ def process_model(name, paradigm, category_data):
             "data": {},
         }
 
-    full_table = categories["full"]["leaderboard_table_df"].loc
-    votes = full_table[model]["num_battles"]
+    full_table = categories["full"]["leaderboard_table_df"]
+    votes = full_table.loc[name]["num_battles"]
 
     is_update = timestamp > space["last_seen"]
     if is_update:
@@ -141,33 +130,27 @@ def process_model(name, paradigm, category_data):
 
     # Process all categories for this model
     for category_name, category_data in categories.items():
-        if model not in category_data["elo_rating_final"]:
+        leaderboard_df = category_data["leaderboard_table_df"]
+        if name not in leaderboard_df.index:
             continue
 
-        elo = float(category_data["elo_rating_final"][model])
-        df = category_data["bootstrap_df"]
+        model_row = leaderboard_df.loc[name]
+        elo = float(model_row["rating"])
 
-        if model in df.columns:
-            samples = df[model].astype(float).tolist()
-            ci_low, ci_high = calculate_confidence_intervals(samples)
-            if ci_low is not None and ci_high is not None:
-                space["data"][category_name] = [
-                    round(elo - ci_low, 2),
-                    round(elo, 2),
-                    round(ci_high - elo, 2),
-                ]
-                continue
+        # Check if confidence interval columns exist
+        ci_low = float(model_row["rating_q025"])
+        ci_high = float(model_row["rating_q975"])
         space["data"][category_name] = [
-            None,
+            round(elo - ci_low, 2),
             round(elo, 2),
-            None,
+            round(ci_high - elo, 2),
         ]
 
 # Process each category (text/vision)
 for paradigm, categories in data.items():
     models_in_paradigm = set()
     for category_name, category_data in categories.items():
-        for model in category_data["elo_rating_final"].keys():
+        for model in category_data["leaderboard_table_df"].index:
             models_in_paradigm.add(model)
 
     for model in models_in_paradigm:

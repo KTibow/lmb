@@ -145,6 +145,14 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     organization: "Anthropic",
     openrouterSlug: "anthropic/claude-3-sonnet",
   },
+  "claude-opus-4-20250514": {
+    organization: "Anthropic",
+    openrouterSlug: "anthropic/claude-opus-4",
+  },
+  "claude-sonnet-4-20250514": {
+    organization: "Anthropic",
+    openrouterSlug: "anthropic/claude-sonnet-4",
+  },
   "claude-instant-1": { organization: "Anthropic" },
   "codellama-34b-instruct": { isOpen: true },
   "codellama-70b-instruct": { isOpen: true },
@@ -353,6 +361,11 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   "grok-2-mini-2024-08-13": { organization: "xAI" },
   "early-grok-3": { deprecated: true, organization: "xAI" },
   "grok-3-preview-02-24": { organization: "xAI", openrouterSlug: "x-ai/grok-3-beta" },
+  "grok-3-mini-beta": {
+    organization: "xAI",
+    openrouterSlug: "x-ai/grok-3-mini-beta",
+    reasoningMultiplier: 2.5,
+  },
   "guanaco-33b": { isOpen: true },
   "internlm2_5-20b-chat": { isOpen: true },
   "internvl2-26b": { isOpen: true },
