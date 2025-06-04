@@ -685,6 +685,7 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   "zephyr-7b-alpha": { isOpen: true },
   "zephyr-7b-beta": { isOpen: true },
   "zephyr-orpo-141b-A35b-v0.1": { isOpen: true },
+  "gpt-image-1": { price: 0.17, organization: "OpenAI" },
   "gpt-4o": { price: 0.17, organization: "OpenAI" },
   "seedream-3": { organization: "ByteDance" },
   "hidream-i1-dev": { price: 0.03, isOpen: true, organization: "HiDream" },
