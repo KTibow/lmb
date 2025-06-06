@@ -254,8 +254,12 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   },
   "gemini-2.5-pro-preview-05-06": {
     organization: "Google",
-    openrouterSlug: "google/gemini-2.5-pro-preview",
+    openrouterSlug: "google/gemini-2.5-pro-preview-05-06",
     reasoningMultiplier: 3.1,
+  },
+  "gemini-2.5-pro-preview-06-05": {
+    organization: "Google",
+    // openrouterSlug: "google/gemini-2.5-pro-preview", disabled until dubesor results
   },
   "gemini-2.5-flash-preview-04-17": {
     organization: "Google",

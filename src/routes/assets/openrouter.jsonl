@@ -26,6 +26,7 @@
 ["google/gemini-2.5-flash-preview-05-20:thinking",[[0.15,3.5],[0.15,3.5]]]
 ["google/gemini-2.5-flash-preview:thinking",[[0.15,3.5],[0.15,3.5]]]
 ["google/gemini-2.5-pro-preview",[[1.25,10],[1.25,10]]]
+["google/gemini-2.5-pro-preview-05-06",[[1.25,10],[1.25,10]]]
 ["google/gemini-flash-1.5",[[0.075,0.3],[0.075,0.3]]]
 ["google/gemini-flash-1.5-8b",[[0.0375,0.15]]]
 ["google/gemini-pro-1.5",[[1.25,5],[1.25,5]]]
