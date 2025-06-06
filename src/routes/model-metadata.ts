@@ -259,7 +259,8 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   },
   "gemini-2.5-pro-preview-06-05": {
     organization: "Google",
-    // openrouterSlug: "google/gemini-2.5-pro-preview", disabled until dubesor results
+    openrouterSlug: "google/gemini-2.5-pro-preview",
+    reasoningMultiplier: 3.1,
   },
   "gemini-2.5-flash-preview-04-17": {
     organization: "Google",
@@ -270,6 +271,7 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   "gemini-2.5-flash-preview-05-20": {
     organization: "Google",
     openrouterSlug: "google/gemini-2.5-flash-preview-05-20:thinking",
+    reasoningMultiplier: 3.9,
   },
   "gemini-advanced-0514": { deprecated: true, organization: "Google" },
   "gemini-exp-1114": { deprecated: true, organization: "Google" },
