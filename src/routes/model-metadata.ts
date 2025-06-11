@@ -700,6 +700,8 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   "imagen-4-preview": { price: 0.05, organization: "Google" },
   reve: { price: 0.01, organization: "Reve" },
   "ideogram-3": { organization: "Ideogram" },
+  "flux-1-kontext-max": { price: 0.08, organization: "Black Forest Labs" },
+  "flux-1.1-pro-ultra": { price: 0.06, organization: "Black Forest Labs" },
   "flux-1.1-pro": { price: 0.04, organization: "Black Forest Labs" },
   "flux-1-pro": { price: 0.05, organization: "Black Forest Labs" },
   "image-01": { price: 0.01, organization: "Minimax" },

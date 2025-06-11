@@ -23,6 +23,7 @@ def transform_model_name(name):
     # Handle bracketed suffixes
     name = name.replace("[pro]", "-pro")
     name = name.replace("[dev]", "-dev")
+    name = name.replace("[max]", "-max")
     name = name.replace("[schnell]", "-schnell")
 
     # Handle parentheses
