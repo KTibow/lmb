@@ -15,6 +15,8 @@ def transform_model_name(name):
         return "reve"
     if "imagen 3" in name and "v002" in name:
         return "imagen-3-generate-002"
+    if "imagen 4 preview" in name:
+        return "imagen-4-generate-preview"
 
     # Replace dots with hyphens in version numbers
     name = name.replace("x1", "x 1")
