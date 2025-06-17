@@ -270,14 +270,19 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   },
   "gemini-2.5-flash-preview-04-17": {
     organization: "Google",
-    openrouterSlug: "google/gemini-2.5-flash-preview:thinking",
+    openrouterSlug: "google/gemini-2.5-flash-preview",
     deprecated: true,
     reasoningMultiplier: 3.9,
   },
   "gemini-2.5-flash-preview-05-20": {
     organization: "Google",
-    openrouterSlug: "google/gemini-2.5-flash-preview-05-20:thinking",
+    openrouterSlug: "google/gemini-2.5-flash-preview-05-20",
     reasoningMultiplier: 3.9,
+  },
+  "gemini-2.5-flash-lite-preview-06-17-thinking": {
+    organization: "Google",
+    openrouterSlug: "google/gemini-2.5-flash-lite-preview-06-17",
+    // wait for dubesor
   },
   "gemini-advanced-0514": { deprecated: true, organization: "Google" },
   "gemini-exp-1114": { deprecated: true, organization: "Google" },
@@ -301,9 +306,9 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     openrouterSlug: "google/gemma-2-27b-it",
   },
   "gemma-2-2b-it": {
+    deprecated: true,
     isOpen: true,
     organization: "Google Open",
-    openrouterSlug: "google/gemma-2b-it",
   },
   "gemma-2-9b-it": {
     isOpen: true,
