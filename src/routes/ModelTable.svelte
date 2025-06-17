@@ -1,4 +1,7 @@
 <script lang="ts">
+  import iconThink from "@ktibow/iconset-material-symbols/lightbulb-rounded";
+  import iconNoThink from "@ktibow/iconset-material-symbols/light-off-rounded";
+  import { Icon } from "m3-svelte";
   import { modelMetadata, type PriceRange } from "./model-metadata";
   import { filterModels } from "./model-filtering";
   import ScatterChart from "./ScatterChart.svelte";
@@ -106,42 +109,54 @@
     }
   }
   function splitUp(name: string) {
-    let pt1 = name;
     let pt2 = "";
+    let pt3: { icon: any; text: string } | undefined;
+    const extractThinking = () => {
+      if (name.endsWith("-no-thinking")) {
+        name = name.replace("-no-thinking", "");
+        pt3 = { icon: iconNoThink, text: "No" };
+      } else if (/-thinking-?([0-9]+k)?$/.test(name)) {
+        const [, a, details] = name.match(/^(.+)-thinking-?([0-9]+k)?$/)!;
+        name = a;
+        pt3 = { icon: iconThink, text: details || "Yes" };
+      }
+    };
+    extractThinking();
     if (/\d{4}-?[01]\d-?\d{2}/.test(name)) {
       const [match, y, m, d] = name.match(/(\d{4})-?(\d{2})-?(\d{2})/)!;
-      pt1 = pt1.replace(`-${match}`, "");
+      name = name.replace(`-${match}`, "");
       pt2 = formatYMD(+y, +m, +d);
     } else if (/-[01]\d-\d{2}$/.test(name)) {
       const [, a, m, d] = name.match(/^(.+)-(\d{2})-(\d{2})$/)!;
-      pt1 = a;
+      name = a;
       pt2 = formatMD(+m, +d);
     } else if (/-[01]\d\d{2}$/.test(name)) {
       const [, a, m, d] = name.match(/^(.+)-(\d{2})(\d{2})$/)!;
-      pt1 = a;
+      name = a;
       pt2 = formatMD(+m, +d);
     } else if (/-[01]\d-\d{4}$/.test(name)) {
       const [, a, m, y] = name.match(/^(.+)-(\d{2})-(\d{4})$/)!;
-      pt1 = a;
+      name = a;
       pt2 = formatMY(+m, +y);
     } else if (/-\d{4}[01]\d$/.test(name)) {
       const [, a, y, m] = name.match(/^(.+)-(\d{4})(\d{2})$/)!;
-      pt1 = a;
+      name = a;
       pt2 = formatMY(+m, +y);
     } else if (/-\d{2}[01]\d$/.test(name)) {
       const [, a, y, m] = name.match(/^(.+)-(\d{2})(\d{2})$/)!;
-      pt1 = a;
+      name = a;
       pt2 = formatMY(+m, +`20${y}`);
     } else if (/-\d{3}$/.test(name)) {
       const [, a, b] = name.match(/^(.+)-(\d{3})$/)!;
-      pt1 = a;
+      name = a;
       pt2 = `v${+b}`;
-    } else if (/^.+[0-9].+-v[0-9.]+$/.test(pt1)) {
-      const [, a, b] = pt1.match(/^(.+)-v([0-9.]+)$/)!;
-      pt1 = a;
+    } else if (/^.+[0-9].+-v[0-9.]+$/.test(name)) {
+      const [, a, b] = name.match(/^(.+)-v([0-9.]+)$/)!;
+      name = a;
       pt2 = `v${+b}`;
     }
-    return [pt1, pt2];
+    extractThinking();
+    return [name, pt2, pt3] as const;
   }
 </script>
 
@@ -159,11 +174,17 @@
   <tbody>
     {#each models as { name, date, rating, rank, ciLow, ciHigh }, i (name)}
       {@const link = getModelLink(name)}
-      {@const [pt1, pt2] = splitUp(name)}
+      {@const [pt1, pt2, thinking] = splitUp(name)}
       {#snippet text()}
         {pt1}
         {#if pt2}
           <span class="badge">{pt2}</span>
+        {/if}
+        {#if thinking}
+          <span class="badge">
+            <Icon icon={thinking.icon} />
+            {thinking.text}
+          </span>
         {/if}
         {#if date > newCutoff}
           <span class="badge new">new</span>
@@ -251,6 +272,9 @@
   }
 
   .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.1rem;
     font-size: 0.75rem;
     padding: 0.1rem 0.4rem;
     border-radius: 1rem;
