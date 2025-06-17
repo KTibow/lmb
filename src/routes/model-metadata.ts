@@ -200,6 +200,12 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     openrouterSlug: "deepseek/deepseek-r1",
     reasoningMultiplier: 5.7,
   },
+  "deepseek-r1-0528": {
+    isOpen: true,
+    organization: "DeepSeek",
+    openrouterSlug: "deepseek/deepseek-r1-0528",
+    reasoningMultiplier: 4.2,
+  },
   "deepseek-v3": {
     isOpen: true,
     organization: "DeepSeek",
@@ -636,6 +642,11 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     organization: "Qwen",
     openrouterSlug: "qwen/qwen3-235b-a22b",
     reasoningMultiplier: 6.2,
+  },
+  "qwen3-235b-a22b-no-thinking": {
+    isOpen: true,
+    organization: "Qwen",
+    openrouterSlug: "qwen/qwen3-235b-a22b",
   },
   "qwen3-32b": {
     isOpen: true,
