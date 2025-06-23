@@ -277,7 +277,7 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   "gemini-2.5-flash-preview-05-20": {
     organization: "Google",
     openrouterSlug: "google/gemini-2.5-flash-preview-05-20",
-    reasoningMultiplier: 3.9,
+    reasoningMultiplier: 3.1,
   },
   "gemini-2.5-flash-lite-preview-06-17-thinking": {
     organization: "Google",
