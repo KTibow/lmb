@@ -264,9 +264,9 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     reasoningMultiplier: 3.1,
     deprecated: true,
   },
-  "gemini-2.5-pro-preview-06-05": {
+  "gemini-2.5-pro": {
     organization: "Google",
-    openrouterSlug: "google/gemini-2.5-pro-preview",
+    openrouterSlug: "google/gemini-2.5-pro",
     reasoningMultiplier: 3.1,
   },
   "gemini-2.5-flash-preview-04-17": {
@@ -275,9 +275,9 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     deprecated: true,
     reasoningMultiplier: 3.9,
   },
-  "gemini-2.5-flash-preview-05-20": {
+  "gemini-2.5-flash": {
     organization: "Google",
-    openrouterSlug: "google/gemini-2.5-flash-preview-05-20",
+    openrouterSlug: "google/gemini-2.5-flash",
     reasoningMultiplier: 3.1,
   },
   "gemini-2.5-flash-lite-preview-06-17-thinking": {
@@ -484,7 +484,17 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     organization: "NVIDIA",
   },
   "llava-v1.6-34b": { isOpen: true },
+  "magistral-medium-2506": {
+    organization: "Mistral",
+    openrouterSlug: "mistralai/magistral-medium-2506",
+    reasoningMultiplier: 8.8,
+  },
   "minicpm-v-2_6": { isOpen: true },
+  "minimax-m1": {
+    isOpen: true,
+    organization: "Minimax",
+    openrouterSlug: "minimax/minimax-m1",
+  },
   "ministral-8b-2410": {
     isOpen: true,
     organization: "Mistral",
@@ -740,7 +750,9 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   "playground-3": { organization: "Playground" },
   "ideogram-2a": { price: 0.04, organization: "Ideogram" },
   "ideogram-2a-turbo": { price: 0.025, organization: "Ideogram" },
-  "gemini-2-flash-experimental": { organization: "Google" },
+  "gemini-2-flash-preview": { organization: "Google", price: 0.039 },
+  "gemini-2-flash-preview-image-generation": { organization: "Google", price: 0.039 },
+  "gemini-2-flash-experimental": { organization: "Google", deprecated: true },
   "playground-2.5": { isOpen: true, organization: "Playground" },
   "dalle-3-hd": { price: 0.08, organization: "OpenAI" },
   "stable-diffusion-3.5-medium": { isOpen: true, price: 0.02, organization: "Stability" },
