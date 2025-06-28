@@ -78,6 +78,7 @@
 ["openai/o1",[[15,60]]]
 ["openai/o1-mini",[[1.1,4.4]]]
 ["openai/o1-preview",[[15,60]]]
+["openai/o3",[[2,8]]]
 ["openai/o3-mini",[[1.1,4.4]]]
 ["openai/o4-mini",[[1.1,4.4]]]
 ["qwen/qwen-2-72b-instruct",[[0.9,0.9]]]
