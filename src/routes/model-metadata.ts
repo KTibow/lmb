@@ -570,7 +570,11 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     openrouterSlug: "openai/o1",
     reasoningMultiplier: 3.9,
   },
-  "o3-2025-04-16": { organization: "OpenAI" }, // TODO: add price once Dubesor data is in
+  "o3-2025-04-16": {
+    organization: "OpenAI",
+    openrouterSlug: "openai/o3",
+    reasoningMultiplier: 2.9,
+  },
   "o3-mini": { organization: "OpenAI", openrouterSlug: "openai/o3-mini", reasoningMultiplier: 4.3 },
   "o3-mini-high": {
     organization: "OpenAI",
