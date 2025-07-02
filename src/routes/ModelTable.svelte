@@ -286,8 +286,8 @@
       color: rgb(var(--m3-scheme-on-primary));
     }
     &.open {
-      background-color: rgb(var(--m3-scheme-tertiary-container));
-      color: rgb(var(--m3-scheme-on-tertiary-container));
+      background-color: rgb(var(--m3-scheme-primary-container));
+      color: rgb(var(--m3-scheme-on-primary-container));
     }
   }
 

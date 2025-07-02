@@ -347,7 +347,6 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   "glm-4-plus": { organization: "Zhipu" },
   "gpt-3.5-turbo-0125": {
     organization: "OpenAI",
-    openrouterSlug: "openai/gpt-3.5-turbo-0125",
   },
   "gpt-3.5-turbo-0314": { price: mixPrice(1.5, 2), organization: "OpenAI" },
   "gpt-3.5-turbo-0613": {
@@ -526,7 +525,6 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   },
   "mistral-medium": {
     organization: "Mistral",
-    openrouterSlug: "mistralai/mistral-medium",
   },
   "mistral-next": { organization: "Mistral" },
   "mistral-small-24b-instruct-2501": {
