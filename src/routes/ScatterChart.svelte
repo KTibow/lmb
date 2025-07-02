@@ -32,10 +32,8 @@
     }
 
     const textColor = `rgb(${getRGBValues("--m3-scheme-on-surface")})`;
-    const primaryPointColor = `rgb(${getRGBValues("--m3-scheme-primary-container")})`;
-    const primaryBorderColor = `rgb(${getRGBValues("--m3-scheme-on-primary-container")})`;
-    const tertiaryPointColor = `rgb(${getRGBValues("--m3-scheme-tertiary-container")})`;
-    const tertiaryBorderColor = `rgb(${getRGBValues("--m3-scheme-on-tertiary-container")})`;
+    const primaryPointColor = `rgb(${getRGBValues("--m3-scheme-primary")})`;
+    const tertiaryPointColor = `rgb(${getRGBValues("--m3-scheme-primary-container")})`;
 
     const dataPoints = models
       .map((model) => {
@@ -47,7 +45,6 @@
           y: model.rating,
           label: model.name,
           backgroundColor: isOpen ? tertiaryPointColor : primaryPointColor,
-          borderColor: isOpen ? tertiaryBorderColor : primaryBorderColor,
         };
       })
       .filter((point) => point.x > 0);
