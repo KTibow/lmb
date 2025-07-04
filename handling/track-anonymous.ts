@@ -17,6 +17,7 @@ const boringModels = [
   "claude-sonnet-4-20250514-thinking-32k",
   "hunyuan-large-vision",
   "amazon.nova-pro-v1:0",
+  "mistral-small-2506",
 ];
 
 const getModels = async () => {
