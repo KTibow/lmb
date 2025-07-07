@@ -743,6 +743,7 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   "stable-diffusion-3.5-large-turbo": { isOpen: true, organization: "Stability" },
   "luma-photon": { price: 0.019, organization: "Luma" },
   "stable-diffusion-3.5-large": { isOpen: true, price: 0.06, organization: "Stability" },
+  bagel: { isOpen: true, price: 0.07 },
   "infinity-8b": { isOpen: true },
   "ideogram-1": { deprecated: true, organization: "Ideogram" },
   "stable-diffusion-3-large": { price: 0.065, organization: "Stability" },
