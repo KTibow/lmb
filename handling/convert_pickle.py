@@ -100,6 +100,8 @@ def process_model(name, paradigm, categories):
         slop[transformed_name] = {}
 
     space_name = f"lmarena_{paradigm}"
+    if space_name == "lmarena_text":
+        space_name = "text"
     if space_name in slop[transformed_name]:
         space = slop[transformed_name][space_name]
     else:
@@ -158,7 +160,7 @@ for paradigm, categories in data.items():
         process_model(model, paradigm, categories)
 
 for model in slop.values():
-    for k in ["lmarena_text", "lmarena_vision", "lmarena_image"]:
+    for k in ["text", "lmarena_vision", "lmarena_image"]:
         if k not in model:
           continue
         space = model[k]

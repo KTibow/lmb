@@ -16,7 +16,7 @@
     .filter(Boolean)
     .map((x) => JSON.parse(x));
 
-  let paradigm = "lmarena_text",
+  let paradigm = "text",
     category = "full",
     styleControl = true;
   let searches: string[] = [];
@@ -40,7 +40,7 @@
   };
 
   const categories = {
-    lmarena_text: {
+    text: {
       Overall: "full",
       "Hard prompts": "hard_6",
       "Hard prompts (english)": "hard_english_6",
@@ -125,7 +125,7 @@
     const settingsHash = $page.url.hash;
     if (settingsHash) {
       const settings = JSON.parse(decodeURIComponent(settingsHash.slice(1)));
-      if (settings.paradigm == "text") settings.paradigm = "lmarena_text";
+      if (settings.paradigm == "text") settings.paradigm = "text";
       if (settings.paradigm == "vision") settings.paradigm = "lmarena_vision";
       if (settings.paradigm == "image_arena") settings.paradigm = "lmarena_image";
       if (settings.paradigm == "image_aa") settings.paradigm = "aa_image";
@@ -151,7 +151,7 @@
       <Dropdown
         bind:value={paradigm}
         options={{
-          Text: "lmarena_text",
+          Text: "text",
           Vision: "lmarena_vision",
           "Image (LM Arena)": "lmarena_image",
           "Image (Artificial Analysis)": "aa_image",
