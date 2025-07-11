@@ -148,6 +148,7 @@ def process_model(name, paradigm, categories):
 
 # Process each category (text/vision)
 for paradigm, categories in data.items():
+    paradigm = paradigm.replace("-", "_")
     models_in_paradigm = set()
     for category_name, category_data in categories.items():
         for model in category_data["leaderboard_table_df"].index:
