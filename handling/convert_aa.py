@@ -119,14 +119,19 @@ for model in data["models"]:
 
         # Parse and add confidence intervals
         minus_ci, plus_ci = parse_ci95(subset_stats.get("ci95"))
+        def transform(x):
+            x = round(x, 2)
+            if isinstance(x, float) and x.is_integer():
+                return int(x)
+            return x
         if minus_ci is not None and plus_ci is not None:
             space["data"][subcat] = [
-                round(minus_ci, 2),
-                round(elo, 2),
-                round(plus_ci, 2),
+                transform(minus_ci),
+                transform(elo),
+                transform(plus_ci),
             ]
             continue
-        space["data"][subcat] = [None, round(elo, 2), None]
+        space["data"][subcat] = [None, transform(elo), None]
 
 for model in slop.values():
     if "aa_image" not in model:

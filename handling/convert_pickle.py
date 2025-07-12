@@ -140,12 +140,19 @@ def process_model(name, paradigm, categories):
         elo = float(model_row["rating"])
 
         # Check if confidence interval columns exist
-        ci_low = float(model_row["rating_q025"])
-        ci_high = float(model_row["rating_q975"])
+        ci_low = elo - float(model_row["rating_q025"])
+        ci_high = float(model_row["rating_q975"]) - elo
+
+        def transform(x):
+            x = round(x, 2)
+            if isinstance(x, float) and x.is_integer():
+                return int(x)
+            return x
+
         space["data"][category_name] = [
-            round(elo - ci_low, 2),
-            round(elo, 2),
-            round(ci_high - elo, 2),
+            transform(ci_low),
+            transform(elo),
+            transform(ci_high),
         ]
 
 # Process each category (text/vision)
