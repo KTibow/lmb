@@ -10,10 +10,12 @@ export type ModelRaw = {
   first_seen: number;
   last_seen: number;
   data: Record<string, number[]>;
+  is_yupp?: boolean;
   status?: string;
 };
 export type Model = {
   name: string;
+  is_yupp: boolean;
   date: number;
   rating: number;
   ciLow: number;
@@ -91,6 +93,7 @@ export function filterModels(
     const details = model.data[categoryName];
     models.push({
       name,
+      is_yupp: Boolean(model.is_yupp),
       date: model.first_seen,
       rating: details[1],
       ciLow: details[1] - (details[0] || 0),

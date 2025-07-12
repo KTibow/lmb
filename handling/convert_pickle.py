@@ -171,7 +171,7 @@ for model in slop.values():
         if k not in model:
           continue
         space = model[k]
-        if space["last_seen"] != timestamp:
+        if space["last_seen"] != timestamp and "is_yupp" not in space:
             space["status"] = "dead"
 
 # Write directly to JSONL

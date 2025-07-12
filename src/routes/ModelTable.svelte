@@ -3,18 +3,10 @@
   import iconNoThink from "@ktibow/iconset-material-symbols/light-off-rounded";
   import { Icon } from "m3-svelte";
   import { modelMetadata, type PriceRange } from "./model-metadata";
-  import { filterModels } from "./model-filtering";
+  import { filterModels, type ModelRaw } from "./model-filtering";
   import ScatterChart from "./ScatterChart.svelte";
 
-  export let rows: [
-    string,
-    string,
-    {
-      first_seen: number;
-      last_seen: number;
-      data: Record<string, number[]>;
-    },
-  ][];
+  export let rows: [string, string, ModelRaw][];
   export let paradigm: string;
   export let categoryName: string;
   export let searches: string[];
@@ -172,7 +164,7 @@
     </tr>
   </thead>
   <tbody>
-    {#each models as { name, date, rating, rank, ciLow, ciHigh }, i (name)}
+    {#each models as { name, is_yupp, date, rating, rank, ciLow, ciHigh }, i (name)}
       {@const link = getModelLink(name)}
       {@const [pt1, pt2, thinking] = splitUp(name)}
       {#snippet text()}
@@ -185,6 +177,9 @@
             <Icon icon={thinking.icon} />
             {thinking.text}
           </span>
+        {/if}
+        {#if is_yupp}
+          <span class="badge" title="estimated based on other leaderboards">est</span>
         {/if}
         {#if date > newCutoff}
           <span class="badge new">new</span>

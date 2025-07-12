@@ -153,6 +153,11 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     organization: "Anthropic",
     openrouterSlug: "anthropic/claude-sonnet-4",
   },
+  "claude-sonnet-4-20250514-thinking": {
+    organization: "Anthropic",
+    openrouterSlug: "anthropic/claude-sonnet-4",
+    reasoningMultiplier: 2,
+  },
   "claude-instant-1": { organization: "Anthropic" },
   "codellama-34b-instruct": { isOpen: true },
   "codellama-70b-instruct": { isOpen: true },
@@ -280,6 +285,10 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     openrouterSlug: "google/gemini-2.5-flash",
     reasoningMultiplier: 3.1,
   },
+  "gemini-2.5-flash-no-thinking": {
+    organization: "Google",
+    openrouterSlug: "google/gemini-2.5-flash",
+  },
   "gemini-2.5-flash-lite-preview-06-17-thinking": {
     organization: "Google",
     openrouterSlug: "google/gemini-2.5-flash-lite-preview-06-17",
@@ -378,6 +387,11 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   "grok-2-mini-2024-08-13": { organization: "xAI" },
   "early-grok-3": { deprecated: true, organization: "xAI" },
   "grok-3-preview-02-24": { organization: "xAI", openrouterSlug: "x-ai/grok-3-beta" },
+  "grok-4-0709": {
+    organization: "xAI",
+    openrouterSlug: "x-ai/grok-4",
+    reasoningMultiplier: 5,
+  },
   "grok-3-mini-beta": {
     organization: "xAI",
     openrouterSlug: "x-ai/grok-3-mini-beta",
@@ -572,6 +586,11 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     organization: "OpenAI",
     openrouterSlug: "openai/o3",
     reasoningMultiplier: 2.9,
+  },
+  "o3-pro": {
+    organization: "OpenAI",
+    // openrouterSlug: "openai/o3-pro",
+    // reasoningMultiplier: 2.9,
   },
   "o3-mini": { organization: "OpenAI", openrouterSlug: "openai/o3-mini", reasoningMultiplier: 4.3 },
   "o3-mini-high": {
