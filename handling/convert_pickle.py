@@ -113,7 +113,7 @@ def process_model(name, paradigm, categories):
         }
 
     full_table = categories["full"]["leaderboard_table_df"]
-    votes = full_table.loc[name]["num_battles"]
+    votes = int(full_table.loc[name]["num_battles"])
 
     is_update = timestamp > space["last_seen"]
     if is_update:
