@@ -551,6 +551,11 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     organization: "Mistral",
     openrouterSlug: "mistralai/mistral-small-3.1-24b-instruct",
   },
+  "mistral-small-2506": {
+    isOpen: true,
+    organization: "Mistral",
+    openrouterSlug: "mistralai/mistral-small-3.2-24b-instruct",
+  },
   "mistral-medium-2505": {
     organization: "Mistral",
     openrouterSlug: "mistralai/mistral-medium-3",
