@@ -1,8 +1,8 @@
 # /// script
-# dependencies = ["requests", "ujson"]
+# dependencies = ["requests", "orjson"]
 # ///
 import requests
-import ujson
+import orjson
 import os
 import time
 
@@ -78,7 +78,7 @@ slop_file_path = "src/routes/assets/data.jsonl"
 if os.path.exists(slop_file_path):
     with open(slop_file_path, "r") as f:
         for line in f:
-            model, modality, modality_data = ujson.loads(line)
+            model, modality, modality_data = orjson.loads(line)
             if model not in slop:
                 slop[model] = {}
             slop[model][modality] = modality_data
@@ -141,7 +141,7 @@ for model in slop.values():
         space["status"] = "dead"
 
 # Write directly to JSONL
-with open(slop_file_path, "w") as f:
+with open(slop_file_path, "wb") as f:
     for model_name, model_data in slop.items():
         for modality, modality_data in model_data.items():
-            f.write(ujson.dumps([model_name, modality, modality_data]) + "\n")
+            f.write(orjson.dumps([model_name, modality, modality_data]) + b"\n")
