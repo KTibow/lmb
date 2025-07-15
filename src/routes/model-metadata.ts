@@ -149,11 +149,16 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     organization: "Anthropic",
     openrouterSlug: "anthropic/claude-opus-4",
   },
+  "claude-opus-4-20250514-thinking-16k": {
+    organization: "Anthropic",
+    openrouterSlug: "anthropic/claude-opus-4",
+    reasoningMultiplier: 1.65,
+  },
   "claude-sonnet-4-20250514": {
     organization: "Anthropic",
     openrouterSlug: "anthropic/claude-sonnet-4",
   },
-  "claude-sonnet-4-20250514-thinking": {
+  "claude-sonnet-4-20250514-thinking-32k": {
     organization: "Anthropic",
     openrouterSlug: "anthropic/claude-sonnet-4",
     reasoningMultiplier: 2,
@@ -396,6 +401,11 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     organization: "xAI",
     openrouterSlug: "x-ai/grok-3-mini-beta",
     reasoningMultiplier: 2.5,
+  },
+  "grok-3-mini-high": {
+    organization: "xAI",
+    openrouterSlug: "x-ai/grok-3-mini",
+    reasoningMultiplier: 4.5,
   },
   "guanaco-33b": { isOpen: true },
   "internlm2_5-20b-chat": { isOpen: true },
