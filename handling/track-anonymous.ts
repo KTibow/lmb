@@ -78,24 +78,16 @@ const getModels = async () => {
       return null;
     }
     // @ts-ignore don't worry
-    const rsc = datum.map((x) => x[1]).find((x) => x?.includes("claude"));
+    let rsc = datum.map((x) => x[1]).find((x) => x?.includes("claude"));
     if (!rsc) {
       // @ts-ignore don't worry
       console.error(datum.map((x) => x[1]));
       return null;
     }
 
-    const dataStart = rsc.slice(rsc.indexOf('{"initialState":'));
-    let data;
-    let trim = 0;
-    while (!data && trim < 10) {
-      try {
-        data = JSON.parse(dataStart.slice(0, -trim)).initialState;
-      } catch {
-        trim++;
-      }
-    }
-    return data;
+    rsc = rsc.slice(rsc.indexOf('"initialModels":') + '"initialModels":'.length);
+    rsc = rsc.slice(0, rsc.indexOf(',"initialModelAId":null'));
+    return JSON.parse(rsc);
   });
   if (!models) {
     throw new Error("no relevant rsc");
@@ -192,6 +184,9 @@ for (const { name } of curiosities) {
   });
   context = context.replace(/^Here's a.+:\n/, "");
   contexts[name] = context;
+
+  console.log(name, "✅");
+  await new Promise((resolve) => setTimeout(resolve, 1000));
 }
 
 await Deno.writeTextFile(
