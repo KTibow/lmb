@@ -10,6 +10,8 @@
     .split("\n")
     .filter(Boolean)
     .map((x) => JSON.parse(x));
+
+  let gridView = $state(false);
 </script>
 
 <div class="header">
@@ -21,7 +23,7 @@
   </div>
   <div class="center">Anonymous models</div>
 </div>
-<div class="models">
+<div class="models" class:grid-view={gridView}>
   {#each rows as { name, multimodal, context }}
     <div class="model">
       <h2>
@@ -33,6 +35,8 @@
       <Markdown input={context} />
     </div>
   {/each}
+  <input type="checkbox" bind:checked={gridView} id="grid-view" />
+  <Button for="grid-view" variant="filled">Grid</Button>
 </div>
 
 <style>
@@ -52,6 +56,10 @@
     flex-direction: column;
     gap: 0.5rem;
     margin-top: 1.5rem;
+    &.grid-view {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    }
   }
   .model {
     display: flex;
@@ -61,11 +69,20 @@
     border-radius: 1.75rem;
     background-color: rgb(var(--m3-scheme-surface-container-low));
 
-    width: 100%;
-    max-width: 50rem;
-    align-self: center;
+    &:is(.grid-view .model) {
+      max-height: 10rem;
+      overflow: hidden;
+    }
+    &:not(.grid-view .model) {
+      width: 100%;
+      max-width: 50rem;
+      align-self: center;
+    }
   }
   h2 {
     font-weight: bold;
+  }
+  #grid-view {
+    display: none;
   }
 </style>
