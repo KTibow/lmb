@@ -281,7 +281,6 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   },
   "gemini-2.5-flash-preview-04-17": {
     organization: "Google",
-    openrouterSlug: "google/gemini-2.5-flash-preview",
     deprecated: true,
     reasoningMultiplier: 3.9,
   },
@@ -381,7 +380,6 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   "gpt-4.1-nano-2025-04-14": { organization: "OpenAI", openrouterSlug: "openai/gpt-4.1-nano" },
   "gpt-4.5-preview-2025-02-27": {
     organization: "OpenAI",
-    openrouterSlug: "openai/gpt-4.5-preview",
   },
   "gpt4all-13b-snoozy": { isOpen: true },
   "granite-3.0-2b-instruct": { isOpen: true },
@@ -413,6 +411,11 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   "internvl2-4b": { isOpen: true },
   "jamba-1.5-large": { isOpen: true, organization: "AI21" },
   "jamba-1.5-mini": { isOpen: true, organization: "AI21" },
+  "kimi-k2-0711-preview": {
+    organization: "Moonshot AI",
+    isOpen: true,
+    openrouterSlug: "moonshotai/kimi-k2",
+  },
   "koala-13b": { isOpen: true },
   "llama-13b": { deprecated: true, isOpen: true, organization: "Meta" },
   "tulu-2-dpo-70b": { deprecated: true, isOpen: true, organization: "Allen" },
