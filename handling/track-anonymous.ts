@@ -18,6 +18,8 @@ const boringModels = [
   "hunyuan-large-vision",
   "amazon.nova-pro-v1:0",
   "mistral-small-2506",
+  "ernie-x1-turbo-32k-preview",
+  "qwen3-coder-480b-a35b-instruct",
 ];
 
 const getModels = async () => {
@@ -168,12 +170,13 @@ const generate = async (payload: Record<string, any>) => {
 console.log("Summarizing buzz");
 const contexts: Record<string, string> = {};
 for (const { name } of curiosities) {
+  console.log(`${name}...`);
   const chat = getContext(name);
   const chatString = chat.map((m) => `${m.author.name}: ${m.content}`).join("\n");
   if (!chatString) continue;
 
   let context = await generate({
-    model: "gemini-2.5-flash-preview-05-20",
+    model: "gemini-2.5-flash",
     temperature: 0,
     messages: [
       {
@@ -186,7 +189,7 @@ for (const { name } of curiosities) {
   contexts[name] = context;
 
   console.log(name, "✅");
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  await new Promise((resolve) => setTimeout(resolve, 4000));
 }
 
 await Deno.writeTextFile(
