@@ -703,6 +703,11 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     organization: "Qwen",
     openrouterSlug: "qwen/qwen3-235b-a22b",
   },
+  "qwen3-235b-a22b-instruct-2507": {
+    isOpen: true,
+    organization: "Qwen",
+    openrouterSlug: "qwen/qwen3-235b-a22b-2507",
+  },
   "qwen3-32b": {
     isOpen: true,
     organization: "Qwen",

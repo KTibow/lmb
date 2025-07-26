@@ -140,8 +140,8 @@ def process_model(name, paradigm, categories):
         elo = float(model_row["rating"])
 
         # Check if confidence interval columns exist
-        ci_low = elo - float(model_row["rating_q025"])
-        ci_high = float(model_row["rating_q975"]) - elo
+        ci_low = elo - float(model_row["rating_lower"])
+        ci_high = float(model_row["rating_upper"]) - elo
 
         def transform(x):
             x = round(x, 2)
