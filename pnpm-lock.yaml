@@ -24,8 +24,8 @@ importers:
         specifier: ^4.4.9
         version: 4.4.9
       m3-svelte:
-        specifier: 4.0.0
-        version: 4.0.0
+        specifier: 5.0.0
+        version: 5.0.0
       prettier:
         specifier: ^3.5.3
         version: 3.5.3
@@ -219,20 +219,23 @@ packages:
   '@jridgewell/sourcemap-codec@1.5.0':
     resolution: {integrity: sha512-gv3ZRaISU3fjPAgNsriBRqGWQL6quFx04YMPW/zD8XMLsU32mhCCbfbO6KZFLjvYpCZ8zyDEgqsgf+PwPaM7GQ==}
 
+  '@jridgewell/sourcemap-codec@1.5.4':
+    resolution: {integrity: sha512-VT2+G1VQs/9oz078bLrYbecdZKs912zQlkelYpuf+SXF+QvZDYJlbx/LSx+meSAwdDFnF8FVXW92AVjjkVmgFw==}
+
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
   '@ktibow/iconset-material-symbols@0.0.1738223466':
     resolution: {integrity: sha512-248Qruj0ceiTVIL3Ny2LO08DsKC2ezT+3Ag1qGKhTct1sXsM/clvLDBn0pQgCOPDmzO0/P2Ad+uPFUX6ozxJOQ==}
 
-  '@ktibow/iconset-material-symbols@0.0.1747426012':
-    resolution: {integrity: sha512-lLiDCN8lSwzZvva+kF5J+q8MkVGpXfPlEc7IB/VSCTWv8rGt1XShE64gqwCgS4v0kk4tG7k6U90+EZwENZZ4vQ==}
+  '@ktibow/iconset-material-symbols@0.0.1752989765':
+    resolution: {integrity: sha512-J+gfYidiP0Lr1Gs8J0OsA+128Ay1UrcBjECZBCye4CBLl6KZmVc7su0vqKrkpNEnUxCJFdcC8nZAH8O2XPWurw==}
+
+  '@ktibow/material-color-utilities-nightly@0.3.11753753853685':
+    resolution: {integrity: sha512-maizGqgFRRubz37aCUPTcA23Ib3f6w+XOVNZ4jLxS3jzv5h2FX1yBPjIqUFzussWjrH4moiF9xtzO+r7YJRqHw==}
 
   '@kurkle/color@0.3.4':
     resolution: {integrity: sha512-M5UknZPHRu3DEDWoipU6sE8PdkZ6Z/S+v4dD+Ke8IaNlpdSQah50lz1KtcFBa2vsdOnwbbnxJwVM4wty6udA5w==}
-
-  '@material/material-color-utilities@0.3.0':
-    resolution: {integrity: sha512-ztmtTd6xwnuh2/xu+Vb01btgV8SQWYCaK56CkRK8gEkWe5TuDyBcYJ0wgkMRn+2VcE9KUmhvkz+N9GHrqw/C0g==}
 
   '@polka/url@1.0.0-next.29':
     resolution: {integrity: sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww==}
@@ -377,8 +380,16 @@ packages:
   '@types/estree@1.0.7':
     resolution: {integrity: sha512-w28IoSUCJpidD/TGviZwwMJckNESJZXFu7NBZ5YJ4mEUnNraUn9Pm8HSZm/jDF1pDWYKspWE7oVphigUPRakIQ==}
 
+  '@types/estree@1.0.8':
+    resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
+
   acorn@8.14.1:
     resolution: {integrity: sha512-OvQ/2pUDKmgfCg++xsTX1wGxfTaszcHVcTctW4UJB4hibJx2HXxxO5UmVgyjMa+ZDsiaf5wWLXYpRWMmBI0QHg==}
+    engines: {node: '>=0.4.0'}
+    hasBin: true
+
+  acorn@8.15.0:
+    resolution: {integrity: sha512-NZyJarBfL7nWwIq+FDL6Zp/yHEhePMNnnJ0y3qfieCrmNvYct8uvtiV41UvlSe6apAfk0fY1FbWx+NwfmpvtTg==}
     engines: {node: '>=0.4.0'}
     hasBin: true
 
@@ -433,6 +444,9 @@ packages:
   esrap@1.4.6:
     resolution: {integrity: sha512-F/D2mADJ9SHY3IwksD4DAXjTt7qt7GWUf3/8RhCNWmC/67tyb55dpimHmy7EplakFaflV0R/PC+fdSPqrRHAQw==}
 
+  esrap@2.1.0:
+    resolution: {integrity: sha512-yzmPNpl7TBbMRC5Lj2JlJZNPml0tzqoqP5B1JXycNUwtqma9AKCO0M2wHrdgsHcy1WRW7S9rJknAMtByg3usgA==}
+
   fdir@6.4.4:
     resolution: {integrity: sha512-1NZP+GK4GfuAv3PqKvxQRDMjdSRZjnkq7KfhlNrCNNlZ0ygQFpebfrnfnq/W7fpUnAv9aGWmY1zKx7FYL3gwhg==}
     peerDependencies:
@@ -456,8 +470,8 @@ packages:
   locate-character@3.0.0:
     resolution: {integrity: sha512-SW13ws7BjaeJ6p7Q6CO2nchbYEc3X3J6WrmTTDto7yMPqVSZTUyY5Tjbid+Ab8gLnATtygYtiDIJGQRRn2ZOiA==}
 
-  m3-svelte@4.0.0:
-    resolution: {integrity: sha512-MrikHJhZq+fJwpIanAnM1DkMx1g7+cCFBBS76VACZV4sq7Vb7+dQVLnTZ0u1NqaV/sOoy/TBVVveb8x9wqNeEA==}
+  m3-svelte@5.0.0:
+    resolution: {integrity: sha512-KPrlPe7sGPbW50uB4bb7R16edcJ4d23p7PH5YWZ4GLvcvHVf2GwWG8sbQFlg8qCk6ko8OQXCslzLQjdP2j2I8w==}
 
   magic-string@0.30.17:
     resolution: {integrity: sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==}
@@ -534,6 +548,10 @@ packages:
 
   svelte@5.33.1:
     resolution: {integrity: sha512-7znzaaQALL62NBzkdKV04tmYIVla8qjrW+k6GdgFZcKcj8XOb8iEjmfRPo40iaWZlKv3+uiuc0h4iaGgwoORtA==}
+    engines: {node: '>=18'}
+
+  svelte@5.37.1:
+    resolution: {integrity: sha512-h8arWpQZ+3z8eahyBT5KkiBOUsG6xvI5Ykg0ozRr9xEdImgSMUPUlOFWRNkUsT7Ti0DSUCTEbPoped0aoxFyWA==}
     engines: {node: '>=18'}
 
   tinyglobby@0.2.13:
@@ -696,6 +714,8 @@ snapshots:
 
   '@jridgewell/sourcemap-codec@1.5.0': {}
 
+  '@jridgewell/sourcemap-codec@1.5.4': {}
+
   '@jridgewell/trace-mapping@0.3.25':
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
@@ -705,13 +725,13 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@ktibow/iconset-material-symbols@0.0.1747426012':
+  '@ktibow/iconset-material-symbols@0.0.1752989765':
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@kurkle/color@0.3.4': {}
+  '@ktibow/material-color-utilities-nightly@0.3.11753753853685': {}
 
-  '@material/material-color-utilities@0.3.0': {}
+  '@kurkle/color@0.3.4': {}
 
   '@polka/url@1.0.0-next.29': {}
 
@@ -779,6 +799,10 @@ snapshots:
     dependencies:
       acorn: 8.14.1
 
+  '@sveltejs/acorn-typescript@1.0.5(acorn@8.15.0)':
+    dependencies:
+      acorn: 8.15.0
+
   '@sveltejs/adapter-static@3.0.8(@sveltejs/kit@2.21.1(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.33.1)(vite@6.3.5))(svelte@5.33.1)(vite@6.3.5))':
     dependencies:
       '@sveltejs/kit': 2.21.1(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.33.1)(vite@6.3.5))(svelte@5.33.1)(vite@6.3.5)
@@ -827,7 +851,11 @@ snapshots:
 
   '@types/estree@1.0.7': {}
 
+  '@types/estree@1.0.8': {}
+
   acorn@8.14.1: {}
+
+  acorn@8.15.0: {}
 
   aria-query@5.3.2: {}
 
@@ -887,6 +915,10 @@ snapshots:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.0
 
+  esrap@2.1.0:
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.5.4
+
   fdir@6.4.4(picomatch@4.0.2):
     optionalDependencies:
       picomatch: 4.0.2
@@ -902,12 +934,12 @@ snapshots:
 
   locate-character@3.0.0: {}
 
-  m3-svelte@4.0.0:
+  m3-svelte@5.0.0:
     dependencies:
       '@iconify/types': 2.0.0
-      '@ktibow/iconset-material-symbols': 0.0.1747426012
-      '@material/material-color-utilities': 0.3.0
-      svelte: 5.33.1
+      '@ktibow/iconset-material-symbols': 0.0.1752989765
+      '@ktibow/material-color-utilities-nightly': 0.3.11753753853685
+      svelte: 5.37.1
 
   magic-string@0.30.17:
     dependencies:
@@ -1004,6 +1036,23 @@ snapshots:
       clsx: 2.1.1
       esm-env: 1.2.2
       esrap: 1.4.6
+      is-reference: 3.0.3
+      locate-character: 3.0.0
+      magic-string: 0.30.17
+      zimmerframe: 1.1.2
+
+  svelte@5.37.1:
+    dependencies:
+      '@ampproject/remapping': 2.3.0
+      '@jridgewell/sourcemap-codec': 1.5.4
+      '@sveltejs/acorn-typescript': 1.0.5(acorn@8.15.0)
+      '@types/estree': 1.0.8
+      acorn: 8.15.0
+      aria-query: 5.3.2
+      axobject-query: 4.1.0
+      clsx: 2.1.1
+      esm-env: 1.2.2
+      esrap: 2.1.0
       is-reference: 3.0.3
       locate-character: 3.0.0
       magic-string: 0.30.17

@@ -56,7 +56,7 @@
           {
             data: dataPoints,
             backgroundColor: dataPoints.map((d) => d.backgroundColor),
-            borderColor: dataPoints.map((d) => d.borderColor),
+            // borderColor: dataPoints.map((d) => d.borderColor),
             borderWidth: 1,
             pointRadius: 6,
             pointHoverRadius: 8,

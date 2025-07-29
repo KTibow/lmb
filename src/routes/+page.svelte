@@ -173,11 +173,11 @@
           <input type="text" bind:value={searches[i]} placeholder="Search for a model" />
         </div>
       {/each}
-      <Button variant="text" iconType="full" click={() => (searches = [...searches, ""])}>
+      <Button variant="text" iconType="full" onclick={() => (searches = [...searches, ""])}>
         <Icon icon={searches.length ? iconAdd : iconSearch} />
       </Button>
     </div>
-    <Button variant="text" iconType="full" click={() => (settingsOpen = true)}>
+    <Button variant="text" iconType="full" onclick={() => (settingsOpen = true)}>
       <Icon icon={iconSettings} />
     </Button>
   </div>
@@ -281,8 +281,8 @@
     <p><em>Remember: You need a 70 point difference for a 60% win rate</em></p>
   </div>
   {#snippet buttons()}
-    <Button variant="text" click={share}>Share</Button>
-    <Button variant="tonal" click={() => (settingsOpen = false)}>Done</Button>
+    <Button variant="text" onclick={share}>Share</Button>
+    <Button variant="tonal" onclick={() => (settingsOpen = false)}>Done</Button>
   {/snippet}
 </Dialog>
 
