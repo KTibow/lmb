@@ -30,8 +30,8 @@ jobs:
       - name: Run conversion script
         run: uv run handling/convert_pickle.py
 
-      - name: Also update with Yupp
-        run: deno run --allow-all handling/yupp-fetcher.ts
+      # - name: Also update with Yupp
+      #   run: deno run --allow-all handling/yupp-fetcher.ts
 
       - name: Also update image models
         run: uv run handling/convert_aa.py
