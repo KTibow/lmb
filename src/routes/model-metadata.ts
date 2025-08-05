@@ -110,8 +110,8 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     openrouterSlug: "openai/chatgpt-4o-latest",
   },
   "claude-1": { organization: "Anthropic" },
-  "claude-2.0": { organization: "Anthropic", openrouterSlug: "anthropic/claude-2.0" },
-  "claude-2.1": { organization: "Anthropic", openrouterSlug: "anthropic/claude-2.1" },
+  "claude-2.0": { organization: "Anthropic", deprecated: true },
+  "claude-2.1": { organization: "Anthropic", deprecated: true },
   "claude-3-5-haiku-20241022": {
     organization: "Anthropic",
     openrouterSlug: "anthropic/claude-3.5-haiku-20241022",
@@ -143,7 +143,7 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   },
   "claude-3-sonnet-20240229": {
     organization: "Anthropic",
-    openrouterSlug: "anthropic/claude-3-sonnet",
+    deprecated: true,
   },
   "claude-opus-4-20250514": {
     organization: "Anthropic",
@@ -358,6 +358,18 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   "glm-4-0116": { organization: "Zhipu" },
   "glm-4-0520": { organization: "Zhipu" },
   "glm-4-plus": { organization: "Zhipu" },
+  "glm-4.5": {
+    organization: "Zhipu",
+    isOpen: true,
+    openrouterSlug: "z-ai/glm-4.5",
+    reasoningMultiplier: 3.8,
+  },
+  "glm-4.5-air": {
+    organization: "Zhipu",
+    isOpen: true,
+    openrouterSlug: "z-ai/glm-4.5-air",
+    reasoningMultiplier: 4.1,
+  },
   "gpt-3.5-turbo-0125": {
     organization: "OpenAI",
   },
@@ -488,6 +500,11 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   "llama-3.3-nemotron-49b-super-v1": {
     isOpen: true,
     organization: "NVIDIA",
+    openrouterSlug: "nvidia/llama-3.3-nemotron-super-49b-v1",
+  },
+  "nvidia-llama-3.3-nemotron-super-49b-v1.5": {
+    isOpen: true,
+    organization: "NVIDIA",
   },
   "llama-4-maverick-03-26-experimental": {
     deprecated: true,
@@ -592,7 +609,7 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   "o1-mini": { organization: "OpenAI", openrouterSlug: "openai/o1-mini", reasoningMultiplier: 2.1 },
   "o1-preview": {
     organization: "OpenAI",
-    openrouterSlug: "openai/o1-preview",
+    deprecated: true,
     reasoningMultiplier: 4.3,
   },
   "o1-2024-12-17": {
@@ -730,6 +747,11 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     openrouterSlug: "qwen/qwen3-30b-a3b",
     reasoningMultiplier: 6.2,
   },
+  "qwen3-30b-a3b-2507": {
+    isOpen: true,
+    organization: "Qwen",
+    openrouterSlug: "qwen/qwen3-30b-a3b-instruct-2507",
+  },
   "qwq-32b-preview": {
     isOpen: true,
     deprecated: true,
@@ -765,7 +787,7 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   "wizardlm-70b": { isOpen: true },
   "yi-1.5-34b-chat": { isOpen: true, organization: "01" },
   "yi-34b-chat": { isOpen: true, organization: "01" },
-  "yi-large": { organization: "01", openrouterSlug: "01-ai/yi-large" },
+  "yi-large": { organization: "01", deprecated: true },
   "yi-large-preview": { organization: "01" },
   "yi-lightning": { organization: "01" },
   "yi-lightning-lite": { organization: "01" },
