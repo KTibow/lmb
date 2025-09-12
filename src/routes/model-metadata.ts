@@ -154,6 +154,15 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     openrouterSlug: "anthropic/claude-opus-4",
     reasoningMultiplier: 1.65,
   },
+  "claude-opus-4-1-20250805": {
+    organization: "Anthropic",
+    openrouterSlug: "anthropic/claude-opus-4.1",
+  },
+  "claude-opus-4-1-20250805-thinking-16k": {
+    organization: "Anthropic",
+    openrouterSlug: "anthropic/claude-opus-4.1",
+    reasoningMultiplier: 1.65,
+  },
   "claude-sonnet-4-20250514": {
     organization: "Anthropic",
     openrouterSlug: "anthropic/claude-sonnet-4",
@@ -225,6 +234,17 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     isOpen: true,
     organization: "DeepSeek",
     openrouterSlug: "deepseek/deepseek-chat-v3-0324",
+  },
+  "deepseek-v3.1": {
+    isOpen: true,
+    organization: "DeepSeek",
+    openrouterSlug: "deepseek/deepseek-chat-v3.1",
+  },
+  "deepseek-v3.1-thinking": {
+    isOpen: true,
+    organization: "DeepSeek",
+    openrouterSlug: "deepseek/deepseek-chat-v3.1",
+    reasoningMultiplier: 2.8,
   },
   "dolly-v2-12b": { isOpen: true },
   "falcon-180b-chat": { isOpen: true },
@@ -393,6 +413,31 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   "gpt-4.5-preview-2025-02-27": {
     organization: "OpenAI",
   },
+  "gpt-5-old": { organization: "OpenAI", deprecated: true },
+  "gpt-5-chat": { organization: "OpenAI", openrouterSlug: "openai/gpt-5-chat" },
+  "gpt-5-high": { organization: "OpenAI", openrouterSlug: "openai/gpt-5", reasoningMultiplier: 5 },
+  "gpt-5-mini-high": {
+    organization: "OpenAI",
+    openrouterSlug: "openai/gpt-5-mini",
+    reasoningMultiplier: 3,
+  },
+  "gpt-5-nano-high": {
+    organization: "OpenAI",
+    openrouterSlug: "openai/gpt-5-nano",
+    reasoningMultiplier: 9,
+  },
+  "gpt-oss-120b": {
+    isOpen: true,
+    organization: "OpenAI",
+    openrouterSlug: "openai/gpt-oss-120b",
+    reasoningMultiplier: 1.6,
+  },
+  "gpt-oss-20b": {
+    isOpen: true,
+    organization: "OpenAI",
+    openrouterSlug: "openai/gpt-oss-20b",
+    reasoningMultiplier: 2.7,
+  },
   "gpt4all-13b-snoozy": { isOpen: true },
   "granite-3.0-2b-instruct": { isOpen: true },
   "granite-3.0-8b-instruct": { isOpen: true },
@@ -472,6 +517,11 @@ export const modelMetadata: Record<string, ModelMetadata> = {
     organization: "NVIDIA",
     openrouterSlug: "nvidia/llama-3.1-nemotron-70b-instruct",
   },
+  "llama-3.1-nemotron-253b-instruct": {
+    isOpen: true,
+    organization: "NVIDIA",
+    openrouterSlug: "nvidia/llama-3.1-nemotron-ultra-253b-v1",
+  },
   "llama-3.2-1b-instruct": {
     isOpen: true,
     organization: "Meta",
@@ -500,7 +550,6 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   "llama-3.3-nemotron-49b-super-v1": {
     isOpen: true,
     organization: "NVIDIA",
-    openrouterSlug: "nvidia/llama-3.3-nemotron-super-49b-v1",
   },
   "nvidia-llama-3.3-nemotron-super-49b-v1.5": {
     isOpen: true,
@@ -551,7 +600,6 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   "mistral-7b-instruct-v0.2": {
     isOpen: true,
     organization: "Mistral",
-    openrouterSlug: "mistralai/mistral-7b-instruct-v0.2",
   },
   "mistral-large-2402": {
     organization: "Mistral",
@@ -569,6 +617,10 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   },
   "mistral-medium": {
     organization: "Mistral",
+  },
+  "mistral-medium-2508": {
+    organization: "Mistral",
+    openrouterSlug: "mistralai/mistral-medium-3.1",
   },
   "mistral-next": { organization: "Mistral" },
   "mistral-small-24b-instruct-2501": {
@@ -668,6 +720,7 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   "qwen-14b-chat": { deprecated: true, isOpen: true, organization: "Qwen" },
   "qwen-max-0428": { deprecated: true, organization: "Qwen" },
   "qwen-max-0919": { deprecated: true, organization: "Qwen" },
+  "qwen-max-2025-08-15": { organization: "Qwen", openrouterSlug: "qwen/qwen3-max" },
   "qwen-plus-0828": { deprecated: true, organization: "Qwen" },
   "qwen-plus-0125": { deprecated: true, organization: "Qwen" },
   "qwen-vl-max-1119": { organization: "Qwen" },
@@ -680,7 +733,6 @@ export const modelMetadata: Record<string, ModelMetadata> = {
   "qwen2-72b-instruct": {
     isOpen: true,
     organization: "Qwen",
-    openrouterSlug: "qwen/qwen-2-72b-instruct",
   },
   "qwen2-vl-72b": { isOpen: true, organization: "Qwen" },
   "qwen2-vl-7b-instruct": {
