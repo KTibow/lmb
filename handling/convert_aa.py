@@ -68,7 +68,7 @@ def parse_ci95(ci95_str):
 
 
 # Fetch and transform the data
-url = "https://artificialanalysis.ai/api/text-to-image/arena/preferences/total"
+url = "https://artificialanalysis.ai/api/text-to-image/arena/preferences"
 response = requests.get(url)
 data = response.json()
 
@@ -119,11 +119,13 @@ for model in data["models"]:
 
         # Parse and add confidence intervals
         minus_ci, plus_ci = parse_ci95(subset_stats.get("ci95"))
+
         def transform(x):
             x = round(x, 2)
             if isinstance(x, float) and x.is_integer():
                 return int(x)
             return x
+
         if minus_ci is not None and plus_ci is not None:
             space["data"][subcat] = [
                 transform(minus_ci),
