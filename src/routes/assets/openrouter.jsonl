@@ -57,7 +57,7 @@
 ["mistralai/mistral-medium-3",[[0.4,2]]]
 ["mistralai/mistral-medium-3.1",[[0.4,2]]]
 ["mistralai/mistral-small-24b-instruct-2501",[[0.05,0.08],[0.05,0.22],[0.1,0.3],[0.8,0.8]]]
-["mistralai/mistral-small-3.1-24b-instruct",[[0.05,0.1],[0.05,0.22],[0.1,0.3],[0.35,0.56]]]
+["mistralai/mistral-small-3.1-24b-instruct",[[0.05,0.22],[0.1,0.3],[0.35,0.56]]]
 ["mistralai/mistral-small-3.2-24b-instruct",[[0.06,0.18],[0.075,0.2],[0.1,0.3],[0.3,0.6]]]
 ["mistralai/mixtral-8x22b-instruct",[[2,6]]]
 ["mistralai/mixtral-8x7b-instruct",[[0.54,0.54],[0.6,0.6]]]
