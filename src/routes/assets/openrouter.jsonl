@@ -1,7 +1,7 @@
 ["amazon/nova-lite-v1",[[0.06,0.24]]]
 ["amazon/nova-micro-v1",[[0.035,0.14]]]
 ["amazon/nova-pro-v1",[[0.8,3.2]]]
-["anthropic/claude-3-haiku",[[0.25,1.25],[0.25,1.25]]]
+["anthropic/claude-3-haiku",[[0.25,1.25],[0.25,1.25],[0.25,1.25]]]
 ["anthropic/claude-3-opus",null]
 ["anthropic/claude-3.5-haiku-20241022",null]
 ["anthropic/claude-3.5-sonnet",[[6,30],[6,30]]]
