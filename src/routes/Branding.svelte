@@ -6,7 +6,6 @@
 
 <div class="branding">
   <div class="row">
-    <img src="https://ktibow.github.io/favicon.svg" alt="KTibow's" width="16" height="16" />
     <h1>{name}</h1>
     <div style:flex-grow="1"></div>
     <a href={github}>GitHub</a>
