@@ -58,17 +58,10 @@
       transition: var(--transition);
       margin-top: 1.5rem;
 
-      img {
-        width: 1rem;
-        height: 1rem;
-        border-radius: 1rem;
-        background-color: rgb(var(--m3-scheme-background));
-        transition: var(--transition);
-      }
       h1 {
         font-weight: bold;
         font-size: 1rem;
-        margin: 0 0 0 0.5rem;
+        margin: 0;
         transition: var(--transition);
       }
       a {
